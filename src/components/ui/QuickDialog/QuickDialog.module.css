@@ -1,0 +1,628 @@
+/* ── Overlay ──────────────────────────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(15, 10, 8, 0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* ── Card — right drawer sliding card ────────────────────────────────────────── */
+.card {
+  width: 100%;
+  max-width: 480px;
+  height: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
+  background: #FFFBF7;
+  border-radius: 24px 0 0 24px;
+  box-shadow:
+    -30px 0 90px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(192, 133, 82, 0.15);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Soft mineral stone texture ── */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.8' numOctaves='1' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0 0.35 0 0 0 12 -6'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+  background-size: 400px 400px;
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Fine quartz speckle layer ── */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.5' numOctaves='1' seed='14' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.50 0 0 0 0 0.40 0 0 0 0 0.30 0 0 0 14 -7'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E");
+  background-size: 280px 280px;
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Drag handle (mobile) ─────────────────────────────────────────────────────── */
+.handle {
+  display: none;
+  width: 36px;
+  height: 4px;
+  background: rgba(75, 46, 43, 0.2);
+  border-radius: 2px;
+  margin: 12px auto -4px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px 28px 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 2.35rem;
+  font-weight: 400;
+  color: var(--mahogany);
+  line-height: 1.12;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.subPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, rgba(247, 239, 230, 0.9), rgba(242, 230, 217, 0.75));
+  border: 1px solid rgba(192, 133, 82, 0.3);
+  border-radius: 100px;
+  margin-top: 6px;
+  box-shadow: 0 2px 8px rgba(192, 133, 82, 0.06);
+}
+
+.subPill span {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: var(--copper-dark, #8c5a3c);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.closeBtn {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b5649;
+  transition: all 0.2s ease;
+  margin-top: 2px;
+}
+
+.closeBtn:hover {
+  background: rgba(75, 46, 43, 0.1);
+  color: var(--mahogany);
+  transform: scale(1.05);
+}
+
+.headerDivider {
+  height: 1px;
+  width: calc(100% - 56px);
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent, rgba(192, 133, 82, 0.2), transparent);
+}
+
+/* ── Body ─────────────────────────────────────────────────────────────────────── */
+.body {
+  padding: 22px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 3-Column Trust Micro-Bar ─────────────────────────────────────────────────── */
+.trustMicroBar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(192, 133, 82, 0.18);
+  border-radius: 12px;
+  padding: 12px 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 10px rgba(75, 46, 43, 0.03);
+}
+
+.trustMicroItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+}
+
+.trustMicroItem div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.trustMicroItem strong {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: #7d5236;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.trustMicroItem span {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: #9c7860;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ── Application Chips Section ───────────────────────────────────────────────── */
+.chipSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chipLabel {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: #5c3c28;
+  text-align: left;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.chipLabel em {
+  font-style: italic;
+  color: var(--copper);
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+.chipsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.chipCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 8px;
+  background: #ffffff;
+  border: 1px solid rgba(192, 133, 82, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.2, 1, 0.3, 1);
+  text-align: center;
+  min-height: 80px;
+  box-shadow: 0 2px 8px rgba(192, 133, 82, 0.04);
+}
+
+.chipCard:hover {
+  border-color: var(--copper);
+  background: #fffdf9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(192, 133, 82, 0.14);
+}
+
+.chipCardActive {
+  background: linear-gradient(135deg, #f9f2eb, #f3e5d7) !important;
+  border: 1.5px solid var(--copper) !important;
+  box-shadow: 0 4px 16px rgba(192, 133, 82, 0.2) !important;
+}
+
+.checkBadge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--copper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chipIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a8713e;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.chipCard:hover .chipIconWrap,
+.chipCardActive .chipIconWrap {
+  color: var(--copper);
+  transform: scale(1.08);
+}
+
+.chipCardText {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-weight: 500;
+  color: #7d5236;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+}
+
+.chipCard:hover .chipCardText,
+.chipCardActive .chipCardText {
+  color: #8c5a3c;
+  font-weight: 600;
+}
+
+/* ── Phone Field ─────────────────────────────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldLabel {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: #7d5236;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.phoneWrap {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border: 1px solid #e2d7cd;
+  border-radius: 12px;
+  background: #ffffff;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.phoneWrap:focus-within {
+  border-color: var(--copper);
+  box-shadow: 0 0 0 3.5px rgba(192, 133, 82, 0.12);
+}
+
+.phonePrefixWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 14px;
+  background: transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.phonePrefixWrap select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 14px;
+}
+
+.phonePrefixDisplay {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: #7d5236;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  pointer-events: none;
+}
+
+.phoneDivider {
+  width: 1px;
+  height: 20px;
+  background: #e2d7cd;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+.fieldInput {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 14px 0 8px;
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  color: #5c3c28;
+  background: transparent;
+  min-width: 0;
+}
+
+.fieldInput::placeholder {
+  color: #a48f82;
+  font-size: 15px;
+}
+
+.privacyNote {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  color: #9c7860;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* ── Primary WhatsApp CTA ─────────────────────────────────────────────────────── */
+.waCta {
+  width: 100%;
+  height: 54px;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #c88a53, #9e6435);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 8px 24px rgba(168, 113, 62, 0.32);
+}
+
+.waCta:hover:not(:disabled) {
+  background: linear-gradient(135deg, #b87b46, #8f5629);
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 10px 28px rgba(168, 113, 62, 0.4);
+}
+
+.waCta:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ── OR Divider ───────────────────────────────────────────────────────────────── */
+.orDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 2px 0;
+}
+
+.orDivider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #eee5dc;
+}
+
+.orDivider span {
+  position: relative;
+  z-index: 1;
+  background: #FFFBF7;
+  padding: 0 12px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  color: #a48f82;
+  letter-spacing: 0.08em;
+}
+
+/* ── Secondary Full Enquiry Link ────────────────────────────────────────── */
+.fullFormLink {
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: #9c7860;
+  padding: 6px 0 2px;
+  transition: color 0.2s ease;
+}
+
+.fullFormLink strong {
+  color: #7d5236;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.fullFormLink:hover strong {
+  color: var(--copper);
+}
+
+/* ── 4-Column Bottom Trust Footer Bar ────────────────────────────────────────── */
+.trustFooterBar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 14px 4px 0;
+  border-top: 1px solid rgba(192, 133, 82, 0.16);
+  margin-top: 2px;
+}
+
+.trustFooterItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+}
+
+.trustFooterItem strong {
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: var(--copper);
+  margin-top: 4px;
+  line-height: 1.1;
+}
+
+.trustFooterItem span {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  color: #9c7860;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* ── Responsive Sheet (Mobile <= 540px) ──────────────────────────────────────── */
+@media (max-width: 540px) {
+  .overlay {
+    align-items: flex-end;
+  }
+
+  .card {
+    max-width: 100%;
+    height: auto;
+    max-height: 92vh;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .handle {
+    display: block;
+  }
+
+  .header {
+    padding: 18px 18px 10px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subPill {
+    padding: 5px 12px;
+    margin-top: 4px;
+  }
+
+  .subPill span {
+    font-size: 12.5px;
+  }
+
+  .body {
+    padding: 12px 16px 20px;
+    gap: 14px;
+  }
+
+  .trustMicroBar {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 10px 6px;
+  }
+
+  .trustMicroItem {
+    gap: 5px;
+  }
+
+  .trustMicroItem svg {
+    width: 14px !important;
+    height: 14px !important;
+    flex-shrink: 0;
+  }
+
+  .trustMicroItem strong {
+    font-size: 10.5px;
+  }
+
+  .trustMicroItem span {
+    font-size: 9.5px;
+  }
+
+  .chipLabel {
+    font-size: 1.2rem;
+  }
+
+  .chipsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .chipCard {
+    padding: 12px 4px;
+    min-height: 72px;
+    gap: 6px;
+  }
+
+  .chipCardText {
+    font-size: 12px;
+  }
+
+  .waCta {
+    height: 48px;
+    font-size: 15px;
+  }
+
+  .fullFormLink {
+    font-size: 12px;
+  }
+
+  .trustFooterBar {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 10px 2px 0;
+  }
+
+  .trustFooterItem strong {
+    font-size: 1rem;
+  }
+
+  .trustFooterItem span {
+    font-size: 9.5px;
+  }
+}

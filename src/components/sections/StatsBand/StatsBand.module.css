@@ -1,0 +1,121 @@
+.section {
+  background: var(--mahogany);
+  padding: 64px 0;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.line {
+  flex-shrink: 0;
+  width: 1px;
+  height: 64px;
+  background: rgba(255,248,240,0.15);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  flex: 1;
+}
+
+.stat {
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.stat + .stat::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 48px;
+  background: rgba(255,248,240,0.12);
+}
+
+.value {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.5vw, 2.6rem);
+  font-weight: 400;
+  color: var(--copper-light);
+  line-height: 1;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,248,240,0.55);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 20px 0;
+  }
+
+  .inner {
+    padding: 0 16px;
+  }
+  
+  .line {
+    display: none !important;
+  }
+  
+  .grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0 !important;
+    flex: 1 !important;
+  }
+  
+  .stat {
+    padding: 12px 4px !important;
+    text-align: center !important;
+    border: none !important;
+  }
+  
+  .stat::before {
+    display: none !important;
+    content: none !important;
+  }
+  
+  /* Delicate vertical borders separating the 3 columns (Stats 1, 2, 4, 5) */
+  .stat:nth-child(3n-2),
+  .stat:nth-child(3n-1) {
+    border-right: 1px solid rgba(255, 248, 240, 0.05) !important;
+  }
+  
+  /* Delicate horizontal border separating Row 1 and Row 2 (Stats 1, 2, 3) */
+  .stat:nth-child(1),
+  .stat:nth-child(2),
+  .stat:nth-child(3) {
+    border-bottom: 1px solid rgba(255, 248, 240, 0.05) !important;
+  }
+  
+  .value {
+    font-size: 1.3rem;
+    margin-bottom: 2px;
+  }
+  
+  .label {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+    color: rgba(255, 248, 240, 0.45);
+  }
+}

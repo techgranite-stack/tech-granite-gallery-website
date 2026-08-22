@@ -1,0 +1,336 @@
+/* ═══════════════════════════════════════════════════════════
+   Horizontal Scroll Gallery — 3-D spherical arc
+   Same GSAP pin+scrub on ALL viewports.
+   CSS controls card size; JS reads from DOM.
+═══════════════════════════════════════════════════════════ */
+
+/* ── Section ── */
+.section {
+  background: var(--mahogany);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Decorative stone veining */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(-62deg,
+      transparent 0%,
+      transparent 28%,
+      rgba(192, 133, 82, 0.09) 28.5%,
+      rgba(192, 133, 82, 0.16) 29%,
+      rgba(192, 133, 82, 0.09) 29.5%,
+      transparent 30.5%,
+      transparent 46%,
+      rgba(192, 133, 82, 0.06) 46.4%,
+      rgba(192, 133, 82, 0.12) 46.8%,
+      rgba(192, 133, 82, 0.06) 47.2%,
+      transparent 48%,
+      transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  padding: 120px 40px 12px;
+  color: var(--ivory);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.header :global(.section-eyebrow)          { color: var(--copper-light); }
+.header :global(.section-eyebrow::before),
+.header :global(.section-eyebrow::after)   { background: var(--copper-light); }
+.header :global(.section-title)            { color: var(--ivory); }
+.header :global(.section-title em)         { color: var(--copper-light); }
+.header :global(.section-desc) {
+  color: rgba(255, 248, 240, 0.75);
+  max-width: 680px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-top: 16px;
+}
+.header :global(.section-desc strong) {
+  color: var(--copper-light);
+  font-weight: 600;
+}
+
+/* ── Pin wrapper — fills the remaining viewport height ── */
+.pinWrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 24px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ── Horizontal track ── */
+.track {
+  display: flex;
+  gap: 24px;
+  padding: 0 80px;
+  will-change: transform;
+}
+
+/* ── Card — GSAP applies all 3-D transforms ── */
+.card {
+  flex: 0 0 600px;
+  height: 400px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  will-change: transform, opacity;
+  text-decoration: none;
+  display: block;
+}
+
+.imgWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .img {
+  transform: scale(1.04);
+}
+
+/* ── Touch devices: no hover, so give tactile feedback via :active ── */
+@media (hover: none) {
+  .card:active .img {
+    transform: scale(1.02);
+  }
+  /* Overlay is always shown on mobile — JS sphere math drives opacity
+     based on which card is centred, so the active card is fully visible */
+  .overlay {
+    opacity: 0.5; /* baseline; JS raises centred card to 1.0 */
+  }
+}
+
+/* Overlay — JS drives opacity based on sphere position;
+   always has a minimum visible state so text is readable */
+.overlay {
+  position: absolute;
+  inset: 0;
+  /* Strong gradient so text pops against any image */
+  background: linear-gradient(
+    to top,
+    rgba(40, 20, 18, 0.72) 0%,
+    rgba(40, 20, 18, 0.4) 35%,
+    rgba(40, 20, 18, 0.12) 65%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px 28px;
+  /* Minimum 0.4 opacity so text is always readable — JS pushes center to 1 */
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+}
+
+.projType {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+  margin-bottom: 10px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
+.projTitle {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.viewBtn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+  text-decoration: none;
+  gap: 8px;
+  transition: gap 0.3s ease;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.viewBtn:hover { gap: 14px; }
+
+/* Scroll hint (bottom-right, pulse animation) */
+.scrollHint {
+  position: absolute;
+  bottom: 28px;
+  right: 80px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 248, 240, 0.35);
+  animation: pulse 2.5s ease infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 0.75; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TABLET — slightly smaller cards
+   ═══════════════════════════════════════════════════════════ */
+/* Short viewports (13" laptop, tablet landscape): shrink cards + header to fit 100vh */
+@media (min-width: 769px) and (max-height: 840px) {
+  .header { padding: 92px 40px 8px; }
+  .pinWrap { padding-top: 12px; }
+  .card { flex: 0 0 540px; height: 340px; }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 120px 40px 16px;
+  }
+  .pinWrap {
+    align-items: flex-start;
+    padding-top: 32px;
+  }
+  .card {
+    flex: 0 0 600px;
+    height: 400px;
+  }
+  .track {
+    gap: 20px;
+    padding: 0 60px;
+  }
+  .scrollHint {
+    right: 60px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE — same horizontal scroll, smaller cards + tighter layout
+   The GSAP pin + scrub still drives everything; JS reads
+   card width/gap from the DOM, so no JS changes needed.
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .section {
+    /* Use dynamic viewport height on mobile so browser chrome doesn't cause shifts */
+    height: 100dvh;
+  }
+
+  .header {
+    padding: 130px 24px 16px;
+  }
+
+  .header :global(.section-title) {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+  }
+
+  .header :global(.section-desc) {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    max-width: 100%;
+    margin-top: 12px;
+  }
+
+  .pinWrap {
+    align-items: flex-start;
+    padding-top: 36px;
+  }
+
+  .track {
+    gap: 16px;
+    padding: 0 32px;
+  }
+
+  .card {
+    flex: 0 0 420px;
+    height: 280px;
+    border-radius: 6px;
+  }
+
+  .overlay {
+    padding: 16px 14px;
+    /* Reset to slightly higher min on mobile — center card always sharp */
+    opacity: 0.5;
+  }
+
+  .projTitle {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+
+  .projType {
+    font-size: 9px;
+    margin-bottom: 6px;
+    letter-spacing: 0.2em;
+  }
+
+  .viewBtn {
+    font-size: 10px;
+  }
+
+  .scrollHint {
+    right: 32px;
+    bottom: 20px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 110px 16px 12px;
+  }
+
+  .pinWrap {
+    align-items: flex-start;
+    padding-top: 24px;
+  }
+
+  .card {
+    flex: 0 0 320px;
+    height: 215px;
+  }
+
+  .track {
+    gap: 14px;
+    padding: 0 24px;
+  }
+
+  .scrollHint {
+    right: 24px;
+  }
+}

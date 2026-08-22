@@ -1,0 +1,246 @@
+.section {
+  background: var(--ivory);
+  padding: var(--section-py) 0;
+  overflow: hidden;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ── Optional header ─────────────────────────────────────────────────────────── */
+.header { margin-bottom: 36px; }
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 400; color: var(--mahogany); margin-top: 12px;
+}
+.heading em { font-style: italic; color: var(--copper); }
+
+/* ── Two equal panels ────────────────────────────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Each panel hosts two stacked buffer layers (outgoing + incoming).
+   3:2 aspect ratio — matches the homepage projects gallery so a single
+   3:2 source image crops consistently across every projects surface. */
+.panelWrap {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* Buffer layer — incoming + outgoing cards crossfade with a subtle zoom */
+.layer {
+  position: absolute;
+  inset: 0;
+  will-change: opacity, transform;
+}
+
+/* Outgoing layer sits beneath and never intercepts clicks */
+.layerBack { pointer-events: none; z-index: 0; }
+
+/* ── Cards ───────────────────────────────────────────────────────────────────── */
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--mahogany);
+  border: none;
+  padding: 0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover { transform: translateY(-4px); box-shadow: 0 24px 56px rgba(75,46,43,0.16); }
+
+/* ── Image ───────────────────────────────────────────────────────────────────── */
+.imgWrap { position: absolute; inset: 0; z-index: 0; }
+
+.img { object-fit: cover; transition: transform 0.9s ease; }
+.card:hover .img { transform: scale(1.04); }
+
+/* ── Overlays ────────────────────────────────────────────────────────────────── */
+.overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(75,46,43,0.95) 0%,
+    rgba(75,46,43,0.25) 50%,
+    transparent 100%
+  );
+}
+
+/* Slightly lighter overlay on the right/preview card */
+.overlayRight {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(75,46,43,0.88) 0%,
+    rgba(75,46,43,0.42) 55%,
+    rgba(75,46,43,0.12) 100%
+  );
+  transition: background 0.4s ease;
+}
+.cardRight:hover .overlayRight {
+  background: linear-gradient(
+    to top,
+    rgba(75,46,43,0.92) 0%,
+    rgba(75,46,43,0.32) 50%,
+    transparent 100%
+  );
+}
+
+/* ── Badges ──────────────────────────────────────────────────────────────────── */
+.catBadge {
+  position: absolute; top: 18px; left: 18px; z-index: 3;
+  padding: 4px 13px; border-radius: 100px;
+  border: 1px solid rgba(255,248,240,0.18);
+  background: rgba(255,248,240,0.07); backdrop-filter: blur(8px);
+  font-family: var(--font-sans);
+  font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--copper-light, #e0a96d);
+}
+
+.sizeBadge {
+  position: absolute; top: 18px; right: 18px; z-index: 3;
+  padding: 4px 12px; border-radius: 100px;
+  border: 1px solid rgba(255,248,240,0.18);
+  font-family: var(--font-sans); font-size: 9px; font-weight: 500;
+  color: rgba(255,248,240,0.55);
+}
+
+/* ── Progress bar ────────────────────────────────────────────────────────────── */
+.progressBar {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 4;
+  height: 2px; background: rgba(255,248,240,0.1);
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--copper), var(--copper-light, #e0a96d));
+  width: 0%;
+  animation: progress linear forwards;
+}
+
+@keyframes progress { from { width: 0%; } to { width: 100%; } }
+
+/* ── Card content ────────────────────────────────────────────────────────────── */
+.cardContent { position: relative; z-index: 3; padding: 30px; text-align: left; }
+
+.location {
+  font-family: var(--font-sans);
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--copper); margin-bottom: 8px; display: block;
+}
+
+.leftTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem); font-weight: 400;
+  color: var(--ivory); margin-bottom: 10px; line-height: 1.2;
+}
+
+.rightTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem); font-weight: 400;
+  color: var(--ivory); margin-bottom: 6px; line-height: 1.2;
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 13px; color: rgba(255,248,240,0.55); line-height: 1.6;
+  margin-bottom: 16px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+
+.tag {
+  padding: 2px 10px; border-radius: 100px;
+  background: rgba(255,248,240,0.06); border: 1px solid rgba(255,248,240,0.12);
+  font-family: var(--font-sans); font-size: 10px; color: rgba(255,248,240,0.5);
+}
+
+.tagMore {
+  padding: 2px 10px; border-radius: 100px;
+  background: rgba(192,133,82,0.12); border: 1px solid rgba(192,133,82,0.3);
+  font-family: var(--font-sans); font-size: 10px; color: var(--copper-light, #e0a96d); font-weight: 600;
+}
+
+.cta {
+  font-family: var(--font-sans);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--copper-light, #e0a96d); display: inline-block;
+  transition: transform 0.3s ease;
+}
+.card:hover .cta { transform: translateX(6px); }
+
+.nextHint {
+  font-family: var(--font-sans);
+  font-size: 10px; color: rgba(255,248,240,0.4); letter-spacing: 0.05em;
+  transition: color 0.25s ease;
+}
+.cardRight:hover .nextHint { color: var(--copper); }
+
+/* ── Navigation ──────────────────────────────────────────────────────────────── */
+.nav {
+  display: flex; align-items: center; justify-content: space-between; padding: 4px 0;
+}
+
+.counter { display: flex; align-items: baseline; gap: 4px; }
+.counterCurrent { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 300; color: var(--mahogany); }
+.counterSep     { font-family: var(--font-sans); font-size: 12px; color: var(--text-muted); }
+.counterTotal   { font-family: var(--font-sans); font-size: 12px; color: var(--text-muted); }
+
+.dots { display: flex; gap: 7px; align-items: center; }
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(192,133,82,0.22); border: none; cursor: pointer; padding: 0;
+  transition: all 0.3s ease;
+}
+.dotActive { background: var(--copper) !important; width: 22px; border-radius: 4px; }
+
+.arrows { display: flex; gap: 10px; }
+
+.arrow {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--copper-pale, #f0dbc8); border: 1.5px solid rgba(192,133,82,0.3);
+  color: var(--copper-dark, #8C5A3C);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.25s ease;
+}
+.arrow:hover {
+  background: var(--copper); color: var(--ivory);
+  border-color: var(--copper); transform: scale(1.08);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .section { padding: var(--section-py-md) 0; }
+  .container { padding: 0 20px; }
+
+  /* Mobile: single 3:2 image at a time (panel keeps the base 3:2 ratio) */
+  .layout { grid-template-columns: 1fr; gap: 0; }
+  .panelWrap:last-child { display: none; }
+
+  .nav { flex-wrap: wrap; gap: 14px; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .cardContent { padding: 22px; }
+  .leftTitle   { font-size: 1.35rem; }
+}

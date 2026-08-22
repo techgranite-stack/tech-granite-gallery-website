@@ -1,0 +1,325 @@
+/* ============================================
+   DESIGN TOKENS — Granite Gallery Palette
+   #FFF8F0 | #C08552 | #8C5A3C | #4B2E2B
+============================================ */
+:root {
+  /* Brand palette */
+  --ivory:       #FFF8F0;
+  --copper:      #C08552;
+  --copper-rgb:  192, 133, 82;
+  --copper-dark: #8C5A3C;
+  --mahogany:    #4B2E2B;
+  --mahogany-rgb: 75, 46, 43;
+  --copper-light:#D9A87A;
+  --copper-pale: #F0DBC8;
+
+  /* Neutrals */
+  --white:       #FFFFFF;
+  --off-white:   #FAF5EE;
+  --stone-100:   #F2EBE0;
+  --stone-200:   #E5D8C8;
+  --stone-300:   #C8B89A;
+  --stone-400:   #A89878;
+  --stone-500:   #7A6858;
+  --text-dark:   #2A1A17;
+  --text-mid:    #5C3D34;
+  --text-muted:  #8C7060;
+
+  /* Typography */
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans:  var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --section-py:    120px;
+  --section-py-md: 80px;
+  --section-py-sm: 60px;
+  --container-max: 1300px;
+
+  /* Effects */
+  --transition:       0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-slow:  0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-sm:        0 2px 12px rgba(75, 46, 43, 0.08);
+  --shadow-md:        0 8px 32px rgba(75, 46, 43, 0.12);
+  --shadow-lg:        0 20px 60px rgba(75, 46, 43, 0.18);
+  --shadow-copper:    0 8px 32px rgba(192, 133, 82, 0.25);
+  --radius-sm:        4px;
+  --radius-md:        8px;
+  --radius-lg:        16px;
+}
+
+/* ============================================
+   RESETS
+============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+::selection {
+  background-color: var(--copper);
+  color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--mahogany);
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+============================================ */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+}
+
+.section-py {
+  padding-top: var(--section-py);
+  padding-bottom: var(--section-py);
+}
+
+@media (max-width: 1024px) {
+  .section-py {
+    padding-top: var(--section-py-md);
+    padding-bottom: var(--section-py-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .section-py {
+    padding-top: var(--section-py-sm);
+    padding-bottom: var(--section-py-sm);
+  }
+}
+
+/* ============================================
+   TYPOGRAPHY COMPONENTS
+============================================ */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 16px;
+}
+
+.section-eyebrow::before,
+.section-eyebrow::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--copper);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  font-weight: 400;
+  color: var(--mahogany);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.section-title.light { color: var(--ivory); }
+.section-title.light em { color: var(--copper-light); }
+
+.section-desc {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+.section-desc.centered { margin: 0 auto; }
+.section-desc.light { color: rgba(255,248,240,0.7); }
+
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+
+/* ============================================
+   BUTTONS
+============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 36px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+  border-radius: 100px;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.btn:hover::after { opacity: 1; }
+
+/* Copper filled */
+.btn-copper {
+  background: var(--copper);
+  color: var(--white);
+}
+.btn-copper::after { background: var(--copper-dark); }
+.btn-copper:hover {
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-copper);
+}
+.btn-copper span { position: relative; z-index: 1; }
+
+/* Outline on dark bg */
+.btn-outline-ivory {
+  background: transparent;
+  color: var(--ivory);
+  border: 1px solid rgba(255,248,240,0.45);
+}
+.btn-outline-ivory:hover {
+  border-color: var(--copper-light);
+  color: var(--copper-light);
+  transform: translateY(-2px);
+}
+
+/* Outline on light bg */
+.btn-outline-copper {
+  background: transparent;
+  color: var(--copper);
+  border: 1px solid var(--copper);
+}
+.btn-outline-copper:hover {
+  background: var(--copper);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Dark mahogany */
+.btn-mahogany {
+  background: var(--mahogany);
+  color: var(--ivory);
+}
+.btn-mahogany:hover {
+  background: var(--copper-dark);
+  color: var(--ivory);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   REVEAL ANIMATIONS (Intersection Observer)
+============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* Delay utilities */
+.d-100 { transition-delay: 0.10s; }
+.d-200 { transition-delay: 0.20s; }
+.d-300 { transition-delay: 0.30s; }
+.d-400 { transition-delay: 0.40s; }
+.d-500 { transition-delay: 0.50s; }
+.d-600 { transition-delay: 0.60s; }
+.d-700 { transition-delay: 0.70s; }
+.d-800 { transition-delay: 0.80s; }
+
+/* ============================================
+   GOLD / COPPER DIVIDER
+============================================ */
+.copper-line {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--copper);
+  margin: 16px 0;
+}
+.copper-line.centered { margin: 16px auto; }
+
+/* ============================================
+   SCROLLBAR
+============================================ */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--ivory); }
+::-webkit-scrollbar-thumb { background: var(--copper); border-radius: 10px; }

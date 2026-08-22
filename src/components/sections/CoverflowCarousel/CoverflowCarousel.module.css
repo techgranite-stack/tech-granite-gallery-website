@@ -1,0 +1,332 @@
+.section {
+  background: #faf8f4; /* warm light stone */
+  padding: var(--section-py) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Marble veining — long diagonal streaks ── */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      -62deg,
+      transparent 0%,
+      transparent 28%,
+      rgba(192, 133, 82, 0.09)  28.5%,
+      rgba(192, 133, 82, 0.16)  29%,
+      rgba(192, 133, 82, 0.09)  29.5%,
+      transparent 30.5%,
+      transparent 46%,
+      rgba(192, 133, 82, 0.06)  46.4%,
+      rgba(192, 133, 82, 0.12)  46.8%,
+      rgba(192, 133, 82, 0.06)  47.2%,
+      transparent 48%,
+      transparent 72%,
+      rgba(192, 133, 82, 0.04)  72.3%,
+      rgba(192, 133, 82, 0.08)  72.7%,
+      rgba(192, 133, 82, 0.04)  73%,
+      transparent 73.5%,
+      transparent 100%
+    ),
+    linear-gradient(
+      -38deg,
+      transparent 0%,
+      transparent 55%,
+      rgba(192, 133, 82, 0.05)  55.5%,
+      rgba(192, 133, 82, 0.09)  56%,
+      rgba(192, 133, 82, 0.05)  56.5%,
+      transparent 57.5%,
+      transparent 100%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Granite grain — SVG feTurbulence noise ── */
+.section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75 0.55' numOctaves='4' seed='8' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.78 0 0 0 0 0.68 0 0 0 0 0.58 0 0 0 0.2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 500px 500px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+/* ── Coverflow Stage ── */
+.stage {
+  position: relative;
+  height: 570px; /* matches card height so there's no empty gap below the card */
+  perspective: 1400px;
+  overflow: visible;
+  margin-bottom: 40px;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.stage:active {
+  cursor: grabbing;
+}
+
+/* Track centers all cards */
+.track {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+}
+
+/* Each card absolutely centered in the track */
+.card {
+  position: absolute;
+  top: 0;
+  left: -210px;
+  width: 420px;
+  height: 570px;
+  cursor: pointer;
+  will-change: transform, opacity;
+  background: var(--mahogany);
+  overflow: hidden;
+}
+
+/* Active card styling */
+.card.cardActive {
+  cursor: default;
+}
+
+/* ── Image ── */
+.imgWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.img {
+  object-fit: cover;
+  filter: brightness(1);
+  transition: filter 0.5s ease;
+}
+
+.cardActive .img {
+  filter: brightness(1.05);
+}
+
+/* Gradient overlay */
+.imgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(10, 4, 3, 0.38) 0%,
+      rgba(10, 4, 3, 0.02) 32%,
+      transparent 52%);
+  z-index: 1;
+}
+
+/* ── Tag ── */
+.tag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 4;
+  background: var(--copper);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+}
+
+/* ── Card content ── */
+.cardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 26px 24px;
+  z-index: 3;
+  transform: translateY(8px);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.cardActive .cardContent {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardLine {
+  width: 22px;
+  height: 1px;
+  background: var(--copper-light);
+  margin-bottom: 12px;
+}
+
+.cardName {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+
+.cardSpecs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.05em;
+  margin-bottom: 18px;
+}
+
+.dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--copper);
+  flex-shrink: 0;
+}
+
+.enquireBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.enquireBtn:hover {
+  color: var(--ivory);
+}
+
+/* ── Navigation ── */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 56px;
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--copper);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--copper);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navBtn:hover {
+  background: var(--copper);
+  color: var(--white);
+}
+
+/* Dot indicators */
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot2 {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--stone-300);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dot2.dotActive {
+  background: var(--copper);
+  transform: scale(1.5);
+}
+
+/* View all */
+.viewAll {
+  text-align: center;
+}
+
+/* ── Mobile: perfected sharp 3D coverflow ── */
+@media (max-width: 768px) {
+  .stage {
+    height: 460px; /* matches mobile card height */
+    perspective: 1200px;
+    margin-bottom: 28px;
+  }
+
+  .card {
+    width: 300px;
+    height: 460px;
+    left: -150px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  .track {
+    left: 50%;
+  }
+
+  .inner {
+    padding: 0 16px;
+  }
+
+  .cardContent {
+    padding: 16px !important;
+  }
+
+  .cardName {
+    font-size: 1.22rem !important;
+    margin-bottom: 5px !important;
+  }
+
+  .cardSpecs {
+    font-size: 9.5px !important;
+    margin-bottom: 10px !important;
+    gap: 6px !important;
+  }
+
+  .nav {
+    margin-bottom: 36px !important;
+    gap: 20px !important;
+  }
+
+  .navBtn {
+    width: 38px !important;
+    height: 38px !important;
+  }
+}

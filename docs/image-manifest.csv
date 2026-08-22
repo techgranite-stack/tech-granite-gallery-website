@@ -1,0 +1,616 @@
+page,route,section_component,slot_field,variant,aspect,min_resolution,qty,suggested_filename,caption_alt_notes,status
+Home,/,HeroSlider,heroSlides[0].image,desktop,16:9,1920x1080,1,home/hero/home-hero-1-desktop.jpg,,Pending
+Home,/,HeroSlider,heroSlides[0].image,mobile,9:16,1080x1920,1,home/hero/home-hero-1-mobile.jpg,,Pending
+Home,/,HeroSlider,heroSlides[1].image,desktop,16:9,1920x1080,1,home/hero/home-hero-2-desktop.jpg,,Pending
+Home,/,HeroSlider,heroSlides[1].image,mobile,9:16,1080x1920,1,home/hero/home-hero-2-mobile.jpg,,Pending
+Home,/,HeroSlider,heroSlides[2].image,desktop,16:9,1920x1080,1,home/hero/home-hero-3-desktop.jpg,,Pending
+Home,/,HeroSlider,heroSlides[2].image,mobile,9:16,1080x1920,1,home/hero/home-hero-3-mobile.jpg,,Pending
+Home,/,Collections panel,categories[marble].image + images[],—,16:9,1400x788,4,collections/marble/marble-cover.jpg,1 cover + 3 panel images,Pending
+Home,/,Collections panel,categories[granite].image + images[],—,16:9,1400x788,4,collections/granite/granite-cover.jpg,1 cover + 3 panel images,Pending
+Home,/,Collections panel,categories[quartzite].image + images[],—,16:9,1400x788,4,collections/quartzite/quartzite-cover.jpg,1 cover + 3 panel images,Pending
+Home,/,Collections panel,categories[limestone].image + images[],—,16:9,1400x788,4,collections/limestone/limestone-cover.jpg,1 cover + 3 panel images,Pending
+Home,/,Collections panel,categories[sandstone].image + images[],—,16:9,1400x788,4,collections/sandstone/sandstone-cover.jpg,1 cover + 3 panel images,Pending
+Home,/,Collections panel,categories[slate].image + images[],—,16:9,1400x788,4,collections/slate/slate-cover.jpg,1 cover + 3 panel images,Pending
+Home,/,Collections panel,categories[cobble-pebble].image + images[],—,16:9,1400x788,4,collections/cobble-pebble/cobble-pebble-cover.jpg,1 cover + 3 panel images,Pending
+Home,/,Collections panel,categories[stone-veneer].image + images[],—,16:9,1400x788,4,collections/stone-veneer/stone-veneer-cover.jpg,1 cover + 3 panel images,Pending
+Home,/,Collections panel,categories[tombstone].image + images[],—,16:9,1400x788,4,collections/tombstone/tombstone-cover.jpg,1 cover + 3 panel images,Pending
+Home,/,Collections panel,categories[imported].image + images[],—,16:9,1400x788,4,collections/imported/imported-cover.jpg,1 cover + 3 panel images,Pending
+Home,/,Shop by Application tile,applications[flooring].image,—,16:9 / wide,1400x788,1,applications/flooring/flooring-tile.jpg,,Pending
+Home,/,Shop by Application tile,applications[wall-cladding].image,—,16:9 / wide,1400x788,1,applications/wall-cladding/wall-cladding-tile.jpg,,Pending
+Home,/,Shop by Application tile,applications[kitchen].image,—,16:9 / wide,1400x788,1,applications/kitchen/kitchen-tile.jpg,,Pending
+Home,/,Shop by Application tile,applications[bathroom].image,—,16:9 / wide,1400x788,1,applications/bathroom/bathroom-tile.jpg,,Pending
+Home,/,Shop by Application tile,applications[hotel-projects].image,—,16:9 / wide,1400x788,1,applications/hotel-projects/hotel-projects-tile.jpg,,Pending
+Home,/,Shop by Application tile,applications[staircase].image,—,16:9 / wide,1400x788,1,applications/staircase/staircase-tile.jpg,,Pending
+Home,/,Shop by Application tile,applications[villa-and-home].image,—,16:9 / wide,1400x788,1,applications/villa-and-home/villa-and-home-tile.jpg,,Pending
+Home,/,Shop by Application tile,applications[tabletops].image,—,16:9 / wide,1400x788,1,applications/tabletops/tabletops-tile.jpg,,Pending
+Home,/,Featured product card,products[calacatta-gold].image,—,16:9 (→1:1 mobile),1200x675,1,home/featured/calacatta-gold-card.jpg,,Pending
+Home,/,Featured product card,products[absolute-black].image,—,16:9 (→1:1 mobile),1200x675,1,home/featured/absolute-black-card.jpg,,Pending
+Home,/,Featured product card,products[statuario-luxe].image,—,16:9 (→1:1 mobile),1200x675,1,home/featured/statuario-luxe-card.jpg,,Pending
+Home,/,Featured product card,products[jade-onyx].image,—,16:9 (→1:1 mobile),1200x675,1,home/featured/jade-onyx-card.jpg,,Pending
+Home,/,Featured product card,products[volakas-classic].image,—,16:9 (→1:1 mobile),1200x675,1,home/featured/volakas-classic-card.jpg,,Pending
+Home,/,Featured product card,products[rainforest-brown].image,—,16:9 (→1:1 mobile),1200x675,1,home/featured/rainforest-brown-card.jpg,,Pending
+Home,/,Project gallery card,projects[taj-pushkar-resort-and-spa].image,—,5:7 portrait,800x1120,1,projects/taj-pushkar-resort-and-spa/taj-pushkar-resort-and-spa-card.jpg,,Pending
+Home,/,Project gallery card,projects[palace-on-wheels].image,—,5:7 portrait,800x1120,1,projects/palace-on-wheels/palace-on-wheels-card.jpg,,Pending
+Home,/,Project gallery card,projects[cohengarh-resort].image,—,5:7 portrait,800x1120,1,projects/cohengarh-resort/cohengarh-resort-card.jpg,,Pending
+Home,/,Project gallery card,projects[parliament-of-india].image,—,5:7 portrait,800x1120,1,projects/parliament-of-india/parliament-of-india-card.jpg,,Pending
+Home,/,Project gallery card,projects[national-war-memorial].image,—,5:7 portrait,800x1120,1,projects/national-war-memorial/national-war-memorial-card.jpg,,Pending
+Home,/,Project gallery card,projects[central-vista-kartavya-path].image,—,5:7 portrait,800x1120,1,projects/central-vista-kartavya-path/central-vista-kartavya-path-card.jpg,,Pending
+Home,/,Project gallery card,projects[jewar-international-airport].image,—,5:7 portrait,800x1120,1,projects/jewar-international-airport/jewar-international-airport-card.jpg,,Pending
+Home,/,Project gallery card,projects[chola-sheraton].image,—,5:7 portrait,800x1120,1,projects/chola-sheraton/chola-sheraton-card.jpg,,Pending
+Home,/,Project gallery card,projects[panipat-toll-plaza].image,—,5:7 portrait,800x1120,1,projects/panipat-toll-plaza/panipat-toll-plaza-card.jpg,,Pending
+Home,/,Project gallery card,projects[mandwa-resort].image,—,5:7 portrait,800x1120,1,projects/mandwa-resort/mandwa-resort-card.jpg,,Pending
+Home,/,Team highlight + /team,teamMembers[amit-rathi].image,—,1:1.1 portrait,800x880,1,team/amit-rathi.jpg,,Pending
+Home,/,Team highlight + /team,teamMembers[shrikant-dargar].image,—,1:1.1 portrait,800x880,1,team/shrikant-dargar.jpg,,Pending
+Home,/,Team highlight + /team,teamMembers[vishal-rathi].image,—,1:1.1 portrait,800x880,1,team/vishal-rathi.jpg,,Pending
+Home,/,Team highlight + /team,teamMembers[anuj-rathi].image,—,1:1.1 portrait,800x880,1,team/anuj-rathi.jpg,,Pending
+Home,/,Blog card + /blogs,blogPosts[how-to-choose-the-right-marble].image,—,16:9,1200x675,1,blog/how-to-choose-the-right-marble.jpg,,Pending
+Home,/,Blog card + /blogs,blogPosts[granite-vs-marble].image,—,16:9,1200x675,1,blog/granite-vs-marble.jpg,,Pending
+Home,/,Blog card + /blogs,blogPosts[stone-trends-2025].image,—,16:9,1200x675,1,blog/stone-trends-2025.jpg,,Pending
+Home,/,Blog card + /blogs,blogPosts[sealing-and-maintenance-guide].image,—,16:9,1200x675,1,blog/sealing-and-maintenance-guide.jpg,,Pending
+Home,/,Blog card + /blogs,blogPosts[why-kishangarh-marble].image,—,16:9,1200x675,1,blog/why-kishangarh-marble.jpg,,Pending
+Home,/,BannerContactForm bg,section background,—,16:9 (decorative),1920x1080,1,home/contact-banner-bg.jpg,"Decorative — alt=""""",Pending
+Collection detail,/collections/marble,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/marble/marble-hero-desktop.jpg,,Pending
+Collection detail,/collections/marble,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/marble/marble-hero-mobile.jpg,,Pending
+Collection detail,/collections/granite,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/granite/granite-hero-desktop.jpg,,Pending
+Collection detail,/collections/granite,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/granite/granite-hero-mobile.jpg,,Pending
+Collection detail,/collections/quartzite,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/quartzite/quartzite-hero-desktop.jpg,,Pending
+Collection detail,/collections/quartzite,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/quartzite/quartzite-hero-mobile.jpg,,Pending
+Collection detail,/collections/limestone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/limestone/limestone-hero-desktop.jpg,,Pending
+Collection detail,/collections/limestone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/limestone/limestone-hero-mobile.jpg,,Pending
+Collection detail,/collections/sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/sandstone-hero-desktop.jpg,,Pending
+Collection detail,/collections/sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/sandstone-hero-mobile.jpg,,Pending
+Collection detail,/collections/slate,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/slate/slate-hero-desktop.jpg,,Pending
+Collection detail,/collections/slate,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/slate/slate-hero-mobile.jpg,,Pending
+Collection detail,/collections/cobble-pebble,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/cobble-pebble/cobble-pebble-hero-desktop.jpg,,Pending
+Collection detail,/collections/cobble-pebble,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/cobble-pebble/cobble-pebble-hero-mobile.jpg,,Pending
+Collection detail,/collections/stone-veneer,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/stone-veneer/stone-veneer-hero-desktop.jpg,,Pending
+Collection detail,/collections/stone-veneer,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/stone-veneer/stone-veneer-hero-mobile.jpg,,Pending
+Collection detail,/collections/tombstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/tombstone/tombstone-hero-desktop.jpg,,Pending
+Collection detail,/collections/tombstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/tombstone/tombstone-hero-mobile.jpg,,Pending
+Collection detail,/collections/imported,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/imported/imported-hero-desktop.jpg,,Pending
+Collection detail,/collections/imported,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/imported/imported-hero-mobile.jpg,,Pending
+Collection detail,/collections/porphyry,HeroSlider,heroImage,desktop,16:9,1920x1080,1,collections/porphyry/porphyry-hero-desktop.jpg,Porphyry collection hero (desktop),Pending
+Collection detail,/collections/porphyry,HeroSlider,heroImage,mobile,9:16,1080x1920,1,collections/porphyry/porphyry-hero-mobile.jpg,Porphyry collection hero (mobile),Pending
+Stone detail,/granite/majestic-black,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/majestic-black/majestic-black-hero-1-desktop.jpg,Majestic Black — room/application hero shots,Pending
+Stone detail,/granite/majestic-black,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/majestic-black/majestic-black-hero-1-mobile.jpg,Majestic Black — mobile hero crops,Pending
+Stone detail,/granite/majestic-black,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/majestic-black/majestic-black-thumbnail.jpg,Majestic Black slab/card image,Pending
+Stone detail,/granite/majestic-black,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/majestic-black/majestic-black-gallery-1.jpg,Majestic Black gallery shots,Pending
+Stone detail,/granite/majestic-black,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/majestic-black/majestic-black-finish-polished.jpg,Majestic Black per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/majestic-black,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/majestic-black/majestic-black-app-flooring.jpg,Majestic Black in-application shots,Pending
+Stone detail,/granite/artic-blue,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/artic-blue/artic-blue-hero-1-desktop.jpg,Artic Blue — room/application hero shots,Pending
+Stone detail,/granite/artic-blue,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/artic-blue/artic-blue-hero-1-mobile.jpg,Artic Blue — mobile hero crops,Pending
+Stone detail,/granite/artic-blue,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/artic-blue/artic-blue-thumbnail.jpg,Artic Blue slab/card image,Pending
+Stone detail,/granite/artic-blue,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/artic-blue/artic-blue-gallery-1.jpg,Artic Blue gallery shots,Pending
+Stone detail,/granite/artic-blue,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/artic-blue/artic-blue-finish-polished.jpg,Artic Blue per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/artic-blue,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/artic-blue/artic-blue-app-flooring.jpg,Artic Blue in-application shots,Pending
+Stone detail,/granite/brazil-brown,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/brazil-brown/brazil-brown-hero-1-desktop.jpg,Brazil Brown — room/application hero shots,Pending
+Stone detail,/granite/brazil-brown,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/brazil-brown/brazil-brown-hero-1-mobile.jpg,Brazil Brown — mobile hero crops,Pending
+Stone detail,/granite/brazil-brown,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/brazil-brown/brazil-brown-thumbnail.jpg,Brazil Brown slab/card image,Pending
+Stone detail,/granite/brazil-brown,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/brazil-brown/brazil-brown-gallery-1.jpg,Brazil Brown gallery shots,Pending
+Stone detail,/granite/brazil-brown,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/brazil-brown/brazil-brown-finish-polished.jpg,Brazil Brown per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/brazil-brown,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/brazil-brown/brazil-brown-app-flooring.jpg,Brazil Brown in-application shots,Pending
+Stone detail,/granite/r-black,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/r-black/r-black-hero-1-desktop.jpg,R Black — room/application hero shots,Pending
+Stone detail,/granite/r-black,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/r-black/r-black-hero-1-mobile.jpg,R Black — mobile hero crops,Pending
+Stone detail,/granite/r-black,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/r-black/r-black-thumbnail.jpg,R Black slab/card image,Pending
+Stone detail,/granite/r-black,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/r-black/r-black-gallery-1.jpg,R Black gallery shots,Pending
+Stone detail,/granite/r-black,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/r-black/r-black-finish-polished.jpg,R Black per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/r-black,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/r-black/r-black-app-flooring.jpg,R Black in-application shots,Pending
+Stone detail,/granite/malkot,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/malkot/malkot-hero-1-desktop.jpg,Malkot — room/application hero shots,Pending
+Stone detail,/granite/malkot,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/malkot/malkot-hero-1-mobile.jpg,Malkot — mobile hero crops,Pending
+Stone detail,/granite/malkot,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/malkot/malkot-thumbnail.jpg,Malkot slab/card image,Pending
+Stone detail,/granite/malkot,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/malkot/malkot-gallery-1.jpg,Malkot gallery shots,Pending
+Stone detail,/granite/malkot,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/malkot/malkot-finish-polished.jpg,Malkot per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/malkot,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/malkot/malkot-app-flooring.jpg,Malkot in-application shots,Pending
+Stone detail,/granite/p-white,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/p-white/p-white-hero-1-desktop.jpg,P White — room/application hero shots,Pending
+Stone detail,/granite/p-white,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/p-white/p-white-hero-1-mobile.jpg,P White — mobile hero crops,Pending
+Stone detail,/granite/p-white,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/p-white/p-white-thumbnail.jpg,P White slab/card image,Pending
+Stone detail,/granite/p-white,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/p-white/p-white-gallery-1.jpg,P White gallery shots,Pending
+Stone detail,/granite/p-white,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/p-white/p-white-finish-polished.jpg,P White per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/p-white,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/p-white/p-white-app-flooring.jpg,P White in-application shots,Pending
+Stone detail,/granite/rosy-pink,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/rosy-pink/rosy-pink-hero-1-desktop.jpg,Rosy Pink — room/application hero shots,Pending
+Stone detail,/granite/rosy-pink,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/rosy-pink/rosy-pink-hero-1-mobile.jpg,Rosy Pink — mobile hero crops,Pending
+Stone detail,/granite/rosy-pink,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/rosy-pink/rosy-pink-thumbnail.jpg,Rosy Pink slab/card image,Pending
+Stone detail,/granite/rosy-pink,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/rosy-pink/rosy-pink-gallery-1.jpg,Rosy Pink gallery shots,Pending
+Stone detail,/granite/rosy-pink,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/rosy-pink/rosy-pink-finish-polished.jpg,Rosy Pink per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/rosy-pink,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/rosy-pink/rosy-pink-app-flooring.jpg,Rosy Pink in-application shots,Pending
+Stone detail,/granite/cheema-pink,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/cheema-pink/cheema-pink-hero-1-desktop.jpg,Cheema Pink — room/application hero shots,Pending
+Stone detail,/granite/cheema-pink,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/cheema-pink/cheema-pink-hero-1-mobile.jpg,Cheema Pink — mobile hero crops,Pending
+Stone detail,/granite/cheema-pink,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/cheema-pink/cheema-pink-thumbnail.jpg,Cheema Pink slab/card image,Pending
+Stone detail,/granite/cheema-pink,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/cheema-pink/cheema-pink-gallery-1.jpg,Cheema Pink gallery shots,Pending
+Stone detail,/granite/cheema-pink,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/cheema-pink/cheema-pink-finish-polished.jpg,Cheema Pink per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/cheema-pink,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/cheema-pink/cheema-pink-app-flooring.jpg,Cheema Pink in-application shots,Pending
+Stone detail,/granite/himalayan-red,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/himalayan-red/himalayan-red-hero-1-desktop.jpg,Himalayan Red — room/application hero shots,Pending
+Stone detail,/granite/himalayan-red,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/himalayan-red/himalayan-red-hero-1-mobile.jpg,Himalayan Red — mobile hero crops,Pending
+Stone detail,/granite/himalayan-red,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/himalayan-red/himalayan-red-thumbnail.jpg,Himalayan Red slab/card image,Pending
+Stone detail,/granite/himalayan-red,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/himalayan-red/himalayan-red-gallery-1.jpg,Himalayan Red gallery shots,Pending
+Stone detail,/granite/himalayan-red,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/himalayan-red/himalayan-red-finish-polished.jpg,Himalayan Red per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/himalayan-red,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/himalayan-red/himalayan-red-app-flooring.jpg,Himalayan Red in-application shots,Pending
+Stone detail,/granite/markino,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/markino/markino-hero-1-desktop.jpg,Markino — room/application hero shots,Pending
+Stone detail,/granite/markino,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/markino/markino-hero-1-mobile.jpg,Markino — mobile hero crops,Pending
+Stone detail,/granite/markino,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/markino/markino-thumbnail.jpg,Markino slab/card image,Pending
+Stone detail,/granite/markino,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/markino/markino-gallery-1.jpg,Markino gallery shots,Pending
+Stone detail,/granite/markino,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/markino/markino-finish-polished.jpg,Markino per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/markino,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/markino/markino-app-flooring.jpg,Markino in-application shots,Pending
+Stone detail,/granite/multi-red,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/multi-red/multi-red-hero-1-desktop.jpg,Multi Red — room/application hero shots,Pending
+Stone detail,/granite/multi-red,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/multi-red/multi-red-hero-1-mobile.jpg,Multi Red — mobile hero crops,Pending
+Stone detail,/granite/multi-red,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/multi-red/multi-red-thumbnail.jpg,Multi Red slab/card image,Pending
+Stone detail,/granite/multi-red,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/multi-red/multi-red-gallery-1.jpg,Multi Red gallery shots,Pending
+Stone detail,/granite/multi-red,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/multi-red/multi-red-finish-polished.jpg,Multi Red per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/multi-red,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/multi-red/multi-red-app-flooring.jpg,Multi Red in-application shots,Pending
+Stone detail,/granite/crystal-yellow,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/crystal-yellow/crystal-yellow-hero-1-desktop.jpg,Crystal Yellow — room/application hero shots,Pending
+Stone detail,/granite/crystal-yellow,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/crystal-yellow/crystal-yellow-hero-1-mobile.jpg,Crystal Yellow — mobile hero crops,Pending
+Stone detail,/granite/crystal-yellow,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/crystal-yellow/crystal-yellow-thumbnail.jpg,Crystal Yellow slab/card image,Pending
+Stone detail,/granite/crystal-yellow,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/crystal-yellow/crystal-yellow-gallery-1.jpg,Crystal Yellow gallery shots,Pending
+Stone detail,/granite/crystal-yellow,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/crystal-yellow/crystal-yellow-finish-polished.jpg,Crystal Yellow per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/crystal-yellow,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/crystal-yellow/crystal-yellow-app-flooring.jpg,Crystal Yellow in-application shots,Pending
+Stone detail,/granite/s-white,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/s-white/s-white-hero-1-desktop.jpg,S White — room/application hero shots,Pending
+Stone detail,/granite/s-white,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/s-white/s-white-hero-1-mobile.jpg,S White — mobile hero crops,Pending
+Stone detail,/granite/s-white,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/s-white/s-white-thumbnail.jpg,S White slab/card image,Pending
+Stone detail,/granite/s-white,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/s-white/s-white-gallery-1.jpg,S White gallery shots,Pending
+Stone detail,/granite/s-white,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/s-white/s-white-finish-polished.jpg,S White per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/s-white,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/s-white/s-white-app-flooring.jpg,S White in-application shots,Pending
+Stone detail,/granite/coin-black,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/coin-black/coin-black-hero-1-desktop.jpg,Coin Black — room/application hero shots,Pending
+Stone detail,/granite/coin-black,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/coin-black/coin-black-hero-1-mobile.jpg,Coin Black — mobile hero crops,Pending
+Stone detail,/granite/coin-black,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/coin-black/coin-black-thumbnail.jpg,Coin Black slab/card image,Pending
+Stone detail,/granite/coin-black,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/coin-black/coin-black-gallery-1.jpg,Coin Black gallery shots,Pending
+Stone detail,/granite/coin-black,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/coin-black/coin-black-finish-polished.jpg,Coin Black per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/coin-black,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/coin-black/coin-black-app-flooring.jpg,Coin Black in-application shots,Pending
+Stone detail,/granite/cera-grey,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/cera-grey/cera-grey-hero-1-desktop.jpg,Cera Grey — room/application hero shots,Pending
+Stone detail,/granite/cera-grey,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/cera-grey/cera-grey-hero-1-mobile.jpg,Cera Grey — mobile hero crops,Pending
+Stone detail,/granite/cera-grey,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/cera-grey/cera-grey-thumbnail.jpg,Cera Grey slab/card image,Pending
+Stone detail,/granite/cera-grey,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/cera-grey/cera-grey-gallery-1.jpg,Cera Grey gallery shots,Pending
+Stone detail,/granite/cera-grey,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/cera-grey/cera-grey-finish-polished.jpg,Cera Grey per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/cera-grey,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/cera-grey/cera-grey-app-flooring.jpg,Cera Grey in-application shots,Pending
+Stone detail,/granite/steel-grey,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/steel-grey/steel-grey-hero-1-desktop.jpg,Steel Grey — room/application hero shots,Pending
+Stone detail,/granite/steel-grey,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/steel-grey/steel-grey-hero-1-mobile.jpg,Steel Grey — mobile hero crops,Pending
+Stone detail,/granite/steel-grey,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/steel-grey/steel-grey-thumbnail.jpg,Steel Grey slab/card image,Pending
+Stone detail,/granite/steel-grey,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/steel-grey/steel-grey-gallery-1.jpg,Steel Grey gallery shots,Pending
+Stone detail,/granite/steel-grey,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/steel-grey/steel-grey-finish-polished.jpg,Steel Grey per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/steel-grey,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/steel-grey/steel-grey-app-flooring.jpg,Steel Grey in-application shots,Pending
+Stone detail,/granite/devda-green,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/devda-green/devda-green-hero-1-desktop.jpg,Devda Green — room/application hero shots,Pending
+Stone detail,/granite/devda-green,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/devda-green/devda-green-hero-1-mobile.jpg,Devda Green — mobile hero crops,Pending
+Stone detail,/granite/devda-green,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/devda-green/devda-green-thumbnail.jpg,Devda Green slab/card image,Pending
+Stone detail,/granite/devda-green,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/devda-green/devda-green-gallery-1.jpg,Devda Green gallery shots,Pending
+Stone detail,/granite/devda-green,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/devda-green/devda-green-finish-polished.jpg,Devda Green per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/devda-green,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/devda-green/devda-green-app-flooring.jpg,Devda Green in-application shots,Pending
+Stone detail,/granite/mokalsar-green,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/mokalsar-green/mokalsar-green-hero-1-desktop.jpg,Mokalsar Green — room/application hero shots,Pending
+Stone detail,/granite/mokalsar-green,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/mokalsar-green/mokalsar-green-hero-1-mobile.jpg,Mokalsar Green — mobile hero crops,Pending
+Stone detail,/granite/mokalsar-green,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/mokalsar-green/mokalsar-green-thumbnail.jpg,Mokalsar Green slab/card image,Pending
+Stone detail,/granite/mokalsar-green,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/mokalsar-green/mokalsar-green-gallery-1.jpg,Mokalsar Green gallery shots,Pending
+Stone detail,/granite/mokalsar-green,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/mokalsar-green/mokalsar-green-finish-polished.jpg,Mokalsar Green per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/mokalsar-green,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/mokalsar-green/mokalsar-green-app-flooring.jpg,Mokalsar Green in-application shots,Pending
+Stone detail,/granite/narlai-grey,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/narlai-grey/narlai-grey-hero-1-desktop.jpg,Narlai Grey — room/application hero shots,Pending
+Stone detail,/granite/narlai-grey,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/narlai-grey/narlai-grey-hero-1-mobile.jpg,Narlai Grey — mobile hero crops,Pending
+Stone detail,/granite/narlai-grey,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/narlai-grey/narlai-grey-thumbnail.jpg,Narlai Grey slab/card image,Pending
+Stone detail,/granite/narlai-grey,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/narlai-grey/narlai-grey-gallery-1.jpg,Narlai Grey gallery shots,Pending
+Stone detail,/granite/narlai-grey,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/narlai-grey/narlai-grey-finish-polished.jpg,Narlai Grey per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/narlai-grey,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/narlai-grey/narlai-grey-app-flooring.jpg,Narlai Grey in-application shots,Pending
+Stone detail,/granite/cotton-white,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/cotton-white/cotton-white-hero-1-desktop.jpg,Cotton White — room/application hero shots,Pending
+Stone detail,/granite/cotton-white,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/cotton-white/cotton-white-hero-1-mobile.jpg,Cotton White — mobile hero crops,Pending
+Stone detail,/granite/cotton-white,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/cotton-white/cotton-white-thumbnail.jpg,Cotton White slab/card image,Pending
+Stone detail,/granite/cotton-white,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/cotton-white/cotton-white-gallery-1.jpg,Cotton White gallery shots,Pending
+Stone detail,/granite/cotton-white,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/cotton-white/cotton-white-finish-polished.jpg,Cotton White per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/cotton-white,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/cotton-white/cotton-white-app-flooring.jpg,Cotton White in-application shots,Pending
+Stone detail,/granite/lakha-red,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/lakha-red/lakha-red-hero-1-desktop.jpg,Lakha Red — room/application hero shots,Pending
+Stone detail,/granite/lakha-red,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/lakha-red/lakha-red-hero-1-mobile.jpg,Lakha Red — mobile hero crops,Pending
+Stone detail,/granite/lakha-red,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/lakha-red/lakha-red-thumbnail.jpg,Lakha Red slab/card image,Pending
+Stone detail,/granite/lakha-red,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/lakha-red/lakha-red-gallery-1.jpg,Lakha Red gallery shots,Pending
+Stone detail,/granite/lakha-red,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/lakha-red/lakha-red-finish-polished.jpg,Lakha Red per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/lakha-red,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/lakha-red/lakha-red-app-flooring.jpg,Lakha Red in-application shots,Pending
+Stone detail,/granite/almond-brown,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/almond-brown/almond-brown-hero-1-desktop.jpg,Almond Brown — room/application hero shots,Pending
+Stone detail,/granite/almond-brown,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/almond-brown/almond-brown-hero-1-mobile.jpg,Almond Brown — mobile hero crops,Pending
+Stone detail,/granite/almond-brown,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/almond-brown/almond-brown-thumbnail.jpg,Almond Brown slab/card image,Pending
+Stone detail,/granite/almond-brown,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/almond-brown/almond-brown-gallery-1.jpg,Almond Brown gallery shots,Pending
+Stone detail,/granite/almond-brown,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/almond-brown/almond-brown-finish-polished.jpg,Almond Brown per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/almond-brown,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/almond-brown/almond-brown-app-flooring.jpg,Almond Brown in-application shots,Pending
+Stone detail,/granite/z-brown,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/z-brown/z-brown-hero-1-desktop.jpg,Z Brown — room/application hero shots,Pending
+Stone detail,/granite/z-brown,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/z-brown/z-brown-hero-1-mobile.jpg,Z Brown — mobile hero crops,Pending
+Stone detail,/granite/z-brown,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/z-brown/z-brown-thumbnail.jpg,Z Brown slab/card image,Pending
+Stone detail,/granite/z-brown,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/z-brown/z-brown-gallery-1.jpg,Z Brown gallery shots,Pending
+Stone detail,/granite/z-brown,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/z-brown/z-brown-finish-polished.jpg,Z Brown per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/z-brown,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/z-brown/z-brown-app-flooring.jpg,Z Brown in-application shots,Pending
+Stone detail,/granite/green-pearl,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/green-pearl/green-pearl-hero-1-desktop.jpg,Green Pearl — room/application hero shots,Pending
+Stone detail,/granite/green-pearl,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/green-pearl/green-pearl-hero-1-mobile.jpg,Green Pearl — mobile hero crops,Pending
+Stone detail,/granite/green-pearl,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/green-pearl/green-pearl-thumbnail.jpg,Green Pearl slab/card image,Pending
+Stone detail,/granite/green-pearl,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/green-pearl/green-pearl-gallery-1.jpg,Green Pearl gallery shots,Pending
+Stone detail,/granite/green-pearl,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/green-pearl/green-pearl-finish-polished.jpg,Green Pearl per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/green-pearl,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/green-pearl/green-pearl-app-flooring.jpg,Green Pearl in-application shots,Pending
+Stone detail,/granite/apple-green,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/apple-green/apple-green-hero-1-desktop.jpg,Apple Green — room/application hero shots,Pending
+Stone detail,/granite/apple-green,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/apple-green/apple-green-hero-1-mobile.jpg,Apple Green — mobile hero crops,Pending
+Stone detail,/granite/apple-green,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/apple-green/apple-green-thumbnail.jpg,Apple Green slab/card image,Pending
+Stone detail,/granite/apple-green,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/apple-green/apple-green-gallery-1.jpg,Apple Green gallery shots,Pending
+Stone detail,/granite/apple-green,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/apple-green/apple-green-finish-polished.jpg,Apple Green per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/apple-green,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/apple-green/apple-green-app-flooring.jpg,Apple Green in-application shots,Pending
+Stone detail,/granite/jhansi-red,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/jhansi-red/jhansi-red-hero-1-desktop.jpg,Jhansi Red — room/application hero shots,Pending
+Stone detail,/granite/jhansi-red,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/jhansi-red/jhansi-red-hero-1-mobile.jpg,Jhansi Red — mobile hero crops,Pending
+Stone detail,/granite/jhansi-red,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/jhansi-red/jhansi-red-thumbnail.jpg,Jhansi Red slab/card image,Pending
+Stone detail,/granite/jhansi-red,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/jhansi-red/jhansi-red-gallery-1.jpg,Jhansi Red gallery shots,Pending
+Stone detail,/granite/jhansi-red,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/jhansi-red/jhansi-red-finish-polished.jpg,Jhansi Red per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/jhansi-red,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/jhansi-red/jhansi-red-app-flooring.jpg,Jhansi Red in-application shots,Pending
+Stone detail,/granite/kharda-red,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/kharda-red/kharda-red-hero-1-desktop.jpg,Kharda Red — room/application hero shots,Pending
+Stone detail,/granite/kharda-red,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/kharda-red/kharda-red-hero-1-mobile.jpg,Kharda Red — mobile hero crops,Pending
+Stone detail,/granite/kharda-red,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/kharda-red/kharda-red-thumbnail.jpg,Kharda Red slab/card image,Pending
+Stone detail,/granite/kharda-red,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/kharda-red/kharda-red-gallery-1.jpg,Kharda Red gallery shots,Pending
+Stone detail,/granite/kharda-red,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/kharda-red/kharda-red-finish-polished.jpg,Kharda Red per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/kharda-red,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/kharda-red/kharda-red-app-flooring.jpg,Kharda Red in-application shots,Pending
+Stone detail,/granite/fish-black,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/fish-black/fish-black-hero-1-desktop.jpg,Fish Black — room/application hero shots,Pending
+Stone detail,/granite/fish-black,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/fish-black/fish-black-hero-1-mobile.jpg,Fish Black — mobile hero crops,Pending
+Stone detail,/granite/fish-black,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/fish-black/fish-black-thumbnail.jpg,Fish Black slab/card image,Pending
+Stone detail,/granite/fish-black,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/fish-black/fish-black-gallery-1.jpg,Fish Black gallery shots,Pending
+Stone detail,/granite/fish-black,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/fish-black/fish-black-finish-polished.jpg,Fish Black per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/fish-black,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/fish-black/fish-black-app-flooring.jpg,Fish Black in-application shots,Pending
+Stone detail,/granite/kandla-grey,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/kandla-grey/kandla-grey-hero-1-desktop.jpg,Kandla Grey — room/application hero shots,Pending
+Stone detail,/granite/kandla-grey,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/kandla-grey/kandla-grey-hero-1-mobile.jpg,Kandla Grey — mobile hero crops,Pending
+Stone detail,/granite/kandla-grey,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/kandla-grey/kandla-grey-thumbnail.jpg,Kandla Grey slab/card image,Pending
+Stone detail,/granite/kandla-grey,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/kandla-grey/kandla-grey-gallery-1.jpg,Kandla Grey gallery shots,Pending
+Stone detail,/granite/kandla-grey,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/kandla-grey/kandla-grey-finish-polished.jpg,Kandla Grey per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/kandla-grey,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/kandla-grey/kandla-grey-app-flooring.jpg,Kandla Grey in-application shots,Pending
+Stone detail,/granite/china-white,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/china-white/china-white-hero-1-desktop.jpg,China White — room/application hero shots,Pending
+Stone detail,/granite/china-white,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/china-white/china-white-hero-1-mobile.jpg,China White — mobile hero crops,Pending
+Stone detail,/granite/china-white,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/china-white/china-white-thumbnail.jpg,China White slab/card image,Pending
+Stone detail,/granite/china-white,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/china-white/china-white-gallery-1.jpg,China White gallery shots,Pending
+Stone detail,/granite/china-white,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/china-white/china-white-finish-polished.jpg,China White per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/china-white,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/china-white/china-white-app-flooring.jpg,China White in-application shots,Pending
+Stone detail,/granite/classic-red,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/classic-red/classic-red-hero-1-desktop.jpg,Classic Red — room/application hero shots,Pending
+Stone detail,/granite/classic-red,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/classic-red/classic-red-hero-1-mobile.jpg,Classic Red — mobile hero crops,Pending
+Stone detail,/granite/classic-red,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/classic-red/classic-red-thumbnail.jpg,Classic Red slab/card image,Pending
+Stone detail,/granite/classic-red,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/classic-red/classic-red-gallery-1.jpg,Classic Red gallery shots,Pending
+Stone detail,/granite/classic-red,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/classic-red/classic-red-finish-polished.jpg,Classic Red per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/classic-red,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/classic-red/classic-red-app-flooring.jpg,Classic Red in-application shots,Pending
+Stone detail,/granite/blue-pearl,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/blue-pearl/blue-pearl-hero-1-desktop.jpg,Blue Pearl — room/application hero shots,Pending
+Stone detail,/granite/blue-pearl,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/blue-pearl/blue-pearl-hero-1-mobile.jpg,Blue Pearl — mobile hero crops,Pending
+Stone detail,/granite/blue-pearl,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/blue-pearl/blue-pearl-thumbnail.jpg,Blue Pearl slab/card image,Pending
+Stone detail,/granite/blue-pearl,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/blue-pearl/blue-pearl-gallery-1.jpg,Blue Pearl gallery shots,Pending
+Stone detail,/granite/blue-pearl,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/blue-pearl/blue-pearl-finish-polished.jpg,Blue Pearl per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/blue-pearl,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/blue-pearl/blue-pearl-app-flooring.jpg,Blue Pearl in-application shots,Pending
+Stone detail,/granite/brown-pearl,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/brown-pearl/brown-pearl-hero-1-desktop.jpg,Brown Pearl — room/application hero shots,Pending
+Stone detail,/granite/brown-pearl,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/brown-pearl/brown-pearl-hero-1-mobile.jpg,Brown Pearl — mobile hero crops,Pending
+Stone detail,/granite/brown-pearl,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/brown-pearl/brown-pearl-thumbnail.jpg,Brown Pearl slab/card image,Pending
+Stone detail,/granite/brown-pearl,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/brown-pearl/brown-pearl-gallery-1.jpg,Brown Pearl gallery shots,Pending
+Stone detail,/granite/brown-pearl,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/brown-pearl/brown-pearl-finish-polished.jpg,Brown Pearl per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/brown-pearl,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/brown-pearl/brown-pearl-app-flooring.jpg,Brown Pearl in-application shots,Pending
+Stone detail,/granite/black-galaxy,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/black-galaxy/black-galaxy-hero-1-desktop.jpg,Black Galaxy — room/application hero shots,Pending
+Stone detail,/granite/black-galaxy,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/black-galaxy/black-galaxy-hero-1-mobile.jpg,Black Galaxy — mobile hero crops,Pending
+Stone detail,/granite/black-galaxy,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/black-galaxy/black-galaxy-thumbnail.jpg,Black Galaxy slab/card image,Pending
+Stone detail,/granite/black-galaxy,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/black-galaxy/black-galaxy-gallery-1.jpg,Black Galaxy gallery shots,Pending
+Stone detail,/granite/black-galaxy,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/black-galaxy/black-galaxy-finish-polished.jpg,Black Galaxy per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/black-galaxy,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/black-galaxy/black-galaxy-app-flooring.jpg,Black Galaxy in-application shots,Pending
+Stone detail,/granite/tan-brown,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/tan-brown/tan-brown-hero-1-desktop.jpg,Tan Brown — room/application hero shots,Pending
+Stone detail,/granite/tan-brown,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/tan-brown/tan-brown-hero-1-mobile.jpg,Tan Brown — mobile hero crops,Pending
+Stone detail,/granite/tan-brown,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/tan-brown/tan-brown-thumbnail.jpg,Tan Brown slab/card image,Pending
+Stone detail,/granite/tan-brown,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/tan-brown/tan-brown-gallery-1.jpg,Tan Brown gallery shots,Pending
+Stone detail,/granite/tan-brown,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/tan-brown/tan-brown-finish-polished.jpg,Tan Brown per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/tan-brown,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/tan-brown/tan-brown-app-flooring.jpg,Tan Brown in-application shots,Pending
+Stone detail,/granite/telephone-black,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/telephone-black/telephone-black-hero-1-desktop.jpg,Telephone Black — room/application hero shots,Pending
+Stone detail,/granite/telephone-black,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/telephone-black/telephone-black-hero-1-mobile.jpg,Telephone Black — mobile hero crops,Pending
+Stone detail,/granite/telephone-black,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/telephone-black/telephone-black-thumbnail.jpg,Telephone Black slab/card image,Pending
+Stone detail,/granite/telephone-black,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/telephone-black/telephone-black-gallery-1.jpg,Telephone Black gallery shots,Pending
+Stone detail,/granite/telephone-black,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/telephone-black/telephone-black-finish-polished.jpg,Telephone Black per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/telephone-black,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/telephone-black/telephone-black-app-flooring.jpg,Telephone Black in-application shots,Pending
+Stone detail,/granite/hassan-green,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/hassan-green/hassan-green-hero-1-desktop.jpg,Hassan Green — room/application hero shots,Pending
+Stone detail,/granite/hassan-green,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/hassan-green/hassan-green-hero-1-mobile.jpg,Hassan Green — mobile hero crops,Pending
+Stone detail,/granite/hassan-green,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/hassan-green/hassan-green-thumbnail.jpg,Hassan Green slab/card image,Pending
+Stone detail,/granite/hassan-green,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/hassan-green/hassan-green-gallery-1.jpg,Hassan Green gallery shots,Pending
+Stone detail,/granite/hassan-green,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/hassan-green/hassan-green-finish-polished.jpg,Hassan Green per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/hassan-green,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/hassan-green/hassan-green-app-flooring.jpg,Hassan Green in-application shots,Pending
+Stone detail,/granite/madka-brown,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/madka-brown/madka-brown-hero-1-desktop.jpg,Madka Brown — room/application hero shots,Pending
+Stone detail,/granite/madka-brown,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/madka-brown/madka-brown-hero-1-mobile.jpg,Madka Brown — mobile hero crops,Pending
+Stone detail,/granite/madka-brown,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/madka-brown/madka-brown-thumbnail.jpg,Madka Brown slab/card image,Pending
+Stone detail,/granite/madka-brown,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/madka-brown/madka-brown-gallery-1.jpg,Madka Brown gallery shots,Pending
+Stone detail,/granite/madka-brown,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/madka-brown/madka-brown-finish-polished.jpg,Madka Brown per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/madka-brown,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/madka-brown/madka-brown-app-flooring.jpg,Madka Brown in-application shots,Pending
+Stone detail,/granite/godhra-grey,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/godhra-grey/godhra-grey-hero-1-desktop.jpg,Godhra Grey — room/application hero shots,Pending
+Stone detail,/granite/godhra-grey,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/godhra-grey/godhra-grey-hero-1-mobile.jpg,Godhra Grey — mobile hero crops,Pending
+Stone detail,/granite/godhra-grey,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/godhra-grey/godhra-grey-thumbnail.jpg,Godhra Grey slab/card image,Pending
+Stone detail,/granite/godhra-grey,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/godhra-grey/godhra-grey-gallery-1.jpg,Godhra Grey gallery shots,Pending
+Stone detail,/granite/godhra-grey,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/godhra-grey/godhra-grey-finish-polished.jpg,Godhra Grey per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/godhra-grey,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/godhra-grey/godhra-grey-app-flooring.jpg,Godhra Grey in-application shots,Pending
+Stone detail,/granite/aadhunik-brown,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/aadhunik-brown/aadhunik-brown-hero-1-desktop.jpg,Aadhunik Brown — room/application hero shots,Pending
+Stone detail,/granite/aadhunik-brown,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/aadhunik-brown/aadhunik-brown-hero-1-mobile.jpg,Aadhunik Brown — mobile hero crops,Pending
+Stone detail,/granite/aadhunik-brown,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/aadhunik-brown/aadhunik-brown-thumbnail.jpg,Aadhunik Brown slab/card image,Pending
+Stone detail,/granite/aadhunik-brown,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/aadhunik-brown/aadhunik-brown-gallery-1.jpg,Aadhunik Brown gallery shots,Pending
+Stone detail,/granite/aadhunik-brown,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/aadhunik-brown/aadhunik-brown-finish-polished.jpg,Aadhunik Brown per-finish shots (1 per finish offered),Pending
+Stone detail,/granite/aadhunik-brown,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/aadhunik-brown/aadhunik-brown-app-flooring.jpg,Aadhunik Brown in-application shots,Pending
+Stone detail,/marble/makrana-white,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/makrana-white/makrana-white-hero-1-desktop.jpg,Makrana White — room/application hero shots,Pending
+Stone detail,/marble/makrana-white,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/makrana-white/makrana-white-hero-1-mobile.jpg,Makrana White — mobile hero crops,Pending
+Stone detail,/marble/makrana-white,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/makrana-white/makrana-white-thumbnail.jpg,Makrana White slab/card image,Pending
+Stone detail,/marble/makrana-white,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/makrana-white/makrana-white-gallery-1.jpg,Makrana White gallery shots,Pending
+Stone detail,/marble/makrana-white,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/makrana-white/makrana-white-finish-polished.jpg,Makrana White per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/makrana-white,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/makrana-white/makrana-white-app-flooring.jpg,Makrana White in-application shots,Pending
+Stone detail,/marble/nizarana-white,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/nizarana-white/nizarana-white-hero-1-desktop.jpg,Nizarana White — room/application hero shots,Pending
+Stone detail,/marble/nizarana-white,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/nizarana-white/nizarana-white-hero-1-mobile.jpg,Nizarana White — mobile hero crops,Pending
+Stone detail,/marble/nizarana-white,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/nizarana-white/nizarana-white-thumbnail.jpg,Nizarana White slab/card image,Pending
+Stone detail,/marble/nizarana-white,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/nizarana-white/nizarana-white-gallery-1.jpg,Nizarana White gallery shots,Pending
+Stone detail,/marble/nizarana-white,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/nizarana-white/nizarana-white-finish-polished.jpg,Nizarana White per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/nizarana-white,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/nizarana-white/nizarana-white-app-flooring.jpg,Nizarana White in-application shots,Pending
+Stone detail,/marble/agariya-white,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/agariya-white/agariya-white-hero-1-desktop.jpg,Agariya White — room/application hero shots,Pending
+Stone detail,/marble/agariya-white,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/agariya-white/agariya-white-hero-1-mobile.jpg,Agariya White — mobile hero crops,Pending
+Stone detail,/marble/agariya-white,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/agariya-white/agariya-white-thumbnail.jpg,Agariya White slab/card image,Pending
+Stone detail,/marble/agariya-white,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/agariya-white/agariya-white-gallery-1.jpg,Agariya White gallery shots,Pending
+Stone detail,/marble/agariya-white,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/agariya-white/agariya-white-finish-polished.jpg,Agariya White per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/agariya-white,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/agariya-white/agariya-white-app-flooring.jpg,Agariya White in-application shots,Pending
+Stone detail,/marble/talai-marble,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/talai-marble/talai-marble-hero-1-desktop.jpg,Talai — room/application hero shots,Pending
+Stone detail,/marble/talai-marble,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/talai-marble/talai-marble-hero-1-mobile.jpg,Talai — mobile hero crops,Pending
+Stone detail,/marble/talai-marble,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/talai-marble/talai-marble-thumbnail.jpg,Talai slab/card image,Pending
+Stone detail,/marble/talai-marble,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/talai-marble/talai-marble-gallery-1.jpg,Talai gallery shots,Pending
+Stone detail,/marble/talai-marble,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/talai-marble/talai-marble-finish-polished.jpg,Talai per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/talai-marble,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/talai-marble/talai-marble-app-flooring.jpg,Talai in-application shots,Pending
+Stone detail,/marble/umraya-white,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/umraya-white/umraya-white-hero-1-desktop.jpg,Umraya White — room/application hero shots,Pending
+Stone detail,/marble/umraya-white,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/umraya-white/umraya-white-hero-1-mobile.jpg,Umraya White — mobile hero crops,Pending
+Stone detail,/marble/umraya-white,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/umraya-white/umraya-white-thumbnail.jpg,Umraya White slab/card image,Pending
+Stone detail,/marble/umraya-white,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/umraya-white/umraya-white-gallery-1.jpg,Umraya White gallery shots,Pending
+Stone detail,/marble/umraya-white,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/umraya-white/umraya-white-finish-polished.jpg,Umraya White per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/umraya-white,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/umraya-white/umraya-white-app-flooring.jpg,Umraya White in-application shots,Pending
+Stone detail,/marble/botticino,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/botticino/botticino-hero-1-desktop.jpg,Botticino — room/application hero shots,Pending
+Stone detail,/marble/botticino,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/botticino/botticino-hero-1-mobile.jpg,Botticino — mobile hero crops,Pending
+Stone detail,/marble/botticino,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/botticino/botticino-thumbnail.jpg,Botticino slab/card image,Pending
+Stone detail,/marble/botticino,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/botticino/botticino-gallery-1.jpg,Botticino gallery shots,Pending
+Stone detail,/marble/botticino,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/botticino/botticino-finish-polished.jpg,Botticino per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/botticino,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/botticino/botticino-app-flooring.jpg,Botticino in-application shots,Pending
+Stone detail,/marble/dyna-marble,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/dyna-marble/dyna-marble-hero-1-desktop.jpg,Dyna — room/application hero shots,Pending
+Stone detail,/marble/dyna-marble,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/dyna-marble/dyna-marble-hero-1-mobile.jpg,Dyna — mobile hero crops,Pending
+Stone detail,/marble/dyna-marble,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/dyna-marble/dyna-marble-thumbnail.jpg,Dyna slab/card image,Pending
+Stone detail,/marble/dyna-marble,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/dyna-marble/dyna-marble-gallery-1.jpg,Dyna gallery shots,Pending
+Stone detail,/marble/dyna-marble,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/dyna-marble/dyna-marble-finish-polished.jpg,Dyna per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/dyna-marble,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/dyna-marble/dyna-marble-app-flooring.jpg,Dyna in-application shots,Pending
+Stone detail,/marble/perlato-marble,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/perlato-marble/perlato-marble-hero-1-desktop.jpg,Perlato — room/application hero shots,Pending
+Stone detail,/marble/perlato-marble,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/perlato-marble/perlato-marble-hero-1-mobile.jpg,Perlato — mobile hero crops,Pending
+Stone detail,/marble/perlato-marble,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/perlato-marble/perlato-marble-thumbnail.jpg,Perlato slab/card image,Pending
+Stone detail,/marble/perlato-marble,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/perlato-marble/perlato-marble-gallery-1.jpg,Perlato gallery shots,Pending
+Stone detail,/marble/perlato-marble,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/perlato-marble/perlato-marble-finish-polished.jpg,Perlato per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/perlato-marble,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/perlato-marble/perlato-marble-app-flooring.jpg,Perlato in-application shots,Pending
+Stone detail,/marble/michelangelo-marble,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/michelangelo-marble/michelangelo-marble-hero-1-desktop.jpg,Michelangelo — room/application hero shots,Pending
+Stone detail,/marble/michelangelo-marble,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/michelangelo-marble/michelangelo-marble-hero-1-mobile.jpg,Michelangelo — mobile hero crops,Pending
+Stone detail,/marble/michelangelo-marble,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/michelangelo-marble/michelangelo-marble-thumbnail.jpg,Michelangelo slab/card image,Pending
+Stone detail,/marble/michelangelo-marble,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/michelangelo-marble/michelangelo-marble-gallery-1.jpg,Michelangelo gallery shots,Pending
+Stone detail,/marble/michelangelo-marble,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/michelangelo-marble/michelangelo-marble-finish-polished.jpg,Michelangelo per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/michelangelo-marble,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/michelangelo-marble/michelangelo-marble-app-flooring.jpg,Michelangelo in-application shots,Pending
+Stone detail,/marble/travertine,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/travertine/travertine-hero-1-desktop.jpg,Travertine — room/application hero shots,Pending
+Stone detail,/marble/travertine,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/travertine/travertine-hero-1-mobile.jpg,Travertine — mobile hero crops,Pending
+Stone detail,/marble/travertine,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/travertine/travertine-thumbnail.jpg,Travertine slab/card image,Pending
+Stone detail,/marble/travertine,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/travertine/travertine-gallery-1.jpg,Travertine gallery shots,Pending
+Stone detail,/marble/travertine,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/travertine/travertine-finish-polished.jpg,Travertine per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/travertine,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/travertine/travertine-app-flooring.jpg,Travertine in-application shots,Pending
+Stone detail,/marble/statuario,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/statuario/statuario-hero-1-desktop.jpg,Statuario — room/application hero shots,Pending
+Stone detail,/marble/statuario,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/statuario/statuario-hero-1-mobile.jpg,Statuario — mobile hero crops,Pending
+Stone detail,/marble/statuario,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/statuario/statuario-thumbnail.jpg,Statuario slab/card image,Pending
+Stone detail,/marble/statuario,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/statuario/statuario-gallery-1.jpg,Statuario gallery shots,Pending
+Stone detail,/marble/statuario,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/statuario/statuario-finish-polished.jpg,Statuario per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/statuario,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/statuario/statuario-app-flooring.jpg,Statuario in-application shots,Pending
+Stone detail,/marble/honey-onyx,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/honey-onyx/honey-onyx-hero-1-desktop.jpg,Alabaster / Honey Onyx — room/application hero shots,Pending
+Stone detail,/marble/honey-onyx,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/honey-onyx/honey-onyx-hero-1-mobile.jpg,Alabaster / Honey Onyx — mobile hero crops,Pending
+Stone detail,/marble/honey-onyx,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/honey-onyx/honey-onyx-thumbnail.jpg,Alabaster / Honey Onyx slab/card image,Pending
+Stone detail,/marble/honey-onyx,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/honey-onyx/honey-onyx-gallery-1.jpg,Alabaster / Honey Onyx gallery shots,Pending
+Stone detail,/marble/honey-onyx,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/honey-onyx/honey-onyx-finish-polished.jpg,Alabaster / Honey Onyx per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/honey-onyx,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/honey-onyx/honey-onyx-app-flooring.jpg,Alabaster / Honey Onyx in-application shots,Pending
+Stone detail,/marble/golden-lisa,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/golden-lisa/golden-lisa-hero-1-desktop.jpg,Golden Lisa — room/application hero shots,Pending
+Stone detail,/marble/golden-lisa,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/golden-lisa/golden-lisa-hero-1-mobile.jpg,Golden Lisa — mobile hero crops,Pending
+Stone detail,/marble/golden-lisa,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/golden-lisa/golden-lisa-thumbnail.jpg,Golden Lisa slab/card image,Pending
+Stone detail,/marble/golden-lisa,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/golden-lisa/golden-lisa-gallery-1.jpg,Golden Lisa gallery shots,Pending
+Stone detail,/marble/golden-lisa,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/golden-lisa/golden-lisa-finish-polished.jpg,Golden Lisa per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/golden-lisa,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/golden-lisa/golden-lisa-app-flooring.jpg,Golden Lisa in-application shots,Pending
+Stone detail,/marble/emperador,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/emperador/emperador-hero-1-desktop.jpg,Emperador — room/application hero shots,Pending
+Stone detail,/marble/emperador,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/emperador/emperador-hero-1-mobile.jpg,Emperador — mobile hero crops,Pending
+Stone detail,/marble/emperador,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/emperador/emperador-thumbnail.jpg,Emperador slab/card image,Pending
+Stone detail,/marble/emperador,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/emperador/emperador-gallery-1.jpg,Emperador gallery shots,Pending
+Stone detail,/marble/emperador,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/emperador/emperador-finish-polished.jpg,Emperador per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/emperador,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/emperador/emperador-app-flooring.jpg,Emperador in-application shots,Pending
+Stone detail,/marble/vietnam-white,ProductHero,heroImages[],desktop,16:9,1920x1080,3,stones/vietnam-white/vietnam-white-hero-1-desktop.jpg,Vietnam White — room/application hero shots,Pending
+Stone detail,/marble/vietnam-white,ProductHero,heroImages[],mobile,9:16,1080x1920,3,stones/vietnam-white/vietnam-white-hero-1-mobile.jpg,Vietnam White — mobile hero crops,Pending
+Stone detail,/marble/vietnam-white,StoneCard,thumbnail,—,16:9 (→1:1 mobile),1200x675,1,stones/vietnam-white/vietnam-white-thumbnail.jpg,Vietnam White slab/card image,Pending
+Stone detail,/marble/vietnam-white,HorizontalScrollGallery,galleryImages[],—,5:7 portrait,800x1120,4,stones/vietnam-white/vietnam-white-gallery-1.jpg,Vietnam White gallery shots,Pending
+Stone detail,/marble/vietnam-white,Finish swatches,finishes[].images[],—,square-ish,1200x900,5,stones/vietnam-white/vietnam-white-finish-polished.jpg,Vietnam White per-finish shots (1 per finish offered),Pending
+Stone detail,/marble/vietnam-white,Application shots,applications[].images[],—,4:3,1600x1200,4,stones/vietnam-white/vietnam-white-app-flooring.jpg,Vietnam White in-application shots,Pending
+Application detail,/applications/flooring,PageHero,heroImage,desktop,16:9,1920x1080,1,applications/flooring/flooring-hero-desktop.jpg,,Pending
+Application detail,/applications/flooring,PageHero,heroImage,mobile,9:16,1080x1920,1,applications/flooring/flooring-hero-mobile.jpg,,Pending
+Application detail,/applications/flooring,Gallery,images[],—,4:3,1600x1200,4,applications/flooring/flooring-1.jpg,,Pending
+Application detail,/applications/wall-cladding,PageHero,heroImage,desktop,16:9,1920x1080,1,applications/wall-cladding/wall-cladding-hero-desktop.jpg,,Pending
+Application detail,/applications/wall-cladding,PageHero,heroImage,mobile,9:16,1080x1920,1,applications/wall-cladding/wall-cladding-hero-mobile.jpg,,Pending
+Application detail,/applications/wall-cladding,Gallery,images[],—,4:3,1600x1200,4,applications/wall-cladding/wall-cladding-1.jpg,,Pending
+Application detail,/applications/kitchen-countertops,PageHero,heroImage,desktop,16:9,1920x1080,1,applications/kitchen-countertops/kitchen-countertops-hero-desktop.jpg,,Pending
+Application detail,/applications/kitchen-countertops,PageHero,heroImage,mobile,9:16,1080x1920,1,applications/kitchen-countertops/kitchen-countertops-hero-mobile.jpg,,Pending
+Application detail,/applications/kitchen-countertops,Gallery,images[],—,4:3,1600x1200,4,applications/kitchen-countertops/kitchen-countertops-1.jpg,,Pending
+Application detail,/applications/bathroom,PageHero,heroImage,desktop,16:9,1920x1080,1,applications/bathroom/bathroom-hero-desktop.jpg,,Pending
+Application detail,/applications/bathroom,PageHero,heroImage,mobile,9:16,1080x1920,1,applications/bathroom/bathroom-hero-mobile.jpg,,Pending
+Application detail,/applications/bathroom,Gallery,images[],—,4:3,1600x1200,4,applications/bathroom/bathroom-1.jpg,,Pending
+Application detail,/applications/staircase,PageHero,heroImage,desktop,16:9,1920x1080,1,applications/staircase/staircase-hero-desktop.jpg,,Pending
+Application detail,/applications/staircase,PageHero,heroImage,mobile,9:16,1080x1920,1,applications/staircase/staircase-hero-mobile.jpg,,Pending
+Application detail,/applications/staircase,Gallery,images[],—,4:3,1600x1200,4,applications/staircase/staircase-1.jpg,,Pending
+Application detail,/applications/hotel-projects,PageHero,heroImage,desktop,16:9,1920x1080,1,applications/hotel-projects/hotel-projects-hero-desktop.jpg,,Pending
+Application detail,/applications/hotel-projects,PageHero,heroImage,mobile,9:16,1080x1920,1,applications/hotel-projects/hotel-projects-hero-mobile.jpg,,Pending
+Application detail,/applications/hotel-projects,Gallery,images[],—,4:3,1600x1200,4,applications/hotel-projects/hotel-projects-1.jpg,,Pending
+Application detail,/applications/exterior-cladding,PageHero,heroImage,desktop,16:9,1920x1080,1,applications/exterior-cladding/exterior-cladding-hero-desktop.jpg,,Pending
+Application detail,/applications/exterior-cladding,PageHero,heroImage,mobile,9:16,1080x1920,1,applications/exterior-cladding/exterior-cladding-hero-mobile.jpg,,Pending
+Application detail,/applications/exterior-cladding,Gallery,images[],—,4:3,1600x1200,4,applications/exterior-cladding/exterior-cladding-1.jpg,,Pending
+Application detail,/applications/tabletops,PageHero,heroImage,desktop,16:9,1920x1080,1,applications/tabletops/tabletops-hero-desktop.jpg,,Pending
+Application detail,/applications/tabletops,PageHero,heroImage,mobile,9:16,1080x1920,1,applications/tabletops/tabletops-hero-mobile.jpg,,Pending
+Application detail,/applications/tabletops,Gallery,images[],—,4:3,1600x1200,4,applications/tabletops/tabletops-1.jpg,,Pending
+Project detail,/projects/taj-pushkar-resort-and-spa,PageHero,heroImage,desktop,16:9,1920x1080,1,projects/taj-pushkar-resort-and-spa/taj-pushkar-resort-and-spa-hero-desktop.jpg,,Pending
+Project detail,/projects/taj-pushkar-resort-and-spa,PageHero,heroImage,mobile,9:16,1080x1920,1,projects/taj-pushkar-resort-and-spa/taj-pushkar-resort-and-spa-hero-mobile.jpg,,Pending
+Project detail,/projects/taj-pushkar-resort-and-spa,Project gallery,images[],—,16:10,1600x1000,6,projects/taj-pushkar-resort-and-spa/taj-pushkar-resort-and-spa-1.jpg,,Pending
+Project detail,/projects/palace-on-wheels,PageHero,heroImage,desktop,16:9,1920x1080,1,projects/palace-on-wheels/palace-on-wheels-hero-desktop.jpg,,Pending
+Project detail,/projects/palace-on-wheels,PageHero,heroImage,mobile,9:16,1080x1920,1,projects/palace-on-wheels/palace-on-wheels-hero-mobile.jpg,,Pending
+Project detail,/projects/palace-on-wheels,Project gallery,images[],—,16:10,1600x1000,6,projects/palace-on-wheels/palace-on-wheels-1.jpg,,Pending
+Project detail,/projects/cohengarh-resort,PageHero,heroImage,desktop,16:9,1920x1080,1,projects/cohengarh-resort/cohengarh-resort-hero-desktop.jpg,,Pending
+Project detail,/projects/cohengarh-resort,PageHero,heroImage,mobile,9:16,1080x1920,1,projects/cohengarh-resort/cohengarh-resort-hero-mobile.jpg,,Pending
+Project detail,/projects/cohengarh-resort,Project gallery,images[],—,16:10,1600x1000,6,projects/cohengarh-resort/cohengarh-resort-1.jpg,,Pending
+Project detail,/projects/parliament-of-india,PageHero,heroImage,desktop,16:9,1920x1080,1,projects/parliament-of-india/parliament-of-india-hero-desktop.jpg,,Pending
+Project detail,/projects/parliament-of-india,PageHero,heroImage,mobile,9:16,1080x1920,1,projects/parliament-of-india/parliament-of-india-hero-mobile.jpg,,Pending
+Project detail,/projects/parliament-of-india,Project gallery,images[],—,16:10,1600x1000,6,projects/parliament-of-india/parliament-of-india-1.jpg,,Pending
+Project detail,/projects/national-war-memorial,PageHero,heroImage,desktop,16:9,1920x1080,1,projects/national-war-memorial/national-war-memorial-hero-desktop.jpg,,Pending
+Project detail,/projects/national-war-memorial,PageHero,heroImage,mobile,9:16,1080x1920,1,projects/national-war-memorial/national-war-memorial-hero-mobile.jpg,,Pending
+Project detail,/projects/national-war-memorial,Project gallery,images[],—,16:10,1600x1000,6,projects/national-war-memorial/national-war-memorial-1.jpg,,Pending
+Project detail,/projects/central-vista-kartavya-path,PageHero,heroImage,desktop,16:9,1920x1080,1,projects/central-vista-kartavya-path/central-vista-kartavya-path-hero-desktop.jpg,,Pending
+Project detail,/projects/central-vista-kartavya-path,PageHero,heroImage,mobile,9:16,1080x1920,1,projects/central-vista-kartavya-path/central-vista-kartavya-path-hero-mobile.jpg,,Pending
+Project detail,/projects/central-vista-kartavya-path,Project gallery,images[],—,16:10,1600x1000,6,projects/central-vista-kartavya-path/central-vista-kartavya-path-1.jpg,,Pending
+Project detail,/projects/jewar-international-airport,PageHero,heroImage,desktop,16:9,1920x1080,1,projects/jewar-international-airport/jewar-international-airport-hero-desktop.jpg,,Pending
+Project detail,/projects/jewar-international-airport,PageHero,heroImage,mobile,9:16,1080x1920,1,projects/jewar-international-airport/jewar-international-airport-hero-mobile.jpg,,Pending
+Project detail,/projects/jewar-international-airport,Project gallery,images[],—,16:10,1600x1000,6,projects/jewar-international-airport/jewar-international-airport-1.jpg,,Pending
+Project detail,/projects/chola-sheraton,PageHero,heroImage,desktop,16:9,1920x1080,1,projects/chola-sheraton/chola-sheraton-hero-desktop.jpg,,Pending
+Project detail,/projects/chola-sheraton,PageHero,heroImage,mobile,9:16,1080x1920,1,projects/chola-sheraton/chola-sheraton-hero-mobile.jpg,,Pending
+Project detail,/projects/chola-sheraton,Project gallery,images[],—,16:10,1600x1000,6,projects/chola-sheraton/chola-sheraton-1.jpg,,Pending
+Project detail,/projects/panipat-toll-plaza,PageHero,heroImage,desktop,16:9,1920x1080,1,projects/panipat-toll-plaza/panipat-toll-plaza-hero-desktop.jpg,,Pending
+Project detail,/projects/panipat-toll-plaza,PageHero,heroImage,mobile,9:16,1080x1920,1,projects/panipat-toll-plaza/panipat-toll-plaza-hero-mobile.jpg,,Pending
+Project detail,/projects/panipat-toll-plaza,Project gallery,images[],—,16:10,1600x1000,6,projects/panipat-toll-plaza/panipat-toll-plaza-1.jpg,,Pending
+Project detail,/projects/mandwa-resort,PageHero,heroImage,desktop,16:9,1920x1080,1,projects/mandwa-resort/mandwa-resort-hero-desktop.jpg,,Pending
+Project detail,/projects/mandwa-resort,PageHero,heroImage,mobile,9:16,1080x1920,1,projects/mandwa-resort/mandwa-resort-hero-mobile.jpg,,Pending
+Project detail,/projects/mandwa-resort,Project gallery,images[],—,16:10,1600x1000,6,projects/mandwa-resort/mandwa-resort-1.jpg,,Pending
+Team detail,/team/amit-rathi,Profile,image / ogImage,—,1:1.1 portrait,1200x1320,1,team/amit-rathi-profile.jpg,Amit Rathi — high-res portrait,Pending
+Team detail,/team/shrikant-dargar,Profile,image / ogImage,—,1:1.1 portrait,1200x1320,1,team/shrikant-dargar-profile.jpg,Shrikant Dargar — high-res portrait,Pending
+Team detail,/team/vishal-rathi,Profile,image / ogImage,—,1:1.1 portrait,1200x1320,1,team/vishal-rathi-profile.jpg,Vishal Rathi — high-res portrait,Pending
+Team detail,/team/anuj-rathi,Profile,image / ogImage,—,1:1.1 portrait,1200x1320,1,team/anuj-rathi-profile.jpg,Anuj Rathi — high-res portrait,Pending
+Blog detail,/blogs/how-to-choose-the-right-marble,Article hero,image,desktop,16:9,1600x900,1,blog/how-to-choose-the-right-marble-hero.jpg,,Pending
+Blog detail,/blogs/granite-vs-marble,Article hero,image,desktop,16:9,1600x900,1,blog/granite-vs-marble-hero.jpg,,Pending
+Blog detail,/blogs/stone-trends-2025,Article hero,image,desktop,16:9,1600x900,1,blog/stone-trends-2025-hero.jpg,,Pending
+Blog detail,/blogs/sealing-and-maintenance-guide,Article hero,image,desktop,16:9,1600x900,1,blog/sealing-and-maintenance-guide-hero.jpg,,Pending
+Blog detail,/blogs/why-kishangarh-marble,Article hero,image,desktop,16:9,1600x900,1,blog/why-kishangarh-marble-hero.jpg,,Pending
+Finish detail,/finishes/polished,PageHero,heroImage,desktop,16:9,1920x1080,1,finishes/polished-hero-desktop.jpg,,Pending
+Finish detail,/finishes/polished,PageHero,heroImage,mobile,9:16,1080x1920,1,finishes/polished-hero-mobile.jpg,,Pending
+Finish detail,/finishes/leathered,PageHero,heroImage,desktop,16:9,1920x1080,1,finishes/leathered-hero-desktop.jpg,,Pending
+Finish detail,/finishes/leathered,PageHero,heroImage,mobile,9:16,1080x1920,1,finishes/leathered-hero-mobile.jpg,,Pending
+Finish detail,/finishes/flamed,PageHero,heroImage,desktop,16:9,1920x1080,1,finishes/flamed-hero-desktop.jpg,,Pending
+Finish detail,/finishes/flamed,PageHero,heroImage,mobile,9:16,1080x1920,1,finishes/flamed-hero-mobile.jpg,,Pending
+Finish detail,/finishes/shot-blast,PageHero,heroImage,desktop,16:9,1920x1080,1,finishes/shot-blast-hero-desktop.jpg,,Pending
+Finish detail,/finishes/shot-blast,PageHero,heroImage,mobile,9:16,1080x1920,1,finishes/shot-blast-hero-mobile.jpg,,Pending
+Finish detail,/finishes/bush-hammered,PageHero,heroImage,desktop,16:9,1920x1080,1,finishes/bush-hammered-hero-desktop.jpg,,Pending
+Finish detail,/finishes/bush-hammered,PageHero,heroImage,mobile,9:16,1080x1920,1,finishes/bush-hammered-hero-mobile.jpg,,Pending
+Finish detail,/finishes/chiseled,PageHero,heroImage,desktop,16:9,1920x1080,1,finishes/chiseled-hero-desktop.jpg,,Pending
+Finish detail,/finishes/chiseled,PageHero,heroImage,mobile,9:16,1080x1920,1,finishes/chiseled-hero-mobile.jpg,,Pending
+Finish detail,/finishes/acid-wash,PageHero,heroImage,desktop,16:9,1920x1080,1,finishes/acid-wash-hero-desktop.jpg,,Pending
+Finish detail,/finishes/acid-wash,PageHero,heroImage,mobile,9:16,1080x1920,1,finishes/acid-wash-hero-mobile.jpg,,Pending
+Finish detail,/finishes/hydro-blast,PageHero,heroImage,desktop,16:9,1920x1080,1,finishes/hydro-blast-hero-desktop.jpg,,Pending
+Finish detail,/finishes/hydro-blast,PageHero,heroImage,mobile,9:16,1080x1920,1,finishes/hydro-blast-hero-mobile.jpg,,Pending
+Landing page,/marble-exporters-in-kishangarh,PageHero,heroImage,desktop,16:9,1920x1080,1,landing/marble-exporters-in-kishangarh-hero-desktop.jpg,,Pending
+Landing page,/marble-exporters-in-kishangarh,PageHero,heroImage,mobile,9:16,1080x1920,1,landing/marble-exporters-in-kishangarh-hero-mobile.jpg,,Pending
+Collection products,/collections/sandstone/english-teak-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/english-teak-sandstone/english-teak-sandstone-hero-desktop.jpg,English Teak — detail hero (desktop),Pending
+Collection products,/collections/sandstone/english-teak-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/english-teak-sandstone/english-teak-sandstone-hero-mobile.jpg,English Teak — detail hero (mobile),Pending
+Collection products,/collections/sandstone/english-teak-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/english-teak-sandstone/gallery/english-teak-sandstone-gallery-1.jpg,English Teak — gallery shots,Pending
+Collection products,/collections/sandstone/english-teak-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/english-teak-sandstone/english-teak-sandstone-card.jpg,English Teak — listing card image,Pending
+Collection products,/collections/sandstone/mp-beige-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/mp-beige-sandstone/mp-beige-sandstone-hero-desktop.jpg,MP Beige — detail hero (desktop),Pending
+Collection products,/collections/sandstone/mp-beige-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/mp-beige-sandstone/mp-beige-sandstone-hero-mobile.jpg,MP Beige — detail hero (mobile),Pending
+Collection products,/collections/sandstone/mp-beige-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/mp-beige-sandstone/gallery/mp-beige-sandstone-gallery-1.jpg,MP Beige — gallery shots,Pending
+Collection products,/collections/sandstone/mp-beige-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/mp-beige-sandstone/mp-beige-sandstone-card.jpg,MP Beige — listing card image,Pending
+Collection products,/collections/sandstone/woodland-buff-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/woodland-buff-sandstone/woodland-buff-sandstone-hero-desktop.jpg,Woodland Buff — detail hero (desktop),Pending
+Collection products,/collections/sandstone/woodland-buff-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/woodland-buff-sandstone/woodland-buff-sandstone-hero-mobile.jpg,Woodland Buff — detail hero (mobile),Pending
+Collection products,/collections/sandstone/woodland-buff-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/woodland-buff-sandstone/gallery/woodland-buff-sandstone-gallery-1.jpg,Woodland Buff — gallery shots,Pending
+Collection products,/collections/sandstone/woodland-buff-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/woodland-buff-sandstone/woodland-buff-sandstone-card.jpg,Woodland Buff — listing card image,Pending
+Collection products,/collections/sandstone/leheriya-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/leheriya-sandstone/leheriya-sandstone-hero-desktop.jpg,Leheriya — detail hero (desktop),Pending
+Collection products,/collections/sandstone/leheriya-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/leheriya-sandstone/leheriya-sandstone-hero-mobile.jpg,Leheriya — detail hero (mobile),Pending
+Collection products,/collections/sandstone/leheriya-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/leheriya-sandstone/gallery/leheriya-sandstone-gallery-1.jpg,Leheriya — gallery shots,Pending
+Collection products,/collections/sandstone/leheriya-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/leheriya-sandstone/leheriya-sandstone-card.jpg,Leheriya — listing card image,Pending
+Collection products,/collections/sandstone/raveena-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/raveena-sandstone/raveena-sandstone-hero-desktop.jpg,Raveena — detail hero (desktop),Pending
+Collection products,/collections/sandstone/raveena-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/raveena-sandstone/raveena-sandstone-hero-mobile.jpg,Raveena — detail hero (mobile),Pending
+Collection products,/collections/sandstone/raveena-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/raveena-sandstone/gallery/raveena-sandstone-gallery-1.jpg,Raveena — gallery shots,Pending
+Collection products,/collections/sandstone/raveena-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/raveena-sandstone/raveena-sandstone-card.jpg,Raveena — listing card image,Pending
+Collection products,/collections/sandstone/kandla-grey-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/kandla-grey-sandstone/kandla-grey-sandstone-hero-desktop.jpg,Kandla Grey — detail hero (desktop),Pending
+Collection products,/collections/sandstone/kandla-grey-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/kandla-grey-sandstone/kandla-grey-sandstone-hero-mobile.jpg,Kandla Grey — detail hero (mobile),Pending
+Collection products,/collections/sandstone/kandla-grey-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/kandla-grey-sandstone/gallery/kandla-grey-sandstone-gallery-1.jpg,Kandla Grey — gallery shots,Pending
+Collection products,/collections/sandstone/kandla-grey-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/kandla-grey-sandstone/kandla-grey-sandstone-card.jpg,Kandla Grey — listing card image,Pending
+Collection products,/collections/sandstone/autumn-brown-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/autumn-brown-sandstone/autumn-brown-sandstone-hero-desktop.jpg,Autumn Brown — detail hero (desktop),Pending
+Collection products,/collections/sandstone/autumn-brown-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/autumn-brown-sandstone/autumn-brown-sandstone-hero-mobile.jpg,Autumn Brown — detail hero (mobile),Pending
+Collection products,/collections/sandstone/autumn-brown-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/autumn-brown-sandstone/gallery/autumn-brown-sandstone-gallery-1.jpg,Autumn Brown — gallery shots,Pending
+Collection products,/collections/sandstone/autumn-brown-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/autumn-brown-sandstone/autumn-brown-sandstone-card.jpg,Autumn Brown — listing card image,Pending
+Collection products,/collections/sandstone/raj-green-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/raj-green-sandstone/raj-green-sandstone-hero-desktop.jpg,Raj Green — detail hero (desktop),Pending
+Collection products,/collections/sandstone/raj-green-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/raj-green-sandstone/raj-green-sandstone-hero-mobile.jpg,Raj Green — detail hero (mobile),Pending
+Collection products,/collections/sandstone/raj-green-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/raj-green-sandstone/gallery/raj-green-sandstone-gallery-1.jpg,Raj Green — gallery shots,Pending
+Collection products,/collections/sandstone/raj-green-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/raj-green-sandstone/raj-green-sandstone-card.jpg,Raj Green — listing card image,Pending
+Collection products,/collections/sandstone/kahareda-brown-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/kahareda-brown-sandstone/kahareda-brown-sandstone-hero-desktop.jpg,Kahareda Brown — detail hero (desktop),Pending
+Collection products,/collections/sandstone/kahareda-brown-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/kahareda-brown-sandstone/kahareda-brown-sandstone-hero-mobile.jpg,Kahareda Brown — detail hero (mobile),Pending
+Collection products,/collections/sandstone/kahareda-brown-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/kahareda-brown-sandstone/gallery/kahareda-brown-sandstone-gallery-1.jpg,Kahareda Brown — gallery shots,Pending
+Collection products,/collections/sandstone/kahareda-brown-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/kahareda-brown-sandstone/kahareda-brown-sandstone-card.jpg,Kahareda Brown — listing card image,Pending
+Collection products,/collections/sandstone/red-teak-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/red-teak-sandstone/red-teak-sandstone-hero-desktop.jpg,Red Teak — detail hero (desktop),Pending
+Collection products,/collections/sandstone/red-teak-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/red-teak-sandstone/red-teak-sandstone-hero-mobile.jpg,Red Teak — detail hero (mobile),Pending
+Collection products,/collections/sandstone/red-teak-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/red-teak-sandstone/gallery/red-teak-sandstone-gallery-1.jpg,Red Teak — gallery shots,Pending
+Collection products,/collections/sandstone/red-teak-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/red-teak-sandstone/red-teak-sandstone-card.jpg,Red Teak — listing card image,Pending
+Collection products,/collections/sandstone/bansi-pink-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/bansi-pink-sandstone/bansi-pink-sandstone-hero-desktop.jpg,Bansi Pink — detail hero (desktop),Pending
+Collection products,/collections/sandstone/bansi-pink-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/bansi-pink-sandstone/bansi-pink-sandstone-hero-mobile.jpg,Bansi Pink — detail hero (mobile),Pending
+Collection products,/collections/sandstone/bansi-pink-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/bansi-pink-sandstone/gallery/bansi-pink-sandstone-gallery-1.jpg,Bansi Pink — gallery shots,Pending
+Collection products,/collections/sandstone/bansi-pink-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/bansi-pink-sandstone/bansi-pink-sandstone-card.jpg,Bansi Pink — listing card image,Pending
+Collection products,/collections/sandstone/ebony-green-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/ebony-green-sandstone/ebony-green-sandstone-hero-desktop.jpg,Ebony Green — detail hero (desktop),Pending
+Collection products,/collections/sandstone/ebony-green-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/ebony-green-sandstone/ebony-green-sandstone-hero-mobile.jpg,Ebony Green — detail hero (mobile),Pending
+Collection products,/collections/sandstone/ebony-green-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/ebony-green-sandstone/gallery/ebony-green-sandstone-gallery-1.jpg,Ebony Green — gallery shots,Pending
+Collection products,/collections/sandstone/ebony-green-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/ebony-green-sandstone/ebony-green-sandstone-card.jpg,Ebony Green — listing card image,Pending
+Collection products,/collections/sandstone/gwalior-mint-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/gwalior-mint-sandstone/gwalior-mint-sandstone-hero-desktop.jpg,Gwalior Mint — detail hero (desktop),Pending
+Collection products,/collections/sandstone/gwalior-mint-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/gwalior-mint-sandstone/gwalior-mint-sandstone-hero-mobile.jpg,Gwalior Mint — detail hero (mobile),Pending
+Collection products,/collections/sandstone/gwalior-mint-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/gwalior-mint-sandstone/gallery/gwalior-mint-sandstone-gallery-1.jpg,Gwalior Mint — gallery shots,Pending
+Collection products,/collections/sandstone/gwalior-mint-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/gwalior-mint-sandstone/gwalior-mint-sandstone-card.jpg,Gwalior Mint — listing card image,Pending
+Collection products,/collections/sandstone/bansi-paharpur-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/bansi-paharpur-sandstone/bansi-paharpur-sandstone-hero-desktop.jpg,Bansi Paharpur — detail hero (desktop),Pending
+Collection products,/collections/sandstone/bansi-paharpur-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/bansi-paharpur-sandstone/bansi-paharpur-sandstone-hero-mobile.jpg,Bansi Paharpur — detail hero (mobile),Pending
+Collection products,/collections/sandstone/bansi-paharpur-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/bansi-paharpur-sandstone/gallery/bansi-paharpur-sandstone-gallery-1.jpg,Bansi Paharpur — gallery shots,Pending
+Collection products,/collections/sandstone/bansi-paharpur-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/bansi-paharpur-sandstone/bansi-paharpur-sandstone-card.jpg,Bansi Paharpur — listing card image,Pending
+Collection products,/collections/sandstone/ganj-basoda-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/ganj-basoda-sandstone/ganj-basoda-sandstone-hero-desktop.jpg,Ganj Basoda — detail hero (desktop),Pending
+Collection products,/collections/sandstone/ganj-basoda-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/ganj-basoda-sandstone/ganj-basoda-sandstone-hero-mobile.jpg,Ganj Basoda — detail hero (mobile),Pending
+Collection products,/collections/sandstone/ganj-basoda-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/ganj-basoda-sandstone/gallery/ganj-basoda-sandstone-gallery-1.jpg,Ganj Basoda — gallery shots,Pending
+Collection products,/collections/sandstone/ganj-basoda-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/ganj-basoda-sandstone/ganj-basoda-sandstone-card.jpg,Ganj Basoda — listing card image,Pending
+Collection products,/collections/sandstone/khatu-teak-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/khatu-teak-sandstone/khatu-teak-sandstone-hero-desktop.jpg,Khatu Teak — detail hero (desktop),Pending
+Collection products,/collections/sandstone/khatu-teak-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/khatu-teak-sandstone/khatu-teak-sandstone-hero-mobile.jpg,Khatu Teak — detail hero (mobile),Pending
+Collection products,/collections/sandstone/khatu-teak-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/khatu-teak-sandstone/gallery/khatu-teak-sandstone-gallery-1.jpg,Khatu Teak — gallery shots,Pending
+Collection products,/collections/sandstone/khatu-teak-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/khatu-teak-sandstone/khatu-teak-sandstone-card.jpg,Khatu Teak — listing card image,Pending
+Collection products,/collections/sandstone/balesar-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/balesar-sandstone/balesar-sandstone-hero-desktop.jpg,Balesar — detail hero (desktop),Pending
+Collection products,/collections/sandstone/balesar-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/balesar-sandstone/balesar-sandstone-hero-mobile.jpg,Balesar — detail hero (mobile),Pending
+Collection products,/collections/sandstone/balesar-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/balesar-sandstone/gallery/balesar-sandstone-gallery-1.jpg,Balesar — gallery shots,Pending
+Collection products,/collections/sandstone/balesar-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/balesar-sandstone/balesar-sandstone-card.jpg,Balesar — listing card image,Pending
+Collection products,/collections/sandstone/jodhpur-sandstone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/sandstone/jodhpur-sandstone/jodhpur-sandstone-hero-desktop.jpg,Jodhpur Sandstone — detail hero (desktop),Pending
+Collection products,/collections/sandstone/jodhpur-sandstone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/sandstone/jodhpur-sandstone/jodhpur-sandstone-hero-mobile.jpg,Jodhpur Sandstone — detail hero (mobile),Pending
+Collection products,/collections/sandstone/jodhpur-sandstone,Gallery,gallery[],—,4:3,1600x1200,4,collections/sandstone/jodhpur-sandstone/gallery/jodhpur-sandstone-gallery-1.jpg,Jodhpur Sandstone — gallery shots,Pending
+Collection products,/collections/sandstone/jodhpur-sandstone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/sandstone/jodhpur-sandstone/jodhpur-sandstone-card.jpg,Jodhpur Sandstone — listing card image,Pending
+Collection products,/collections/limestone/jaisalmer-yellow-limestone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/limestone/jaisalmer-yellow-limestone/jaisalmer-yellow-limestone-hero-desktop.jpg,Jaisalmer Yellow — detail hero (desktop),Pending
+Collection products,/collections/limestone/jaisalmer-yellow-limestone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/limestone/jaisalmer-yellow-limestone/jaisalmer-yellow-limestone-hero-mobile.jpg,Jaisalmer Yellow — detail hero (mobile),Pending
+Collection products,/collections/limestone/jaisalmer-yellow-limestone,Gallery,gallery[],—,4:3,1600x1200,4,collections/limestone/jaisalmer-yellow-limestone/gallery/jaisalmer-yellow-limestone-gallery-1.jpg,Jaisalmer Yellow — gallery shots,Pending
+Collection products,/collections/limestone/jaisalmer-yellow-limestone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/limestone/jaisalmer-yellow-limestone/jaisalmer-yellow-limestone-card.jpg,Jaisalmer Yellow — listing card image,Pending
+Collection products,/collections/limestone/ita-gold-limestone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/limestone/ita-gold-limestone/ita-gold-limestone-hero-desktop.jpg,Ita Gold — detail hero (desktop),Pending
+Collection products,/collections/limestone/ita-gold-limestone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/limestone/ita-gold-limestone/ita-gold-limestone-hero-mobile.jpg,Ita Gold — detail hero (mobile),Pending
+Collection products,/collections/limestone/ita-gold-limestone,Gallery,gallery[],—,4:3,1600x1200,4,collections/limestone/ita-gold-limestone/gallery/ita-gold-limestone-gallery-1.jpg,Ita Gold — gallery shots,Pending
+Collection products,/collections/limestone/ita-gold-limestone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/limestone/ita-gold-limestone/ita-gold-limestone-card.jpg,Ita Gold — listing card image,Pending
+Collection products,/collections/limestone/kadappa-limestone,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/limestone/kadappa-limestone/kadappa-limestone-hero-desktop.jpg,Kadappa — detail hero (desktop),Pending
+Collection products,/collections/limestone/kadappa-limestone,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/limestone/kadappa-limestone/kadappa-limestone-hero-mobile.jpg,Kadappa — detail hero (mobile),Pending
+Collection products,/collections/limestone/kadappa-limestone,Gallery,gallery[],—,4:3,1600x1200,4,collections/limestone/kadappa-limestone/gallery/kadappa-limestone-gallery-1.jpg,Kadappa — gallery shots,Pending
+Collection products,/collections/limestone/kadappa-limestone,Listing card,heroImage (card),—,16:9,1200x675,1,collections/limestone/kadappa-limestone/kadappa-limestone-card.jpg,Kadappa — listing card image,Pending
+Collection products,/collections/slate/monsoon-slate,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/slate/monsoon-slate/monsoon-slate-hero-desktop.jpg,Monsoon — detail hero (desktop),Pending
+Collection products,/collections/slate/monsoon-slate,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/slate/monsoon-slate/monsoon-slate-hero-mobile.jpg,Monsoon — detail hero (mobile),Pending
+Collection products,/collections/slate/monsoon-slate,Gallery,gallery[],—,4:3,1600x1200,4,collections/slate/monsoon-slate/gallery/monsoon-slate-gallery-1.jpg,Monsoon — gallery shots,Pending
+Collection products,/collections/slate/monsoon-slate,Listing card,heroImage (card),—,16:9,1200x675,1,collections/slate/monsoon-slate/monsoon-slate-card.jpg,Monsoon — listing card image,Pending
+Collection products,/collections/slate/sangarwas-slate,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/slate/sangarwas-slate/sangarwas-slate-hero-desktop.jpg,Sangarwas — detail hero (desktop),Pending
+Collection products,/collections/slate/sangarwas-slate,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/slate/sangarwas-slate/sangarwas-slate-hero-mobile.jpg,Sangarwas — detail hero (mobile),Pending
+Collection products,/collections/slate/sangarwas-slate,Gallery,gallery[],—,4:3,1600x1200,4,collections/slate/sangarwas-slate/gallery/sangarwas-slate-gallery-1.jpg,Sangarwas — gallery shots,Pending
+Collection products,/collections/slate/sangarwas-slate,Listing card,heroImage (card),—,16:9,1200x675,1,collections/slate/sangarwas-slate/sangarwas-slate-card.jpg,Sangarwas — listing card image,Pending
+Collection products,/collections/slate/devli-slate,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/slate/devli-slate/devli-slate-hero-desktop.jpg,Devli — detail hero (desktop),Pending
+Collection products,/collections/slate/devli-slate,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/slate/devli-slate/devli-slate-hero-mobile.jpg,Devli — detail hero (mobile),Pending
+Collection products,/collections/slate/devli-slate,Gallery,gallery[],—,4:3,1600x1200,4,collections/slate/devli-slate/gallery/devli-slate-gallery-1.jpg,Devli — gallery shots,Pending
+Collection products,/collections/slate/devli-slate,Listing card,heroImage (card),—,16:9,1200x675,1,collections/slate/devli-slate/devli-slate-card.jpg,Devli — listing card image,Pending
+Collection products,/collections/slate/silver-gray-slate,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/slate/silver-gray-slate/silver-gray-slate-hero-desktop.jpg,Silver Gray — detail hero (desktop),Pending
+Collection products,/collections/slate/silver-gray-slate,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/slate/silver-gray-slate/silver-gray-slate-hero-mobile.jpg,Silver Gray — detail hero (mobile),Pending
+Collection products,/collections/slate/silver-gray-slate,Gallery,gallery[],—,4:3,1600x1200,4,collections/slate/silver-gray-slate/gallery/silver-gray-slate-gallery-1.jpg,Silver Gray — gallery shots,Pending
+Collection products,/collections/slate/silver-gray-slate,Listing card,heroImage (card),—,16:9,1200x675,1,collections/slate/silver-gray-slate/silver-gray-slate-card.jpg,Silver Gray — listing card image,Pending
+Collection products,/collections/slate/matrix-slate,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/slate/matrix-slate/matrix-slate-hero-desktop.jpg,Matrix — detail hero (desktop),Pending
+Collection products,/collections/slate/matrix-slate,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/slate/matrix-slate/matrix-slate-hero-mobile.jpg,Matrix — detail hero (mobile),Pending
+Collection products,/collections/slate/matrix-slate,Gallery,gallery[],—,4:3,1600x1200,4,collections/slate/matrix-slate/gallery/matrix-slate-gallery-1.jpg,Matrix — gallery shots,Pending
+Collection products,/collections/slate/matrix-slate,Listing card,heroImage (card),—,16:9,1200x675,1,collections/slate/matrix-slate/matrix-slate-card.jpg,Matrix — listing card image,Pending
+Collection products,/collections/slate/raymond-slate,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/slate/raymond-slate/raymond-slate-hero-desktop.jpg,Raymond — detail hero (desktop),Pending
+Collection products,/collections/slate/raymond-slate,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/slate/raymond-slate/raymond-slate-hero-mobile.jpg,Raymond — detail hero (mobile),Pending
+Collection products,/collections/slate/raymond-slate,Gallery,gallery[],—,4:3,1600x1200,4,collections/slate/raymond-slate/gallery/raymond-slate-gallery-1.jpg,Raymond — gallery shots,Pending
+Collection products,/collections/slate/raymond-slate,Listing card,heroImage (card),—,16:9,1200x675,1,collections/slate/raymond-slate/raymond-slate-card.jpg,Raymond — listing card image,Pending
+Collection products,/collections/slate/himachal-slate,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/slate/himachal-slate/himachal-slate-hero-desktop.jpg,Himachal Slate — detail hero (desktop),Pending
+Collection products,/collections/slate/himachal-slate,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/slate/himachal-slate/himachal-slate-hero-mobile.jpg,Himachal Slate — detail hero (mobile),Pending
+Collection products,/collections/slate/himachal-slate,Gallery,gallery[],—,4:3,1600x1200,4,collections/slate/himachal-slate/gallery/himachal-slate-gallery-1.jpg,Himachal Slate — gallery shots,Pending
+Collection products,/collections/slate/himachal-slate,Listing card,heroImage (card),—,16:9,1200x675,1,collections/slate/himachal-slate/himachal-slate-card.jpg,Himachal Slate — listing card image,Pending
+Collection products,/collections/porphyry/multi-porphyry,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/porphyry/multi-porphyry/multi-porphyry-hero-desktop.jpg,Multi Porphyry — detail hero (desktop),Pending
+Collection products,/collections/porphyry/multi-porphyry,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/porphyry/multi-porphyry/multi-porphyry-hero-mobile.jpg,Multi Porphyry — detail hero (mobile),Pending
+Collection products,/collections/porphyry/multi-porphyry,Gallery,gallery[],—,4:3,1600x1200,4,collections/porphyry/multi-porphyry/gallery/multi-porphyry-gallery-1.jpg,Multi Porphyry — gallery shots,Pending
+Collection products,/collections/porphyry/multi-porphyry,Listing card,heroImage (card),—,16:9,1200x675,1,collections/porphyry/multi-porphyry/multi-porphyry-card.jpg,Multi Porphyry — listing card image,Pending
+Collection products,/collections/porphyry/black-porphyry,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/porphyry/black-porphyry/black-porphyry-hero-desktop.jpg,Black Porphyry — detail hero (desktop),Pending
+Collection products,/collections/porphyry/black-porphyry,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/porphyry/black-porphyry/black-porphyry-hero-mobile.jpg,Black Porphyry — detail hero (mobile),Pending
+Collection products,/collections/porphyry/black-porphyry,Gallery,gallery[],—,4:3,1600x1200,4,collections/porphyry/black-porphyry/gallery/black-porphyry-gallery-1.jpg,Black Porphyry — gallery shots,Pending
+Collection products,/collections/porphyry/black-porphyry,Listing card,heroImage (card),—,16:9,1200x675,1,collections/porphyry/black-porphyry/black-porphyry-card.jpg,Black Porphyry — listing card image,Pending
+Collection products,/collections/quartzite/kandla-quartzite,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/quartzite/kandla-quartzite/kandla-quartzite-hero-desktop.jpg,Kandla — detail hero (desktop),Pending
+Collection products,/collections/quartzite/kandla-quartzite,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/quartzite/kandla-quartzite/kandla-quartzite-hero-mobile.jpg,Kandla — detail hero (mobile),Pending
+Collection products,/collections/quartzite/kandla-quartzite,Gallery,gallery[],—,4:3,1600x1200,4,collections/quartzite/kandla-quartzite/gallery/kandla-quartzite-gallery-1.jpg,Kandla — gallery shots,Pending
+Collection products,/collections/quartzite/kandla-quartzite,Listing card,heroImage (card),—,16:9,1200x675,1,collections/quartzite/kandla-quartzite/kandla-quartzite-card.jpg,Kandla — listing card image,Pending
+Collection products,/collections/quartzite/woodland-quartzite,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/quartzite/woodland-quartzite/woodland-quartzite-hero-desktop.jpg,Woodland — detail hero (desktop),Pending
+Collection products,/collections/quartzite/woodland-quartzite,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/quartzite/woodland-quartzite/woodland-quartzite-hero-mobile.jpg,Woodland — detail hero (mobile),Pending
+Collection products,/collections/quartzite/woodland-quartzite,Gallery,gallery[],—,4:3,1600x1200,4,collections/quartzite/woodland-quartzite/gallery/woodland-quartzite-gallery-1.jpg,Woodland — gallery shots,Pending
+Collection products,/collections/quartzite/woodland-quartzite,Listing card,heroImage (card),—,16:9,1200x675,1,collections/quartzite/woodland-quartzite/woodland-quartzite-card.jpg,Woodland — listing card image,Pending
+Collection products,/collections/quartzite/bansi-pink-quartzite,PageHero,heroImage,desktop,16:9,1920x1080,1,collections/quartzite/bansi-pink-quartzite/bansi-pink-quartzite-hero-desktop.jpg,Bansi Pink — detail hero (desktop),Pending
+Collection products,/collections/quartzite/bansi-pink-quartzite,PageHero,heroImage,mobile,9:16,1080x1920,1,collections/quartzite/bansi-pink-quartzite/bansi-pink-quartzite-hero-mobile.jpg,Bansi Pink — detail hero (mobile),Pending
+Collection products,/collections/quartzite/bansi-pink-quartzite,Gallery,gallery[],—,4:3,1600x1200,4,collections/quartzite/bansi-pink-quartzite/gallery/bansi-pink-quartzite-gallery-1.jpg,Bansi Pink — gallery shots,Pending
+Collection products,/collections/quartzite/bansi-pink-quartzite,Listing card,heroImage (card),—,16:9,1200x675,1,collections/quartzite/bansi-pink-quartzite/bansi-pink-quartzite-card.jpg,Bansi Pink — listing card image,Pending

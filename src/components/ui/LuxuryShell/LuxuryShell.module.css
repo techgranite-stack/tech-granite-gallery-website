@@ -1,0 +1,73 @@
+.shell {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s var(--ease-power3);
+  border-radius: inherit; /* Takes radius from parent if applied */
+  background: var(--ivory);
+}
+
+.dark {
+  background: var(--mahogany);
+}
+
+.glass {
+  background: rgba(var(--ivory-rgb), 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(var(--ivory-rgb), 0.2);
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+}
+
+/* ── Glossy Spotlight ── */
+.spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: var(--spotlight-opacity, 0);
+  transition: opacity 0.5s ease;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(var(--glow-rgb), 0.12),
+    transparent 40%
+  );
+}
+
+/* ── Classy Border Glow ── */
+.borderGlow {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: var(--spotlight-opacity, 0);
+  transition: opacity 0.5s ease;
+  mask-image: linear-gradient(black, black), linear-gradient(black, black);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
+  padding: 1px; /* Border thickness */
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    rgba(var(--glow-rgb), 0.8),
+    transparent 40%
+  );
+}
+
+/* ── Subtle Grain / Paper Texture ── */
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ── Hover Elevations ── */
+.shell:hover {
+  box-shadow: 0 20px 60px rgba(var(--mahogany-rgb), 0.08);
+}

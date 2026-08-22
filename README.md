@@ -1,1 +1,0 @@
-# tech-granite-gallery-website

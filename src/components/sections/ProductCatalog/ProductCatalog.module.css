@@ -1,0 +1,340 @@
+/* ── Product Detail — shared across marble / granite / collections ── */
+
+.section {
+  padding: var(--section-py) 0;
+  background: var(--ivory);
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+/* ── Row 1: Intro + Image ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 300;
+  color: var(--mahogany);
+  line-height: 1.05;
+  margin-top: 10px;
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.copperLine {
+  width: 48px;
+  height: 2px;
+  background: var(--copper);
+  margin: 18px 0 22px;
+}
+
+.para {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.highlights {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--mahogany);
+}
+
+.highlightIcon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(192, 133, 82, 0.3);
+  border-radius: 50%;
+  color: var(--copper);
+  background: rgba(192, 133, 82, 0.06);
+}
+
+.highlightIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(75, 46, 43, 0.05);
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* ── Row 2: Specs + Finishes ── */
+.specsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.card {
+  border: 1px solid rgba(192, 133, 82, 0.18);
+  border-radius: 14px;
+  padding: 26px 28px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.cardTitle {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 16px;
+}
+
+.cardTitleSpaced {
+  margin-top: 26px;
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+}
+
+.specRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(192, 133, 82, 0.12);
+}
+
+.specKey {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--mahogany);
+  letter-spacing: 0.03em;
+}
+
+.specVal {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+/* Pills (finishes + applications) */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 6px 16px;
+  border: 1px solid rgba(192, 133, 82, 0.35);
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--copper);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  background: rgba(192, 133, 82, 0.05);
+}
+
+.pill:hover {
+  background: var(--copper);
+  color: var(--white);
+  border-color: var(--copper);
+}
+
+.appPill {
+  border-color: rgba(75, 46, 43, 0.25);
+  color: var(--mahogany);
+  background: rgba(75, 46, 43, 0.03);
+}
+
+.appPill:hover {
+  background: var(--mahogany);
+  color: var(--ivory);
+  border-color: var(--mahogany);
+}
+
+/* ── Row 3: CTA + Trust ── */
+.ctaRow {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.ctaActions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.ctaBtn {
+  align-self: flex-start;
+}
+
+.backLink {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.backLink:hover {
+  color: var(--copper);
+}
+
+.trust {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.trustItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.trustIcon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--copper);
+}
+
+.trustIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.trustText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.trustTitle {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mahogany);
+}
+
+.trustSub {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .imageWrap {
+    order: -1; /* image above the intro copy on tablet/mobile */
+  }
+  .specsRow {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .ctaRow {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .trust {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: var(--section-py-sm) 0;
+  }
+  .inner {
+    padding: 0 20px;
+    gap: 32px;
+  }
+  .specsGrid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  .trust {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .ctaActions {
+    align-items: stretch;
+  }
+  .ctaBtn {
+    align-self: stretch;
+    text-align: center;
+  }
+  .backLink {
+    align-self: center;
+  }
+}

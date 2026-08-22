@@ -1,0 +1,737 @@
+.section {
+  background: var(--ivory);
+  padding: var(--section-py) 0;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;   /* tighter gap between header and bottom row */
+}
+
+/* ── TOP: centred header ─────────────────────────────────────────────────────── */
+.topHeader {
+  text-align: center;
+}
+
+/* Wrapper that centres the eyebrow (inline-flex) including its dash pseudo-elements */
+.eyebrowWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.titleCentered {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.subtitleCentered {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 560px;
+}
+
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+  font-weight: 400;
+  color: var(--mahogany);
+  line-height: 1.12;
+  margin-bottom: 14px;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 440px;
+}
+
+/* Active category meta — top right corner */
+.activeMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.activeNum {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--copper);
+  line-height: 1;
+}
+
+.activeName {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mahogany);
+}
+
+.activeTag {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid rgba(192, 133, 82, 0.4);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--copper-dark);
+}
+
+/* ── BOTTOM: cylinder (45%) + image (55%), equal heights ─────────────────────── */
+.bottomRow {
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* ── Cylinder drum ───────────────────────────────────────────────────────────── */
+.drumWrap {
+  position: relative;
+  min-height: 560px;      /* reduced from 900px — enough for ~7 items visible */
+  cursor: ns-resize;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.drum {
+  position: relative;
+  flex: 1;
+  transform-style: preserve-3d;
+}
+
+.drumItem {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;   /* active item sits at the vertical centre of the drum */
+  transform-origin: center center;
+  cursor: pointer;
+  outline: none;
+  padding: 12px 22px;
+  border-radius: 14px;
+  background-color: transparent;
+  border: 1px solid transparent;   /* reserved so the active border adds no layout shift */
+  /* NB: do NOT transition `transform` — GSAP drives the 3D rotation per-frame. */
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.drumItem:focus-visible {
+  outline: 2px solid var(--copper);
+  border-radius: 14px;
+}
+
+/* Hover lift — a warm copper wash gives the rotating items a tactile feel */
+.drumItem:not([data-active='1']):hover {
+  background-color: rgba(192, 133, 82, 0.07);
+  box-shadow: 0 8px 22px rgba(75, 46, 43, 0.07);
+}
+
+/* Active face lifts off the surface — same ivory tone, raised by shadow alone
+   with a faint copper edge, so it reads as an embossed tile (no white block). */
+.drumItem[data-active='1'] {
+  background-color: var(--ivory);
+  border-color: rgba(192, 133, 82, 0.22);
+  box-shadow:
+    0 22px 50px rgba(75, 46, 43, 0.18),
+    0 5px 14px rgba(75, 46, 43, 0.10);
+}
+
+.itemLine {
+  height: 1px;
+  background: var(--stone-200);
+  margin-bottom: 12px;
+  transition: background 0.3s ease;
+}
+
+.drumItem[data-active='1'] .itemLine {
+  background: var(--copper);
+}
+
+.itemRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 12px;
+}
+
+.num {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  min-width: 26px;
+  transition: color 0.3s ease;
+}
+
+.drumItem[data-active='1'] .num {
+  color: var(--copper);
+}
+
+.itemText {
+  flex: 1;
+}
+
+.itemNameRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 3px;
+}
+
+.itemName {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2vw, 1.75rem);
+  font-weight: 400;
+  color: var(--mahogany);
+  line-height: 1.1;
+  /* Smooth grow as the item rotates into / out of the active slot */
+  transition:
+    color 0.35s ease,
+    font-size 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.drumItem[data-active='1'] .itemName {
+  color: var(--copper);
+  /* Current item reads larger to stand out from the rest of the drum */
+  font-size: clamp(1.6rem, 2.7vw, 2.3rem);
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 7px;
+  border: 1px solid rgba(192, 133, 82, 0.4);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--copper-dark);
+}
+
+.itemSub {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.itemArrowLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--copper);
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.itemArrow {
+  color: var(--copper);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.drumItem[data-active='1'] .itemArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Mobile inline image — hidden on desktop, shown only inside mobile media query */
+.mobileInlineImg {
+  display: none;
+}
+
+.mobileImgBlock {
+  display: none;
+}
+
+.hint {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0.4;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* ── Image panel — same height as drum column ───────────────────────────────── */
+.imagePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.imageSlot {
+  position: relative;
+  flex: 1;
+  min-height: 520px;      /* reduced — matches the taller cylinder */
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--stone-100);
+}
+
+/* Each pre-rendered image layer — GSAP controls z-index + clip-path */
+.imgLayer {
+  position: absolute;
+  inset: 0;
+}
+
+/* Counter row below the image */
+.counterRow {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 10px 0 4px;
+  justify-content: flex-end;
+}
+
+.counterCurrent {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mahogany);
+}
+
+.counterSlash {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.counterTotal {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Image dots (inside imageSlot, bottom-centre) */
+.imgDots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.imgDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 248, 240, 0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.imgDotActive {
+  background: var(--copper) !important;
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* Explore link inside image (bottom-right) */
+.imgExplore {
+  position: absolute;
+  bottom: 18px;
+  right: 20px;
+  z-index: 10;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 248, 240, 0.35);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease;
+}
+
+.imgExplore:hover {
+  border-color: rgba(255, 248, 240, 0.8);
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.imageSlot:hover .img {
+  transform: scale(1.03);
+}
+
+.imgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(75, 46, 43, 0.5) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.imgTag {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 5px 12px;
+  background: var(--copper);
+  color: var(--ivory);
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  z-index: 2;
+}
+
+.imageLabel {
+  position: absolute;
+  bottom: 20px;
+  left: 22px;
+  z-index: 2;
+}
+
+.imageLabelName {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--ivory);
+  line-height: 1.15;
+}
+
+.imageLabelCount {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: rgba(255, 248, 240, 0.6);
+  letter-spacing: 0.06em;
+  margin-top: 3px;
+}
+
+.counter {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  z-index: 2;
+}
+
+.counterCurrent {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ivory);
+}
+
+.counterSlash {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: rgba(255, 248, 240, 0.4);
+}
+
+.counterTotal {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: rgba(255, 248, 240, 0.5);
+}
+
+/* ── Image navigation ────────────────────────────────────────────────────────── */
+.navRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 14px 0 4px;
+}
+
+.navBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--copper-pale, #f0dbc8);
+  border: 1.5px solid rgba(192, 133, 82, 0.3);
+  color: var(--copper-dark, #8C5A3C);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.navBtn:hover {
+  background: var(--copper);
+  color: var(--ivory);
+  border-color: var(--copper);
+  transform: scale(1.08);
+}
+
+.navDots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.navDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--stone-200);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.navDotActive {
+  background: var(--copper) !important;
+  width: 20px;
+  border-radius: 4px;
+}
+
+.exploreLink {
+  display: inline-block;
+  margin-top: 12px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--copper);
+  text-decoration: none;
+  border-bottom: 1px solid var(--copper-pale, #f0dbc8);
+  padding-bottom: 2px;
+  width: fit-content;
+  transition: border-color 0.2s ease;
+}
+
+.exploreLink:hover {
+  border-color: var(--copper);
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   MOBILE — accordion list, original behaviour, cylinder hidden
+   ════════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .inner {
+    padding: 0 24px;
+    gap: 32px;
+  }
+
+  /* Stack: header → accordion (no cylinder) */
+  .bottomRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Image panel hidden on mobile — images live inline in accordion */
+  .imagePanel {
+    display: none;
+  }
+
+  /* The drumWrap becomes the mobile accordion list */
+  .drumWrap {
+    min-height: unset;
+    cursor: default;
+    overflow: visible;
+    perspective: none !important;
+  }
+
+  /* Reset 3D cylinder on each item — show them in normal flow */
+  .drumItem {
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    left: auto !important;
+    right: auto !important;
+    /* Drop the desktop floating-card look — mobile is a flat accordion list */
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .drumItem:hover,
+  .drumItem[data-active='1'] {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+  }
+
+  /* Active item still gets copper accent */
+  .drumItem[data-active='1'] .itemName {
+    color: var(--copper);
+  }
+
+  .drumItem[data-active='1'] .num {
+    color: var(--copper);
+  }
+
+  .drumItem[data-active='1'] .itemLine {
+    background: var(--copper);
+  }
+
+  .drumItem[data-active='1'] .itemArrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Inline image — shown after active item's row */
+  .drumItem[data-active='1'] .mobileInlineImg {
+    display: block;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .mobileInlineImg {
+    display: none;
+  }
+
+  .activeMeta {
+    display: none;
+  }
+
+  .hint {
+    display: none;
+  }
+
+  .drum {
+    flex: none;
+  }
+
+  /* Mobile inline image container */
+  .mobileInlineImg {
+    position: relative !important;
+    margin-bottom: 16px;
+  }
+
+  /* Wrapper for scroll strip + dots */
+  .mobileImgBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* Horizontal scroll strip */
+  .mobileImgStrip {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    border-radius: 12px;
+    overflow-y: hidden;
+  }
+
+  .mobileImgStrip::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Each image frame */
+  .mobileImgFrame {
+    position: relative;
+    flex: 0 0 100%;
+    aspect-ratio: 16 / 9;
+    scroll-snap-align: start;
+    overflow: hidden;
+  }
+
+  /* Dot indicators */
+  .mobileDots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 2px 0;
+  }
+
+  .mobileDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(192, 133, 82, 0.3);   /* copper tint for inactive */
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .mobileDotActive {
+    background: var(--copper) !important;  /* solid copper for active */
+    width: 20px;
+    border-radius: 4px;
+  }
+
+  /* Explore link */
+  .mobileExplore {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--copper);
+    text-decoration: none;
+    border-bottom: 1px solid var(--copper-pale, #f0dbc8);
+    padding-bottom: 2px;
+    width: fit-content;
+    margin-left: 4px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: var(--section-py-sm) 0;
+  }
+
+  .inner {
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

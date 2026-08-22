@@ -1,0 +1,1328 @@
+/* ── About Us Page Styles ── */
+
+.main {
+  background: var(--ivory);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ── Container & Layout ── */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.textCenter {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 64px;
+}
+
+/* ── 1. Infinite Possibilities Pillar Cards (Architectural Clean Style) ── */
+.matrixSection {
+  background-color: var(--ivory);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(192, 133, 82, 0.12) 0%, transparent 65%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z' fill='none' stroke='rgba(192,133,82,0.06)' stroke-width='0.75'/%3E%3C/svg%3E");
+  color: var(--text-dark);
+  padding: 108px 0;
+  position: relative;
+  border-top: 1px solid rgba(75, 46, 43, 0.08);
+  border-bottom: 1px solid rgba(75, 46, 43, 0.08);
+}
+
+.matrixGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.pillarCard {
+  background: var(--white);
+  border: 1px solid rgba(75, 46, 43, 0.1);
+  border-top: 3.5px solid var(--copper);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(75, 46, 43, 0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.pillarCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--copper);
+  box-shadow: 0 30px 65px rgba(75, 46, 43, 0.15);
+}
+
+.pillarImgWrap {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.pillarImg {
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pillarCard:hover .pillarImg {
+  transform: scale(1.06);
+}
+
+.pillarBody {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pillarCategory {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 12px;
+}
+
+.pillarTitle {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: var(--mahogany);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.pillarDesc {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: rgba(75, 46, 43, 0.78);
+  margin-bottom: 36px;
+}
+
+.pillarBtn {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--copper);
+  color: var(--white);
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(192, 133, 82, 0.25);
+}
+
+.pillarBtn:hover {
+  background: var(--copper-dark);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(164, 105, 56, 0.4);
+}
+
+/* ── Interactive Combination Engine (Dark Mahogany Luxury Theme with Floating Dropdowns) ── */
+.comboEngine {
+  margin-top: 72px;
+  position: relative;
+  overflow: visible;
+  padding: 52px 48px;
+  z-index: 20;
+}
+
+.comboEngineBg {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: 
+    radial-gradient(circle at 88% 12%, rgba(192, 133, 82, 0.28) 0%, transparent 45%),
+    radial-gradient(circle at 12% 88%, rgba(192, 133, 82, 0.2) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Cpath d='M25 0 L50 25 L25 50 L0 25 Z' fill='none' stroke='rgba(197,160,89,0.08)' stroke-width='0.75'/%3E%3Ccircle cx='25' cy='25' r='5' fill='none' stroke='rgba(197,160,89,0.06)' stroke-width='0.5'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, #2A1A17 0%, #3D221E 50%, #1F1210 100%);
+  border: 1.5px solid rgba(192, 133, 82, 0.4);
+  box-shadow: 0 35px 90px rgba(42, 26, 23, 0.45);
+  overflow: hidden;
+  z-index: -1;
+}
+
+.comboEngineBg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--copper) 50%, transparent 100%);
+}
+
+.comboHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.comboTag {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+}
+
+.comboTitle {
+  font-family: var(--font-serif);
+  font-size: 2.15rem;
+  color: var(--ivory);
+  margin-top: 8px;
+}
+
+.comboControls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.comboGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comboLabel {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+}
+
+.customSelectWrap {
+  position: relative;
+  width: 100%;
+}
+
+.customSelectTrigger {
+  width: 100%;
+  padding: 16px 22px;
+  background: rgba(255, 248, 240, 0.08);
+  border: 1.5px solid rgba(192, 133, 82, 0.4);
+  border-radius: 50px;
+  color: var(--ivory);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.customSelectTrigger:hover,
+.customSelectTrigger.open {
+  border-color: var(--copper);
+  background: rgba(255, 248, 240, 0.15);
+  box-shadow: 0 0 25px rgba(192, 133, 82, 0.35);
+}
+
+.customSelectChevron {
+  color: var(--copper-light);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.customSelectTrigger.open .customSelectChevron {
+  transform: rotate(180deg);
+}
+
+/* Luxury Custom Dropdown Menu */
+.customDropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  background: rgba(30, 18, 15, 0.98);
+  border: 1.5px solid rgba(192, 133, 82, 0.5);
+  border-radius: 18px;
+  padding: 8px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  max-height: 240px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: dropdownFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.customDropdownMenu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.customDropdownMenu::-webkit-scrollbar-thumb {
+  background: rgba(192, 133, 82, 0.4);
+  border-radius: 10px;
+}
+
+.customOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  color: rgba(250, 246, 240, 0.85);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.customOption:hover {
+  background: rgba(192, 133, 82, 0.22);
+  color: var(--ivory);
+  padding-left: 20px;
+}
+
+.selectedOption {
+  background: linear-gradient(135deg, rgba(192, 133, 82, 0.3) 0%, rgba(164, 105, 56, 0.2) 100%);
+  color: var(--copper-light);
+  font-weight: 700;
+}
+
+.optionCheck {
+  color: var(--copper-light);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.comboResultCard {
+  background: rgba(255, 248, 240, 0.05);
+  border: 1.5px solid rgba(192, 133, 82, 0.4);
+  border-radius: 20px;
+  padding: 28px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.comboResultText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.comboResultFormula {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--ivory);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.comboResultDesc {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: rgba(250, 246, 240, 0.75);
+}
+
+.comboBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #C08552 0%, #A46938 100%);
+  color: var(--white);
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  box-shadow: 0 10px 30px rgba(192, 133, 82, 0.45);
+}
+
+.comboBtn:hover {
+  background: linear-gradient(135deg, #D9A87A 0%, #C08552 100%);
+  color: var(--mahogany);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 40px rgba(217, 168, 122, 0.5);
+}
+
+/* ── 2. Heritage & Infrastructure Split ── */
+.heritageSection {
+  padding: 120px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(75, 46, 43, 0.08);
+  border-bottom: 1px solid rgba(75, 46, 43, 0.08);
+}
+
+.heritageHeader {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 64px;
+}
+
+/* Asymmetric split — the text column gets the wider measure, because it
+   carries the reading load. Image is the anchor, not the equal partner. */
+.heritageGrid {
+  display: grid;
+  grid-template-columns: 0.86fr 1fr;
+  gap: 64px;
+  align-items: stretch;
+}
+
+/* <Reveal> is the grid item; give it a resolvable height so the image and the
+   text column share one baseline instead of each running to its own height. */
+.heritageGrid > * {
+  min-width: 0;
+  height: 100%;
+}
+
+.heritageImageWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(42, 26, 23, 0.14);
+  border: 1px solid rgba(75, 46, 43, 0.08);
+}
+
+.heritageImg {
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.heritageImageWrap:hover .heritageImg {
+  transform: scale(1.05);
+}
+
+/* Guarantees badge legibility regardless of what the photo does at the base */
+.heritageImgScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(30, 18, 15, 0.55) 0%, rgba(30, 18, 15, 0.12) 32%, transparent 55%);
+  pointer-events: none;
+}
+
+.heritageBadge {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  right: 28px;
+  background: rgba(30, 18, 15, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: var(--ivory);
+  padding: 22px 26px;
+  border-radius: 16px;
+  border: 1px solid rgba(192, 133, 82, 0.32);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
+}
+
+.heritageBadgeNum {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--copper-light);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  margin-bottom: 10px;
+}
+
+.heritageBadgeLabel {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 248, 240, 0.78);
+  line-height: 1.6;
+  padding-top: 10px;
+  border-top: 1px solid rgba(192, 133, 82, 0.28);
+}
+
+/* ── Editorial text column ── */
+.heritageContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 8px 0;
+}
+
+.storyRule {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--copper);
+  margin-bottom: 22px;
+  flex-shrink: 0;
+}
+
+.storyTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  font-weight: 400;
+  color: var(--mahogany);
+  line-height: 1.25;
+  letter-spacing: 0.005em;
+  margin-bottom: 22px;
+  max-width: 20ch;
+}
+
+/* Lede — the sentence that has to land. Larger, looser, darker. */
+.storyLede {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--text-mid);
+  max-width: 60ch;
+}
+
+.storyBody {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 60ch;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(75, 46, 43, 0.1);
+}
+
+/* ── Pull-quote — dark is reserved for short copy only ── */
+.quoteCard {
+  position: relative;
+  background: var(--mahogany);
+  border-radius: 18px;
+  border: 1px solid rgba(192, 133, 82, 0.3);
+  box-shadow: 0 24px 50px rgba(42, 26, 23, 0.18);
+  padding: 34px 36px 30px;
+  margin-top: 34px;
+  overflow: hidden;
+}
+
+.quoteCardBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 88% 6%, rgba(192, 133, 82, 0.24) 0%, transparent 62%);
+  pointer-events: none;
+}
+
+.quoteMark {
+  position: absolute;
+  top: 6px;
+  left: 24px;
+  font-family: var(--font-serif);
+  font-size: 5.5rem;
+  line-height: 1;
+  color: rgba(192, 133, 82, 0.28);
+  pointer-events: none;
+  user-select: none;
+}
+
+.quoteText {
+  position: relative;
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.55vw, 1.35rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--ivory);
+  letter-spacing: 0.005em;
+  margin-bottom: 18px;
+}
+
+.quoteAuthor {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+}
+
+.quoteAuthor::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--copper);
+  flex-shrink: 0;
+}
+
+/* ── Capability bar ── */
+/* No fill — the section's own white carries these. A tinted card here would
+   collide with .groupSection (--off-white) directly below. Structure instead:
+   a segmented hairline above each item, like a spec sheet. */
+.capabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 76px;
+}
+
+.capCard {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 26px 4px 0;
+  border-top: 1px solid rgba(75, 46, 43, 0.14);
+  background: none;
+  transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* Copper rule overlays the hairline on hover — same idiom as the team cards */
+.capCard::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--copper);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.capCard:hover {
+  transform: translateY(-3px);
+}
+
+.capCard:hover::before {
+  transform: scaleX(1);
+}
+
+.capCard:hover .capTitle {
+  color: var(--copper-dark);
+}
+
+.topBadgeIconSvg {
+  padding: 8px;
+  background: rgba(192, 133, 82, 0.12);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.capIconWrap {
+  width: 42px;
+  height: 42px;
+  background: rgba(192, 133, 82, 0.1);
+  border: 1px solid rgba(192, 133, 82, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--copper);
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.capCard:hover .capIconWrap {
+  background: rgba(192, 133, 82, 0.18);
+  border-color: var(--copper);
+}
+
+.capTitle {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--mahogany);
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.capDesc {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ── 3. Group Ecosystem & Sister Ventures (Light Luxury Theme) ── */
+.groupSection {
+  background: var(--off-white);
+  color: var(--text-dark);
+  padding: 112px 0;
+  position: relative;
+  border-top: 1px solid rgba(75, 46, 43, 0.08);
+  border-bottom: 1px solid rgba(75, 46, 43, 0.08);
+}
+
+/* ── Granular stone texture over --off-white ──────────────────────────────
+   The turbulence itself paints hard tan flecks (the alpha ramp in
+   feColorMatrix clamps most of the noise to opaque); `opacity` on the layer
+   is what makes it a grain rather than a wash. That is the dial to turn —
+   raise for more grit, lower for less. Do not push the ramp instead. */
+.groupSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340'%3E%3Cfilter id='ga'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.6' numOctaves='1' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.72 0 0 0 0 0.58 0 0 0 0 0.41 0 0 0 12 -4.8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23ga)'/%3E%3C/svg%3E");
+  background-size: 340px 340px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Finer quartz dust, offset tile size so the two layers never lock up */
+.groupSection::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='gb'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.2' numOctaves='1' seed='33' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.66 0 0 0 0 0.53 0 0 0 0 0.38 0 0 0 14 -5.8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23gb)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  opacity: 0.09;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Content rides above both texture layers */
+.groupSection > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* 3 columns × 2 rows: the flagship takes two cells, the four divisions one
+   each — so five cards fill six cells with nothing stranded. */
+.groupGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.groupCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid rgba(75, 46, 43, 0.1);
+  border-radius: 14px;
+  padding: 32px 28px 34px;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease,
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Copper rule wipes across the top edge on hover */
+.groupCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--copper);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+  z-index: 2;
+}
+
+.groupCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(192, 133, 82, 0.5);
+  box-shadow: 0 26px 52px rgba(75, 46, 43, 0.1);
+}
+
+.groupCard:hover::before {
+  transform: scaleX(1);
+}
+
+/* Ghosted serif numeral — gives the row rhythm without adding another box */
+.groupIndex {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  font-family: var(--font-serif);
+  font-size: 3.4rem;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(192, 133, 82, 0.16);
+  pointer-events: none;
+  user-select: none;
+  transition: color 0.4s ease;
+}
+
+.groupCard:hover .groupIndex {
+  color: rgba(192, 133, 82, 0.3);
+}
+
+.groupTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 16px;
+}
+
+.groupTagRule {
+  width: 20px;
+  height: 1px;
+  background: var(--copper);
+  flex-shrink: 0;
+}
+
+.groupTitle {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--mahogany);
+  margin-bottom: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.005em;
+}
+
+/* Muted, not copper — the tag above already carries the copper accent */
+.groupLocation {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.groupLocation svg {
+  color: var(--copper);
+  flex-shrink: 0;
+}
+
+.groupDesc {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+  padding-top: 20px;
+  border-top: 1px solid rgba(75, 46, 43, 0.1);
+}
+
+/* ── Flagship (Granite Gallery) — dark, wide, two-up interior ── */
+.groupFlagship {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  background: var(--mahogany);
+  border-color: rgba(192, 133, 82, 0.32);
+  padding: 40px 42px;
+}
+
+.groupFlagshipBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 92% 8%, rgba(192, 133, 82, 0.26) 0%, transparent 62%);
+  pointer-events: none;
+}
+
+.groupFlagshipLead {
+  position: relative;
+  flex: 0 0 42%;
+}
+
+.groupFlagship:hover {
+  border-color: var(--copper);
+  box-shadow: 0 30px 60px rgba(42, 26, 23, 0.24);
+}
+
+.groupFlagship .groupTag {
+  color: var(--copper-light);
+  margin-bottom: 18px;
+}
+
+.groupFlagship .groupTagRule {
+  background: var(--copper-light);
+}
+
+.groupFlagship .groupTitle {
+  font-size: 2.4rem;
+  color: var(--ivory);
+  margin-bottom: 12px;
+}
+
+.groupFlagship .groupLocation {
+  color: rgba(255, 248, 240, 0.62);
+  margin-bottom: 0;
+}
+
+.groupFlagship .groupLocation svg {
+  color: var(--copper-light);
+}
+
+.groupFlagship .groupDesc {
+  position: relative;
+  flex: 1;
+  font-size: 0.9375rem;
+  color: rgba(255, 248, 240, 0.82);
+  padding-top: 0;
+  padding-left: 40px;
+  border-top: none;
+  border-left: 1px solid rgba(192, 133, 82, 0.28);
+}
+
+/* ── 4. End-to-End Client Guidance Process ── */
+.processSection {
+  background: var(--mahogany);
+  color: var(--ivory);
+  padding: 112px 0;
+  position: relative;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.processCard {
+  background: rgba(255, 248, 240, 0.05);
+  border: 1px solid rgba(192, 133, 82, 0.2);
+  border-radius: 20px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.processCard:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 248, 240, 0.09);
+  border-color: var(--copper);
+}
+
+.processStepNum {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  color: var(--copper-light);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.processTitle {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--ivory);
+  margin-bottom: 12px;
+}
+
+.processDesc {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(255, 248, 240, 0.72);
+}
+
+/* ── Responsive Breakpoints ── */
+@media (max-width: 1024px) {
+  .matrixGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .comboControls {
+    grid-template-columns: 1fr;
+  }
+  .comboResultCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .heritageHeader {
+    margin-bottom: 48px;
+  }
+  .heritageGrid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .heritageImageWrap {
+    height: 420px;
+    min-height: 0;
+  }
+  .heritageContent {
+    padding: 0;
+  }
+  .capabilityGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 60px;
+  }
+  .groupGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .groupFlagship {
+    padding: 34px 32px;
+    gap: 32px;
+  }
+  .groupFlagship .groupTitle {
+    font-size: 2.1rem;
+  }
+  .groupFlagship .groupDesc {
+    padding-left: 32px;
+  }
+  .processGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .matrixSection, .heritageSection, .groupSection, .processSection {
+    padding: 48px 0;
+  }
+  .container {
+    padding: 0 18px;
+  }
+
+  /* ── 1. Our Brand Philosophy (Pillar Cards Horizontal Touch Carousel) ── */
+  .matrixGrid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 16px;
+    padding: 12px 18px 28px;
+    margin: 0 -18px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .matrixGrid::-webkit-scrollbar {
+    display: none;
+  }
+  .pillarCard {
+    flex: 0 0 280px;
+    scroll-snap-align: center;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(75, 46, 43, 0.08);
+  }
+  .pillarImgWrap {
+    height: 180px;
+  }
+  .pillarBody {
+    padding: 20px 18px 22px;
+  }
+  .pillarCategory {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    margin-bottom: 6px;
+  }
+  .pillarTitle {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+  .pillarDesc {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .pillarBtn {
+    font-size: 12px;
+    padding-top: 12px;
+  }
+
+  /* ── Combo Engine Mobile ── */
+  .comboEngine {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  /* ── 2. Our Roots & Capabilities (Heritage & Horizontal Cap Cards) ── */
+  .heritageHeader {
+    margin-bottom: 30px;
+  }
+  .heritageGrid {
+    gap: 28px;
+  }
+  .heritageImageWrap {
+    height: 260px;
+    min-height: 0;
+    border-radius: 16px;
+  }
+  .heritageBadge {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+  .heritageBadgeNum {
+    font-size: 1.65rem;
+    margin-bottom: 4px;
+  }
+  .heritageBadgeLabel {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    padding-top: 4px;
+  }
+  .storyTitle {
+    margin-bottom: 14px;
+    max-width: none;
+    font-size: 1.55rem;
+  }
+  .storyLede {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .quoteCard {
+    padding: 20px 18px 18px;
+    margin-top: 20px;
+    border-radius: 16px;
+  }
+  .quoteMark {
+    left: 12px;
+    top: 6px;
+    font-size: 3.2rem;
+  }
+  .quoteText {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+  .capabilityGrid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 14px;
+    padding: 12px 18px 24px;
+    margin: 32px -18px 0;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .capabilityGrid::-webkit-scrollbar {
+    display: none;
+  }
+  .capCard {
+    flex: 0 0 250px;
+    scroll-snap-align: center;
+    padding: 16px 16px;
+    background: #ffffff;
+    border: 1px solid rgba(75, 46, 43, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 16px rgba(75, 46, 43, 0.04);
+  }
+  .capIconWrap {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(192, 133, 82, 0.1);
+    border: 1px solid rgba(192, 133, 82, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .capTitle {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+    color: var(--mahogany);
+  }
+  .capDesc {
+    font-size: 11.5px;
+    color: rgba(42, 26, 23, 0.7);
+  }
+
+  /* ── 3. Sister Ventures (Horizontal Touch Carousel) ── */
+  .groupGrid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 16px;
+    padding: 12px 18px 28px;
+    margin: 0 -18px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .groupGrid::-webkit-scrollbar {
+    display: none;
+  }
+  .groupCard {
+    flex: 0 0 285px;
+    scroll-snap-align: center;
+    padding: 22px 20px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid rgba(75, 46, 43, 0.12);
+    box-shadow: 0 8px 24px rgba(75, 46, 43, 0.05);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .groupFlagship {
+    flex: 0 0 300px;
+    scroll-snap-align: center;
+    padding: 22px 20px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #2A1A17 0%, #1c110f 100%);
+    border: 1px solid rgba(192, 133, 82, 0.35);
+  }
+  .groupFlagshipLead {
+    flex: none;
+  }
+  .groupFlagship .groupTitle {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+  }
+  .groupFlagship .groupLocation {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+  .groupFlagship .groupDesc {
+    padding-left: 0;
+    padding-top: 12px;
+    border-left: none;
+    border-top: 1px solid rgba(192, 133, 82, 0.25);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .groupIndex {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--copper);
+    background: rgba(192, 133, 82, 0.12);
+    border: 1px solid rgba(192, 133, 82, 0.25);
+    padding: 3px 10px;
+    border-radius: 100px;
+    top: 20px;
+    right: 16px;
+  }
+  .groupTag {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .groupTitle {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+  .groupLocation {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .groupDesc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(42, 26, 23, 0.78);
+  }
+
+  /* ── 4. Client-Centric Process (Horizontal Touch Carousel) ── */
+  .processGrid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 16px;
+    padding: 12px 18px 28px;
+    margin: 0 -18px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .processGrid::-webkit-scrollbar {
+    display: none;
+  }
+  .processCard {
+    flex: 0 0 270px;
+    scroll-snap-align: center;
+    padding: 22px 20px;
+    border-radius: 18px;
+    background: rgba(255, 248, 240, 0.05);
+    border: 1px solid rgba(192, 133, 82, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .processStepNum {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--copper-light);
+    background: rgba(192, 133, 82, 0.18);
+    border: 1px solid rgba(192, 133, 82, 0.35);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+  }
+  .processTitle {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: var(--ivory);
+  }
+  .processDesc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 248, 240, 0.75);
+  }
+  .bulletGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,32 @@
+:root {
+  /* Colors from Color Hunt */
+  --ivory: #FFF8F0;
+  --ivory-rgb: 255, 248, 240;
+  
+  --copper: #C08552;
+  --copper-rgb: 192, 133, 82;
+
+  --bronze: #8C5A3C;
+  --bronze-rgb: 140, 90, 60;
+  
+  --mahogany: #4B2E2B;
+  --mahogany-rgb: 75, 46, 43;
+  
+  --mahogany-muted: rgba(75, 46, 43, 0.7);
+  
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  /* Spacing */
+  --section-padding: clamp(4rem, 10vw, 12rem);
+  --container-max: 1440px;
+
+  /* Animation Eases */
+  --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-power3: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+[data-theme='dark'] {
+  --ivory: #1A1A1A;
+  --mahogany: #F5F5F0;
+}

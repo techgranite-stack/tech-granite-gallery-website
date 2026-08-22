@@ -1,0 +1,297 @@
+/* ═══════════════════════════════════════════════════════════
+   Horizontal Scroll Gallery — 3-D spherical arc
+   Same GSAP pin+scrub on ALL viewports.
+   CSS controls card size; JS reads from DOM.
+═══════════════════════════════════════════════════════════ */
+
+/* ── Section ── */
+.section {
+  background: var(--mahogany);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Decorative stone veining */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(-62deg,
+      transparent 0%,
+      transparent 28%,
+      rgba(192, 133, 82, 0.09) 28.5%,
+      rgba(192, 133, 82, 0.16) 29%,
+      rgba(192, 133, 82, 0.09) 29.5%,
+      transparent 30.5%,
+      transparent 46%,
+      rgba(192, 133, 82, 0.06) 46.4%,
+      rgba(192, 133, 82, 0.12) 46.8%,
+      rgba(192, 133, 82, 0.06) 47.2%,
+      transparent 48%,
+      transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  padding: 100px 40px 36px;
+  color: var(--ivory);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.header :global(.section-eyebrow) {
+  color: var(--copper-light);
+}
+
+.header :global(.section-eyebrow::before),
+.header :global(.section-eyebrow::after) {
+  background: var(--copper-light);
+}
+
+.header :global(.section-title) {
+  color: var(--ivory);
+}
+
+.header :global(.section-title em) {
+  color: var(--copper-light);
+}
+
+.header :global(.section-desc) {
+  color: rgba(255, 248, 240, 0.6);
+}
+
+/* ── Pin wrapper — fills the remaining viewport height ── */
+.pinWrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ── Horizontal track ── */
+.track {
+  display: flex;
+  gap: 24px;
+  padding: 0 80px;
+  will-change: transform;
+}
+
+/* ── Card — GSAP applies all 3-D transforms ── */
+.card {
+  flex: 0 0 400px;
+  height: 520px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  will-change: transform, opacity;
+}
+
+.imgWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .img {
+  transform: scale(1.04);
+}
+
+/* Overlay — JS drives opacity based on sphere position;
+   always has a minimum visible state so text is readable */
+.overlay {
+  position: absolute;
+  inset: 0;
+  /* Strong gradient so text pops against any image */
+  background: linear-gradient(to top,
+      rgba(40, 20, 18, 0.98) 0%,
+      rgba(40, 20, 18, 0.75) 35%,
+      rgba(40, 20, 18, 0.25) 65%,
+      transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px 28px;
+  /* Minimum 0.4 opacity so text is always readable — JS pushes center to 1 */
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+}
+
+.projType {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+  margin-bottom: 10px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.projTitle {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.viewBtn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+  text-decoration: none;
+  gap: 8px;
+  transition: gap 0.3s ease;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.viewBtn:hover {
+  gap: 14px;
+}
+
+/* Scroll hint (bottom-right, pulse animation) */
+.scrollHint {
+  position: absolute;
+  bottom: 28px;
+  right: 80px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 248, 240, 0.35);
+  animation: pulse 2.5s ease infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TABLET — slightly smaller cards
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .card {
+    flex: 0 0 340px;
+    height: 460px;
+  }
+
+  .track {
+    gap: 20px;
+    padding: 0 60px;
+  }
+
+  .scrollHint {
+    right: 60px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE — same horizontal scroll, smaller cards + tighter layout
+   The GSAP pin + scrub still drives everything; JS reads
+   card width/gap from the DOM, so no JS changes needed.
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .section {
+    /* Use dynamic viewport height on mobile so browser chrome doesn't cause shifts */
+    height: 100dvh;
+  }
+
+  .header {
+    padding: 56px 20px 20px;
+  }
+
+  .header :global(.section-title) {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+  }
+
+  .track {
+    gap: 16px;
+    padding: 0 32px;
+  }
+
+  .card {
+    flex: 0 0 270px;
+    height: 390px;
+    border-radius: 6px;
+  }
+
+  .overlay {
+    padding: 20px 18px;
+    /* Reset to slightly higher min on mobile — center card always sharp */
+    opacity: 0.5;
+  }
+
+  .projTitle {
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+  }
+
+  .projType {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  .viewBtn {
+    font-size: 11px;
+  }
+
+  .scrollHint {
+    right: 32px;
+    bottom: 20px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 0 0 230px;
+    height: 340px;
+  }
+
+  .track {
+    gap: 14px;
+    padding: 0 24px;
+  }
+
+  .scrollHint {
+    right: 24px;
+  }
+}

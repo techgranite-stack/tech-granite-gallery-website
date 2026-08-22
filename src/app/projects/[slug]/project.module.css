@@ -1,0 +1,530 @@
+/* ── Project Detail Page ── */
+
+.section {
+  padding: 96px 0;
+  background: var(--ivory);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* Left side content */
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--mahogany);
+  margin-top: 12px;
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+
+.sectionTitle em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.para {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(75, 46, 43, 0.8);
+  margin-bottom: 20px;
+}
+
+.group {
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgba(75, 46, 43, 0.08);
+  padding-bottom: 36px;
+}
+
+.group:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Architect Info Box */
+.architectBox {
+  background: rgba(192, 133, 82, 0.04);
+  border-left: 3px solid var(--copper);
+  padding: 20px 24px;
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 48px;
+}
+
+.archLabel {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(75, 46, 43, 0.5);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.archVal {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--mahogany);
+  font-weight: 400;
+}
+
+/* Materials & Finishes */
+.materialsGroup {
+  margin-bottom: 36px;
+}
+
+.groupTitle {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mahogany);
+  margin-bottom: 16px;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 100px;
+  background: transparent;
+  border: 1px solid var(--copper);
+  color: var(--copper);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pill:hover {
+  background: var(--copper);
+  color: var(--ivory);
+  transform: translateY(-2px);
+}
+
+.pillStatic {
+  border-color: rgba(75, 46, 43, 0.2);
+  color: var(--mahogany);
+}
+
+.pillStatic:hover {
+  background: var(--mahogany);
+  color: var(--ivory);
+  border-color: var(--mahogany);
+}
+
+.pillFinish {
+  border-color: var(--bronze);
+  color: var(--bronze);
+}
+
+.pillFinish:hover {
+  background: var(--bronze);
+  color: var(--ivory);
+  border-color: var(--bronze);
+}
+
+/* Right side details / gallery */
+.right {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Auto-crossfading slideshow (single spot, one image at a time) ── */
+.slideshow {
+  position: relative;
+  aspect-ratio: 3/2;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(75, 46, 43, 0.05);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease;
+}
+
+.slideActive {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slideImg {
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 6s ease-out;
+}
+
+/* Gentle Ken-Burns zoom on the visible slide */
+.slideActive .slideImg {
+  transform: scale(1.07);
+}
+
+.slideDots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.slideDot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.slideDot:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.slideDotActive {
+  width: 22px;
+  border-radius: 4px;
+  background: #fff;
+}
+
+/* Specifications Card */
+.specsBox {
+  background: white;
+  border: 1px solid rgba(75, 46, 43, 0.05);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 30px rgba(75, 46, 43, 0.02);
+}
+
+.specsTitle {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--mahogany);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.specsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(75, 46, 43, 0.05);
+}
+
+.specsRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.specsRow:first-child {
+  padding-top: 0;
+}
+
+.specsKey {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(75, 46, 43, 0.5);
+}
+
+.specsVal {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mahogany);
+}
+
+/* CTA Card */
+.ctaCard {
+  background: var(--mahogany);
+  padding: 36px;
+  border-radius: 16px;
+  color: var(--ivory);
+  box-shadow: 0 12px 40px rgba(75, 46, 43, 0.15);
+}
+
+.ctaCard h4 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+
+.ctaCard p {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255, 248, 240, 0.6);
+  margin-bottom: 24px;
+}
+
+/* Featured Stones Section */
+.stonesSection {
+  padding: 96px 0;
+  background: white;
+  border-top: 1px solid rgba(75, 46, 43, 0.05);
+}
+
+.stonesHeader {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 56px;
+}
+
+.stonesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stoneCard {
+  position: relative;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--mahogany);
+  box-shadow: 0 8px 25px rgba(75, 46, 43, 0.03);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stoneCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 35px rgba(75, 46, 43, 0.1);
+}
+
+.stoneImgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.stoneImg {
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stoneCard:hover .stoneImg {
+  transform: scale(1.08);
+}
+
+.stoneOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(75, 46, 43, 0.9) 0%, rgba(75, 46, 43, 0.2) 60%, transparent 100%);
+  z-index: 1;
+}
+
+.stoneContent {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+}
+
+.stoneTag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: rgba(255, 248, 240, 0.1);
+  border: 1px solid rgba(255, 248, 240, 0.2);
+  color: var(--copper-light);
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.stoneName {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ivory);
+  margin-bottom: 4px;
+}
+
+.stoneOrigin {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: rgba(255, 248, 240, 0.5);
+}
+
+/* Related Projects Section */
+.relatedSection {
+  padding: 96px 0;
+  background: var(--ivory);
+  border-top: 1px solid rgba(75, 46, 43, 0.05);
+}
+
+.relatedHeader {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 56px;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.relatedCard {
+  position: relative;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--mahogany);
+  box-shadow: 0 8px 25px rgba(75, 46, 43, 0.03);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.relatedCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 35px rgba(75, 46, 43, 0.1);
+}
+
+.relatedImgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.relatedImg {
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.relatedCard:hover .relatedImg {
+  transform: scale(1.08);
+}
+
+.relatedOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(75, 46, 43, 0.9) 0%, rgba(75, 46, 43, 0.2) 60%, transparent 100%);
+  z-index: 1;
+}
+
+.relatedContent {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+}
+
+.relatedCategory {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--copper-light);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.relatedName {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ivory);
+  margin-bottom: 4px;
+}
+
+.relatedSub {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: rgba(255, 248, 240, 0.5);
+}
+
+/* Responsive adjust */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .right {
+    position: static;
+  }
+  .stonesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .relatedGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section, .stonesSection, .relatedSection {
+    padding: 64px 0;
+  }
+  .container {
+    padding: 0 24px;
+  }
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  .stonesGrid, .relatedGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .stoneCard {
+    height: 280px;
+  }
+  .relatedCard {
+    height: 240px;
+  }
+  .ctaCard {
+    padding: 24px;
+  }
+}

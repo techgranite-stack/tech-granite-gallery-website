@@ -1,0 +1,50 @@
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--copper);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(192, 133, 82, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  will-change: transform;
+}
+
+.ring.expanded {
+  width: 60px;
+  height: 60px;
+  background: rgba(192, 133, 82, 0.08);
+  border-color: var(--copper);
+  transform: translate(-30px, -30px); /* Adjusted for larger size */
+}
+
+/* Hide the copper cursor over zoomable images and while the lightbox is open,
+   so the native magnifying-glass (zoom-in / zoom-out) cursor shows cleanly. */
+:global(body.cursor-magnify) .dot,
+:global(body.cursor-magnify) .ring,
+:global(body.lightbox-open) .dot,
+:global(body.lightbox-open) .ring {
+  opacity: 0 !important;
+}
+
+@media (pointer: coarse) {
+  .dot, .ring { display: none !important; }
+}

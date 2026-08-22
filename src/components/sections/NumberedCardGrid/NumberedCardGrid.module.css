@@ -1,0 +1,361 @@
+.section {
+  background: var(--ivory);
+  padding: var(--section-py) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  color: var(--mahogany);
+  font-weight: 300;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.sectionTitle em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.sectionDesc {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Marquee Strip ── */
+.marqueeWrap {
+  overflow: hidden;
+  border-top: 1px solid rgba(192, 133, 82, 0.22);
+  border-bottom: 1px solid rgba(192, 133, 82, 0.22);
+  padding: 14px 0;
+  margin-bottom: 80px;
+  background: rgba(192, 133, 82, 0.06);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: whyUsMarquee 45s linear infinite;
+}
+
+.marqueeWrap:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+.marqueeItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 32px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--copper-dark);
+  white-space: nowrap;
+}
+
+.marqueeGem {
+  font-size: 9px;
+  color: var(--copper);
+  opacity: 1;
+}
+
+@keyframes whyUsMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Grid — no vertical lines, only horizontal row dividers ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ── Card ── */
+.card {
+  padding: 52px 40px 48px;
+  position: relative;
+  background: var(--ivory);
+  border-bottom: 1px solid var(--stone-200);
+  transition: background 0.4s ease,
+    transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.45s ease;
+  overflow: hidden;
+  cursor: default;
+}
+
+/* Remove border on last row */
+.card:nth-child(n+4) {
+  border-bottom: none;
+}
+
+.card:hover {
+  background: var(--ivory);
+  transform: translateX(5px);
+  box-shadow: 0 20px 60px rgba(192, 133, 82, 0.14),
+    0 4px 16px rgba(192, 133, 82, 0.08);
+  z-index: 2;
+}
+
+/* ── Copper left bar — ONLY on hover, hidden at rest ── */
+.cardBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--copper-light), var(--copper));
+  transform: scaleY(0);
+  transform-origin: top center;
+  z-index: 5;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover .cardBorder {
+  transform: scaleY(1);
+}
+
+/* ── Ghost number ── */
+.number {
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  color: var(--copper);
+  margin-bottom: 20px;
+  opacity: 0.14;
+  letter-spacing: -0.04em;
+  font-weight: 300;
+  line-height: 1;
+  will-change: transform, opacity;
+  user-select: none;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .number {
+  opacity: 0.40 !important;
+  transform: translateX(6px);
+}
+
+/* ── Title ── */
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--mahogany);
+  margin-bottom: 14px;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  display: inline-block;
+  position: relative;
+  transition: color 0.35s ease, letter-spacing 0.35s ease;
+}
+
+/* Copper underline draws left→right on hover */
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--copper);
+  transition: width 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover .title::after {
+  width: 100%;
+}
+
+.card:hover .title {
+  color: var(--copper-dark);
+  letter-spacing: -0.01em;
+}
+
+/* ── Description ── */
+.desc {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-top: 18px;
+  transition: color 0.35s ease, transform 0.4s ease;
+}
+
+.card:hover .desc {
+  color: var(--mahogany);
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sectionTitle {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .marqueeWrap {
+    margin-bottom: 40px;
+    padding: 12px 0;
+  }
+
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE */
+    margin: 0 -20px;
+    padding: 0 20px 24px;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none; /* Safari/Chrome */
+  }
+
+  .card {
+    flex: 0 0 280px;
+    scroll-snap-align: center;
+    margin-right: 16px;
+    padding: 40px 28px 36px;
+    border: 1px solid var(--stone-200);
+    border-radius: var(--radius-md);
+    background: var(--ivory);
+    transition: all 0.4s ease;
+  }
+
+  /* Reset border-bottom settings */
+  .card:nth-child(n+3),
+  .card:nth-child(n+4) {
+    border-bottom: 1px solid var(--stone-200);
+  }
+
+  .card:last-child {
+    margin-right: 0;
+  }
+
+  .card.activeCard {
+    background: var(--ivory);
+    box-shadow: 0 12px 36px rgba(192, 133, 82, 0.12),
+      0 4px 12px rgba(192, 133, 82, 0.06);
+    border-color: var(--copper);
+    z-index: 2;
+  }
+
+  .card.activeCard .cardBorder {
+    transform: scaleY(1);
+  }
+
+  .card.activeCard .number {
+    opacity: 0.40 !important;
+    transform: translateX(6px);
+  }
+
+  .card.activeCard .title::after {
+    width: 100%;
+  }
+
+  .card.activeCard .title {
+    color: var(--copper-dark);
+    letter-spacing: -0.01em;
+  }
+
+  .card.activeCard .desc {
+    color: var(--mahogany);
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 640px) {
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+
+  .inner {
+    padding: 0 20px;
+  }
+}
+
+/* ── Dots indicator styling ── */
+.dots {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(192, 133, 82, 0.25);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .activeDot {
+    background: var(--copper);
+    width: 24px;
+    border-radius: 100px;
+  }
+}

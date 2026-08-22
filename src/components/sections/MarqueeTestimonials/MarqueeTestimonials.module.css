@@ -1,0 +1,312 @@
+/* ═══════════════════════════════════════════════════════════
+   Marquee Testimonials
+   Two rows scrolling in opposite directions.
+   Hover/tap pauses. Touch: tap-to-pause via JS.
+═══════════════════════════════════════════════════════════ */
+
+.section {
+  background: var(--ivory);
+  padding: var(--section-py) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Kashmiri Khatamband Lattice & Royal Paisley (Buta) Inlays ── */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z' fill='none' stroke='rgba(197,160,89,0.12)' stroke-width='0.75'/%3E%3Cpath d='M0 0 L60 60 M60 0 L0 60' fill='none' stroke='rgba(197,160,89,0.08)' stroke-width='0.5'/%3E%3Ccircle cx='30' cy='30' r='8' fill='none' stroke='rgba(197,160,89,0.15)' stroke-width='0.75'/%3E%3Ccircle cx='0' cy='0' r='6' fill='none' stroke='rgba(197,160,89,0.12)' stroke-width='0.5'/%3E%3Ccircle cx='60' cy='0' r='6' fill='none' stroke='rgba(197,160,89,0.12)' stroke-width='0.5'/%3E%3Ccircle cx='0' cy='60' r='6' fill='none' stroke='rgba(197,160,89,0.12)' stroke-width='0.5'/%3E%3Ccircle cx='60' cy='60' r='6' fill='none' stroke='rgba(197,160,89,0.12)' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3Csvg x='5%25' y='10%25' width='220' height='360' viewBox='0 0 100 160' opacity='0.20'%3E%3Cpath d='M50,150 C10,130 5,80 25,45 C35,28 45,15 50,0 C55,15 65,28 75,45 C95,80 90,130 50,150 Z' fill='none' stroke='rgba(197,160,89,1)' stroke-width='2'/%3E%3Cpath d='M50,135 C20,118 15,78 30,50 C38,36 46,24 50,12 C54,24 62,36 70,50 C85,78 80,118 50,135 Z' fill='none' stroke='rgba(197,160,89,0.7)' stroke-width='1' stroke-dasharray='2,2'/%3E%3Ccircle cx='50' cy='80' r='10' fill='none' stroke='rgba(197,160,89,0.8)' stroke-width='1.5'/%3E%3Cpath d='M50,60 L50,100 M30,80 L70,80' stroke='rgba(197,160,89,0.8)' stroke-width='1'/%3E%3Cpath d='M50,150 C50,110 50,70 50,0' fill='none' stroke='rgba(197,160,89,0.5)' stroke-width='1'/%3E%3C/svg%3E%3Csvg x='85%25' y='50%25' width='220' height='360' viewBox='0 0 100 160' opacity='0.20'%3E%3Cpath d='M50,150 C10,130 5,80 25,45 C35,28 45,15 50,0 C55,15 65,28 75,45 C95,80 90,130 50,150 Z' fill='none' stroke='rgba(197,160,89,1)' stroke-width='2'/%3E%3Cpath d='M50,135 C20,118 15,78 30,50 C38,36 46,24 50,12 C54,24 62,36 70,50 C85,78 80,118 50,135 Z' fill='none' stroke='rgba(197,160,89,0.7)' stroke-width='1' stroke-dasharray='2,2'/%3E%3Ccircle cx='50' cy='80' r='10' fill='none' stroke='rgba(197,160,89,0.8)' stroke-width='1.5'/%3E%3Cpath d='M50,60 L50,100 M30,80 L70,80' stroke='rgba(197,160,89,0.8)' stroke-width='1'/%3E%3Cpath d='M50,150 C50,110 50,70 50,0' fill='none' stroke='rgba(197,160,89,0.5)' stroke-width='1'/%3E%3C/svg%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  padding: 0 40px 64px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Marquee row wrapper ── */
+.marqueeWrap {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  /* Gradient fades on left and right for that cinematic edge-dissolve */
+  -webkit-mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%);
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%);
+}
+
+/* Gap between row 1 and row 2 */
+.rowGap {
+  height: 20px;
+}
+
+/* ── Scrolling track ── */
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  /* Pause state toggled by JS on touch/hover */
+  will-change: transform;
+}
+
+.trackLeft {
+  animation: scrollLeft 38s linear infinite;
+}
+
+.trackRight {
+  animation: scrollRight 44s linear infinite;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ── Card wrapper (fixed width so cards don't shrink) ── */
+.cardWrap {
+  flex: 0 0 400px;
+}
+
+/* ── Testimonial card ── */
+.card {
+  background: #fff;
+  border: 1px solid var(--stone-200);
+  border-radius: 2px;
+  padding: 36px 32px 32px;
+  min-height: 240px;
+  /* cards can grow if testimony is long */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: default;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+  overflow: hidden;
+}
+
+/* ── Hover / focus state — mahogany inversion ── */
+.card:hover,
+.card:focus-within {
+  background: var(--mahogany);
+  border-color: var(--mahogany);
+  box-shadow: 0 20px 56px rgba(75, 46, 43, 0.18);
+  transform: translateY(-6px);
+}
+
+/* Touch: :active gives the same lifted feel */
+@media (hover: none) {
+  .card:active {
+    background: var(--mahogany);
+    border-color: var(--mahogany);
+    transform: translateY(-3px);
+    transition-duration: 0.15s;
+  }
+
+  .card:active .quoteText {
+    color: var(--ivory);
+  }
+
+  .card:active .name {
+    color: var(--copper-light);
+  }
+
+  .card:active .role {
+    color: rgba(255, 248, 240, 0.6);
+  }
+
+  .card:active .avatar {
+    background: var(--copper);
+    color: #fff;
+  }
+
+  .card:active .authorDivider {
+    background: rgba(255, 248, 240, 0.15);
+  }
+
+  .card:active .quoteIcon {
+    color: var(--copper-light);
+    opacity: 0.5;
+  }
+}
+
+/* Text colour transitions on hover */
+.card:hover .quoteText {
+  color: var(--ivory);
+}
+
+.card:hover .name {
+  color: var(--copper-light);
+}
+
+.card:hover .role {
+  color: rgba(255, 248, 240, 0.6);
+}
+
+.card:hover .avatar {
+  background: var(--copper);
+  color: #fff;
+}
+
+.card:hover .authorDivider {
+  background: rgba(255, 248, 240, 0.15);
+}
+
+.card:hover .quoteIcon {
+  color: var(--copper-light);
+  opacity: 0.5;
+}
+
+/* ── Card internals ── */
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--mahogany);
+  color: var(--ivory);
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+.quoteIcon {
+  color: var(--copper);
+  opacity: 0.35;
+  flex-shrink: 0;
+  transition: color 0.35s ease, opacity 0.35s ease;
+}
+
+.quoteText {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-mid);
+  line-height: 1.75;
+  flex: 1;
+  transition: color 0.35s ease;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+  /* push to bottom of card */
+}
+
+.authorDivider {
+  height: 1px;
+  background: var(--stone-200);
+  margin-bottom: 14px;
+  transition: background 0.35s ease;
+}
+
+.name {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--mahogany);
+  transition: color 0.35s ease;
+}
+
+.role {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  transition: color 0.35s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE — narrower cards, tighter header
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 24px 44px;
+  }
+
+  .cardWrap {
+    flex: 0 0 290px;
+  }
+
+  .card {
+    padding: 28px 24px 26px;
+    min-height: 210px;
+    gap: 12px;
+  }
+
+  .quoteText {
+    font-size: 0.95rem;
+    -webkit-line-clamp: 3;
+  }
+
+  .name {
+    font-size: 12px;
+  }
+
+  .role {
+    font-size: 10px;
+  }
+
+  /* Slightly narrower gap on small screens */
+  .marqueeTrack {
+    gap: 14px;
+  }
+
+  .rowGap {
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardWrap {
+    flex: 0 0 260px;
+  }
+
+  .card {
+    padding: 24px 20px;
+    min-height: 200px;
+  }
+}

@@ -1,0 +1,286 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background-color: var(--mahogany);
+}
+
+/* ── Taller on collection listing pages ── */
+.hero.centered {
+  min-height: 520px;
+  align-items: center;
+}
+
+/* ── Full 100vh Hero Banner (matching Homepage HeroSlider) ── */
+.hero.fullHeight {
+  height: 100vh;
+  min-height: 680px;
+  align-items: center;
+  padding-top: 80px;
+}
+
+/* ── Background image ── */
+.imgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  will-change: transform, opacity;
+}
+
+.img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Gradient Overlays ── */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(18, 14, 12, 0.62) 0%,
+    rgba(18, 14, 12, 0.34) 45%,
+    rgba(18, 14, 12, 0.08) 80%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.gradientBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to top, rgba(18, 14, 12, 0.8) 0%, transparent 100%);
+  z-index: 2;
+}
+
+/* ── Kashmiri top accent ── */
+.topAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--copper), var(--copper-light), var(--copper), transparent);
+  z-index: 10;
+  opacity: 0.9;
+}
+
+/* ── Content ── */
+.content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 80px 40px 64px;
+}
+
+.centered .content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.crumbItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.crumbLink {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 248, 240, 0.55);
+  transition: color 0.25s ease;
+}
+
+.crumbLink:hover {
+  color: var(--copper-light);
+}
+
+.crumbSep {
+  font-size: 12px;
+  color: rgba(255, 248, 240, 0.35);
+}
+
+.crumbCurrent {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+}
+
+/* ── Eyebrow ── */
+.eyebrow {
+  color: var(--copper-light) !important;
+  margin-bottom: 12px;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  background: var(--copper-light) !important;
+}
+
+/* ── Title ── */
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 300;
+  color: var(--ivory);
+  line-height: 1.05;
+  margin-bottom: 0;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+.title em {
+  font-style: italic;
+  color: var(--copper-light);
+}
+
+/* ── Copper accent line ── */
+.copperLine {
+  width: 48px;
+  height: 1.5px;
+  background: var(--copper);
+  margin: 20px 0;
+}
+
+.centered .copperLine {
+  margin: 20px auto;
+}
+
+/* ── Subtitle ── */
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: rgba(255, 248, 240, 0.72);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.centered .subtitle {
+  text-align: center;
+}
+
+/* ── Spec Badges ── */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.centered .badges {
+  justify-content: center;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 18px;
+  background: rgba(255, 248, 240, 0.08);
+  border: 1px solid rgba(255, 248, 240, 0.15);
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  min-width: 100px;
+}
+
+.badgeValue {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--copper-light);
+  line-height: 1.2;
+}
+
+.badgeLabel {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 248, 240, 0.5);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 380px;
+  }
+  
+  .content {
+    padding: 60px 20px 48px;
+  }
+
+  .title {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .badge {
+    min-width: 80px;
+    padding: 8px 14px;
+  }
+}
+
+/* Slide controls (dots) for background slideshow */
+.controls {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 248, 240, 0.35);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dotActive {
+  width: 24px;
+  border-radius: 3px;
+  background: var(--copper-light);
+}
+
+@media (max-width: 768px) {
+  .controls {
+    bottom: 16px;
+  }
+}

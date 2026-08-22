@@ -1,0 +1,16 @@
+.wordReveal {
+  display: inline-block;
+}
+
+.wordClip {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: 1.15;
+}
+
+.wordInner {
+  display: inline-block;
+  will-change: transform;
+  /* Initial state is handled by GSAP in the parent component */
+}

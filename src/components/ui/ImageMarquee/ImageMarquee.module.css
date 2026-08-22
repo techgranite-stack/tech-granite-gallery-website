@@ -1,0 +1,35 @@
+.strip {
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll linear infinite;
+  will-change: transform;
+}
+
+.item {
+  flex-shrink: 0;
+  margin-right: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}
+
+@media (max-width: 768px) {
+  .item { margin-right: 16px; }
+}

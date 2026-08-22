@@ -1,0 +1,261 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--stone-200);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* ── Image ── */
+.imgWrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: block;
+  overflow: hidden;
+  background: var(--stone-100);
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .img {
+  transform: scale(1.06);
+}
+
+/* ── Tag badge ── */
+.tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 4px 10px;
+  background: var(--copper);
+  color: var(--ivory);
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  z-index: 2;
+}
+
+/* ── Colour chips ── */
+.colorChips {
+  position: absolute;
+  bottom: 56px;
+  left: 14px;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .colorChips {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chip {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.7);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+
+/* colour swatches */
+.chip_white   { background: #f8f5f0; }
+.chip_black   { background: #1a1a1a; }
+.chip_grey    { background: #888; }
+.chip_pink    { background: #e8a0a0; }
+.chip_red     { background: #b03030; }
+.chip_green   { background: #3a7a3a; }
+.chip_brown   { background: #7a4a2a; }
+.chip_blue    { background: #3a60a0; }
+.chip_yellow  { background: #d4a820; }
+.chip_beige   { background: #d4b896; }
+.chip_multi   { background: linear-gradient(135deg, #b03030 33%, #3a7a3a 33% 66%, #3a60a0 66%); }
+
+/* ── Hover overlay ── */
+.hoverOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(75,46,43,0.55) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+}
+
+.card:hover .hoverOverlay {
+  opacity: 1;
+}
+
+.viewBtn {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  border-bottom: 1px solid var(--copper-light);
+  padding-bottom: 2px;
+}
+
+/* ── Body ── */
+.body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.category {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+.origin {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--mahogany);
+  line-height: 1.2;
+}
+
+.name a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.name a:hover {
+  color: var(--copper);
+}
+
+.altName {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.tagline {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* ── Actions ── */
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.detailsBtn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  background: var(--copper);
+  color: var(--ivory);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1.5px solid var(--copper);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.detailsBtn:hover {
+  background: var(--copper-dark, #8C5A3C);
+  border-color: var(--copper-dark, #8C5A3C);
+}
+
+.waBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px 14px;
+  background: transparent;
+  color: var(--copper-dark, #8C5A3C);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1.5px solid rgba(192, 133, 82, 0.3);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.waBtn:hover {
+  background: #25D366;
+  color: #fff;
+  border-color: #25D366;
+}
+
+/* ── Mobile (2 col) ── */
+@media (max-width: 480px) {
+  .body    { padding: 12px 14px 14px; }
+  .name    { font-size: 1.05rem; }
+  .tagline { display: none; }
+}
+
+/* ── Compact (3 col ~110px) ── */
+@media (max-width: 480px) {
+  /* When card is very narrow, stack actions vertically and shrink text */
+  .actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .detailsBtn { font-size: 9px; padding: 7px 8px; }
+  .waBtn      { font-size: 9px; padding: 7px 8px; }
+
+  /* Shorter image so more cards fit in viewport */
+  .imgWrap { aspect-ratio: 1 / 1; }
+
+  /* Hide category meta on tiny cards */
+  .origin { display: none; }
+}

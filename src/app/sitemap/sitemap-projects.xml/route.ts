@@ -1,6 +1,5 @@
 import { projectsData } from '@/lib/project-data';
-
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://granitegalleryindia.com';
+import { SITE_URL } from '@/lib/seo-url';
 
 export async function GET() {
   const lastMod = new Date().toISOString();
@@ -12,7 +11,7 @@ export async function GET() {
   projectsData.forEach((p) => {
     xml += `
   <url>
-    <loc>${BASE_URL}/projects/${p.slug}</loc>
+    <loc>${SITE_URL}/projects/${p.slug}</loc>
     <lastmod>${lastMod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

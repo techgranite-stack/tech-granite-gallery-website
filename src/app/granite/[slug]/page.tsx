@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: product.metaTitle,
     description: product.metaDescription,
     keywords: product.keywords,
+    alternates: { canonical: `/granite/${product.slug}` },
     openGraph: {
       title: product.metaTitle,
       description: product.metaDescription,

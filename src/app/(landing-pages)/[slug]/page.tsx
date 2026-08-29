@@ -36,6 +36,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
       title: colorPage.metaTitle,
       description: colorPage.metaDescription,
       keywords: colorPage.keywords,
+      alternates: { canonical: `/${colorPage.slug}` },
       openGraph: {
         title: colorPage.metaTitle,
         description: colorPage.metaDescription,
@@ -51,6 +52,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
       title: pageData.metadata.title,
       description: pageData.metadata.description,
       keywords: pageData.metadata.keywords,
+      alternates: { canonical: `/${pageData.slug}` },
     };
   }
 

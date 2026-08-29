@@ -1,6 +1,5 @@
 import { blogPostsData } from '@/lib/blog-data';
-
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://granitegalleryindia.com';
+import { SITE_URL } from '@/lib/seo-url';
 
 export async function GET() {
   const lastMod = new Date().toISOString();
@@ -12,7 +11,7 @@ export async function GET() {
   blogPostsData.forEach((b) => {
     xml += `
   <url>
-    <loc>${BASE_URL}/blogs/${b.slug}</loc>
+    <loc>${SITE_URL}/blogs/${b.slug}</loc>
     <lastmod>${lastMod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

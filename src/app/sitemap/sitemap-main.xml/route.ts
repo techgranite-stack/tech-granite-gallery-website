@@ -1,9 +1,6 @@
 import { landingPages } from '@/lib/landing-pages-data';
 import { productsData } from '@/lib/product-data';
-
-const BASE = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_PUBLIC_APP_URL ?? 'https://granitegalleryindia.com'
-).replace(/\/$/, '');
+import { SITE_URL } from '@/lib/seo-url';
 
 export async function GET() {
   const lastMod = new Date().toISOString();
@@ -31,7 +28,7 @@ export async function GET() {
   for (const r of staticRoutes) {
     xml += `
   <url>
-    <loc>${BASE}${r.path}</loc>
+    <loc>${SITE_URL}${r.path}</loc>
     <lastmod>${lastMod}</lastmod>
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
@@ -41,7 +38,7 @@ export async function GET() {
   for (const cat of categories) {
     xml += `
   <url>
-    <loc>${BASE}/collections/${cat}</loc>
+    <loc>${SITE_URL}/collections/${cat}</loc>
     <lastmod>${lastMod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -52,7 +49,7 @@ export async function GET() {
   for (const page of Object.values(landingPages)) {
     xml += `
   <url>
-    <loc>${BASE}/${page.slug}</loc>
+    <loc>${SITE_URL}/${page.slug}</loc>
     <lastmod>${lastMod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

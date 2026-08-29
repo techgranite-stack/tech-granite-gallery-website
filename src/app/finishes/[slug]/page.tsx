@@ -5,18 +5,22 @@ import Image from 'next/image';
 import PageHero from '@/components/sections/PageHero';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import FAQAccordion from '@/components/sections/FAQAccordion';
-import { finishesData, mockFinishFallback } from '@/lib/finish-data';
+import { finishesData } from '@/lib/finish-data';
 import styles from './finish.module.css';
 
+// Unknown slugs 404 at the routing layer instead of rendering placeholder content.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  return [...finishesData, mockFinishFallback].map((f) => ({ slug: f.slug }));
+  return finishesData.map((f) => ({ slug: f.slug }));
 }
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
   const { slug } = await params;
-  const finish = finishesData.find((f) => f.slug === slug) ?? mockFinishFallback;
+  const finish = finishesData.find((f) => f.slug === slug);
+  if (!finish) return {};
   return {
     title: finish.metaTitle,
     description: finish.metaDescription,
@@ -34,7 +38,8 @@ export default async function FinishDetailPage(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
-  const finish = finishesData.find((f) => f.slug === slug) ?? mockFinishFallback;
+  const finish = finishesData.find((f) => f.slug === slug);
+  if (!finish) notFound();
 
   // Other finishes for related section
   const related = finishesData.filter((f) => f.slug !== slug).slice(0, 4);

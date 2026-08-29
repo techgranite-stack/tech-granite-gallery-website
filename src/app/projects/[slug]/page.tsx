@@ -5,20 +5,24 @@ import Image from 'next/image';
 import PageHero from '@/components/sections/PageHero';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import ProjectGallery from './ProjectGallery';
-import { projectsData, mockProjectFallback } from '@/lib/project-data';
+import { projectsData } from '@/lib/project-data';
 import { productsData } from '@/lib/product-data';
 import { resolveCollectionImage } from '@/lib/product-detail';
 import styles from './project.module.css';
 
+// Unknown slugs 404 at the routing layer instead of rendering placeholder content.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  return [...projectsData, mockProjectFallback].map((p) => ({ slug: p.slug }));
+  return projectsData.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
   const { slug } = await params;
-  const project = projectsData.find((p) => p.slug === slug) ?? mockProjectFallback;
+  const project = projectsData.find((p) => p.slug === slug);
+  if (!project) return {};
   return {
     title: project.metaTitle,
     description: project.metaDescription,
@@ -36,7 +40,8 @@ export default async function ProjectDetailPage(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
-  const project = projectsData.find((p) => p.slug === slug) ?? mockProjectFallback;
+  const project = projectsData.find((p) => p.slug === slug);
+  if (!project) notFound();
 
   // Featured stones: materials that map to a product page AND ship owned imagery.
   // Products still on placeholder stock photos are skipped — every material is

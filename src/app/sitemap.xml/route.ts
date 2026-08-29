@@ -1,53 +1,42 @@
 /**
- * Sitemap index — lists every category sub-sitemap.
+ * Sitemap index — lists every sub-sitemap.
  *
- * To add a new category sub-sitemap:
+ * To add a new sub-sitemap:
  *   1. Create src/app/sitemap/sitemap-<category>.xml/route.ts
- *   2. Import its count function below and add one <sitemap> entry.
+ *   2. Add its filename to SUB_SITEMAPS below.
  * The sub-sitemap itself derives its URLs purely from a data array import.
+ *
+ * The <sitemap> element accepts only <loc> and <lastmod> per the sitemaps.org
+ * 0.9 schema. This file previously emitted a <count> child, which is not part
+ * of the spec — validators reject it and parsers may discard the entry. The
+ * per-sitemap URL counts it carried were also drifting out of sync with the
+ * routes they described (main was hardcoded to 9 against 10 static paths), so
+ * they are gone rather than corrected.
  */
 
-import { productsData }                   from '@/lib/product-data';
-import { finishesData }                   from '@/lib/finish-data';
-import { applicationsData }               from '@/lib/application-data';
-import { blogPostsData }                  from '@/lib/blog-data';
-import { projectsData }                   from '@/lib/project-data';
-import { getAllMarble, getAllGranite, colorPages } from '@/data/stone-index';
-import { landingPages }                   from '@/lib/landing-pages-data';
-import { teamMembers }                     from '@/data/team';
+import { SITE_URL } from '@/lib/seo-url';
 
-const BASE = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_PUBLIC_APP_URL ?? 'https://granitegalleryindia.com'
-).replace(/\/$/, '');
-
-interface SubSitemap {
-  path: string;   // relative path under /sitemap/
-  count: number;
-}
+const SUB_SITEMAPS = [
+  'sitemap-main.xml',
+  'sitemap-marble.xml',
+  'sitemap-granite.xml',
+  'sitemap-colors.xml',
+  'sitemap-products.xml',
+  'sitemap-finishes.xml',
+  'sitemap-applications.xml',
+  'sitemap-blogs.xml',
+  'sitemap-projects.xml',
+  'sitemap-team.xml',
+] as const;
 
 export async function GET() {
   const lastMod = new Date().toISOString();
 
-  // Every sub-sitemap with its live count (auto-updates as data grows)
-  const subs: SubSitemap[] = [
-    { path: 'sitemap-main.xml',         count: 9 + new Set(productsData.map((p) => p.type)).size + Object.keys(landingPages).length },
-    { path: 'sitemap-marble.xml',       count: getAllMarble().length + 1 },         // +1 for /marble listing
-    { path: 'sitemap-granite.xml',      count: getAllGranite().length + 1 },        // +1 for /granite listing
-    { path: 'sitemap-colors.xml',       count: colorPages.length },
-    { path: 'sitemap-products.xml',     count: productsData.length + getAllMarble().length + getAllGranite().length },
-    { path: 'sitemap-finishes.xml',     count: finishesData.length },
-    { path: 'sitemap-applications.xml', count: applicationsData.length },
-    { path: 'sitemap-blogs.xml',        count: blogPostsData.length },
-    { path: 'sitemap-projects.xml',     count: projectsData.length },
-    { path: 'sitemap-team.xml',         count: teamMembers.length },
-  ];
-
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${subs.map(({ path, count }) => `  <sitemap>
-    <loc>${BASE}/sitemap/${path}</loc>
-    <count>${count}</count>
+${SUB_SITEMAPS.map((path) => `  <sitemap>
+    <loc>${SITE_URL}/sitemap/${path}</loc>
     <lastmod>${lastMod}</lastmod>
   </sitemap>`).join('\n')}
 </sitemapindex>`;

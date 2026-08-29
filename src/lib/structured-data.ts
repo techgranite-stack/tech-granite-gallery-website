@@ -7,10 +7,7 @@
 
 import type { StoneProduct } from '@/types/stone';
 import { productPath } from '@/types/stone';
-
-const BASE = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_PUBLIC_APP_URL ?? 'https://granitegalleryindia.com'
-).replace(/\/$/, '');
+import { SITE_URL } from '@/lib/seo-url';
 
 const ORG = {
   '@type': 'Organization',
@@ -32,14 +29,14 @@ export function productJsonLd(stone: StoneProduct) {
     ...(stone.altNames?.length ? { alternateName: stone.altNames } : {}),
     material: stone.name,
     brand: { '@type': 'Brand', name: 'Granite Gallery' },
-    url: `${BASE}${productPath(stone)}`,
+    url: `${SITE_URL}${productPath(stone)}`,
     offers: {
       '@type': 'Offer',
       availability: stone.inStock === false
         ? 'https://schema.org/OutOfStock'
         : 'https://schema.org/InStock',
       priceCurrency: 'INR',
-      url: `${BASE}${productPath(stone)}`,
+      url: `${SITE_URL}${productPath(stone)}`,
       seller: ORG,
     },
   };
@@ -53,9 +50,9 @@ export function breadcrumbJsonLd(stone: StoneProduct) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE },
-      { '@type': 'ListItem', position: 2, name: categoryLabel, item: `${BASE}/${categorySlug}` },
-      { '@type': 'ListItem', position: 3, name: stone.name, item: `${BASE}${productPath(stone)}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: categoryLabel, item: `${SITE_URL}/${categorySlug}` },
+      { '@type': 'ListItem', position: 3, name: stone.name, item: `${SITE_URL}${productPath(stone)}` },
     ],
   };
 }

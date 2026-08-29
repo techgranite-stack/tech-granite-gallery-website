@@ -1,8 +1,5 @@
 import { getAllMarble } from '@/data/stone-index';
-
-const BASE = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_PUBLIC_APP_URL ?? 'https://granitegalleryindia.com'
-).replace(/\/$/, '');
+import { SITE_URL } from '@/lib/seo-url';
 
 export async function GET() {
   const lastMod = new Date().toISOString();
@@ -10,19 +7,14 @@ export async function GET() {
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Marble listing page -->
-  <url>
-    <loc>${BASE}/marble</loc>
-    <lastmod>${lastMod}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>`;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+  // The /marble listing page itself lives in sitemap-main.xml alongside every
+  // other listing page — carrying it here too put it in two sitemaps at once.
 
   for (const stone of stones) {
     xml += `
   <url>
-    <loc>${BASE}/marble/${stone.slug}</loc>
+    <loc>${SITE_URL}/marble/${stone.slug}</loc>
     <lastmod>${lastMod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>

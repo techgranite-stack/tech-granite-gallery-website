@@ -1,8 +1,5 @@
 import { colorPages } from '@/data/stone-index';
-
-const BASE = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_PUBLIC_APP_URL ?? 'https://granitegalleryindia.com'
-).replace(/\/$/, '');
+import { SITE_URL } from '@/lib/seo-url';
 
 export async function GET() {
   const lastMod = new Date().toISOString();
@@ -14,7 +11,7 @@ export async function GET() {
   for (const cp of colorPages) {
     xml += `
   <url>
-    <loc>${BASE}/${cp.slug}</loc>
+    <loc>${SITE_URL}/${cp.slug}</loc>
     <lastmod>${lastMod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

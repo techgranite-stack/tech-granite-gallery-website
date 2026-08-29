@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   title: seo.metaTitle,
   description: seo.metaDescription,
   keywords: seo.keywords,
+  alternates: { canonical: '/granite' },
   openGraph: {
     title: seo.metaTitle,
     description: seo.metaDescription,

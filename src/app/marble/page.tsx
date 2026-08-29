@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   title: seo.metaTitle,
   description: seo.metaDescription,
   keywords: seo.keywords,
+  alternates: { canonical: '/marble' },
   openGraph: {
     title: seo.metaTitle,
     description: seo.metaDescription,

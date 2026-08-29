@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import PageHero from '@/components/sections/PageHero';
 import BannerContactForm from '@/components/sections/BannerContactForm';
@@ -6,16 +7,19 @@ import FAQAccordion from '@/components/sections/FAQAccordion';
 import StoneCard from '@/components/ui/StoneCard';
 import Reveal from '@/components/ui/Reveal';
 import ProductCatalog from '@/components/sections/ProductCatalog';
-import { productsData, mockProductFallback } from '@/lib/product-data';
+import { productsData } from '@/lib/product-data';
 import { fromCollectionProduct } from '@/lib/listing-item';
 import { fromCollectionDetail, resolveCollectionImage } from '@/lib/product-detail';
 import { categories } from '@/data/categories';
 import relatedStyles from '@/components/sections/RelatedStones/RelatedStones.module.css';
 
 // ── Static Params ──────────────────────────────────────────────
+// Unknown category/slug pairs 404 at the routing layer instead of rendering
+// the Carrara White placeholder that used to be prebuilt and submitted.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  const allProducts = [...productsData, mockProductFallback];
-  return allProducts.map((p) => ({
+  return productsData.map((p) => ({
     category: p.type,
     slug: p.slug,
   }));
@@ -25,8 +29,9 @@ export async function generateStaticParams() {
 export async function generateMetadata(
   { params }: { params: Promise<{ category: string; slug: string }> }
 ): Promise<Metadata> {
-  const { slug } = await params;
-  const product = productsData.find((p) => p.slug === slug) ?? mockProductFallback;
+  const { category, slug } = await params;
+  const product = productsData.find((p) => p.slug === slug);
+  if (!product || product.type !== category) return {};
   return {
     title: product.metaTitle,
     description: product.metaDescription,
@@ -44,7 +49,10 @@ export default async function ProductDetailPage(
   { params }: { params: Promise<{ category: string; slug: string }> }
 ) {
   const { category, slug } = await params;
-  const product = productsData.find((p) => p.slug === slug) ?? mockProductFallback;
+  const product = productsData.find((p) => p.slug === slug);
+  // Pin the product to its own category: previously any category segment
+  // resolved, so one product was reachable at several URLs.
+  if (!product || product.type !== category) notFound();
   const cat = categories.find((c) => c.id === category);
 
   // Related products (same type, different slug)

@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# next.js build output
+.next/
+out/
+
+# env — never commit secrets (RESEND_API_KEY lives here)
+.env
+.env.local
+.env.development
+.env.production
+
+# typescript
+tsconfig.tsbuildinfo
+next-env.d.ts
+
+# os
+.DS_Store

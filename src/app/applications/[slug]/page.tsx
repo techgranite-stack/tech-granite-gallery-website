@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import PageHero from '@/components/sections/PageHero';
 import RelatedGrid from '@/components/sections/RelatedGrid';
 import CoverflowCarousel from '@/components/sections/CoverflowCarousel';
@@ -10,7 +11,7 @@ import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
 import ApplicationGallery from './ApplicationGallery';
 import { testimonials } from '@/data/testimonials';
-import { applicationsData, mockApplicationFallback } from '@/lib/application-data';
+import { applicationsData } from '@/lib/application-data';
 import { productsData } from '@/lib/product-data';
 import { projectsData } from '@/lib/project-data';
 
@@ -98,15 +99,19 @@ const getTechnicalBadge = (slug: string): string => {
   }
 };
 
+// Unknown slugs 404 at the routing layer instead of rendering placeholder content.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  return [...applicationsData, mockApplicationFallback].map((a) => ({ slug: a.slug }));
+  return applicationsData.map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
   const { slug } = await params;
-  const app = applicationsData.find((a) => a.slug === slug) ?? mockApplicationFallback;
+  const app = applicationsData.find((a) => a.slug === slug);
+  if (!app) return {};
   return {
     title: app.metaTitle,
     description: app.metaDescription,
@@ -124,7 +129,8 @@ export default async function ApplicationDetailPage(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
-  const app = applicationsData.find((a) => a.slug === slug) ?? mockApplicationFallback;
+  const app = applicationsData.find((a) => a.slug === slug);
+  if (!app) notFound();
 
   // Majestic two-part title components
   const { title, titleEm } = getMajesticTitleParts(app.slug, app.title);

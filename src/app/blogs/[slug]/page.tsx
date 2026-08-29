@@ -4,19 +4,23 @@ import Link from 'next/link';
 import Image from 'next/image';
 import PageHero from '@/components/sections/PageHero';
 import BannerContactForm from '@/components/sections/BannerContactForm';
-import { blogPostsData, mockBlogFallback } from '@/lib/blog-data';
+import { blogPostsData } from '@/lib/blog-data';
 import { getTeamMember } from '@/data/team';
 import styles from './blog.module.css';
 
+// Unknown slugs 404 at the routing layer instead of rendering placeholder content.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  return [...blogPostsData, mockBlogFallback].map((p) => ({ slug: p.slug }));
+  return blogPostsData.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
   const { slug } = await params;
-  const post = blogPostsData.find((p) => p.slug === slug) ?? mockBlogFallback;
+  const post = blogPostsData.find((p) => p.slug === slug);
+  if (!post) return {};
   return {
     title: post.metaTitle,
     description: post.metaDescription,
@@ -120,7 +124,8 @@ export default async function BlogDetailPage(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
-  const post = blogPostsData.find((p) => p.slug === slug) ?? mockBlogFallback;
+  const post = blogPostsData.find((p) => p.slug === slug);
+  if (!post) notFound();
   const authorMember = post.authorSlug ? getTeamMember(post.authorSlug) : undefined;
 
   // Format date and other items

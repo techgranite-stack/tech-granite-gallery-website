@@ -74,7 +74,7 @@ export default async function ProjectDetailPage(
   if (project.area) badges.push({ value: project.area, label: 'Area Covered' });
 
   return (
-    <main>
+    <>
       {/* Schema injection */}
       <script
         type="application/ld+json"
@@ -256,6 +256,6 @@ export default async function ProjectDetailPage(
       )}
 
       <BannerContactForm />
-    </main>
+    </>
   );
 }

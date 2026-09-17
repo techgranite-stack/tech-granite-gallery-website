@@ -77,7 +77,7 @@ export const mockProductFallback: Product = {
   longDescription: `Quarried from the mountains of Carrara in the Tuscany region of Northern Italy, Carrara White Marble has been the stone of choice for Renaissance masters and today's most visionary architects alike. Its signature soft grey veining dances across a brilliant crystalline-white base, offering organic elegance that no artificial material can replicate.
 
 This ultra-premium stone is ideal for spaces that demand both grandeur and restraint. From bookmatched feature walls in five-star hotel lobbies to seamless kitchen island slabs — Carrara transforms every surface into a work of art.`,
-  metaTitle: 'Carrara White Marble Slabs — Direct Exporters | Granite Gallery',
+  metaTitle: 'Carrara White Marble Slabs — Direct Exporters',
   metaDescription: 'Source premium Carrara White Italian Marble slabs directly from Kishangarh. Mirror polished, honed & brushed finishes. Global export. Get quote.',
   whatsappMsg: "Hello, I'm interested in Carrara White Marble. Please share slab details and pricing.",
   faqs: [
@@ -128,7 +128,7 @@ export const productsData: Product[] = [
     longDescription: `Calacatta Gold is widely regarded as the most luxurious marble on earth. Unlike its close cousin Carrara, Calacatta features bolder, more dramatic veining in shades of warm gold and deep grey — all set against a brilliant, almost luminous white background.
 
 Extracted from a single quarry zone in the Apuan Alps of Carrara, each slab is a unique geological painting. Its rarity and striking visual impact make it the material of choice for the world's most exclusive interiors — from presidential suites to private superyacht bathrooms.`,
-    metaTitle: 'Calacatta Gold Italian Marble Slabs | Direct Export — Granite Gallery',
+    metaTitle: 'Calacatta Gold Italian Marble Slabs | Direct Export',
     metaDescription: 'Premium Calacatta Gold Italian Marble — bold gold veining on brilliant white. Direct export from Kishangarh. Mirror polished & honed finishes available.',
     whatsappMsg: "Hello, I'm interested in Calacatta Gold Marble. Please share slab availability and pricing.",
     faqs: [
@@ -175,7 +175,7 @@ Extracted from a single quarry zone in the Apuan Alps of Carrara, each slab is a
     longDescription: `Statuario — literally "of the sculptor" in Italian — is the marble Michelangelo selected for the David. Its pure, unadulterated white background carries dramatic, expressive veining in shades of deep charcoal and warm grey. No two slabs are identical, making every installation a one-of-a-kind artistic statement.
 
 Historically reserved for the world's greatest sculptures and monuments, Statuario is now the defining stone of ultra-luxury residential and hospitality design. Its crystalline surface responds magnificently to bookmatching — creating symmetrical vein patterns that read as abstract masterpieces.`,
-    metaTitle: 'Statuario Luxe Italian Marble — Bookmatched Slabs | Granite Gallery',
+    metaTitle: 'Statuario Luxe Italian Marble — Bookmatched Slabs',
     metaDescription: 'Premium Statuario Marble from Carrara, Italy. Dramatic charcoal veining on pure white. Bookmatched slabs available. Export from Kishangarh.',
     whatsappMsg: "Hello, I'm interested in Statuario Luxe Marble. Please share slab availability and pricing.",
     faqs: [
@@ -222,7 +222,7 @@ Historically reserved for the world's greatest sculptures and monuments, Statuar
     longDescription: `Quarried from deep within the Deccan Plateau of Karnataka, Absolute Black Granite is the definitive statement stone for architects who demand total visual control. Its near-perfect uniform jet-black surface, devoid of any visible grain or mineral variation, creates an effect of pure, bold modernity.
 
 With a hardness of 7 on the Mohs scale, Absolute Black is among the most durable natural stones on earth — making it equally suited to heavy-traffic commercial flooring as to precision-engineered kitchen worktops. The flamed finish creates a beautifully rough, anti-slip surface ideal for exterior terraces and pool decks.`,
-    metaTitle: 'Absolute Black Granite Slabs — India | Granite Gallery Kishangarh',
+    metaTitle: 'Absolute Black Granite Slabs | Kishangarh, India',
     metaDescription: 'Premium Absolute Black Granite from Karnataka. Polished, flamed & honed finishes. Zero grain. Commercial & residential. Export from Kishangarh.',
     whatsappMsg: "Hello, I'm interested in Absolute Black Granite. Please share slab availability and pricing.",
     faqs: [
@@ -315,7 +315,7 @@ This remarkable property makes it the definitive choice for statement backlit fe
     longDescription: `Quarried near the city of Drama in northern Greece, Volakas Marble is celebrated for its warm, creamy-white base adorned with elegant, delicate veining in soft grey and subtle rose tones. It possesses the quiet sophistication of classic Mediterranean architecture.
 
 Its relative consistency of patterning makes it an excellent choice for large-format floor installations and dramatic staircase runs where a cohesive, refined aesthetic is essential. Volakas polishes to a beautiful high-sheen surface while its honed finish offers a more understated, matte luxuriousness.`,
-    metaTitle: 'Volakas White Greek Marble Slabs | Granite Gallery Kishangarh',
+    metaTitle: 'Volakas White Greek Marble Slabs | Kishangarh',
     metaDescription: 'Premium Volakas White Marble from Greece. Warm white with delicate grey veining. Polished & honed finishes. Direct export from Kishangarh.',
     whatsappMsg: "Hello, I'm interested in Volakas Classic Marble. Please share slab availability and pricing.",
     faqs: [
@@ -362,7 +362,7 @@ Its relative consistency of patterning makes it an excellent choice for large-fo
     longDescription: `Rainforest Brown is one of India's most celebrated exotic natural stones. Quarried from select zones in Rajasthan, its deep, rich brown base is animated by flowing organic veining in warm gold and cream — creating a visual texture that genuinely resembles an aerial view of a tropical forest canopy.
 
 Its unique patterning means no two slabs are identical, making every installation a completely bespoke artistic expression. The antique finish enhances its natural character while the polished finish delivers a warm, glossy depth perfect for interior feature walls and premium flooring in luxury hotels and heritage residences.`,
-    metaTitle: 'Rainforest Brown Indian Marble — Exotic Stone | Granite Gallery',
+    metaTitle: 'Rainforest Brown Indian Marble — Exotic Stone',
     metaDescription: 'Rainforest Brown exotic marble from Rajasthan. Rich brown with gold veining. Antique & polished finishes. Export worldwide from Kishangarh.',
     whatsappMsg: "Hello, I'm interested in Rainforest Brown Marble. Please share slab availability and pricing.",
     faqs: [

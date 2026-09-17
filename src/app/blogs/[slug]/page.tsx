@@ -159,7 +159,7 @@ export default async function BlogDetailPage(
   const related = blogPostsData.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
-    <main>
+    <>
       {/* Schema injection */}
       <script
         type="application/ld+json"
@@ -291,6 +291,6 @@ export default async function BlogDetailPage(
       </section>
 
       <BannerContactForm />
-    </main>
+    </>
   );
 }

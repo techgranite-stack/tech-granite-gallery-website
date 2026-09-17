@@ -220,7 +220,7 @@ export const finishesData: Finish[] = [
     cons: ['Labour-intensive and higher cost', 'Rough texture not suitable for all interiors'],
     careInstructions: 'Sweep and hose down regularly. Seal every 3 years for outdoor surfaces.',
     image: '/images/finishes/bush-hammered.webp',
-    metaTitle: 'Bush Hammered Stone Finish — Heritage Texture | Granite Gallery',
+    metaTitle: 'Bush Hammered Stone Finish — Heritage Texture',
     metaDescription: 'Bush hammered granite & limestone — traditional artisanal texture finish. Heritage buildings & exteriors. Export from Kishangarh.',
     keywords: ['bush hammered stone', 'bush hammered granite finish', 'heritage stone texture', 'artisanal stone finish india', 'rough stone exterior finish'],
     faqs: [
@@ -386,7 +386,7 @@ export const finishesData: Finish[] = [
     cons: ['Result varies by stone type', 'Requires specialist equipment'],
     careInstructions: 'Regular sweeping. Periodic wash with stone-safe cleaner. Seal every 2 years.',
     image: '/images/finishes/hydro-blast.webp',
-    metaTitle: 'Hydro Blast Stone Finish — Water Jet Texture | Granite Gallery',
+    metaTitle: 'Hydro Blast Stone Finish — Water Jet Texture',
     metaDescription: 'Hydro blast granite & quartzite — chemical-free water jet finish revealing natural crystal texture. Export from Kishangarh.',
     keywords: ['hydro blast stone finish', 'water jet stone texture', 'chemical free stone finish', 'hydro blast granite india', 'crystal texture stone surface'],
     faqs: [

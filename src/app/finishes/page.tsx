@@ -65,7 +65,7 @@ export default function FinishesPage() {
   const finishes = finishesData.length > 0 ? finishesData : [mockFinishFallback];
 
   return (
-    <main>
+    <>
       <HeroSlider slides={finishSlides} />
 
       <section className={styles.section} id="collections">
@@ -123,6 +123,6 @@ export default function FinishesPage() {
 
       <ScrollingTagline items={marqueeItems} />
       <BannerContactForm />
-    </main>
+    </>
   );
 }

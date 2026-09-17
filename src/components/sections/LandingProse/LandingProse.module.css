@@ -1,0 +1,145 @@
+.section {
+  padding: 96px 0;
+  background: var(--ivory);
+  border-top: 1px solid rgba(75, 46, 43, 0.05);
+}
+
+.section.dark {
+  background: var(--mahogany);
+  border-top-color: rgba(255, 248, 240, 0.08);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Two-column: heading rail on the left, prose on the right. Keeps line length
+   readable, which matters because these blocks carry the page's real copy. */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.header {
+  position: sticky;
+  top: 120px;
+}
+
+.eyebrow {
+  color: var(--copper);
+}
+
+.section.dark .eyebrow {
+  color: var(--copper-light);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 400;
+  color: var(--mahogany);
+  line-height: 1.15;
+  margin-top: 12px;
+}
+
+.section.dark .title {
+  color: var(--ivory);
+}
+
+.title em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.section.dark .title em {
+  color: var(--copper-light);
+}
+
+.body p {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: var(--mahogany-muted);
+}
+
+.body p + p {
+  margin-top: 20px;
+}
+
+.section.dark .body p {
+  color: rgba(255, 248, 240, 0.72);
+}
+
+/* ── Definition list ── */
+.bullets {
+  margin-top: 40px;
+  display: grid;
+  gap: 4px;
+}
+
+.bullet {
+  padding: 22px 0;
+  border-top: 1px solid rgba(75, 46, 43, 0.12);
+}
+
+.section.dark .bullet {
+  border-top-color: rgba(255, 248, 240, 0.14);
+}
+
+.bullet:last-child {
+  border-bottom: 1px solid rgba(75, 46, 43, 0.12);
+}
+
+.section.dark .bullet:last-child {
+  border-bottom-color: rgba(255, 248, 240, 0.14);
+}
+
+.bulletTitle {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 10px;
+}
+
+.section.dark .bulletTitle {
+  color: var(--copper-light);
+}
+
+.bulletText {
+  font-family: var(--font-sans);
+  font-size: 0.975rem;
+  line-height: 1.75;
+  color: var(--mahogany-muted);
+}
+
+.section.dark .bulletText {
+  color: rgba(255, 248, 240, 0.68);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .header {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+}

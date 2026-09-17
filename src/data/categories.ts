@@ -16,7 +16,7 @@ export const categories: CategoryItem[] = [
     href: '/marble',
     count: 15,
     metaTitle: 'Marble Collection | Granite Gallery',
-    metaDescription: 'Premium Indian & imported marble — Makrana White, Statuario, Bottincino & more. Polished, honed & antique finishes. Direct supply from Kishangarh.',
+    metaDescription: 'Premium Indian & imported marble — Makrana White, Statuario, Botticino & more. Polished, honed & antique finishes. Direct supply from Kishangarh.',
     keywords: ['marble india', 'makrana white marble', 'italian marble', 'imported marble kishangarh', 'white marble supplier'],
   },
   {

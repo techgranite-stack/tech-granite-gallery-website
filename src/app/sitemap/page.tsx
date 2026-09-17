@@ -111,7 +111,7 @@ export default function SitemapPage() {
   const groups = buildGroups();
 
   return (
-    <main style={{ maxWidth: 1200, margin: '0 auto', padding: '120px 40px 80px', fontFamily: 'Inter, sans-serif' }}>
+    <div style={{ maxWidth: 1200, margin: '0 auto', padding: '120px 40px 80px', fontFamily: 'Inter, sans-serif' }}>
       {/* CSS hover without JS event handlers */}
       <style>{`.sm-link:hover { color: #C08552 !important; }`}</style>
       <header style={{ marginBottom: 60 }}>
@@ -177,6 +177,6 @@ export default function SitemapPage() {
         {' · '}
         Last updated: {new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}
       </footer>
-    </main>
+    </div>
   );
 }

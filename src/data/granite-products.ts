@@ -151,7 +151,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Uniform deep black — near-zero colour variation', 'Mirror-polish capability for high-gloss countertops', 'Extremely dense — ideal for heavy-use kitchen surfaces', 'Popular for export to Middle East, Europe, and USA'],
-    metaTitle: 'Majestic Black Granite | Kotda Black Granite India | Granite Gallery',
+    metaTitle: 'Majestic Black Granite | Kotda Black Granite India',
     metaDescription: 'Majestic Black / Kotda Black Granite — deep uniform black, mirror polish. Ideal for kitchen countertops, flooring, and exterior. Export quality from Gujarat.',
     keywords: ['majestic black granite', 'kotda black granite', 'black granite india', 'black kitchen countertop granite', 'buy black granite', 'majestic black granite price'],
     faqs: [
@@ -179,7 +179,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Distinctive blue-grey with silver mica shimmer', 'Rare colour — stands out in any interior', 'Great for kitchen islands and bathroom vanities', 'Available in large format slabs'],
-    metaTitle: 'Artic Blue Granite | Blue Grey Granite India | Granite Gallery',
+    metaTitle: 'Artic Blue Granite | Blue Grey Granite India',
     metaDescription: 'Artic Blue Granite — unique blue-grey stone with silver shimmer from Rajasthan. Perfect for kitchens, bathrooms, and feature walls.',
     keywords: ['artic blue granite', 'ice blue granite', 'blue granite india', 'blue grey granite', 'rajasthan blue granite', 'artic blue granite price'],
     faqs: [
@@ -207,7 +207,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Warm brown base with exotic mineral movement', 'Excellent for kitchen countertops and commercial flooring', 'High hardness — resistant to scratching and heat', 'Pairs beautifully with cream and beige cabinetry'],
-    metaTitle: 'Brazil Brown Granite | Imported Brown Granite India | Granite Gallery',
+    metaTitle: 'Brazil Brown Granite | Imported Brown Granite India',
     metaDescription: 'Brazil Brown Granite — exotic warm brown stone from Minas Gerais. Perfect for kitchen counters, floors, and feature walls. Available from Granite Gallery.',
     keywords: ['brazil brown granite', 'brown granite india', 'imported granite india', 'warm brown granite countertop', 'brazil brown granite price'],
     faqs: [
@@ -235,7 +235,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Consistent deep black — great value for large areas', 'Most popular black granite in India', 'Suitable for heavy-traffic commercial flooring', 'Available in both tiles and slabs'],
-    metaTitle: 'R Black Granite | Black Granite Flooring India | Granite Gallery',
+    metaTitle: 'R Black Granite | Black Granite Flooring India',
     metaDescription: 'R Black Granite — deep solid black from Rajasthan. Ideal for flooring, kitchen slabs, and exterior paving. Most affordable black granite available.',
     keywords: ['r black granite', 'black granite rajasthan', 'black granite flooring', 'cheap black granite india', 'r black granite price'],
     faqs: [
@@ -347,7 +347,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Deeper saturated pink — bolder than Rosy Pink', 'Popular in heritage and colonial-style architecture', 'Vivid mineral inclusions for lively visual movement', 'Strong export demand for Middle East and Europe'],
-    metaTitle: 'Cheema Pink Granite | Deep Pink Granite India | Granite Gallery',
+    metaTitle: 'Cheema Pink Granite | Deep Pink Granite India',
     metaDescription: 'Cheema Pink Granite — deep rose-pink stone from Rajasthan with vivid mineral inclusions. Ideal for entrances, flooring, and feature walls.',
     keywords: ['cheema pink granite', 'deep pink granite', 'pink granite rajasthan', 'heritage pink granite', 'cheema pink granite price'],
     faqs: [
@@ -431,7 +431,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Multi-toned red mosaic pattern — full of character', 'Great for decorative floors and garden paving', 'Rich red palette with pink, grey and black accents', 'Popular in traditional and heritage building styles'],
-    metaTitle: 'Multi Red Granite | Multi Colour Red Granite India | Granite Gallery',
+    metaTitle: 'Multi Red Granite | Multi Colour Red Granite India',
     metaDescription: 'Multi Red Granite — vibrant multi-tonal red, pink and grey stone from Rajasthan. Ideal for decorative flooring, garden walls, and heritage interiors.',
     keywords: ['multi red granite', 'multicolor red granite', 'red multi granite india', 'decorative red granite', 'multi red granite price'],
     faqs: [
@@ -459,7 +459,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Rare golden-yellow — unusual in the granite category', 'Warm, luminous tone brightens any interior', 'Ideal for kitchen countertops and feature accents', 'Fine speckle creates visual richness without busyness'],
-    metaTitle: 'Crystal Yellow Granite | Yellow Granite India | Granite Gallery',
+    metaTitle: 'Crystal Yellow Granite | Yellow Granite India',
     metaDescription: 'Crystal Yellow Granite — rare golden-yellow stone from Rajasthan. Perfect for kitchen counters, accent floors, and feature walls. Available from Granite Gallery.',
     keywords: ['crystal yellow granite', 'yellow granite india', 'golden granite', 'yellow kitchen countertop stone', 'crystal yellow granite price'],
     faqs: [
@@ -487,7 +487,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Softer, more uniform white than P White', 'Fine grain for seamless large-area installations', 'Popular in residential buildings and 5-star hotels', 'Easy to maintain — highly stain resistant'],
-    metaTitle: 'S White Granite | Uniform White Granite India | Granite Gallery',
+    metaTitle: 'S White Granite | Uniform White Granite India',
     metaDescription: 'S White Granite — fine-grained, uniform white from Andhra Pradesh. Perfect for seamless hotel floors, bathrooms, and kitchen counters.',
     keywords: ['s white granite', 'white granite andhra', 'uniform white granite', 'fine grain white granite', 's white granite price'],
     faqs: [
@@ -515,7 +515,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Black with unique golden-coin mineral inclusions', 'One of India\'s most distinctive granites', 'Mirror polish brings out the coin-pattern brilliantly', 'Ideal for feature countertops and accent walls'],
-    metaTitle: 'Coin Black Granite | Black Gold Granite Karnataka | Granite Gallery',
+    metaTitle: 'Coin Black Granite | Black Gold Granite Karnataka',
     metaDescription: 'Coin Black Granite — jet black with unique golden coin-like inclusions from Karnataka. Perfect for kitchen islands, feature walls, and luxury bathrooms.',
     keywords: ['coin black granite', 'black gold granite', 'karnataka black granite', 'black granite with gold spots', 'coin black granite price'],
     faqs: [
@@ -543,7 +543,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Cool pale grey — perfect neutral for modern interiors', 'Fine even grain — minimal visual distraction', 'Popular for minimalist and Scandinavian-style design', 'Available in honed finish for a soft matte look'],
-    metaTitle: 'Cera Grey Granite | Pale Grey Granite India | Granite Gallery',
+    metaTitle: 'Cera Grey Granite | Pale Grey Granite India',
     metaDescription: 'Cera Grey Granite — cool, uniform pale grey from Rajasthan. Ideal for minimalist kitchens, bathrooms, and large-format flooring.',
     keywords: ['cera grey granite', 'pale grey granite india', 'light grey granite', 'grey granite countertop', 'cera grey granite price'],
     faqs: [
@@ -571,7 +571,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Mid-grey with silver mineral flash when polished', 'One of India\'s most exported granites', 'Extremely dense — ideal for heavy commercial use', 'Available in both tiles and large slabs'],
-    metaTitle: 'Steel Grey Granite | Mid Grey Granite India | Granite Gallery',
+    metaTitle: 'Steel Grey Granite | Mid Grey Granite India',
     metaDescription: 'Steel Grey Granite — mid-grey with silver mineral flash from Andhra Pradesh. Perfect for commercial floors, exterior cladding, and kitchen countertops.',
     keywords: ['steel grey granite', 'grey granite india', 'andhra grey granite', 'mid grey granite countertop', 'steel grey granite price'],
     faqs: [
@@ -627,7 +627,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Green base with bold black mineral veining', 'Graphic, high-contrast patterns — each slab unique', 'Ideal for feature walls and reception counters', 'Strong export demand from European and Gulf markets'],
-    metaTitle: 'Mokalsar Green Granite | Bold Green Granite India | Granite Gallery',
+    metaTitle: 'Mokalsar Green Granite | Bold Green Granite India',
     metaDescription: 'Mokalsar Green Granite — distinctive green with bold black veining from Rajasthan. Perfect for feature walls, reception areas, and luxury flooring.',
     keywords: ['mokalsar green granite', 'bold green granite', 'black green granite india', 'graphic green granite', 'mokalsar green granite price'],
     faqs: [
@@ -655,7 +655,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Soft silver-grey — excellent value for large floors', 'Fine grain for seamless, understated installations', 'Great outdoor option — UV stable and slip-resistant in flamed finish', 'Historic Narlai quarry — consistent quality supply'],
-    metaTitle: 'Narlai Grey Granite | Silver Grey Granite India | Granite Gallery',
+    metaTitle: 'Narlai Grey Granite | Silver Grey Granite India',
     metaDescription: 'Narlai Grey Granite — soft silver-grey from historic Narlai, Rajasthan. Ideal for large-format flooring, outdoor paving, and contemporary interiors.',
     keywords: ['narlai grey granite', 'silver grey granite india', 'narlai granite', 'light grey granite flooring', 'narlai grey granite price'],
     faqs: [
@@ -683,7 +683,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Soft off-white — not glaring, easy on the eyes', 'Warm cream undertone distinguishes it from pure whites', 'Widely used in institutional and healthcare projects', 'Consistent supply from Tamil Nadu quarries'],
-    metaTitle: 'Cotton White Granite | Off White Granite India | Granite Gallery',
+    metaTitle: 'Cotton White Granite | Off White Granite India',
     metaDescription: 'Cotton White Granite — soft off-white with warm cream undertones from Tamil Nadu. Perfect for residential floors, hospitals, and educational buildings.',
     keywords: ['cotton white granite', 'off white granite india', 'cream white granite', 'soft white granite tile', 'cotton white granite price'],
     faqs: [
@@ -740,7 +740,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Warm almond-brown — most loved kitchen granite in India', 'Pairs beautifully with cream and wood kitchen cabinets', 'Consistent supply in large volumes', 'Excellent for kitchen worktops — heat and scratch resistant'],
-    metaTitle: 'Almond Brown Granite | Madar Brown Granite India | Granite Gallery',
+    metaTitle: 'Almond Brown Granite | Madar Brown Granite India',
     metaDescription: 'Almond Brown / Madar Brown Granite — warm earthy brown from Rajasthan. India\'s most popular kitchen countertop granite. Available from Granite Gallery.',
     keywords: ['almond brown granite', 'madar brown granite', 'brown granite kitchen', 'warm brown granite india', 'almond brown granite price'],
     faqs: [
@@ -796,7 +796,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Iridescent pearl effect — extraordinary visual character', 'Imported Norwegian stone — among the hardest available', 'Olive-green with golden and silver labradorite flash', 'Ideal for statement kitchen islands and luxury feature walls'],
-    metaTitle: 'Green Pearl Granite | Norwegian Green Granite India | Granite Gallery',
+    metaTitle: 'Green Pearl Granite | Norwegian Green Granite India',
     metaDescription: 'Green Pearl Granite — Norwegian imported stone with iridescent pearl sheen. Perfect for luxury kitchen islands, feature walls, and premium countertops.',
     keywords: ['green pearl granite', 'norwegian granite india', 'pearl granite', 'imported green granite', 'labradorite granite', 'green pearl granite price'],
     faqs: [
@@ -824,7 +824,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Vivid bright green — high-impact statement stone', 'Popular for kitchen islands and accent floors', 'White mineral inclusions create lively pattern', 'Available in large format for dramatic effect'],
-    metaTitle: 'Apple Green Granite | Bright Green Granite India | Granite Gallery',
+    metaTitle: 'Apple Green Granite | Bright Green Granite India',
     metaDescription: 'Apple Green Granite — vivid bright green from Rajasthan. Perfect for statement kitchen islands, accent walls, and contemporary flooring.',
     keywords: ['apple green granite', 'bright green granite india', 'vivid green granite', 'green granite kitchen', 'apple green granite price'],
     faqs: [
@@ -880,7 +880,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Warm terracotta-red — earthy, grounded character', 'Cost-effective for large-volume paving projects', 'Maharashtra quarry — abundant and reliable supply', 'Available in both tiles and cobbles for paving'],
-    metaTitle: 'Kharda Red Granite | Terracotta Red Granite Maharashtra | Granite Gallery',
+    metaTitle: 'Kharda Red Granite | Terracotta Red Granite Maharashtra',
     metaDescription: 'Kharda Red Granite — warm terracotta-red from Maharashtra. Ideal for large-scale outdoor paving, government buildings, and rural architecture.',
     keywords: ['kharda red granite', 'maharashtra red granite', 'terracotta granite', 'red granite paving india', 'kharda red granite price'],
     faqs: [
@@ -908,7 +908,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Absolute black — among India\'s darkest granites', 'Fish-scale crystal pattern adds subtle visual depth', 'Highest density — exceptional hardness and durability', 'Premium export quality for Middle East and European markets'],
-    metaTitle: 'Fish Black Granite | Absolute Black Granite Andhra | Granite Gallery',
+    metaTitle: 'Fish Black Granite | Absolute Black Granite Andhra',
     metaDescription: 'Fish Black Granite — absolute-black premium stone from Andhra Pradesh with fish-scale crystal texture. Perfect for luxury countertops, bathrooms, and export.',
     keywords: ['fish black granite', 'absolute black granite', 'andhra black granite', 'premium black granite india', 'fish black granite price'],
     faqs: [
@@ -945,7 +945,7 @@ export const graniteProducts: StoneProduct[] = [
     ],
     sizes: standardSizes,
     highlights: ['Most exported Indian grey stone to UK and Europe', 'Natural cleft surface — ideal for anti-slip outdoor use', 'Soft blue-grey colour with natural variation', 'Available in paving slabs, cobbles, and tiles'],
-    metaTitle: 'Kandla Grey Granite | Grey Indian Paving Stone | Granite Gallery',
+    metaTitle: 'Kandla Grey Granite | Grey Indian Paving Stone',
     metaDescription: 'Kandla Grey — India\'s most exported blue-grey paving stone. Perfect for garden landscaping, driveways, and outdoor patios. Available from Granite Gallery.',
     keywords: ['kandla grey granite', 'kandla grey paving', 'grey indian paving stone', 'grey patio stone india', 'kandla grey sandstone'],
     faqs: [
@@ -973,7 +973,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Pure bright white with fine crystalline sparkle', 'Consistent colour across large floor areas', 'Cost-effective premium white granite', 'Popular for luxury residential and hotel projects'],
-    metaTitle: 'China White Granite | Imported White Granite India | Granite Gallery',
+    metaTitle: 'China White Granite | Imported White Granite India',
     metaDescription: 'China White Granite — pure bright white imported stone with crystalline sparkle. Perfect for luxury flooring, bathrooms, and kitchen countertops.',
     keywords: ['china white granite', 'imported white granite india', 'pure white granite', 'bright white granite flooring', 'china white granite price'],
     faqs: [
@@ -1001,7 +1001,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Rich warm red — India\'s most enduring granite colour', 'Excellent UV stability for long-term exterior use', 'Available in large volumes for monumental projects', 'Consistent quality from Rajasthan quarries'],
-    metaTitle: 'Classic Red Granite | Timeless Red Granite India | Granite Gallery',
+    metaTitle: 'Classic Red Granite | Timeless Red Granite India',
     metaDescription: 'Classic Red Granite — warm, rich red from Rajasthan with excellent UV stability. Ideal for public buildings, outdoor paving, and plinth work.',
     keywords: ['classic red granite', 'indian red granite', 'red granite india', 'red granite outdoor paving', 'classic red granite price'],
     faqs: [
@@ -1029,7 +1029,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Electric blue iridescence — world\'s most recognised luxury granite', 'Norwegian labradorite crystal inclusions', 'Exceptional density — hardest granite available', 'Perfect bookmatching for symmetrical installations'],
-    metaTitle: 'Blue Pearl Granite | Norwegian Blue Granite India | Granite Gallery',
+    metaTitle: 'Blue Pearl Granite | Norwegian Blue Granite India',
     metaDescription: 'Blue Pearl Granite — prestigious Norwegian import with electric blue iridescence. Ideal for luxury kitchen countertops, feature walls, and premium bathrooms.',
     keywords: ['blue pearl granite', 'norwegian granite india', 'blue granite india', 'labradorite granite countertop', 'blue pearl granite price'],
     faqs: [
@@ -1057,7 +1057,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Warm brown with luminous pearl mineral glow', 'Inviting, sophisticated colour for kitchens and dining', 'High density — excellent for heavy-use countertops', 'Pairs beautifully with dark wood and bronze hardware'],
-    metaTitle: 'Brown Pearl Granite | Imported Brown Granite India | Granite Gallery',
+    metaTitle: 'Brown Pearl Granite | Imported Brown Granite India',
     metaDescription: 'Brown Pearl Granite — warm brown with luminous pearl shimmer. Perfect for kitchen countertops, flooring, and feature applications in luxury interiors.',
     keywords: ['brown pearl granite', 'imported brown granite india', 'pearl granite brown', 'warm brown granite countertop', 'brown pearl granite price'],
     faqs: [
@@ -1085,7 +1085,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Black with golden bronzite star inclusions — iconic look', 'India\'s most exported and recognised granite', 'Exceptional density and mirror-polish capability', 'Popular across 80+ countries for kitchen countertops'],
-    metaTitle: 'Black Galaxy Granite | Golden Star Black Granite India | Granite Gallery',
+    metaTitle: 'Black Galaxy Granite | Golden Star Black Granite India',
     metaDescription: 'Black Galaxy Granite — India\'s most iconic export stone. Deep black with golden star inclusions. Premium kitchen countertop granite available from Granite Gallery.',
     keywords: ['black galaxy granite', 'galaxy black granite', 'andhra black granite', 'black granite with gold', 'black galaxy countertop', 'black galaxy granite price'],
     faqs: [
@@ -1113,7 +1113,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Rich dark brown with dramatic black crystal matrix', 'One of India\'s most exported countertop granites', 'Exceptional hardness and stain resistance', 'Pairs well with cream, beige, and stainless hardware'],
-    metaTitle: 'Tan Brown Granite | Dark Brown Granite India | Granite Gallery',
+    metaTitle: 'Tan Brown Granite | Dark Brown Granite India',
     metaDescription: 'Tan Brown Granite — rich dark brown with black crystal matrix from Andhra Pradesh. India\'s most popular export granite for kitchen countertops.',
     keywords: ['tan brown granite', 'dark brown granite andhra', 'tan brown countertop', 'brown black granite india', 'tan brown granite price'],
     faqs: [
@@ -1142,7 +1142,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['True absolute black — virtually zero colour variation', 'India\'s most consistent black granite surface', 'Ultra-dense — takes the highest mirror polish', 'Preferred for precision architectural installations'],
-    metaTitle: 'Telephone Black Granite | Absolute Black Granite Karnataka | Granite Gallery',
+    metaTitle: 'Telephone Black Granite | Absolute Black Granite Karnataka',
     metaDescription: 'Telephone Black Granite — true absolute black with zero variation from Karnataka. The purest black granite from India for luxury countertops and architectural use.',
     keywords: ['telephone black granite', 'absolute black granite karnataka', 'pure black granite india', 'jet black granite countertop', 'telephone black granite price'],
     faqs: [
@@ -1170,7 +1170,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Dark jungle-green — premium Karnataka export', 'Uniform, dense pattern with high polishability', 'Ideal for feature walls, staircases, and countertops', 'Popular in Gulf and European luxury interiors'],
-    metaTitle: 'Hassan Green Granite | Dark Green Granite Karnataka | Granite Gallery',
+    metaTitle: 'Hassan Green Granite | Dark Green Granite Karnataka',
     metaDescription: 'Hassan Green Granite — dark jungle-green premium stone from Hassan, Karnataka. Perfect for feature walls, countertops, and luxury interiors.',
     keywords: ['hassan green granite', 'karnataka green granite', 'dark green granite india', 'jungle green granite', 'hassan green granite price'],
     faqs: [
@@ -1198,7 +1198,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Warm rustic brown — earthy farmhouse character', 'Ages gracefully for long-term outdoor use', 'Available in natural finish for rustic aesthetics', 'Ideal for garden walls and landscape features'],
-    metaTitle: 'Madka Brown Granite | Rustic Brown Granite India | Granite Gallery',
+    metaTitle: 'Madka Brown Granite | Rustic Brown Granite India',
     metaDescription: 'Madka Brown Granite — warm rustic brown from Rajasthan. Perfect for garden landscaping, farmhouse interiors, and outdoor paving.',
     keywords: ['madka brown granite', 'rustic brown granite', 'farmhouse granite india', 'outdoor brown granite', 'madka brown granite price'],
     faqs: [
@@ -1226,7 +1226,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Medium silver-grey — ideal institutional stone', 'Excellent value for large commercial floor areas', 'Consistent quality from Gujarat quarries', 'Suitable for heavy-traffic mall and office flooring'],
-    metaTitle: 'Godhra Grey Granite | Commercial Grey Granite Gujarat | Granite Gallery',
+    metaTitle: 'Godhra Grey Granite | Commercial Grey Granite Gujarat',
     metaDescription: 'Godhra Grey Granite — silver-grey commercial stone from Gujarat. Ideal for shopping malls, offices, and large institutional flooring projects.',
     keywords: ['godhra grey granite', 'gujarat grey granite', 'commercial grey granite india', 'silver grey granite floor', 'godhra grey granite price'],
     faqs: [
@@ -1254,7 +1254,7 @@ export const graniteProducts: StoneProduct[] = [
     applications: graniteApplications,
     sizes: standardSizes,
     highlights: ['Warm copper-brown — designed for contemporary interiors', 'Fine mineral speckle — refined, not distracting', 'Great for modern kitchen and bathroom countertops', 'Pairs with both light and dark cabinetry'],
-    metaTitle: 'Aadhunik Brown Granite | Modern Brown Granite India | Granite Gallery',
+    metaTitle: 'Aadhunik Brown Granite | Modern Brown Granite India',
     metaDescription: 'Aadhunik Brown Granite — warm copper-brown stone for contemporary kitchens and bathrooms. A modern Indian granite from Rajasthan.',
     keywords: ['aadhunik brown granite', 'modern brown granite india', 'copper brown granite', 'contemporary granite', 'aadhunik brown granite price'],
     faqs: [

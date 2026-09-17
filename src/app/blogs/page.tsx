@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function BlogsPage() {
   return (
-    <main>
+    <>
       <PageHero
         eyebrow="Knowledge Hub"
         title="Insights &"
@@ -34,6 +34,6 @@ export default function BlogsPage() {
       <ArticleCardGrid posts={blogPostsData} showAll={true} />
 
       <BannerContactForm />
-    </main>
+    </>
   );
 }

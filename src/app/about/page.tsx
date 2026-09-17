@@ -156,7 +156,7 @@ export default function AboutPage() {
   const waUrl = `https://wa.me/919116622422?text=${waMessage}`;
 
   return (
-    <main className={styles.main}>
+    <div className={styles.main}>
 
       {/* Hero Banner */}
       <PageHero
@@ -664,6 +664,6 @@ export default function AboutPage() {
       {/* CTA Contact Banner */}
       <BannerContactForm />
 
-    </main>
+    </div>
   );
 }

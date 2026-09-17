@@ -1,4 +1,5 @@
 import { NavItem } from "@/types/navigation";
+import { addressOneLine } from "@/data/local-seo";
 
 export const siteConfig = {
   name: "Granite Gallery",
@@ -144,6 +145,7 @@ export const siteConfig = {
 
     { label: 'Team', href: '/team' },
     { label: 'About', href: '/about' },
+    { label: 'Contact', href: '/contact' },
   ] as NavItem[],
 
   links: {
@@ -151,7 +153,9 @@ export const siteConfig = {
     phone: "+91 91166 22422",
     phoneRaw: "+919116622422",
     email: "sales.granitegalleryindia@gmail.com",
-    address: "Khasra No.948, 4, MEGA Highway, Tehsil, Ralawata, Kishangarh, Rajasthan 305801",
+    // Derived from the structured copy in src/data/local-seo.ts so the flat
+    // display string and the PostalAddress in the schema can never drift apart.
+    address: addressOneLine,
     maps: "https://www.google.com/maps/place/Granite+Gallery+India/@26.6790384,74.8630417,16.28z/data=!4m6!3m5!1s0x396bf3652f4b26cd:0x9e6bd1cd0358ce90!8m2!3d26.6799656!4d74.8600186!16s%2Fg%2F11clvcz9nb",
     instagram: "https://www.instagram.com/granitegalleryindia/",
     youtube: "https://www.youtube.com/c/GraniteGalleryIndia",

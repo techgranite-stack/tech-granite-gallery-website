@@ -93,7 +93,7 @@ export default function CollectionsPage() {
   const totalVarieties = categories.reduce((sum, c) => sum + varietyCount(c), 0);
 
   return (
-    <main>
+    <>
 
       {/* 1. Hero Slider */}
       <HeroSlider slides={collectionSlides} />
@@ -164,6 +164,6 @@ export default function CollectionsPage() {
       {/* 7. CTA Banner + Contact Form */}
       <BannerContactForm />
 
-    </main>
+    </>
   );
 }

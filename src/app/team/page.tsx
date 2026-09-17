@@ -59,7 +59,7 @@ const teamMarquee = [
 
 export default function TeamPage() {
   return (
-    <main>
+    <>
 
       {/* Hero slider */}
       <HeroSlider slides={teamSlides} />
@@ -94,6 +94,6 @@ export default function TeamPage() {
       <MarqueeTestimonials testimonials={testimonials} />
 
       <BannerContactForm />
-    </main>
+    </>
   );
 }

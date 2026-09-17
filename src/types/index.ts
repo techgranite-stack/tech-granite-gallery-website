@@ -4,6 +4,12 @@ export interface HeroSlide {
   sub: string;
   /** Optional explicit eyebrow; falls back to a short phrase derived from `sub`. */
   eyebrow?: string;
+  /**
+   * Alt text describing the photograph. Falls back to `title`, which describes
+   * the marketing headline rather than the image — fine as a default, poor for
+   * image search on a business whose product *is* the picture.
+   */
+  alt?: string;
 }
 
 export interface StatItem {

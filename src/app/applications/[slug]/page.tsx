@@ -186,7 +186,7 @@ export default async function ApplicationDetailPage(
   }));
 
   return (
-    <main>
+    <>
       <PageHero
         eyebrow="Applications Guide"
         title={title}
@@ -256,6 +256,6 @@ export default async function ApplicationDetailPage(
       <MarqueeTestimonials testimonials={testimonials} />
 
       <BannerContactForm />
-    </main>
+    </>
   );
 }

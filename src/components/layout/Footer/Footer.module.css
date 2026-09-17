@@ -344,6 +344,27 @@
   color: rgba(255, 248, 240, 0.35);
 }
 
+/* Site-wide links to the local landing targets. Every page linking to them is
+   what tells Google these are primary pages rather than orphans. */
+.bottomLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 18px;
+}
+
+.bottomLink {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: rgba(255, 248, 240, 0.55);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.bottomLink:hover {
+  color: var(--copper-light);
+}
+
 @media (max-width: 1024px) {
   .inner {
     grid-template-columns: 1fr 1fr;

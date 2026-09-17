@@ -52,7 +52,7 @@ All calcite-based natural stones are susceptible to "etching" — a chemical rea
   readTime: '5 min read',
   author: 'Shrikant Dargar',
   authorSlug: 'shrikant-dargar',
-  metaTitle: 'How to Choose the Right Marble for Your Home | Granite Gallery',
+  metaTitle: 'How to Choose the Right Marble for Your Home',
   metaDescription: 'A comprehensive homeowner\'s guide to selecting imported Italian marble. Durability, color palettes, finishes, and maintenance tips for luxury spaces.',
   tags: ['Italian Marble', 'Home Interiors', 'Design Guide', 'Kishangarh Marble']
 };
@@ -87,7 +87,7 @@ All calcite-based natural stones are susceptible to "etching" — a chemical rea
     readTime: '5 min read',
     author: 'Shrikant Dargar',
     authorSlug: 'shrikant-dargar',
-    metaTitle: 'How to Choose the Right Marble for Your Home | Granite Gallery',
+    metaTitle: 'How to Choose the Right Marble for Your Home',
     metaDescription: 'A comprehensive homeowner\'s guide to selecting imported Italian marble. Durability, color palettes, finishes, and maintenance tips for luxury spaces.',
     keywords: ['how to choose marble', 'marble selection guide', 'best marble for home', 'marble types india', 'marble maintenance tips', 'italian marble guide'],
     tags: ['Italian Marble', 'Home Interiors', 'Design Guide', 'Kishangarh Marble']

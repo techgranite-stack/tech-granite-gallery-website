@@ -1,0 +1,144 @@
+.section {
+  padding: 80px 0;
+  background: var(--stone-100, #f2ebe0);
+  border-top: 1px solid rgba(75, 46, 43, 0.06);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--mahogany);
+  line-height: 1.2;
+  margin-top: 12px;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--copper);
+}
+
+.body p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--mahogany-muted);
+}
+
+.body p + p {
+  margin-top: 16px;
+}
+
+/* ── Fact rows ── */
+.facts {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(75, 46, 43, 0.1);
+  border: 1px solid rgba(75, 46, 43, 0.1);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.fact {
+  background: var(--ivory);
+  padding: 20px 22px;
+}
+
+.factLabel {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 8px;
+}
+
+.factValue {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--mahogany);
+}
+
+/* ── CTAs ── */
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 28px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.ctaPrimary {
+  background: var(--mahogany);
+  color: var(--ivory);
+  border: 1px solid var(--mahogany);
+}
+
+.ctaPrimary:hover {
+  background: var(--copper);
+  border-color: var(--copper);
+}
+
+.ctaSecondary {
+  background: transparent;
+  color: var(--mahogany);
+  border: 1px solid rgba(75, 46, 43, 0.3);
+}
+
+.ctaSecondary:hover {
+  border-color: var(--copper);
+  color: var(--copper);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+  }
+}

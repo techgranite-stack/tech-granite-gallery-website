@@ -24,6 +24,14 @@ interface PageHeroProps {
   breadcrumb?: BreadcrumbItem[];
   heroImage?: string;
   heroImages?: string[];
+  /**
+   * Alt text for the background image(s). Defaults to `title`, which is what
+   * every call site relied on before — but a bare `alt="Statuario"` describes
+   * neither the stone type, the finish, nor the setting, and alt text is a
+   * primary ranking input for image search. Detail routes pass a composed
+   * description instead.
+   */
+  imageAlt?: string;
   badges?: PageHeroBadge[];
   align?: 'left' | 'center';
   fullHeight?: boolean;
@@ -37,6 +45,7 @@ export default function PageHero({
   breadcrumb,
   heroImage,
   heroImages,
+  imageAlt,
   badges,
   align = 'left',
   fullHeight = false,
@@ -108,7 +117,7 @@ export default function PageHero({
         >
           <Image
             src={img}
-            alt={title}
+            alt={imageAlt ?? title}
             fill
             priority={i === 0}
             sizes="100vw"
@@ -126,6 +135,36 @@ export default function PageHero({
       <div className={styles.topAccent} />
 
       <div className={styles.content}>
+
+        {/*
+          Breadcrumb trail. The prop and its styles both already existed — only
+          this markup was missing, so every caller's trail was silently dropped
+          and the site rendered no visible breadcrumbs at all. The matching
+          BreadcrumbList JSON-LD was being emitted the whole time; Google prefers
+          the markup and the visible trail to agree.
+        */}
+        {breadcrumb && breadcrumb.length > 0 && (
+          <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+            {breadcrumb.map((crumb, i) => (
+              <span key={`${crumb.label}-${i}`} className={styles.crumbItem}>
+                {crumb.href ? (
+                  <Link href={crumb.href} className={styles.crumbLink}>
+                    {crumb.label}
+                  </Link>
+                ) : (
+                  <span className={styles.crumbCurrent} aria-current="page">
+                    {crumb.label}
+                  </span>
+                )}
+                {i < breadcrumb.length - 1 && (
+                  <span className={styles.crumbSep} aria-hidden="true">
+                    /
+                  </span>
+                )}
+              </span>
+            ))}
+          </nav>
+        )}
 
         {/* Eyebrow */}
         {eyebrow && (

@@ -25,7 +25,7 @@ export const pageSeo: Record<string, SeoMeta> = {
 
   '/marble': {
     metaTitle: 'Marble Collection | Indian & Imported Marble',
-    metaDescription: 'Explore 15 premium marbles — Makrana White, Statuario, Bottincino, Travertine & more. Indian & imported, polished & honed. Direct supply from Kishangarh.',
+    metaDescription: 'Explore 15 premium marbles — Makrana White, Statuario, Botticino, Travertine & more. Indian & imported, polished & honed. Direct supply from Kishangarh.',
     keywords: [
       'marble collection india',
       'white marble kishangarh',
@@ -127,8 +127,11 @@ export const pageSeo: Record<string, SeoMeta> = {
   },
 
   '/about': {
-    metaTitle: 'About Us — Infinite Possibilities in Natural Stone | Granite Gallery',
-    metaDescription: 'Discover Granite Gallery — a family-run business with 4 decades of stone experience based in Kishangarh. Own mines, state-of-the-art manufacturing, and global exports across 30+ countries.',
+    // Was 72 chars — over the 60-char ceiling in src/types/seo.ts, so Google
+    // truncated it mid-phrase. Now 54.
+    metaTitle: 'About Granite Gallery | Stone Manufacturer, Kishangarh',
+    // Was 197 chars, well past the 140–160 band. Now 156.
+    metaDescription: 'A family-run stone manufacturer in Kishangarh, Rajasthan — own mines, in-house processing and exports to 30+ countries. Four decades in natural stone.',
     keywords: [
       'about granite gallery',
       'kishangarh stone manufacturer',
@@ -137,6 +140,21 @@ export const pageSeo: Record<string, SeoMeta> = {
       'family stone business kishangarh',
       'infinite possibilities stone',
     ],
+  },
+
+  '/contact': {
+    metaTitle: 'Contact | Marble & Granite Supplier, Kishangarh',
+    metaDescription:
+      'Contact Granite Gallery in Kishangarh, Rajasthan. Call, WhatsApp or visit our slab yard and processing facility. Same-day quotes on marble and granite.',
+    keywords: [
+      'granite gallery contact',
+      'marble supplier kishangarh contact',
+      'granite supplier near me kishangarh',
+      'stone yard kishangarh address',
+      'marble factory kishangarh phone number',
+      'natural stone enquiry rajasthan',
+    ],
+    ogImage: '/images/hero/granite-gallery-kishangarh-stone-facility.webp',
   },
 
   '/sitemap': {

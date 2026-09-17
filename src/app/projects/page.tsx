@@ -97,7 +97,7 @@ const projectGridMarquee = [
 
 export default function ProjectsPage() {
   return (
-    <main>
+    <>
       {/* 1. Hero Slider */}
       <HeroSlider slides={projectSlides} />
 
@@ -124,6 +124,6 @@ export default function ProjectsPage() {
 
       {/* 7. Contact */}
       <BannerContactForm />
-    </main>
+    </>
   );
 }

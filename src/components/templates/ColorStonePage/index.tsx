@@ -78,7 +78,7 @@ const COLOR_TAGLINE_WORDS: Record<ColorFamily, string[]> = {
   brown:  ['Warm Earthy Browns', 'Tan Brown · Almond · Emperador', 'Kitchen Favourite', 'Export Quality'],
   blue:   ['Electric Blue Stones', 'Blue Pearl · Artic Blue', 'Norwegian Labradorite', 'Luxury Countertops'],
   yellow: ['Warm Golden Tones', 'Crystal Yellow · Honey Onyx', 'Backlit Options Available', 'Rare & Luminous'],
-  beige:  ['Timeless Italian Beige', 'Bottincino · Perlato · Travertine', 'Classic Elegance', 'Imported Direct'],
+  beige:  ['Timeless Italian Beige', 'Botticino · Perlato · Travertine', 'Classic Elegance', 'Imported Direct'],
   multi:  ['Multicolour Stones', 'Unique Patterns', 'Every Slab Different', 'Premium Stock'],
 };
 

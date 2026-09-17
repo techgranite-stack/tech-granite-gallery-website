@@ -379,7 +379,7 @@ Google normalises these to the same URL; left as-is rather than fighting `metada
 **Goal:** Every page declares what it is, in a form Google can parse.
 **Depends on:** Phase 1 · **Effort:** M–L
 
-### `[ ]` P2-1 — Emit Organization, LocalBusiness and WebSite schema
+### `[x]` P2-1 — Emit Organization, LocalBusiness and WebSite schema
 
 - **Files:** [`src/lib/structured-data.ts`](../../src/lib/structured-data.ts),
   [`src/app/layout.tsx`](../../src/app/layout.tsx), [`src/app/page.tsx`](../../src/app/page.tsx)
@@ -461,7 +461,7 @@ Google normalises these to the same URL; left as-is rather than fighting `metada
   Organization on any page and LocalBusiness on `/`, with zero errors.
 - **Effort:** M · **Risk:** none.
 
-### `[ ]` P2-2 — Fix the images inside Product schema
+### `[x]` P2-2 — Fix the images inside Product schema
 
 - **Files:** [`src/lib/structured-data.ts`](../../src/lib/structured-data.ts),
   [`src/app/marble/[slug]/page.tsx`](../../src/app/marble/[slug]/page.tsx),
@@ -510,7 +510,7 @@ Google normalises these to the same URL; left as-is rather than fighting `metada
   image URLs, all under `/images/stones/black-galaxy/`, all returning 200.
 - **Effort:** M · **Risk:** none.
 
-### `[ ]` P2-3 — Set site-wide Open Graph and Twitter defaults
+### `[x]` P2-3 — Set site-wide Open Graph and Twitter defaults
 
 - **Files:** [`src/app/layout.tsx`](../../src/app/layout.tsx)
 - **Why:** there is no `openGraph.type`, `siteName`, `locale` or default `images`, and
@@ -551,7 +551,7 @@ Google normalises these to the same URL; left as-is rather than fighting `metada
   `/marble/statuario` and `/blogs/granite-vs-marble`.
 - **Effort:** S · **Risk:** none.
 
-### `[ ]` P2-4 — Remove the nested `<main>` elements
+### `[x]` P2-4 — Remove the nested `<main>` elements
 
 - **Files:** 16 page components — `blogs/page.tsx`, `blogs/[slug]`, `marble/[slug]`,
   `granite/[slug]`, `projects/page.tsx`, `projects/[slug]`, `sitemap/page.tsx`, `about`,
@@ -567,6 +567,48 @@ Google normalises these to the same URL; left as-is rather than fighting `metada
 - **Accept:** `grep -rn "<main" src/app --include=page.tsx` returns nothing; W3C validator
   reports no nested-landmark error on three sampled pages.
 - **Effort:** M · **Risk:** low — visual regression only if CSS targets `main`.
+
+---
+
+## ✅ Phase 2 — completion record (2026-08-30)
+
+Shipped alongside the landing-page and local-SEO work — see
+[`Local_SEO_Plan.md`](./Local_SEO_Plan.md) and
+[`../Strategy/Keyword_Map.md`](../Strategy/Keyword_Map.md).
+
+| Task | Result |
+|---|---|
+| P2-1 | Organization + WebSite on every page (root layout); LocalBusiness on `/`, `/contact` and the Kishangarh landing page only. Facts centralised in the new `src/data/local-seo.ts`. `foundingDate` and `openingHoursSpecification` deliberately omitted — Decision Log #3 and #4 are still open, and emitting either wrong is worse than omitting it. |
+| P2-2 | Product `image` now carries three absolute, per-slug URLs resolved the same way the page resolves them (`_hero`, `_stand`, `_catalog`), replacing one relative shared room photo. Seller is a resolvable `@id` reference instead of a bare string address. |
+| P2-3 | `og:type`, `og:site_name`, `og:locale`, default `og:image` and a full `twitter:` block set site-wide. Default image verified at 2400×1600. |
+| P2-4 | All 16 nested `<main>` elements removed — 13 became fragments, 3 that carried styling became `<div>`. No CSS targeted bare `main`, so nothing regressed. |
+| P3-2 | `PageHero` gained `imageAlt`; both stone routes pass a composed description ("Makrana White marble slab — polished finish, Makrana, Nagaur, Rajasthan, India"). `HeroSlide` gained an `alt` field, used on all four homepage slides. |
+| P4-4 | Written as `scripts/seo-check.mjs` (`npm run seo:check`) and run against the **built HTML** rather than the source data, because every defect this repo actually shipped was invisible at the data layer. 73 over-length titles fixed: 66 by dropping the now-redundant `\| Granite Gallery` suffix, 7 by hand. |
+
+**Verified on a clean build — 164 pages:**
+
+```
+titles > 60 chars                 0   (was 68)
+duplicate titles                  0
+missing / relative canonicals     0
+pages with != 1 <h1>              0
+nested <main>                     0
+<img> without alt                 0
+JSON-LD blocks failing to parse   0
+```
+
+Remaining warnings, all pre-existing and tracked elsewhere: 91 meta descriptions
+outside the 140–160 band (median 133 — mostly slightly short, soft signal), and
+36 live Unsplash hotlinks in `src/lib/product-data.ts` (P3-5).
+
+**Bonus fixes found while in these files**
+
+- `PageHero` accepted a `breadcrumb` prop and shipped `.breadcrumb` CSS but never
+  rendered the markup — every caller's trail was silently dropped, so the site
+  had no visible breadcrumbs while emitting BreadcrumbList schema. Now rendered.
+- `BannerContactForm` defaulted to `contact@granitegallery.com`, which is not the
+  address the business reads, and the "Request Catalogue" button mailed it. Both
+  phone and email now come from `siteConfig`.
 
 ---
 
@@ -646,7 +688,7 @@ ${body}
   ~165 discovered images within two weeks.
 - **Effort:** M · **Risk:** none.
 
-### `[ ]` P3-2 — Write real alt text for hero images
+### `[x]` P3-2 — Write real alt text for hero images
 
 - **Files:** [`src/components/sections/PageHero/index.tsx`](../../src/components/sections/PageHero/index.tsx),
   the two stone detail routes
@@ -864,7 +906,7 @@ ${body}
 - **Effort:** XL (external dependency) · **Risk:** none technically; this is the long pole
   on image rankings.
 
-### `[ ]` P4-4 — Audit titles and descriptions against the project's own contract
+### `[x]` P4-4 — Audit titles and descriptions against the project's own contract
 
 - **Files:** [`src/data/page-seo.ts`](../../src/data/page-seo.ts), all `*-products.ts`,
   `*-data.ts`

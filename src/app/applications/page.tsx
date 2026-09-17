@@ -136,7 +136,7 @@ export default function ApplicationsPage() {
   });
 
   return (
-    <main>
+    <>
       {/* 1. Hero Slider */}
       <HeroSlider slides={applicationSlides} />
 
@@ -163,6 +163,6 @@ export default function ApplicationsPage() {
 
       {/* 8. Contact */}
       <BannerContactForm />
-    </main>
+    </>
   );
 }

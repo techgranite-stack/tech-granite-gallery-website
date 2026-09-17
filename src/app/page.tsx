@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { pageSeo } from '@/data/page-seo';
+import { localBusinessJsonLd } from '@/lib/structured-data';
 import HeroSlider from "@/components/sections/HeroSlider";
 import StatsBand from "@/components/sections/StatsBand";
 import ScrollingTagline from "@/components/sections/ScrollingTagline";
@@ -62,6 +63,18 @@ const mosaicApps = applicationsData.map((app) => ({
 export default function Home() {
   return (
     <>
+      {/*
+        LocalBusiness — emitted on the homepage, /contact and the Kishangarh
+        landing page only. Organization and WebSite come from the root layout on
+        every page; this node adds the physical premises, geo pin and areaServed
+        that make the business eligible for the local pack. Deliberately not
+        site-wide: duplicated LocalBusiness nodes compete with each other.
+      */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd()) }}
+      />
+
       {/* 1. Hero — full viewport, self-contained background */}
       <HeroSlider slides={heroSlides} />
 

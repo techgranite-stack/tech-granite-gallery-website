@@ -163,7 +163,7 @@ export default function HeroSlider({ slides = heroSlides }: HeroSliderProps) {
         >
           <Image
             src={s.image}
-            alt={s.title}
+            alt={s.alt ?? s.title}
             fill
             priority={i === 0}
             sizes="100vw"

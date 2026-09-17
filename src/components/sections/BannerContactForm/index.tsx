@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import styles from './BannerContactForm.module.css';
 import { COUNTRY_CODES, formatFullPhoneNumber } from '@/data/country-codes';
+import { siteConfig } from '@/config/site';
 
 
 if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
@@ -69,8 +70,13 @@ export interface BannerContactFormProps {
 
 export default function BannerContactForm({
   web3FormsKey = '6170b2ba-9972-4bff-a0c2-b7d256aa1ce0',
-  phone = '+91 9116622422',
-  email = 'contact@granitegallery.com',
+  // NAP consistency: these used to be hardcoded here and disagreed with the
+  // footer, the schema and each other — the "Request Catalogue" mailto pointed
+  // at contact@granitegallery.com, which is not the address the business reads.
+  // Local ranking depends on the name/address/phone matching everywhere Google
+  // sees it, so both now come from the single source in site.ts.
+  phone = siteConfig.links.phone,
+  email = siteConfig.links.email,
   bannerEyebrow = 'Ready to Begin?',
   bannerHeadline = 'Transform Your Space with Premium Stone',
   hideBanner = false,

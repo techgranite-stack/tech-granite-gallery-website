@@ -116,7 +116,7 @@ export default async function TeamMemberPage(
   const memberMarquee = [...member.specialties, 'Kishangarh Stone', 'Granite Gallery'];
 
   return (
-    <main className={styles.page}>
+    <div className={styles.page}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -265,6 +265,6 @@ export default async function TeamMemberPage(
       <MarqueeTestimonials testimonials={testimonials} />
 
       <BannerContactForm />
-    </main>
+    </div>
   );
 }

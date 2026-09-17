@@ -6,13 +6,19 @@ import BannerContactForm from '@/components/sections/BannerContactForm';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import ProductCatalog from '@/components/sections/ProductCatalog';
+import ProductLocalBlock from '@/components/sections/ProductLocalBlock';
 import {
   getAllMarbleSlugs,
   getProductBySlug,
   getRelatedByColor,
   getRelatedByCategory,
 } from '@/data/stone-index';
-import { fromStoneDetail, resolveStandImage, resolveHeroImage } from '@/lib/product-detail';
+import {
+  fromStoneDetail,
+  resolveStandImage,
+  resolveHeroImage,
+  resolveCatalogImage,
+} from '@/lib/product-detail';
 import { productJsonLd, breadcrumbJsonLd } from '@/lib/structured-data';
 
 interface PageProps {
@@ -61,61 +67,75 @@ export default function MarbleProductPage({ params }: PageProps) {
 
   const standImage = resolveStandImage(product.slug, product.heroImages[0] ?? product.thumbnail);
   const heroImage = resolveHeroImage(product.slug, product.heroImages[0] ?? product.thumbnail);
+  const catalogImage = resolveCatalogImage(product.slug, product.thumbnail);
+
+  // Describes the photograph rather than repeating the stone's name. PageHero
+  // previously fell back to `alt={title}`, so the highest-value image on every
+  // stone page carried alt="Statuario" — no material, no finish, no origin.
+  const heroAlt = [
+    `${product.name} ${categoryLabel.toLowerCase()} slab`,
+    product.finishes[0] ? `${product.finishes[0].label.toLowerCase()} finish` : null,
+    product.origin,
+  ]
+    .filter(Boolean)
+    .join(' — ');
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd(product)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd(product, [heroImage, standImage, catalogImage])) }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(product)) }}
       />
 
-      <main>
-        {/* ── Hero ── */}
-        <PageHero
-          eyebrow={categoryLabel}
-          title={product.name}
-          heroImages={[heroImage]}
-          breadcrumb={[
-            { label: 'Home', href: '/' },
-            { label: 'Marble', href: '/marble' },
-            { label: product.name },
-          ]}
-          badges={specBadges}
-        />
+      {/* ── Hero ── */}
+      <PageHero
+        eyebrow={categoryLabel}
+        title={product.name}
+        heroImages={[heroImage]}
+        imageAlt={heroAlt}
+        breadcrumb={[
+          { label: 'Home', href: '/' },
+          { label: 'Marble', href: '/marble' },
+          { label: product.name },
+        ]}
+        badges={specBadges}
+      />
 
-        {/* ── Product Detail ── */}
-        <ProductCatalog
-          {...fromStoneDetail(product, {
-            subtitle: categoryLabel,
-            backHref: '/marble',
-            backLabel: '← Back to Marble Collection',
-            image: standImage,
-            whatsappUrl,
-          })}
-        />
+      {/* ── Product Detail ── */}
+      <ProductCatalog
+        {...fromStoneDetail(product, {
+          subtitle: categoryLabel,
+          backHref: '/marble',
+          backLabel: '← Back to Marble Collection',
+          image: standImage,
+          whatsappUrl,
+        })}
+      />
 
-        <ScrollingTagline items={[
-          product.name,
-          product.origin,
-          ...product.finishes.map(f => f.label),
-          'Direct from Quarry',
-          'Ships Worldwide',
-        ]} />
+      <ScrollingTagline items={[
+        product.name,
+        product.origin,
+        ...product.finishes.map(f => f.label),
+        'Direct from Quarry',
+        'Ships Worldwide',
+      ]} />
 
-        {/* ── Related Stones (interlinking) ── */}
-        <RelatedStones product={product} byColor={byColor} byCategory={byCategory} />
+      {/* ── Related Stones (interlinking) ── */}
+      <RelatedStones product={product} byColor={byColor} byCategory={byCategory} />
 
-        {/* ── FAQs ── */}
-        {product.faqs && product.faqs.length > 0 && (
-          <FAQAccordion items={product.faqs} title={product.name} titleEm="FAQs" eyebrow="FAQ" />
-        )}
+      {/* ── Local supply & dispatch (Kishangarh) ── */}
+      <ProductLocalBlock product={product} />
 
-        <BannerContactForm hideBanner />
-      </main>
+      {/* ── FAQs ── */}
+      {product.faqs && product.faqs.length > 0 && (
+        <FAQAccordion items={product.faqs} title={product.name} titleEm="FAQs" eyebrow="FAQ" />
+      )}
+
+      <BannerContactForm hideBanner />
     </>
   );
 }

@@ -95,7 +95,7 @@ export default async function ProductDetailPage(
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main>
+      <>
         {/* Hero */}
         <PageHero
           eyebrow={cat?.title ?? product.type}
@@ -166,7 +166,7 @@ export default async function ProductDetailPage(
         )}
 
         <BannerContactForm />
-      </main>
+      </>
     </>
   );
 }

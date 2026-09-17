@@ -45,7 +45,7 @@ export default async function FinishDetailPage(
   const related = finishesData.filter((f) => f.slug !== slug).slice(0, 4);
 
   return (
-    <main>
+    <>
       <PageHero
         eyebrow="Surface Finishes"
         title={finish.name}
@@ -209,6 +209,6 @@ export default async function FinishDetailPage(
       )}
 
       <BannerContactForm />
-    </main>
+    </>
   );
 }

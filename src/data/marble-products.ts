@@ -130,7 +130,7 @@ export const domesticMarble: StoneProduct[] = [
       'Excellent for high-footfall flooring applications',
       'Available in polished, honed and antique finishes',
     ],
-    metaTitle: 'Makrana White Marble | India\'s Finest Pure White Marble | Granite Gallery',
+    metaTitle: 'Makrana White Marble | India\'s Finest Pure White Marble',
     metaDescription:
       'Buy premium Makrana White Marble — the stone of the Taj Mahal. Pure white surface, fine grey veining. Available in polished, honed & antique finishes. Direct from Kishangarh quarries.',
     keywords: ['makrana white marble', 'white marble india', 'taj mahal marble', 'rajasthan marble', 'buy white marble', 'makrana marble price'],
@@ -185,7 +185,7 @@ export const domesticMarble: StoneProduct[] = [
       'Excellent polishing capability for mirror finish',
       'Cost-effective premium alternative for large area flooring',
     ],
-    metaTitle: 'Nizarana White Marble | Bright White Indian Marble | Granite Gallery',
+    metaTitle: 'Nizarana White Marble | Bright White Indian Marble',
     metaDescription:
       'Nizarana White Marble — bright, even-toned white with minimal veining. Perfect for flooring, walls, and countertops. Direct from Rajasthan quarries.',
     keywords: ['nizarana white marble', 'white marble rajasthan', 'kishangarh marble', 'indian white marble', 'nizarana marble price'],
@@ -239,7 +239,7 @@ export const domesticMarble: StoneProduct[] = [
       'Great value for large residential flooring projects',
       'Available in oversized slabs for seamless layouts',
     ],
-    metaTitle: 'Agariya White Marble | Rajasthan White Marble Supplier | Granite Gallery',
+    metaTitle: 'Agariya White Marble | Rajasthan White Marble Supplier',
     metaDescription:
       'Agariya White Marble with subtle cream undertones and fine grain texture. Ideal for luxury flooring, bathrooms and kitchens. Sourced from Rajasthan.',
     keywords: ['agariya white marble', 'white marble kishangarh', 'cream white marble', 'rajasthan white marble', 'agariya marble price'],
@@ -292,7 +292,7 @@ export const domesticMarble: StoneProduct[] = [
       'High contrast patterns — each slab is unique',
       'Excellent hardness for high-traffic floor areas',
     ],
-    metaTitle: 'Talai Marble | White Marble with Grey Veining | Granite Gallery',
+    metaTitle: 'Talai Marble | White Marble with Grey Veining',
     metaDescription:
       'Talai Marble — premium Indian white marble with bold grey veining. Perfect for feature walls, staircases, and luxury bathrooms. Available from Granite Gallery, Kishangarh.',
     keywords: ['talai marble', 'white grey marble', 'veined marble india', 'marble with grey veins', 'talai marble price'],
@@ -345,7 +345,7 @@ export const domesticMarble: StoneProduct[] = [
       'Exceptional polishing response for mirror-gloss finish',
       'Popular for residential and hospitality interiors',
     ],
-    metaTitle: 'Umraya White Marble | Pearl White Indian Marble | Granite Gallery',
+    metaTitle: 'Umraya White Marble | Pearl White Indian Marble',
     metaDescription:
       'Umraya White Marble — crystalline pearl-white surface with minimal veining. Ideal for minimalist and contemporary interiors. Direct from Rajasthan.',
     keywords: ['umraya white marble', 'pearl white marble', 'uniform white marble india', 'plain white marble', 'umraya marble price'],
@@ -421,7 +421,7 @@ export const importedMarble: StoneProduct[] = [
       'Available in large format slabs for uninterrupted layouts',
       'Pairs beautifully with bronze and gold hardware',
     ],
-    metaTitle: 'Botticino Marble | Italian Beige Marble Supplier India | Granite Gallery',
+    metaTitle: 'Botticino Marble | Italian Beige Marble Supplier India',
     metaDescription:
       'Buy Botticino Italian Marble — warm beige with fossil markings, quarried near Brescia, Italy. Ideal for flooring, walls, and luxury interiors. Available at Granite Gallery.',
     keywords: ['botticino marble', 'bottincino marble', 'italian beige marble', 'beige marble india', 'fossil marble', 'botticino marble price india'],
@@ -475,7 +475,7 @@ export const importedMarble: StoneProduct[] = [
       'Consistent background with expressive movement',
       'Ideal for large-format feature walls',
     ],
-    metaTitle: 'Dyna Marble | Turkish White Grey Veined Marble | Granite Gallery',
+    metaTitle: 'Dyna Marble | Turkish White Grey Veined Marble',
     metaDescription:
       'Dyna Turkish Marble — white base with bold grey veining. Perfect for feature walls, kitchen islands, and luxury bathrooms. Available in polished and honed finishes.',
     keywords: ['dyna marble', 'turkish marble india', 'grey veined marble', 'imported white marble', 'dyna marble price india'],
@@ -528,7 +528,7 @@ export const importedMarble: StoneProduct[] = [
       'Classic Sicilian marble used in historic architecture',
       'Low optical movement — great for large unbroken areas',
     ],
-    metaTitle: 'Perlato Marble | Italian Ivory Marble India | Granite Gallery',
+    metaTitle: 'Perlato Marble | Italian Ivory Marble India',
     metaDescription:
       'Perlato Sicilia Italian Marble — ivory-cream with fossilised detail. Perfect for spa floors, hotel lobbies, and luxury residences. Imported directly to Kishangarh.',
     keywords: ['perlato marble', 'perlato sicilia', 'italian ivory marble', 'fossil marble india', 'cream marble imported', 'perlato marble price'],
@@ -583,7 +583,7 @@ export const importedMarble: StoneProduct[] = [
       'High density for heavy-use floor applications',
       'Bookmatching available for symmetrical installations',
     ],
-    metaTitle: 'Michelangelo Marble | Turkish White Marble India | Granite Gallery',
+    metaTitle: 'Michelangelo Marble | Turkish White Marble India',
     metaDescription:
       'Michelangelo Turkish Marble — bright white with flowing grey rivers. Ideal for grand entrances, kitchen islands, and luxury bathrooms. Available from Granite Gallery.',
     keywords: ['michelangelo marble', 'michaelangelo marble', 'turkish white marble india', 'flowing veined marble', 'afyon white marble'],
@@ -645,7 +645,7 @@ export const importedMarble: StoneProduct[] = [
       'Used in Roman architecture for over 2,000 years',
       'Great for indoor and outdoor applications',
     ],
-    metaTitle: 'Travertine Marble | Italian Travertine Supplier India | Granite Gallery',
+    metaTitle: 'Travertine Marble | Italian Travertine Supplier India',
     metaDescription:
       'Italian Travertine — warm beige cellular stone from Tivoli. Available in filled/polished, honed, and brushed finishes. Perfect for flooring, walls, and pool surrounds.',
     keywords: ['travertine marble', 'italian travertine india', 'travertine flooring', 'beige travertine', 'imported travertine', 'travertine price india'],
@@ -703,7 +703,7 @@ export const importedMarble: StoneProduct[] = [
       'Bookmatching available for mirror-image installations',
       'Certificate of Italian origin available on request',
     ],
-    metaTitle: 'Statuario Marble | Carrara Italian White Marble India | Granite Gallery',
+    metaTitle: 'Statuario Marble | Carrara Italian White Marble India',
     metaDescription:
       'Statuario / Satvario Italian Marble from Carrara — the world\'s most coveted white marble. Bold grey veining on brilliant white. Available polished & honed from Granite Gallery.',
     keywords: ['statuario marble', 'satvario marble', 'carrara marble india', 'italian white marble', 'luxury marble', 'statuario price india'],
@@ -772,7 +772,7 @@ export const importedMarble: StoneProduct[] = [
       'Ideal for bar tops, feature walls, and reception counters',
       'Available as thin panels (10–15 mm) for backlit applications',
     ],
-    metaTitle: 'Honey Onyx Alabaster Marble | Translucent Stone India | Granite Gallery',
+    metaTitle: 'Honey Onyx Alabaster Marble | Translucent Stone India',
     metaDescription:
       'Honey Onyx / Alabaster — semi-translucent golden stone, stunning when backlit. Perfect for feature walls, bar counters, and luxury bathrooms. Available from Granite Gallery.',
     keywords: ['honey onyx', 'alabaster marble', 'translucent marble india', 'backlit onyx', 'golden onyx stone', 'backlit stone panel india'],
@@ -826,7 +826,7 @@ export const importedMarble: StoneProduct[] = [
       'High contrast veining creates natural focal points',
       'Available in bookmatched pairs for symmetrical walls',
     ],
-    metaTitle: 'Golden Lisa Marble | Spanish Golden Marble India | Granite Gallery',
+    metaTitle: 'Golden Lisa Marble | Spanish Golden Marble India',
     metaDescription:
       'Golden Lisa Spanish Marble — warm golden-beige with caramel veining. Perfect for kitchen counters, bathroom vanities, and luxury flooring. Import direct from Granite Gallery.',
     keywords: ['golden lisa marble', 'golden beige marble', 'spanish marble india', 'warm marble flooring', 'golden lisa marble price'],
@@ -884,7 +884,7 @@ export const importedMarble: StoneProduct[] = [
       'Highest hardness among marbles — ideal for countertops',
       'Stunning contrast for fireplace surrounds and feature walls',
     ],
-    metaTitle: 'Emperador Marble | Dark Brown Spanish Marble India | Granite Gallery',
+    metaTitle: 'Emperador Marble | Dark Brown Spanish Marble India',
     metaDescription:
       'Emperador Spanish Marble — rich dark brown with gold and white veining. Perfect for countertops, fireplaces, and dramatic feature walls. Available from Granite Gallery.',
     keywords: ['emperador marble', 'dark brown marble', 'spanish brown marble india', 'emperador dark marble price', 'light emperador marble'],
@@ -938,7 +938,7 @@ export const importedMarble: StoneProduct[] = [
       'Consistent large-format slabs available',
       'Excellent alternative to European white marble at better value',
     ],
-    metaTitle: 'Vietnam White Marble | Crystal White Marble India | Granite Gallery',
+    metaTitle: 'Vietnam White Marble | Crystal White Marble India',
     metaDescription:
       'Vietnam White Marble — crystal clear, bluish-white surface with minimal veining. One of Asia\'s purest white marbles. Available in large format slabs from Granite Gallery.',
     keywords: ['vietnam white marble', 'vietnamese marble india', 'crystal white marble', 'bluish white marble', 'imported white marble india', 'vietnam white marble price'],

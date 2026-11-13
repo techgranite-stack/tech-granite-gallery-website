@@ -1,4 +1,4 @@
-# Keyword → URL Map
+# Keyword → URL Maps
 
 **Created:** 2026-08-30
 **Companion docs:** [`Main_Strategy.md`](./Main_Strategy.md) · [`../Implementation/Local_SEO_Plan.md`](../Implementation/Local_SEO_Plan.md) · [`../Implementation/Technical_SEO_Plan.md`](../Implementation/Technical_SEO_Plan.md)
@@ -26,12 +26,12 @@ instead of building a second one.
 Search intent in this market splits four ways, and each tier wants a different
 kind of page. Mixing them on one URL is what makes a page rank for nothing.
 
-| Tier | The searcher wants | Page type | Example query |
-|---|---|---|---|
-| **Local-commercial** | To buy, from someone near a place | Landing / contact | "marble exporters in kishangarh" |
-| **Product** | A specific named stone | Stone detail | "black galaxy granite price" |
-| **Category** | To browse a class of stone | Listing / colour hub | "white marble india" |
-| **Informational** | To learn before deciding | Blog / finish / application | "granite vs marble" |
+| Tier                        | The searcher wants                                              | Page type                    | Example query                            |
+| --------------------------- | --------------------------------------------------------------- | ---------------------------- | ---------------------------------------- |
+| **Local-commercial**  | To buy, from someone near a place                               | Landing / contact            | "marble exporters in kishangarh"         |
+| **Product**           | A specific named stone                                          | Stone detail                 | "black galaxy granite price"             |
+| **Category**          | To browse a class of stone                                      | Listing / colour hub         | "white marble india"                     |
+| **Informational**     | To learn before deciding                                        | Blog / finish / application  | "granite vs marble"                      |
 | **Best-For Decision** | To compare & specify top materials for an application or finish | High-Intent Buyer Guide (G6) | "best quartzite for kitchen countertops" |
 
 > **Complete Best-For Matrix & Guide:** See [`Best_Keywords_Matrix_Guide.md`](./Best_Keywords_Matrix_Guide.md) for the 53 live decision routes, ASTM benchmarks, and keyword clusters.
@@ -43,16 +43,16 @@ kind of page. Mixing them on one URL is what makes a page rank for nothing.
 Highest commercial value, lowest competition, and the tier the site was weakest
 in. These are the pages that convert.
 
-| Target keyword | URL | Status |
-|---|---|---|
-| marble exporters in kishangarh | `/marble-exporters-in-kishangarh` | ✅ rebuilt — real content, was a homepage duplicate |
-| marble supplier kishangarh | `/marble-exporters-in-kishangarh` | ✅ same page, secondary term |
-| granite manufacturer kishangarh | `/marble-exporters-in-kishangarh` | ✅ same page, secondary term |
-| kishangarh marble market / marble mandi | `/marble-exporters-in-kishangarh` | ✅ covered in the "Why Kishangarh" block |
-| marble supplier near me / contact number | `/contact` | ✅ new page — none existed |
-| stone yard kishangarh address | `/contact` | ✅ new page |
-| `{stone}` supplier in kishangarh | `/marble/[slug]`, `/granite/[slug]` | ✅ per-product local block on all 55 |
-| `{stone}` price in kishangarh | `/marble/[slug]`, `/granite/[slug]` | ⚠️ block added; no price data on site — see Gaps |
+| Target keyword                           | URL                                     | Status                                               |
+| ---------------------------------------- | --------------------------------------- | ---------------------------------------------------- |
+| marble exporters in kishangarh           | `/marble-exporters-in-kishangarh`     | ✅ rebuilt — real content, was a homepage duplicate |
+| marble supplier kishangarh               | `/marble-exporters-in-kishangarh`     | ✅ same page, secondary term                         |
+| granite manufacturer kishangarh          | `/marble-exporters-in-kishangarh`     | ✅ same page, secondary term                         |
+| kishangarh marble market / marble mandi  | `/marble-exporters-in-kishangarh`     | ✅ covered in the "Why Kishangarh" block             |
+| marble supplier near me / contact number | `/contact`                            | ✅ new page — none existed                          |
+| stone yard kishangarh address            | `/contact`                            | ✅ new page                                          |
+| `{stone}` supplier in kishangarh       | `/marble/[slug]`, `/granite/[slug]` | ✅ per-product local block on all 55                 |
+| `{stone}` price in kishangarh          | `/marble/[slug]`, `/granite/[slug]` | ⚠️ block added; no price data on site — see Gaps  |
 
 **Do not** create `/marble-supplier-kishangarh`, `/granite-exporter-kishangarh`
 or similar. They are the same intent as row 1. Splitting them across URLs divides
@@ -65,11 +65,11 @@ the signal and is the pattern Google classifies as doorway pages.
 55 stone pages, each with hand-written metadata and FAQs. Structurally the
 strongest part of the site.
 
-| Pattern | URL | Notes |
-|---|---|---|
-| `{stone name}` | `/marble/[slug]` · `/granite/[slug]` | Canonical home for every stone |
-| `{stone name}` + price / slab / supplier | same | Served by the local block + FAQs |
-| `{alt trade name}` | same | Carried in `altNames` → schema `alternateName` |
+| Pattern                                    | URL                                       | Notes                                               |
+| ------------------------------------------ | ----------------------------------------- | --------------------------------------------------- |
+| `{stone name}`                           | `/marble/[slug]` · `/granite/[slug]` | Canonical home for every stone                      |
+| `{stone name}` + price / slab / supplier | same                                      | Served by the local block + FAQs                    |
+| `{alt trade name}`                       | same                                      | Carried in `altNames` → schema `alternateName` |
 
 **Known conflict:** `statuario-luxe-marble` under `/collections/marble/` competes
 with `/marble/statuario` on the same intent. One of the two should 301 to the
@@ -79,14 +79,14 @@ other. This is Decision Log #1 in the technical plan and is still open.
 
 ## Tier 3 — Category
 
-| Target | URL |
-|---|---|
-| marble collection / indian marble / italian marble | `/marble` |
-| granite varieties / granite collection | `/granite` |
+| Target                                                   | URL                                       |
+| -------------------------------------------------------- | ----------------------------------------- |
+| marble collection / indian marble / italian marble       | `/marble`                               |
+| granite varieties / granite collection                   | `/granite`                              |
 | white marble india, black granite india, … (10 colours) | `/white-marble`, `/black-granite`, … |
-| quartzite / sandstone / limestone / slate | `/collections/[category]` |
-| polished, honed, flamed, leathered … | `/finishes/[slug]` |
-| flooring, countertops, cladding … | `/applications/[slug]` |
+| quartzite / sandstone / limestone / slate                | `/collections/[category]`               |
+| polished, honed, flamed, leathered …                    | `/finishes/[slug]`                      |
+| flooring, countertops, cladding …                       | `/applications/[slug]`                  |
 
 The colour hubs are a genuine asset — 10 pages capturing high-volume
 "`{colour}` marble/granite" queries that no individual stone page can own.
@@ -105,15 +105,15 @@ landing page and should link to it directly.
 Derived from [`src/types/seo.ts`](../../src/types/seo.ts) and enforced by
 `npm run seo:check`.
 
-| Element | Rule | Enforced |
-|---|---|---|
-| `<title>` | ≤ 60 chars, unique | ✅ hard fail |
-| meta description | 140–160 chars, unique | ⚠️ warn on length, hard fail on duplicate |
-| `<h1>` | Exactly one, carries the target keyword | ✅ hard fail |
-| canonical | Present, absolute, self-referential | ✅ hard fail |
-| `<main>` | Exactly one (root layout supplies it) | ✅ hard fail |
-| image `alt` | Present on every `<img>` | ✅ hard fail |
-| JSON-LD | Parses | ✅ hard fail |
+| Element          | Rule                                    | Enforced                                    |
+| ---------------- | --------------------------------------- | ------------------------------------------- |
+| `<title>`      | ≤ 60 chars, unique                     | ✅ hard fail                                |
+| meta description | 140–160 chars, unique                  | ⚠️ warn on length, hard fail on duplicate |
+| `<h1>`         | Exactly one, carries the target keyword | ✅ hard fail                                |
+| canonical        | Present, absolute, self-referential     | ✅ hard fail                                |
+| `<main>`       | Exactly one (root layout supplies it)   | ✅ hard fail                                |
+| image `alt`    | Present on every `<img>`              | ✅ hard fail                                |
+| JSON-LD          | Parses                                  | ✅ hard fail                                |
 
 **The `| Granite Gallery` suffix has been dropped from 66 titles** that exceeded
 60 characters. It was pure overhead: the site now emits Organization and WebSite

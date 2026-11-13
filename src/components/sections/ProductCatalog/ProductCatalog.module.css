@@ -36,6 +36,14 @@
   margin-top: 10px;
 }
 
+.titleMeta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
 .subtitle {
   font-family: var(--font-sans);
   font-size: 12px;
@@ -43,7 +51,29 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-top: 12px;
+}
+
+.pricePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(192, 133, 82, 0.12);
+  border: 1px solid rgba(192, 133, 82, 0.35);
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--copper);
+  letter-spacing: 0.02em;
+}
+
+.pricePillSub {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .copperLine {
@@ -154,6 +184,24 @@
   border-bottom: 1px solid rgba(192, 133, 82, 0.12);
 }
 
+.specRowPrice {
+  background: rgba(192, 133, 82, 0.08);
+  margin: 0 -8px;
+  padding: 11px 8px;
+  border-radius: 6px;
+  border-bottom-color: rgba(192, 133, 82, 0.25);
+}
+
+.specRowPrice .specKey {
+  color: var(--copper);
+  font-weight: 700;
+}
+
+.specRowPrice .specVal {
+  color: var(--mahogany);
+  font-weight: 700;
+}
+
 .specKey {
   font-family: var(--font-sans);
   font-size: 12px;
@@ -221,6 +269,63 @@
   flex-direction: column;
   gap: 14px;
   align-items: flex-start;
+}
+
+.priceCallout {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(192, 133, 82, 0.28);
+  border-left: 3px solid var(--copper);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 4px 14px rgba(75, 46, 43, 0.04);
+}
+
+.priceCalloutHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.priceCalloutLabel {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--copper);
+}
+
+.priceCalloutBadge {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  background: rgba(192, 133, 82, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.priceCalloutValue {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--mahogany);
+  line-height: 1.2;
+}
+
+.priceCalloutSub {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.3;
 }
 
 .ctaBtn {

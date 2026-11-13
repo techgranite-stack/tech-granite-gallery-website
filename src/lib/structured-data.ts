@@ -21,6 +21,7 @@ import type { StoneProduct } from '@/types/stone';
 import { productPath } from '@/types/stone';
 import { SITE_URL, abs } from '@/lib/seo-url';
 import { siteConfig } from '@/config/site';
+import { getProductPrice } from '@/data/product-prices';
 import {
   businessAddress,
   businessGeo,
@@ -168,6 +169,7 @@ export function websiteJsonLd() {
 export function productJsonLd(stone: StoneProduct, images: string[] = []) {
   const categoryLabel = stone.category === 'granite' ? 'Granite' : 'Marble';
   const url = abs(productPath(stone));
+  const pricing = stone.priceRange ?? getProductPrice(stone.slug, stone.category);
 
   // Fall back to the old derivation only if the caller passed nothing, so an
   // un-migrated call site degrades rather than emitting an empty image array.
@@ -194,23 +196,17 @@ export function productJsonLd(stone: StoneProduct, images: string[] = []) {
     countryOfOrigin: { '@type': 'Country', name: primaryLocation.country },
     url,
     offers: {
-      '@type': 'Offer',
+      '@type': 'AggregateOffer',
+      priceCurrency: 'INR',
+      lowPrice: String(pricing.low),
+      highPrice: String(pricing.high),
+      offerCount: '1',
+      priceValidUntil: '2027-12-31',
       availability:
         stone.inStock === false
           ? 'https://schema.org/OutOfStock'
           : 'https://schema.org/InStock',
-      priceCurrency: 'INR',
       url,
-      // Was `address: 'Kishangarh, Rajasthan, India'` — a bare string, which
-      // schema.org does not accept and Google drops, so every product page
-      // carried no seller location at all.
-      //
-      // Points at #organization, not #localbusiness: the Organization node is
-      // emitted by the root layout on every page, so this @id always resolves
-      // inside the page's own graph. LocalBusiness only appears on /, /contact
-      // and the Kishangarh landing page, and a reference to a node that is not
-      // on the page is a dangling one. Organization already carries the
-      // PostalAddress and areaServed, so the location signal is intact.
       seller: { '@id': `${SITE_URL}/#organization` },
       areaServed: areaServed(),
       itemCondition: 'https://schema.org/NewCondition',

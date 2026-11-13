@@ -9,6 +9,7 @@ import fs from 'fs';
 import path from 'path';
 import type { StoneProduct } from '@/types/stone';
 import type { Product } from '@/lib/product-data';
+import { getProductPrice } from '@/data/product-prices';
 
 export interface DetailSpecRow {
   key: string;
@@ -39,6 +40,8 @@ export interface ProductDetailData {
   whatsappUrl: string;
   backHref: string;
   backLabel: string;
+  priceFormatted?: string;
+  priceNote?: string;
 }
 
 /** Title-cases a slug-ish string: "kitchen-countertops" → "Kitchen Countertops" */
@@ -110,7 +113,11 @@ interface StoneDetailOpts {
 
 /** System A — StoneProduct (powers /marble and /granite). */
 export function fromStoneDetail(p: StoneProduct, opts: StoneDetailOpts): ProductDetailData {
+  const price = p.priceRange ?? getProductPrice(p.slug, p.category);
+  const priceFormatted = `₹${price.low} – ₹${price.high} / ${price.unit || 'sq ft'}`;
+
   const specRows: DetailSpecRow[] = [
+    { key: 'Indicative Price', val: `${priceFormatted} (ex-factory)` },
     { key: 'Origin', val: p.origin },
     { key: 'Stone Type', val: opts.subtitle },
     ...(p.specs.density ? [{ key: 'Density', val: p.specs.density }] : []),
@@ -136,6 +143,8 @@ export function fromStoneDetail(p: StoneProduct, opts: StoneDetailOpts): Product
     whatsappUrl: opts.whatsappUrl,
     backHref: opts.backHref,
     backLabel: opts.backLabel,
+    priceFormatted,
+    priceNote: 'Wholesale & factory rates (ex-Kishangarh). Contact for customized sizes & container export quotes.',
   };
 }
 
@@ -149,7 +158,11 @@ interface CollectionDetailOpts {
 /** System B — Product (powers /collections/[category]/[slug]). */
 export function fromCollectionDetail(p: Product, opts: CollectionDetailOpts): ProductDetailData {
   const typeLabel = p.type.charAt(0).toUpperCase() + p.type.slice(1);
+  const price = p.priceRange ?? getProductPrice(p.slug, p.type);
+  const priceFormatted = `₹${price.low} – ₹${price.high} / ${price.unit || 'sq ft'}`;
+
   const specRows: DetailSpecRow[] = [
+    { key: 'Indicative Price', val: `${priceFormatted} (ex-factory)` },
     { key: 'Origin', val: p.origin },
     { key: 'Stone Type', val: typeLabel },
     ...(p.specifications.density ? [{ key: 'Density', val: p.specifications.density }] : []),
@@ -174,5 +187,7 @@ export function fromCollectionDetail(p: Product, opts: CollectionDetailOpts): Pr
     whatsappUrl: opts.whatsappUrl,
     backHref: opts.backHref,
     backLabel: opts.backLabel,
+    priceFormatted,
+    priceNote: 'Wholesale & factory rates (ex-Kishangarh). Contact for customized sizes & container export quotes.',
   };
 }

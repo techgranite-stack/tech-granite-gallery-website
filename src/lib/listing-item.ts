@@ -12,6 +12,7 @@ import type { StoneProduct, ColorFamily } from '@/types/stone';
 import { productPath } from '@/types/stone';
 import type { Product } from '@/lib/product-data';
 import { resolveCatalogImage, resolveCollectionImage } from '@/lib/product-detail';
+import { getProductPrice } from '@/data/product-prices';
 
 export interface ListingItem {
   slug: string;
@@ -35,6 +36,7 @@ export interface ListingItem {
   categoryLabel: string;
   tag?: string;
   altNames?: string[];
+  priceFormatted?: string;
 }
 
 function stoneCategoryLabel(category: StoneProduct['category']): string {
@@ -45,6 +47,9 @@ function stoneCategoryLabel(category: StoneProduct['category']): string {
 
 /** Adapt a rich StoneProduct (marble/granite system) to a ListingItem. */
 export function fromStoneProduct(p: StoneProduct): ListingItem {
+  const price = p.priceRange ?? getProductPrice(p.slug, p.category);
+  const priceFormatted = `₹${price.low} – ₹${price.high} / ${price.unit || 'sq ft'}`;
+
   return {
     slug: p.slug,
     name: p.name,
@@ -60,11 +65,15 @@ export function fromStoneProduct(p: StoneProduct): ListingItem {
     categoryLabel: stoneCategoryLabel(p.category),
     tag: p.tag,
     altNames: p.altNames,
+    priceFormatted,
   };
 }
 
 /** Adapt a collection Product to a ListingItem for a given category title. */
 export function fromCollectionProduct(p: Product, categoryLabel: string): ListingItem {
+  const price = p.priceRange ?? getProductPrice(p.slug, p.type);
+  const priceFormatted = `₹${price.low} – ₹${price.high} / ${price.unit || 'sq ft'}`;
+
   return {
     slug: p.slug,
     name: p.name,
@@ -80,5 +89,6 @@ export function fromCollectionProduct(p: Product, categoryLabel: string): Listin
     href: `/collections/${p.type}/${p.slug}`,
     categoryLabel,
     tag: p.tag,
+    priceFormatted,
   };
 }

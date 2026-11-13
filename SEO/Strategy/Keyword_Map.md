@@ -32,6 +32,9 @@ kind of page. Mixing them on one URL is what makes a page rank for nothing.
 | **Product** | A specific named stone | Stone detail | "black galaxy granite price" |
 | **Category** | To browse a class of stone | Listing / colour hub | "white marble india" |
 | **Informational** | To learn before deciding | Blog / finish / application | "granite vs marble" |
+| **Best-For Decision** | To compare & specify top materials for an application or finish | High-Intent Buyer Guide (G6) | "best quartzite for kitchen countertops" |
+
+> **Complete Best-For Matrix & Guide:** See [`Best_Keywords_Matrix_Guide.md`](./Best_Keywords_Matrix_Guide.md) for the 53 live decision routes, ASTM benchmarks, and keyword clusters.
 
 ---
 

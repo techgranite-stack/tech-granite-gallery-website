@@ -56,6 +56,13 @@ export default function StoneCard({ product }: StoneCardProps) {
 
         <p className={styles.tagline}>{product.tagline}</p>
 
+        {product.priceFormatted && (
+          <div className={styles.priceRow}>
+            <span className={styles.priceVal}>{product.priceFormatted}</span>
+            <span className={styles.priceUnit}>ex-factory</span>
+          </div>
+        )}
+
         <div className={styles.actions}>
           <Link href={href} className={styles.detailsBtn}>
             Details

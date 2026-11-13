@@ -17,20 +17,30 @@ import RelatedGrid from '@/components/sections/RelatedGrid';
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
+import StatsBand from '@/components/sections/StatsBand';
+import NumberedCardGrid from '@/components/sections/NumberedCardGrid';
+import MosaicGrid from '@/components/sections/MosaicGrid';
+import FlagshipLandingPage from '@/components/templates/FlagshipLandingPage';
+import { getFlagshipPage, getAllFlagshipSlugs } from '@/data/flagship-pages';
 import { localBusinessJsonLd, localServiceJsonLd, trailJsonLd } from '@/lib/structured-data';
+import { getAllLandingSlugs, getLandingPage } from '@/lib/landing';
 
 interface PageProps {
   params: { slug: string };
 }
 
-// Unknown slugs must 404 rather than render, matching the rest of the site.
-export const dynamicParams = false;
+// Unknown slugs call notFound() explicitly if not matched in any data registry.
+export const dynamicParams = true;
 
-// Pre-generate static paths for both landing pages AND color pages
+// Pre-generate static paths for landing pages, color pages, and programmatic matrix pages
 export function generateStaticParams() {
-  const landingSlugs = Object.keys(landingPages).map((slug) => ({ slug }));
-  const colorSlugs = colorPages.map((cp) => ({ slug: cp.slug }));
-  return [...landingSlugs, ...colorSlugs];
+  const flagshipSlugs = getAllFlagshipSlugs();
+  const landingSlugs = Object.keys(landingPages);
+  const colorSlugs = colorPages.map((cp) => cp.slug);
+  const programmaticSlugs = getAllLandingSlugs();
+
+  const allSlugs = Array.from(new Set([...flagshipSlugs, ...landingSlugs, ...colorSlugs, ...programmaticSlugs]));
+  return allSlugs.map((slug) => ({ slug }));
 }
 
 export function generateMetadata({ params }: PageProps): Metadata {
@@ -50,8 +60,33 @@ export function generateMetadata({ params }: PageProps): Metadata {
     };
   }
 
-  // Landing page metadata
-  const pageData = landingPages[params.slug];
+  // Flagship landing page metadata (full home-page component stack)
+  const flagship = getFlagshipPage(params.slug);
+  if (flagship) {
+    const { title, description, keywords, ogImage, canonical } = flagship.metadata;
+    return {
+      title,
+      description,
+      keywords,
+      alternates: { canonical: canonical ?? `/${flagship.slug}` },
+      openGraph: {
+        type: 'website',
+        title,
+        description,
+        url: `/${flagship.slug}`,
+        ...(ogImage ? { images: [ogImage] } : {}),
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+        ...(ogImage ? { images: [ogImage] } : {}),
+      },
+    };
+  }
+
+  // Hand-crafted landing page metadata or Programmatic matrix landing page
+  const pageData = landingPages[params.slug] ?? getLandingPage(params.slug);
   if (pageData) {
     const { title, description, keywords, ogImage } = pageData.metadata;
     return {
@@ -79,6 +114,12 @@ export function generateMetadata({ params }: PageProps): Metadata {
 }
 
 export default function CatchAllPage({ params }: PageProps) {
+  // ── Flagship SEO page (full home-page component stack) ───────────────────────
+  const flagship = getFlagshipPage(params.slug);
+  if (flagship) {
+    return <FlagshipLandingPage data={flagship} />;
+  }
+
   // ── Color SEO page ──────────────────────────────────────────────────────────
   const colorPage = getColorPageBySlug(params.slug);
   if (colorPage) {
@@ -86,8 +127,8 @@ export default function CatchAllPage({ params }: PageProps) {
     return <ColorStonePage data={colorPage} products={products} />;
   }
 
-  // ── Marketing / local landing page ──────────────────────────────────────────
-  const page = landingPages[params.slug];
+  // ── Marketing / local landing page (Handcrafted or Programmatic) ─────────────
+  const page = landingPages[params.slug] ?? getLandingPage(params.slug);
   if (!page) notFound();
 
   const { hero, intro, blocks, showcase, tagline, localInfo, faqs, faqHeading, service } = page;
@@ -109,14 +150,15 @@ export default function CatchAllPage({ params }: PageProps) {
   return (
     <>
       {/*
-        LocalBusiness is emitted here and on / and /contact only — the pages that
-        actually speak about the premises. The Service node ties "what we do" to
-        "where", which is the pairing local queries match against.
+        LocalBusiness is emitted on pages with physical premises (Kishangarh facility)
+        only. Delivery/out-of-town pages emit Service schema with areaServed.
       */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd()) }}
-      />
+      {localInfo && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd()) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -155,11 +197,39 @@ export default function CatchAllPage({ params }: PageProps) {
         fullHeight
       />
 
+      {page.statsBand && page.statsBand.length > 0 && (
+        <StatsBand stats={page.statsBand} />
+      )}
+
       <LandingProse block={intro} />
+
+      {page.mosaicApps && page.mosaicApps.length > 0 && (
+        <MosaicGrid
+          apps={page.mosaicApps}
+          eyebrow="APPLICATION SHOWCASE"
+          title="Architectural"
+          titleEm="Applications"
+          description="Engineered for high-traffic durability, stain resistance, and timeless luxury aesthetics."
+        />
+      )}
 
       {blocks.map((block) => (
         <LandingProse key={block.id} block={block} />
       ))}
+
+      {page.numberedCards && page.numberedCards.reasons.length > 0 && (
+        <NumberedCardGrid
+          reasons={page.numberedCards.reasons.map((r, i) => ({
+            num: String(i + 1).padStart(2, '0'),
+            title: r.title,
+            desc: r.desc,
+          }))}
+          eyebrow={page.numberedCards.eyebrow}
+          title={page.numberedCards.title}
+          subtitle={page.numberedCards.subtitle}
+          marqueeItems={page.numberedCards.marqueeItems}
+        />
+      )}
 
       {showcase && showcaseItems.length > 0 && (
         <RelatedGrid

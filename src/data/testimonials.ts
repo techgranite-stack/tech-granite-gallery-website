@@ -6,15 +6,15 @@ export interface ExtendedTestimonialItem extends TestimonialItem {
 
 export const testimonials: ExtendedTestimonialItem[] = [
   {
-    text: "Granite Gallery supplied the entire marble for our 5-star hotel lobby. The quality of Calacatta Gold was exceptional — perfect veining, consistent slab thickness, and delivered on time.",
+    text: "Granite Gallery supplied the entire stone for our luxury hotel lobby. The quality of their imported Italian marble was exceptional — perfect veining, consistent slab thickness, and delivered on schedule.",
     author: "Rajesh Mehta",
-    role: "Lead Architect, Mehta & Partners",
+    role: "Architect / Designer, New Delhi",
     initial: "R"
   },
   {
-    text: "We've imported three containers of Black Galaxy and White Statuario for our projects in UAE. The export packaging was impeccable and the quality certificates helped us clear customs smoothly.",
+    text: "We imported full consignments of gangsaw granite and imported marble for our commercial projects in UAE. The export packaging was impeccable and the quality certificates helped us clear customs smoothly.",
     author: "Ahmed Al-Rashid",
-    role: "Interior Contractor, Dubai",
+    role: "Contractor / Builder, Dubai",
     initial: "A"
   },
   {
@@ -24,15 +24,15 @@ export const testimonials: ExtendedTestimonialItem[] = [
     initial: "S"
   },
   {
-    text: "As an interior designer, I've worked with dozens of stone suppliers. Granite Gallery stands out for their curated selection of exotic stones and their willingness to provide samples.",
+    text: "As an interior designer, I've worked with dozens of stone suppliers. Granite Gallery stands out for their curated selection of exotic stones and their willingness to provide physical design samples.",
     author: "Priya Nair",
-    role: "Interior Designer, Mumbai",
+    role: "Architect / Designer, Mumbai",
     initial: "P"
   },
   {
-    text: "The exotic stone collection is unmatched. We used Rainforest Brown for our penthouse kitchen and it's become the center of attraction for every guest.",
+    text: "The exotic stone collection is unmatched. We used exotic quartzite for our penthouse kitchen and it has become the centerpiece of our home.",
     author: "Vikram Singh",
-    role: "Business Owner",
+    role: "Business Owner, Delhi",
     initial: "V"
   }
 ];

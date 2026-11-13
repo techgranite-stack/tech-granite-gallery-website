@@ -179,6 +179,29 @@
   flex: 1;
 }
 
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 4px 0 2px;
+}
+
+.priceVal {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--copper);
+  letter-spacing: 0.02em;
+}
+
+.priceUnit {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
 /* ── Actions ── */
 .actions {
   display: flex;

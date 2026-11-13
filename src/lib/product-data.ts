@@ -43,6 +43,8 @@ export interface Product {
   keywords?: string[];
   ogImage?: string;
   whatsappMsg?: string;
+  /** Indicative market price range in ₹ / sq ft */
+  priceRange?: { low: number; high: number; unit?: string };
   faqs?: FAQItem[];
 }
 
@@ -68,11 +70,11 @@ export const mockProductFallback: Product = {
     hardness: '3 Mohs',
   },
   gallery: [
-    'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1400&q=85&fm=webp',
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=85&fm=webp',
-    'https://images.unsplash.com/photo-1633505899122-4e5d56b63f8d?w=1400&q=85&fm=webp',
+    '/images/stones/vietnam-white/vietnam-white_hero.webp',
+    '/images/stones/statuario/statuario_hero.webp',
+    '/images/applications/kitchen-countertops/kitchen-stone-wall-1.webp',
   ],
-  heroImage: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1800&q=90&fm=webp',
+  heroImage: '/images/stones/vietnam-white/vietnam-white_hero.webp',
   description: 'A timeless Italian classic — Carrara Marble features dynamic grey veining overlaying a brilliant warm-white backdrop.',
   longDescription: `Quarried from the mountains of Carrara in the Tuscany region of Northern Italy, Carrara White Marble has been the stone of choice for Renaissance masters and today's most visionary architects alike. Its signature soft grey veining dances across a brilliant crystalline-white base, offering organic elegance that no artificial material can replicate.
 
@@ -119,11 +121,11 @@ export const productsData: Product[] = [
       hardness: '3 Mohs',
     },
     gallery: [
-      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1400&q=85&fm=webp',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=85&fm=webp',
-      'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1400&q=85&fm=webp',
+      '/images/stones/statuario/statuario_stand.webp',
+      '/images/stones/statuario/statuario_catalog.webp',
+      '/images/applications/kitchen-countertops/kitchen-stone-wall-2.webp',
     ],
-    heroImage: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1800&q=90&fm=webp',
+    heroImage: '/images/stones/statuario/statuario_hero.webp',
     description: 'The crown jewel of Italian marble — Calacatta Gold features dramatic gold veining on a pure white canvas.',
     longDescription: `Calacatta Gold is widely regarded as the most luxurious marble on earth. Unlike its close cousin Carrara, Calacatta features bolder, more dramatic veining in shades of warm gold and deep grey — all set against a brilliant, almost luminous white background.
 
@@ -166,11 +168,11 @@ Extracted from a single quarry zone in the Apuan Alps of Carrara, each slab is a
       hardness: '3 Mohs',
     },
     gallery: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=85&fm=webp',
-      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1400&q=85&fm=webp',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1400&q=85&fm=webp',
+      '/images/stones/statuario/statuario_hero.webp',
+      '/images/stones/statuario/statuario_stand.webp',
+      '/images/applications/wall-cladding/luxury-bedroom-interior-granite.webp',
     ],
-    heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=90&fm=webp',
+    heroImage: '/images/stones/statuario/statuario_hero.webp',
     description: 'The stone that Michelangelo carved the David from — Statuario is the apex of Italian marblecraft.',
     longDescription: `Statuario — literally "of the sculptor" in Italian — is the marble Michelangelo selected for the David. Its pure, unadulterated white background carries dramatic, expressive veining in shades of deep charcoal and warm grey. No two slabs are identical, making every installation a one-of-a-kind artistic statement.
 
@@ -213,11 +215,11 @@ Historically reserved for the world's greatest sculptures and monuments, Statuar
       hardness: '7 Mohs',
     },
     gallery: [
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1400&q=85&fm=webp',
-      'https://images.unsplash.com/photo-1625479610681-f789345a8157?w=1400&q=85&fm=webp',
-      'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1400&q=85&fm=webp',
+      '/images/stones/r-black/r-black_hero.webp',
+      '/images/stones/telephone-black/telephone-black_hero.webp',
+      '/images/applications/kitchen-countertops/r-black-kitchen-wall.webp',
     ],
-    heroImage: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1800&q=90&fm=webp',
+    heroImage: '/images/stones/telephone-black/telephone-black_hero.webp',
     description: 'Absolute Black is the gold standard in black granite — zero grain, zero compromise, pure presence.',
     longDescription: `Quarried from deep within the Deccan Plateau of Karnataka, Absolute Black Granite is the definitive statement stone for architects who demand total visual control. Its near-perfect uniform jet-black surface, devoid of any visible grain or mineral variation, creates an effect of pure, bold modernity.
 
@@ -259,11 +261,11 @@ With a hardness of 7 on the Mohs scale, Absolute Black is among the most durable
       hardness: '3.5 Mohs',
     },
     gallery: [
-      'https://images.unsplash.com/photo-1625479610681-f789345a8157?w=1400&q=85&fm=webp',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=85&fm=webp',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1400&q=85&fm=webp',
+      '/images/stones/honey-onyx/honey-onyx_stand.webp',
+      '/images/stones/honey-onyx/honey-onyx_catalog.webp',
+      '/images/stones/apple-green/apple-green_hero.webp',
     ],
-    heroImage: 'https://images.unsplash.com/photo-1625479610681-f789345a8157?w=1800&q=90&fm=webp',
+    heroImage: '/images/stones/honey-onyx/honey-onyx_hero.webp',
     description: 'When backlit, Jade Green Onyx transforms into an otherworldly emerald lantern — nature\'s finest artwork.',
     longDescription: `Sourced from ancient deposits in Iran, Jade Green Onyx is one of the rarest and most visually dramatic stones in the natural world. Its deep emerald green translucency — interlaced with flowing white and gold veining — creates an almost ethereal glow when illuminated from behind.
 
@@ -306,11 +308,11 @@ This remarkable property makes it the definitive choice for statement backlit fe
       hardness: '3 Mohs',
     },
     gallery: [
-      'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1400&q=85&fm=webp',
-      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1400&q=85&fm=webp',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=85&fm=webp',
+      '/images/stones/makrana-white/makrana-white_hero.webp',
+      '/images/stones/nizarana-white/nizarana-white_hero.webp',
+      '/images/applications/flooring/flooring-stone-wall.webp',
     ],
-    heroImage: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1800&q=90&fm=webp',
+    heroImage: '/images/stones/makrana-white/makrana-white_hero.webp',
     description: 'Volakas carries the warmth of the Aegean — a refined white marble with delicate rose and grey veining.',
     longDescription: `Quarried near the city of Drama in northern Greece, Volakas Marble is celebrated for its warm, creamy-white base adorned with elegant, delicate veining in soft grey and subtle rose tones. It possesses the quiet sophistication of classic Mediterranean architecture.
 
@@ -353,11 +355,11 @@ Its relative consistency of patterning makes it an excellent choice for large-fo
       hardness: '3 Mohs',
     },
     gallery: [
-      'https://images.unsplash.com/photo-1601897690942-bcacbad33e55?w=1400&q=85&fm=webp',
-      'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1400&q=85&fm=webp',
-      'https://images.unsplash.com/photo-1625479610681-f789345a8157?w=1400&q=85&fm=webp',
+      '/images/stones/aadhunik-brown/aadhunik-brown_hero.webp',
+      '/images/stones/aadhunik-brown/aadhunik-brown_stand.webp',
+      '/images/stones/madka-brown/madka-brown_hero.webp',
     ],
-    heroImage: 'https://images.unsplash.com/photo-1601897690942-bcacbad33e55?w=1800&q=90&fm=webp',
+    heroImage: '/images/stones/aadhunik-brown/aadhunik-brown_hero.webp',
     description: 'Inspired by the organic flow of ancient rainforests — a one-of-a-kind exotic marble from Rajasthan.',
     longDescription: `Rainforest Brown is one of India's most celebrated exotic natural stones. Quarried from select zones in Rajasthan, its deep, rich brown base is animated by flowing organic veining in warm gold and cream — creating a visual texture that genuinely resembles an aerial view of a tropical forest canopy.
 
@@ -1283,8 +1285,12 @@ Its unique patterning means no two slabs are identical, making every installatio
       waterAbsorption: "< 0.5%",
       hardness: "3.5 Mohs"
     },
-    gallery: ["https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1400&q=85&fm=webp", "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=1400&q=85&fm=webp", "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1400&q=85&fm=webp"],
-    heroImage: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1800&q=90&fm=webp",
+    gallery: [
+      "/images/stones/r-black/r-black_hero.webp",
+      "/images/stones/telephone-black/telephone-black_stand.webp",
+      "/images/collections/showroom/limestone-showroom-display-wall-kishangarh.webp",
+    ],
+    heroImage: "/images/stones/telephone-black/telephone-black_hero.webp",
     description: "Kadappa is a limestone from Cuddapah (Kadapa), Andhra Pradesh, characterised by its charcoal-black, turning deep black when wet. Also called Cuddapah Black; oil-resistant and non-slip, ideal for floors.",
     longDescription: "Kadappa is quarried in Cuddapah (Kadapa), Andhra Pradesh and is distinguished by its charcoal-black, turning deep black when wet. Also called Cuddapah Black; oil-resistant and non-slip, ideal for floors. Each block is hand-selected and processed at our Kishangarh facility for consistent colour, thickness and calibration across every consignment.\n\nAs a natural limestone, Kadappa suits flooring, wall cladding, staircase and tabletops. It is supplied in polished, shot blast and bush hammered finishes and a range of slab and tile formats for both interior and exterior projects. Granite Gallery exports Kadappa worldwide, with quality checks at every stage from quarry to container.",
     metaTitle: "Kadappa Limestone Slabs & Tiles | Granite Gallery",
@@ -1608,8 +1614,12 @@ Its unique patterning means no two slabs are identical, making every installatio
       waterAbsorption: "< 0.4%",
       hardness: "7 Mohs"
     },
-    gallery: ["https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1400&q=85&fm=webp", "https://images.unsplash.com/photo-1601897690942-bcacbad33e55?w=1400&q=85&fm=webp", "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=1400&q=85&fm=webp"],
-    heroImage: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1800&q=90&fm=webp",
+    gallery: [
+      "/images/stones/multi-red/multi-red_hero.webp",
+      "/images/stones/multi-red/multi-red_stand.webp",
+      "/images/collections/sandstone/autumn-brown-sandstone/autumn-brown-sandstone_hero.webp",
+    ],
+    heroImage: "/images/stones/multi-red/multi-red_hero.webp",
     description: "Multi Porphyry is a natural stone from India, characterised by its grey, green, purple and red blend. A dense volcanic rock (~70% silica) that hides dirt and resists stains.",
     longDescription: "Multi Porphyry is quarried in India and is distinguished by its grey, green, purple and red blend. A dense volcanic rock (~70% silica) that hides dirt and resists stains. Each block is hand-selected and processed at our Kishangarh facility for consistent colour, thickness and calibration across every consignment.\n\nAs a natural porphyry, Multi Porphyry suits flooring, exterior cladding and staircase. It is supplied in flamed, shot blast, bush hammered and chiseled finishes and a range of slab and tile formats for both interior and exterior projects. Granite Gallery exports Multi Porphyry worldwide, with quality checks at every stage from quarry to container.",
     metaTitle: "Multi Porphyry Slabs & Tiles | Granite Gallery",
@@ -1649,8 +1659,12 @@ Its unique patterning means no two slabs are identical, making every installatio
       waterAbsorption: "< 0.4%",
       hardness: "7 Mohs"
     },
-    gallery: ["https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1400&q=85&fm=webp", "https://images.unsplash.com/photo-1601897690942-bcacbad33e55?w=1400&q=85&fm=webp", "https://images.unsplash.com/photo-1567016432779-094069958ea5?w=1400&q=85&fm=webp"],
-    heroImage: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1800&q=90&fm=webp",
+    gallery: [
+      "/images/stones/coin-black/coin-black_hero.webp",
+      "/images/stones/fish-black/fish-black_hero.webp",
+      "/images/stones/r-black/r-black_hero.webp",
+    ],
+    heroImage: "/images/stones/coin-black/coin-black_hero.webp",
     description: "Black Porphyry is a natural stone from India, characterised by its dark charcoal-black. A hard-wearing volcanic paver for high-traffic outdoor surfaces.",
     longDescription: "Black Porphyry is quarried in India and is distinguished by its dark charcoal-black. A hard-wearing volcanic paver for high-traffic outdoor surfaces. Each block is hand-selected and processed at our Kishangarh facility for consistent colour, thickness and calibration across every consignment.\n\nAs a natural porphyry, Black Porphyry suits flooring, exterior cladding and staircase. It is supplied in flamed, shot blast, bush hammered and chiseled finishes and a range of slab and tile formats for both interior and exterior projects. Granite Gallery exports Black Porphyry worldwide, with quality checks at every stage from quarry to container.",
     metaTitle: "Black Porphyry Slabs & Tiles | Granite Gallery",

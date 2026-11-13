@@ -27,6 +27,8 @@ const SUB_SITEMAPS = [
   'sitemap-blogs.xml',
   'sitemap-projects.xml',
   'sitemap-team.xml',
+  'sitemap-landing.xml',
+  'sitemap-images.xml',
 ] as const;
 
 export async function GET() {

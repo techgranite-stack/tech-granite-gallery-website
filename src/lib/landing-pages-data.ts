@@ -109,6 +109,26 @@ export interface LandingPageData {
   faqHeading?: { title: string; titleEm: string; description: string };
   /** Drives the schema.org/Service node. */
   service: { name: string; serviceType: string };
+  /** Pattern ID for structured layout differentiation */
+  pattern?: string;
+  /** High-impact numerical metrics band */
+  statsBand?: { number: string; label: string }[];
+  /** Step-by-step numbered guide (e.g. Quality inspection, Sourcing workflow) */
+  numberedCards?: {
+    eyebrow?: string;
+    title?: string;
+    subtitle?: string;
+    marqueeItems?: string[];
+    reasons: { title: string; desc: string }[];
+  };
+  /** Visual mosaic grid for applications, finishes, or spaces */
+  mosaicApps?: {
+    title: string;
+    sub: string;
+    image: string;
+    href?: string;
+    wide?: boolean;
+  }[];
 }
 
 // ─── Shared: the Google Maps embed for the Kishangarh facility ────────────────

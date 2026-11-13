@@ -53,6 +53,8 @@ export default function ProductCatalog({
   whatsappUrl,
   backHref,
   backLabel,
+  priceFormatted,
+  priceNote,
 }: ProductDetailData) {
   const paras = description.split('\n\n').filter(Boolean);
 
@@ -65,7 +67,14 @@ export default function ProductCatalog({
           <div className={styles.heroText}>
             <span className="section-eyebrow">{eyebrow}</span>
             <h2 className={styles.title}>{title}</h2>
-            <span className={styles.subtitle}>{subtitle}</span>
+            <div className={styles.titleMeta}>
+              <span className={styles.subtitle}>{subtitle}</span>
+              {priceFormatted && (
+                <span className={styles.pricePill}>
+                  {priceFormatted} <span className={styles.pricePillSub}>ex-factory</span>
+                </span>
+              )}
+            </div>
             <div className={styles.copperLine} />
 
             {paras.map((p, i) => (
@@ -103,12 +112,18 @@ export default function ProductCatalog({
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>Technical Specifications</h3>
             <div className={styles.specsGrid}>
-              {specRows.map((row) => (
-                <div key={row.key} className={styles.specRow}>
-                  <span className={styles.specKey}>{row.key}</span>
-                  <span className={styles.specVal}>{row.val}</span>
-                </div>
-              ))}
+              {specRows.map((row) => {
+                const isPrice = row.key.toLowerCase().includes('price');
+                return (
+                  <div
+                    key={row.key}
+                    className={`${styles.specRow} ${isPrice ? styles.specRowPrice : ''}`}
+                  >
+                    <span className={styles.specKey}>{row.key}</span>
+                    <span className={styles.specVal}>{row.val}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -140,6 +155,16 @@ export default function ProductCatalog({
         {/* ── Row 3: CTA + Trust ── */}
         <div className={styles.ctaRow}>
           <div className={styles.ctaActions}>
+            {priceFormatted && (
+              <div className={styles.priceCallout}>
+                <div className={styles.priceCalloutHeader}>
+                  <span className={styles.priceCalloutLabel}>Indicative Price</span>
+                  <span className={styles.priceCalloutBadge}>Direct Factory Rate</span>
+                </div>
+                <div className={styles.priceCalloutValue}>{priceFormatted}</div>
+                <div className={styles.priceCalloutSub}>Ex-factory Kishangarh · Slabs & tiles</div>
+              </div>
+            )}
             <a
               data-wa-source="product_detail"
               href={whatsappUrl}

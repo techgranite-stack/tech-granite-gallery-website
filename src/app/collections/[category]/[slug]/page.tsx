@@ -11,6 +11,8 @@ import { productsData } from '@/lib/product-data';
 import { fromCollectionProduct } from '@/lib/listing-item';
 import { fromCollectionDetail, resolveCollectionImage } from '@/lib/product-detail';
 import { categories } from '@/data/categories';
+import { abs } from '@/lib/seo-url';
+import { getProductPrice } from '@/data/product-prices';
 import relatedStyles from '@/components/sections/RelatedStones/RelatedStones.module.css';
 
 // ── Static Params ──────────────────────────────────────────────
@@ -32,6 +34,7 @@ export async function generateMetadata(
   const { category, slug } = await params;
   const product = productsData.find((p) => p.slug === slug);
   if (!product || product.type !== category) return {};
+  const heroImg = resolveCollectionImage(product.type, product.slug, 'hero', product.heroImage);
   return {
     title: product.metaTitle,
     description: product.metaDescription,
@@ -39,7 +42,13 @@ export async function generateMetadata(
     openGraph: {
       title: product.metaTitle,
       description: product.metaDescription,
-      images: [{ url: product.heroImage, width: 1800, height: 1200, alt: product.name }],
+      images: [{ url: heroImg, width: 1800, height: 1200, alt: product.name }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: product.metaTitle,
+      description: product.metaDescription,
+      images: [heroImg],
     },
   };
 }
@@ -60,34 +69,45 @@ export default async function ProductDetailPage(
     .filter((p) => p.type === product.type && p.slug !== product.slug)
     .slice(0, 4);
 
+  const pricing = product.priceRange ?? getProductPrice(product.slug, product.type);
+
   const specBadges = [
+    { value: `₹${pricing.low} – ₹${pricing.high} / sq ft`, label: 'Indicative Price' },
     ...(product.specifications.density ? [{ value: product.specifications.density, label: 'Density' }] : []),
     ...(product.specifications.hardness ? [{ value: product.specifications.hardness, label: 'Hardness' }] : []),
     ...(product.specifications.compressiveStrength ? [{ value: product.specifications.compressiveStrength, label: 'Compressive Str.' }] : []),
     { value: product.finish, label: 'Default Finish' },
   ];
 
-  // JSON-LD structured data
+  const standImage = resolveCollectionImage(product.type, product.slug, 'stand', product.heroImage);
+  const heroImg = resolveCollectionImage(product.type, product.slug, 'hero', product.heroImage);
+  const whatsappUrl = `https://wa.me/919116622422?text=${encodeURIComponent(
+    product.whatsappMsg ?? `Hello, I'm interested in ${product.name}. Please share details and pricing.`
+  )}`;
+
+  // JSON-LD structured data with Schema.org AggregateOffer
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
     description: product.description,
-    image: product.heroImage,
-    brand: { '@type': 'Organization', name: 'Granite Gallery' },
+    image: abs(heroImg),
+    sku: product.slug,
+    category: cat?.title ?? product.type,
+    brand: { '@type': 'Brand', name: 'Granite Gallery' },
     offers: {
-      '@type': 'Offer',
+      '@type': 'AggregateOffer',
+      priceCurrency: 'INR',
+      lowPrice: String(pricing.low),
+      highPrice: String(pricing.high),
+      offerCount: '1',
+      priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      url: abs(`/collections/${product.type}/${product.slug}`),
       seller: { '@type': 'Organization', name: 'Granite Gallery', address: 'Kishangarh, Rajasthan, India' },
     },
   };
-
-  const whatsappUrl = `https://wa.me/919116622422?text=${encodeURIComponent(
-    product.whatsappMsg ?? `Hello, I'm interested in ${product.name}. Please share details and pricing.`
-  )}`;
-
-  const standImage = resolveCollectionImage(product.type, product.slug, 'stand', product.heroImage);
-  const heroImg = resolveCollectionImage(product.type, product.slug, 'hero', product.heroImage);
 
   return (
     <>

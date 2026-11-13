@@ -62,6 +62,8 @@ export interface StoneProduct {
   finishes: StoneFinish[];
   applications: StoneApplication[];
   sizes: StoneSize[];
+  /** Indicative market price range in ₹ / sq ft */
+  priceRange?: { low: number; high: number; unit?: string };
 
   /** 3–5 highlight bullet points */
   highlights: string[];

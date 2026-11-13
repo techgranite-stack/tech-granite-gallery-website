@@ -20,6 +20,7 @@ import {
   resolveCatalogImage,
 } from '@/lib/product-detail';
 import { productJsonLd, breadcrumbJsonLd } from '@/lib/structured-data';
+import { getProductPrice } from '@/data/product-prices';
 
 interface PageProps {
   params: { slug: string };
@@ -32,6 +33,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const product = getProductBySlug(params.slug);
   if (!product) return {};
+  const heroImage = resolveHeroImage(product.slug, product.heroImages[0] ?? product.thumbnail);
   return {
     title: product.metaTitle,
     description: product.metaDescription,
@@ -40,7 +42,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: product.metaTitle,
       description: product.metaDescription,
-      images: [product.heroImages[0]],
+      images: [
+        {
+          url: heroImage,
+          width: 1800,
+          height: 1200,
+          alt: `${product.name} Marble Slab — Kishangarh, Rajasthan`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: product.metaTitle,
+      description: product.metaDescription,
+      images: [heroImage],
     },
   };
 }
@@ -54,7 +69,10 @@ export default function MarbleProductPage({ params }: PageProps) {
 
   const categoryLabel = product.category === 'imported-marble' ? 'Imported Marble' : 'Indian Marble';
 
+  const pricing = product.priceRange ?? getProductPrice(product.slug, product.category);
+
   const specBadges = [
+    { value: `₹${pricing.low} – ₹${pricing.high} / sq ft`, label: 'Indicative Price' },
     ...(product.specs.hardness ? [{ value: product.specs.hardness, label: 'Hardness' }] : []),
     ...(product.specs.density ? [{ value: product.specs.density, label: 'Density' }] : []),
     ...(product.specs.compressiveStrength ? [{ value: product.specs.compressiveStrength, label: 'Compressive Str.' }] : []),

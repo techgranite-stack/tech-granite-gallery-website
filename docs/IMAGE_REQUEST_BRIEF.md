@@ -1,4 +1,4 @@
-# Image Request Brief — Granite Gallery
+# Image Request Brief — Granite Galleri
 
 ## 0. Why this matters (the two promises we keep)
 

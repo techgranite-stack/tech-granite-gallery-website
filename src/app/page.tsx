@@ -28,19 +28,17 @@ import { testimonials } from "@/data/testimonials";
 import { blogPosts } from "@/data/blog";
 import { whyUsReasons, whyUsMarquee } from "@/data/whyus";
 
+import { buildMetadata } from '@/lib/seo';
+
 const seo = pageSeo['/'];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
   keywords: seo.keywords,
-  alternates: { canonical: '/' },
-  openGraph: {
-    title: seo.metaTitle,
-    description: seo.metaDescription,
-    ...(seo.ogImage ? { images: [seo.ogImage] } : {}),
-  },
-};
+  canonical: '/',
+  image: seo.ogImage,
+});
 
 // "Stone for Every Space" mosaic — real applications with hand-picked 16:9 photos
 // (varied colours so the grid isn't all one tone).

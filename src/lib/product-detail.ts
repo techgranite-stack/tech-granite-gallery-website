@@ -49,6 +49,60 @@ function titleCase(value: string): string {
   return value.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+/** Canonical application slug normalization to avoid 404 links */
+export const CANONICAL_APPLICATION_MAP: Record<string, string> = {
+  'kitchen-counter': 'kitchen-countertops',
+  'kitchen-countertop': 'kitchen-countertops',
+  'kitchen': 'kitchen-countertops',
+  'feature-walls': 'wall-cladding',
+  'feature-wall': 'wall-cladding',
+  'backlit-feature-walls': 'wall-cladding',
+  'fireplace': 'wall-cladding',
+  'fireplaces': 'wall-cladding',
+  'wall': 'wall-cladding',
+  'outdoor-paving': 'exterior-cladding',
+  'landscaping': 'exterior-cladding',
+  'garden': 'exterior-cladding',
+  'pool-surround': 'exterior-cladding',
+  'exterior': 'exterior-cladding',
+  'bar-counter': 'tabletops',
+  'bar-counters': 'tabletops',
+  'tabletop': 'tabletops',
+  'table-tops': 'tabletops',
+  'bathroom-vanities': 'bathroom',
+  'bathroom-flooring': 'bathroom',
+  'bath': 'bathroom',
+  'flooring': 'flooring',
+  'staircase': 'staircase',
+  'wall-cladding': 'wall-cladding',
+  'kitchen-countertops': 'kitchen-countertops',
+  'exterior-cladding': 'exterior-cladding',
+  'tabletops': 'tabletops',
+};
+
+/** Canonical finish slug normalization to avoid 404 links */
+export const CANONICAL_FINISH_MAP: Record<string, string> = {
+  'leather': 'leathered',
+  'brushed': 'leathered',
+  'unfilled-brushed': 'antique',
+  'honed-filled': 'honed',
+  'filled-polished': 'polished',
+  'backlit': 'polished',
+  'natural': 'chiseled',
+  'sandblasted': 'shot-blast',
+  'polished': 'polished',
+  'leathered': 'leathered',
+  'flamed': 'flamed',
+  'shot-blast': 'shot-blast',
+  'bush-hammered': 'bush-hammered',
+  'chiseled': 'chiseled',
+  'acid-wash': 'acid-wash',
+  'honed': 'honed',
+  'latino': 'latino',
+  'antique': 'antique',
+  'hydro-blast': 'hydro-blast',
+};
+
 /**
  * Server-only. Returns `/images/stones/<slug>/stand.webp` when that file
  * exists in /public, otherwise the supplied fallback image. Only ~15 marble
@@ -136,8 +190,14 @@ export function fromStoneDetail(p: StoneProduct, opts: StoneDetailOpts): Product
     description: p.description,
     highlights: p.highlights ?? [],
     specRows,
-    finishes: p.finishes.map((f) => ({ label: f.label, href: `/finishes/${f.id}` })),
-    applications: p.applications.map((a) => ({ label: a.label, href: `/applications/${a.id}` })),
+    finishes: p.finishes.map((f) => {
+      const canonicalSlug = CANONICAL_FINISH_MAP[f.id] || f.id;
+      return { label: f.label, href: `/finishes/${canonicalSlug}` };
+    }),
+    applications: p.applications.map((a) => {
+      const canonicalSlug = CANONICAL_APPLICATION_MAP[a.id] || a.id;
+      return { label: a.label, href: `/applications/${canonicalSlug}` };
+    }),
     image: opts.image,
     imageAlt: `${p.name} — ${opts.subtitle}`,
     whatsappUrl: opts.whatsappUrl,
@@ -180,8 +240,14 @@ export function fromCollectionDetail(p: Product, opts: CollectionDetailOpts): Pr
     description: p.longDescription,
     highlights: [],
     specRows,
-    finishes: p.finishesAvailable.map((f) => ({ label: titleCase(f), href: `/finishes/${f}` })),
-    applications: p.applications.map((a) => ({ label: titleCase(a), href: `/applications/${a}` })),
+    finishes: p.finishesAvailable.map((f) => {
+      const canonicalSlug = CANONICAL_FINISH_MAP[f] || f;
+      return { label: titleCase(f), href: `/finishes/${canonicalSlug}` };
+    }),
+    applications: p.applications.map((a) => {
+      const canonicalSlug = CANONICAL_APPLICATION_MAP[a] || a;
+      return { label: titleCase(a), href: `/applications/${canonicalSlug}` };
+    }),
     image: opts.image,
     imageAlt: `${p.name} — ${typeLabel}`,
     whatsappUrl: opts.whatsappUrl,

@@ -22,6 +22,8 @@ import {
 import { productJsonLd, breadcrumbJsonLd } from '@/lib/structured-data';
 import { getProductPrice } from '@/data/product-prices';
 
+import { buildMetadata } from '@/lib/seo';
+
 interface PageProps {
   params: { slug: string };
 }
@@ -34,30 +36,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const product = getProductBySlug(params.slug);
   if (!product) return {};
   const heroImage = resolveHeroImage(product.slug, product.heroImages[0] ?? product.thumbnail);
-  return {
+  return buildMetadata({
     title: product.metaTitle,
     description: product.metaDescription,
     keywords: product.keywords,
-    alternates: { canonical: `/marble/${product.slug}` },
-    openGraph: {
-      title: product.metaTitle,
-      description: product.metaDescription,
-      images: [
-        {
-          url: heroImage,
-          width: 1800,
-          height: 1200,
-          alt: `${product.name} Marble Slab — Kishangarh, Rajasthan`,
-        },
-      ],
+    canonical: `/marble/${product.slug}`,
+    image: {
+      url: heroImage,
+      width: 1800,
+      height: 1200,
+      alt: `${product.name} Marble Slab — Kishangarh, Rajasthan`,
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: product.metaTitle,
-      description: product.metaDescription,
-      images: [heroImage],
-    },
-  };
+  });
 }
 
 export default function MarbleProductPage({ params }: PageProps) {

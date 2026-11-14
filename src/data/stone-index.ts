@@ -142,7 +142,7 @@ export const colorPages: {
     title: 'Blue Granite Collection',
     description: 'Exclusive blue granites including the prestigious Blue Pearl from Norway and Artic Blue from Rajasthan. Extraordinary stones for luxury kitchen islands and feature walls.',
     metaTitle: 'Blue Granite Collection | Granite Gallery',
-    metaDescription: 'Exclusive blue granite — Blue Pearl (Norway) & Artic Blue from Rajasthan. Iridescent luxury stones for kitchen islands & feature walls. Available from Kishangarh.',
+    metaDescription: 'Exclusive blue granite — Blue Pearl from Norway and Artic Blue from Rajasthan. Iridescent luxury slabs for countertops & feature walls from Kishangarh.',
     keywords: ['blue granite india', 'blue pearl granite', 'norwegian granite india', 'artic blue granite', 'ice blue granite', 'blue kitchen countertop granite', 'luxury blue stone'],
   },
   {
@@ -151,7 +151,7 @@ export const colorPages: {
     title: 'Beige & Cream Marble Collection',
     description: 'Classic beige and cream marbles including Botticino, Perlato, Golden Lisa, and Travertine. Timeless Italian and European stones for elegant flooring and wall cladding.',
     metaTitle: 'Beige Marble Collection | Granite Gallery',
-    metaDescription: 'Classic beige marble — Botticino, Perlato Sicilia, Golden Lisa & Travertine. Timeless Italian stones for flooring & wall cladding. Imported & available in India.',
+    metaDescription: 'Classic beige marble — Botticino, Perlato Sicilia, Golden Lisa and Travertine. Premium Italian stone for flooring & wall cladding. Kishangarh stock.',
     keywords: ['beige marble india', 'botticino marble', 'perlato marble', 'travertine india', 'cream marble flooring', 'italian beige marble supplier india'],
   },
   {

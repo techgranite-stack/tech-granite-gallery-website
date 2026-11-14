@@ -59,8 +59,8 @@ export const mockProductFallback: Product = {
   primaryColor: 'White with soft grey veining',
   finish: 'Mirror Polished',
   tag: 'Bestseller',
-  finishesAvailable: ['polished', 'honed', 'brushed'],
-  applications: ['kitchen-countertops', 'bathroom-flooring', 'wall-cladding'],
+  finishesAvailable: ['polished', 'honed', 'leathered'],
+  applications: ['kitchen-countertops', 'bathroom', 'wall-cladding'],
   sizes: ['3000×1800mm', '2400×1200mm', '600×600mm', '600×300mm'],
   specifications: {
     density: '2.71 g/cm³',
@@ -111,7 +111,7 @@ export const productsData: Product[] = [
     finish: 'Mirror Polished',
     tag: 'Premium',
     finishesAvailable: ['polished', 'honed'],
-    applications: ['kitchen-countertops', 'bathroom', 'feature-walls'],
+    applications: ['kitchen-countertops', 'bathroom', 'wall-cladding'],
     sizes: ['3200×1800mm', '2800×1600mm', '600×600mm'],
     specifications: {
       density: '2.72 g/cm³',
@@ -158,7 +158,7 @@ Extracted from a single quarry zone in the Apuan Alps of Carrara, each slab is a
     finish: 'High Gloss',
     tag: 'Exclusive',
     finishesAvailable: ['polished', 'honed', 'leathered'],
-    applications: ['feature-walls', 'bathroom', 'flooring'],
+    applications: ['wall-cladding', 'bathroom', 'flooring'],
     sizes: ['3000×1800mm', '2600×1600mm', '600×600mm'],
     specifications: {
       density: '2.73 g/cm³',
@@ -204,7 +204,7 @@ Historically reserved for the world's greatest sculptures and monuments, Statuar
     primaryColor: 'Deep jet black, zero grain',
     finish: 'Velvet Matte',
     tag: 'Classic',
-    finishesAvailable: ['polished', 'flamed', 'honed', 'sandblasted'],
+    finishesAvailable: ['polished', 'flamed', 'honed', 'shot-blast'],
     applications: ['flooring', 'kitchen-countertops', 'exterior-cladding', 'staircase'],
     sizes: ['3000×1800mm', '600×600mm', '600×300mm', '300×300mm'],
     specifications: {
@@ -252,7 +252,7 @@ With a hardness of 7 on the Mohs scale, Absolute Black is among the most durable
     finish: 'Backlit Grade Polished',
     tag: 'Exclusive',
     finishesAvailable: ['polished'],
-    applications: ['backlit-feature-walls', 'bar-counters', 'bathroom'],
+    applications: ['wall-cladding', 'tabletops', 'bathroom'],
     sizes: ['2400×1200mm', '1800×900mm', 'Custom'],
     specifications: {
       density: '2.65 g/cm³',
@@ -297,7 +297,7 @@ This remarkable property makes it the definitive choice for statement backlit fe
     primaryColor: 'Warm white with delicate grey & rose veining',
     finish: 'Polished',
     tag: 'Popular',
-    finishesAvailable: ['polished', 'honed', 'brushed'],
+    finishesAvailable: ['polished', 'honed', 'leathered'],
     applications: ['flooring', 'wall-cladding', 'bathroom', 'staircase'],
     sizes: ['2800×1600mm', '600×600mm', '600×300mm', '300×300mm'],
     specifications: {
@@ -344,8 +344,8 @@ Its relative consistency of patterning makes it an excellent choice for large-fo
     primaryColor: 'Rich brown with golden and cream organic veining',
     finish: 'Antique Finish',
     tag: 'Rare',
-    finishesAvailable: ['polished', 'antique', 'brushed', 'sandblasted'],
-    applications: ['flooring', 'wall-cladding', 'exterior-cladding', 'landscaping'],
+    finishesAvailable: ['polished', 'antique', 'leathered', 'shot-blast'],
+    applications: ['flooring', 'wall-cladding', 'exterior-cladding'],
     sizes: ['2400×1200mm', '600×600mm', '600×300mm', 'Random'],
     specifications: {
       density: '2.64 g/cm³',
@@ -1423,7 +1423,7 @@ Its unique patterning means no two slabs are identical, making every installatio
     description: "Silver Gray is a slate from Rajasthan, characterised by its silver-grey. A cool, contemporary slate with a soft metallic sheen.",
     longDescription: "Silver Gray is quarried in Rajasthan and is distinguished by its silver-grey. A cool, contemporary slate with a soft metallic sheen. Each block is hand-selected and processed at our Kishangarh facility.",
     metaTitle: "Silver Gray Slate Slabs & Tiles | Granite Gallery",
-    metaDescription: "Silver Gray slate from Rajasthan — 3 finishes. Ideal for flooring and wall cladding.",
+    metaDescription: "Natural Silver Gray Slate from Rajasthan — calibrated slabs & tiles in 3 finishes. Durable anti-slip stone for flooring and wall cladding. Kishangarh supply.",
     keywords: ["silver gray slate", "silver gray slate price"],
     whatsappMsg: "Hello, I'm interested in Silver Gray Slate. Please share slab/tile sizes and pricing.",
     faqs: [
@@ -1463,7 +1463,7 @@ Its unique patterning means no two slabs are identical, making every installatio
     description: "Matrix is a slate from India, characterised by its dark multicolour. A bold blended slate for feature walls and façades.",
     longDescription: "Matrix is quarried in India and is distinguished by its dark multicolour. A bold blended slate for feature walls and façades. Processed at our Kishangarh facility.",
     metaTitle: "Matrix Slate Slabs & Tiles | Granite Gallery",
-    metaDescription: "Matrix slate from India — 3 finishes. Ideal for feature walls and cladding.",
+    metaDescription: "Matrix Slate stone from India — 3 natural textured finishes. Ideal for architectural feature walls, interior cladding, and patios. Direct Kishangarh export.",
     keywords: ["matrix slate", "matrix slate price"],
     whatsappMsg: "Hello, I'm interested in Matrix Slate. Please share pricing.",
     faqs: [
@@ -1503,7 +1503,7 @@ Its unique patterning means no two slabs are identical, making every installatio
     description: "Raymond is a slate from India, characterised by its grey-black blend. A consistent grey-black slate suited to cladding and flooring.",
     longDescription: "Raymond is quarried in India and is distinguished by its grey-black blend. A consistent grey-black slate suited to cladding and flooring.",
     metaTitle: "Raymond Slate Slabs & Tiles | Granite Gallery",
-    metaDescription: "Raymond slate from India — 3 finishes. Ideal for cladding & flooring.",
+    metaDescription: "Premium Raymond Slate from India — natural cleft and antique finishes. Perfect for wall cladding, exterior facades, and flooring. Kishangarh export depot.",
     keywords: ["raymond slate", "raymond slate price"],
     whatsappMsg: "Hello, I'm interested in Raymond Slate. Please share pricing.",
     faqs: [
@@ -1544,7 +1544,7 @@ Its unique patterning means no two slabs are identical, making every installatio
     description: "Himachal Slate is a natural stone from Himachal Pradesh, characterised by its consistent jet black. A non-porous, fine grano-blastic black slate that is fireproof and non-slip.",
     longDescription: "Himachal Slate is quarried in Himachal Pradesh and is distinguished by its consistent jet black. A non-porous, fine grano-blastic black slate that is fireproof and non-slip.",
     metaTitle: "Himachal Slate Slabs & Tiles | Granite Gallery",
-    metaDescription: "Himachal Slate from Himachal Pradesh — 3 finishes. Ideal for flooring and wall cladding.",
+    metaDescription: "Authentic Himachal Slate from Himachal Pradesh — cleft & calibrated stone tiles. Weather-resistant anti-skid flooring and wall cladding from Kishangarh.",
     keywords: ["himachal slate", "himachal slate price"],
     whatsappMsg: "Hello, I'm interested in Himachal Slate. Please share pricing.",
     faqs: [
@@ -1565,7 +1565,7 @@ Its unique patterning means no two slabs are identical, making every installatio
     finish: "Honed / Smooth",
     tag: "Exotic",
     finishesAvailable: ["honed", "polished", "leathered"],
-    applications: ["flooring", "kitchen-countertops", "wall-cladding", "fireplaces"],
+    applications: ["flooring", "kitchen-countertops", "wall-cladding"],
     sizes: ["600×300mm", "600×600mm", "Gang-saw slabs"],
     specifications: {
       density: "2.75 g/cm³",
@@ -1585,7 +1585,7 @@ Its unique patterning means no two slabs are identical, making every installatio
     description: "Marine Soapstone is a dense, silky-smooth natural stone with rich ocean grey-green hues, renowned for high thermal resistance.",
     longDescription: "Marine Soapstone is quarried in India and processed in Kishangarh. Its high talc content gives it an unmistakable soft touch, complete chemical imperviousness, and extraordinary heat retention.",
     metaTitle: "Marine Soapstone Slabs & Tiles | Granite Gallery",
-    metaDescription: "Marine Soapstone from India — honed heat-resistant stone for countertops & fireplaces.",
+    metaDescription: "Marine Soapstone from India — honed heat-resistant natural stone slabs. Ideal for luxury kitchen countertops, wall cladding, and fireplaces. Kishangarh depot.",
     keywords: ["marine soapstone", "soapstone india", "soapstone slabs"],
     whatsappMsg: "Hello, I'm interested in Marine Soapstone. Please share pricing.",
     faqs: [
@@ -1742,7 +1742,7 @@ Its unique patterning means no two slabs are identical, making every installatio
     finish: "Polished",
     tag: "Premium",
     finishesAvailable: ["polished", "leathered", "honed", "flamed"],
-    applications: ["flooring", "kitchen-countertops", "wall-cladding", "bathroom-vanities"],
+    applications: ["flooring", "kitchen-countertops", "wall-cladding", "bathroom"],
     sizes: ["Gang-saw slabs", "600×600mm", "800×800mm", "Custom cut-to-size"],
     specifications: {
       density: "2.68 g/cm³",
@@ -1783,7 +1783,7 @@ Its unique patterning means no two slabs are identical, making every installatio
     finish: "Polished",
     tag: "Exotic",
     finishesAvailable: ["polished", "leathered", "honed"],
-    applications: ["flooring", "kitchen-countertops", "wall-cladding", "feature-walls"],
+    applications: ["flooring", "kitchen-countertops", "wall-cladding"],
     sizes: ["Gang-saw slabs", "600×600mm", "Custom cut-to-size"],
     specifications: {
       density: "2.64 g/cm³",
@@ -1924,7 +1924,7 @@ Its unique patterning means no two slabs are identical, making every installatio
     description: "Bansi Pink Quartzite is a famous soft-pink quartzitic stone from Rajasthan, renowned for its serene color tone and architectural heritage usage.",
     longDescription: "Bansi Pink Quartzite is quarried in Rajasthan, India. Celebrated for its delicate salmon-pink shade, this ultra-durable stone resists weathering, moisture, and acid etching, making it a preferred choice for sacred monuments, luxury hotel cladding, and pool surroundings.",
     metaTitle: "Bansi Pink Quartzite Slabs & Tiles | Granite Gallery",
-    metaDescription: "Bansi Pink Quartzite from Rajasthan — elegant pink quartzite slabs. Direct export from Kishangarh.",
+    metaDescription: "Bansi Pink Quartzite from Rajasthan — high-density pink quartzite slabs and tiles. Scratch and heat resistant for countertops and floors. Kishangarh export.",
     keywords: ["bansi pink quartzite", "pink quartzite india", "rajasthan pink stone"],
     whatsappMsg: "Hello, I'm interested in Bansi Pink Quartzite. Please share pricing.",
     faqs: [

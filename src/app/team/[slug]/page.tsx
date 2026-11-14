@@ -8,6 +8,7 @@ import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
 import { teamMembers, getTeamMember } from '@/data/team';
 import { testimonials } from '@/data/testimonials';
+import { buildMetadata } from '@/lib/seo';
 import type { StatItem } from '@/types';
 import styles from './teamMember.module.css';
 
@@ -24,18 +25,14 @@ export async function generateMetadata(
   const member = getTeamMember(slug);
   if (!member) return { title: 'Team Member — Granite Gallery' };
 
-  return {
+  return buildMetadata({
     title: member.metaTitle,
     description: member.metaDescription,
     keywords: member.keywords,
-    openGraph: {
-      title: member.metaTitle,
-      description: member.metaDescription,
-      type: 'profile',
-      images: [member.ogImage ?? member.image],
-    },
-    alternates: { canonical: `/team/${member.slug}` },
-  };
+    canonical: `/team/${member.slug}`,
+    image: member.ogImage ?? member.image,
+    type: 'profile',
+  });
 }
 
 export default async function TeamMemberPage(

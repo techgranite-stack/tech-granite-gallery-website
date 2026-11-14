@@ -8,6 +8,7 @@ import ProjectGallery from './ProjectGallery';
 import { projectsData } from '@/lib/project-data';
 import { productsData } from '@/lib/product-data';
 import { resolveCollectionImage } from '@/lib/product-detail';
+import { buildMetadata } from '@/lib/seo';
 import styles from './project.module.css';
 
 // Unknown slugs 404 at the routing layer instead of rendering placeholder content.
@@ -23,17 +24,13 @@ export async function generateMetadata(
   const { slug } = await params;
   const project = projectsData.find((p) => p.slug === slug);
   if (!project) return {};
-  return {
+  return buildMetadata({
     title: project.metaTitle,
     description: project.metaDescription,
     keywords: project.keywords,
-    openGraph: {
-      title: project.metaTitle,
-      description: project.metaDescription,
-      ...(project.ogImage ?? project.heroImage ? { images: [project.ogImage ?? project.heroImage] } : {}),
-    },
-    alternates: { canonical: `/projects/${project.slug}` },
-  };
+    canonical: `/projects/${project.slug}`,
+    image: project.ogImage ?? project.heroImage,
+  });
 }
 
 export default async function ProjectDetailPage(

@@ -75,6 +75,7 @@ export const pageSeo: Record<string, SeoMeta> = {
       'leathered granite',
       'natural stone finishes india',
     ],
+    ogImage: '/images/finishes/finishes-showroom-display-wall-kishangarh.webp',
   },
 
   '/applications': {
@@ -88,6 +89,7 @@ export const pageSeo: Record<string, SeoMeta> = {
       'natural stone applications',
       'stone for hotels india',
     ],
+    ogImage: '/images/applications/flooring/flooring-granite-crystalline-wall.webp',
   },
 
   '/projects': {
@@ -114,6 +116,7 @@ export const pageSeo: Record<string, SeoMeta> = {
       'natural stone guide',
       'stone maintenance tips india',
     ],
+    ogImage: '/images/collections/showroom/marble-showroom-display-wall-kishangarh.webp',
   },
 
   '/team': {
@@ -124,6 +127,7 @@ export const pageSeo: Record<string, SeoMeta> = {
       'stone experts kishangarh',
       'natural stone consultants india',
     ],
+    ogImage: '/images/hero/granite-gallery-kishangarh-stone-facility.webp',
   },
 
   '/about': {
@@ -140,6 +144,7 @@ export const pageSeo: Record<string, SeoMeta> = {
       'family stone business kishangarh',
       'infinite possibilities stone',
     ],
+    ogImage: '/images/hero/granite-gallery-kishangarh-stone-facility.webp',
   },
 
   '/contact': {
@@ -161,6 +166,7 @@ export const pageSeo: Record<string, SeoMeta> = {
     metaTitle: 'Sitemap | Granite Gallery',
     metaDescription: 'Complete directory of all pages, products, and content on the Granite Gallery website.',
     keywords: ['granite gallery sitemap'],
+    ogImage: '/images/hero/granite-gallery-marble-granite-sandstone.webp',
   },
 
 };

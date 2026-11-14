@@ -24,6 +24,7 @@ import FlagshipLandingPage from '@/components/templates/FlagshipLandingPage';
 import { getFlagshipPage, getAllFlagshipSlugs } from '@/data/flagship-pages';
 import { localBusinessJsonLd, localServiceJsonLd, trailJsonLd } from '@/lib/structured-data';
 import { getAllLandingSlugs, getLandingPage } from '@/lib/landing';
+import { buildMetadata } from '@/lib/seo';
 
 interface PageProps {
   params: { slug: string };
@@ -47,67 +48,41 @@ export function generateMetadata({ params }: PageProps): Metadata {
   // Color page metadata — sourced from colorPages data in stone-index.ts
   const colorPage = getColorPageBySlug(params.slug);
   if (colorPage) {
-    return {
+    const products = getProductsByColor(colorPage.color);
+    const image = colorPage.ogImage || (products.length > 0 ? (products[0].heroImages?.[0] ?? products[0].thumbnail) : undefined);
+    return buildMetadata({
       title: colorPage.metaTitle,
       description: colorPage.metaDescription,
       keywords: colorPage.keywords,
-      alternates: { canonical: `/${colorPage.slug}` },
-      openGraph: {
-        title: colorPage.metaTitle,
-        description: colorPage.metaDescription,
-        ...(colorPage.ogImage ? { images: [colorPage.ogImage] } : {}),
-      },
-    };
+      canonical: `/${colorPage.slug}`,
+      image,
+    });
   }
 
   // Flagship landing page metadata (full home-page component stack)
   const flagship = getFlagshipPage(params.slug);
   if (flagship) {
     const { title, description, keywords, ogImage, canonical } = flagship.metadata;
-    return {
+    return buildMetadata({
       title,
       description,
       keywords,
-      alternates: { canonical: canonical ?? `/${flagship.slug}` },
-      openGraph: {
-        type: 'website',
-        title,
-        description,
-        url: `/${flagship.slug}`,
-        ...(ogImage ? { images: [ogImage] } : {}),
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title,
-        description,
-        ...(ogImage ? { images: [ogImage] } : {}),
-      },
-    };
+      canonical: canonical ?? `/${flagship.slug}`,
+      image: ogImage,
+    });
   }
 
   // Hand-crafted landing page metadata or Programmatic matrix landing page
   const pageData = landingPages[params.slug] ?? getLandingPage(params.slug);
   if (pageData) {
     const { title, description, keywords, ogImage } = pageData.metadata;
-    return {
+    return buildMetadata({
       title,
       description,
       keywords,
-      alternates: { canonical: `/${pageData.slug}` },
-      openGraph: {
-        type: 'website',
-        title,
-        description,
-        url: `/${pageData.slug}`,
-        ...(ogImage ? { images: [ogImage] } : {}),
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title,
-        description,
-        ...(ogImage ? { images: [ogImage] } : {}),
-      },
-    };
+      canonical: `/${pageData.slug}`,
+      image: ogImage,
+    });
   }
 
   return {};

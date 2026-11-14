@@ -12,6 +12,7 @@ import { fromCollectionProduct } from '@/lib/listing-item';
 import { fromCollectionDetail, resolveCollectionImage } from '@/lib/product-detail';
 import { categories } from '@/data/categories';
 import { abs } from '@/lib/seo-url';
+import { buildMetadata } from '@/lib/seo';
 import { getProductPrice } from '@/data/product-prices';
 import relatedStyles from '@/components/sections/RelatedStones/RelatedStones.module.css';
 
@@ -35,22 +36,13 @@ export async function generateMetadata(
   const product = productsData.find((p) => p.slug === slug);
   if (!product || product.type !== category) return {};
   const heroImg = resolveCollectionImage(product.type, product.slug, 'hero', product.heroImage);
-  return {
+  return buildMetadata({
     title: product.metaTitle,
     description: product.metaDescription,
-    alternates: { canonical: `/collections/${product.type}/${product.slug}` },
-    openGraph: {
-      title: product.metaTitle,
-      description: product.metaDescription,
-      images: [{ url: heroImg, width: 1800, height: 1200, alt: product.name }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: product.metaTitle,
-      description: product.metaDescription,
-      images: [heroImg],
-    },
-  };
+    keywords: product.keywords,
+    canonical: `/collections/${product.type}/${product.slug}`,
+    image: { url: heroImg, width: 1800, height: 1200, alt: product.name },
+  });
 }
 
 // ── Page ──────────────────────────────────────────────────────

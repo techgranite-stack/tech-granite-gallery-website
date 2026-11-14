@@ -8,17 +8,18 @@ import { finishesData, mockFinishFallback } from '@/lib/finish-data';
 import { marqueeItems } from '@/data/landing';
 import { pageSeo } from '@/data/page-seo';
 import type { HeroSlide } from '@/types';
+import { buildMetadata } from '@/lib/seo';
 import styles from './finishes.module.css';
 
 const seo = pageSeo['/finishes'];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
   keywords: seo.keywords,
-  openGraph: { title: seo.metaTitle, description: seo.metaDescription, ...(seo.ogImage ? { images: [seo.ogImage] } : {}) },
-  alternates: { canonical: '/finishes' },
-};
+  canonical: '/finishes',
+  image: seo.ogImage,
+});
 
 const finishSlides: HeroSlide[] = [
   {

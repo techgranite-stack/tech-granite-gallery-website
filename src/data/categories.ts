@@ -54,7 +54,7 @@ export const categories: CategoryItem[] = [
     href: '/collections/quartzite',
     count: 6,
     metaTitle: 'Quartzite Collection | Granite Gallery',
-    metaDescription: 'Premium quartzite stones — Kandla Lining, Roma Grey, Sea Shell, Kandla Grey, Woodland & Bansi Pink. Harder than marble, naturally beautiful. Direct from Kishangarh.',
+    metaDescription: 'Premium quartzite collection — Kandla Lining, Roma Grey, Sea Shell, Woodland & Bansi Pink. Ultra-durable natural stone slabs direct from Kishangarh.',
     keywords: ['quartzite india', 'kandla lining quartzite', 'roma grey quartzite', 'sea shell quartzite', 'kandla quartzite', 'woodland quartzite', 'bansi pink quartzite'],
   },
   {

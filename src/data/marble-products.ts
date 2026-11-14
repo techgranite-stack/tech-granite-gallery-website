@@ -41,8 +41,8 @@ const marbleFinishes: StoneFinish[] = [
     images: [MARBLE_ROOMS.floor2, MARBLE_ROOMS.wall1, MARBLE_ROOMS.living1],
   },
   {
-    id: 'brushed',
-    label: 'Brushed',
+    id: 'leathered',
+    label: 'Leathered',
     images: [MARBLE_ROOMS.bath2, MARBLE_ROOMS.stair1, MARBLE_ROOMS.floor1],
   },
   {
@@ -66,7 +66,7 @@ const marbleApplications: StoneApplication[] = [
     images: [MARBLE_ROOMS.wall1, MARBLE_ROOMS.wall2, MARBLE_ROOMS.bath1],
   },
   {
-    id: 'kitchen-counter',
+    id: 'kitchen-countertops',
     label: 'Kitchen Counter',
     images: [MARBLE_ROOMS.kitchen1, MARBLE_ROOMS.kitchen2, MARBLE_ROOMS.kitchen3],
   },
@@ -132,7 +132,7 @@ export const domesticMarble: StoneProduct[] = [
     ],
     metaTitle: 'Makrana White Marble | India\'s Finest Pure White Marble',
     metaDescription:
-      'Buy premium Makrana White Marble — the stone of the Taj Mahal. Pure white surface, fine grey veining. Available in polished, honed & antique finishes. Direct from Kishangarh quarries.',
+      'Buy authentic Makrana White Marble — pure white stone of the Taj Mahal. Polished, honed, and antique finishes. Direct factory supply from Kishangarh.',
     keywords: ['makrana white marble', 'white marble india', 'taj mahal marble', 'rajasthan marble', 'buy white marble', 'makrana marble price'],
     faqs: [
       {
@@ -294,7 +294,7 @@ export const domesticMarble: StoneProduct[] = [
     ],
     metaTitle: 'Talai Marble | White Marble with Grey Veining',
     metaDescription:
-      'Talai Marble — premium Indian white marble with bold grey veining. Perfect for feature walls, staircases, and luxury bathrooms. Available from Granite Gallery, Kishangarh.',
+      'Talai Marble — premium Indian white marble with bold grey veining. Ideal for feature walls, staircases, and luxury floors. Direct from Kishangarh depot.',
     keywords: ['talai marble', 'white grey marble', 'veined marble india', 'marble with grey veins', 'talai marble price'],
     faqs: [
       {
@@ -381,8 +381,8 @@ const importedFinishes: StoneFinish[] = [
     images: [MARBLE_ROOMS.floor2, MARBLE_ROOMS.wall1, MARBLE_ROOMS.living1],
   },
   {
-    id: 'brushed',
-    label: 'Brushed',
+    id: 'leathered',
+    label: 'Leathered',
     images: [MARBLE_ROOMS.bath2, MARBLE_ROOMS.stair1, MARBLE_ROOMS.wall2],
   },
 ];
@@ -423,7 +423,7 @@ export const importedMarble: StoneProduct[] = [
     ],
     metaTitle: 'Botticino Marble | Italian Beige Marble Supplier India',
     metaDescription:
-      'Buy Botticino Italian Marble — warm beige with fossil markings, quarried near Brescia, Italy. Ideal for flooring, walls, and luxury interiors. Available at Granite Gallery.',
+      'Botticino Italian Marble — warm beige stone with fossil markings from Brescia, Italy. Ideal for flooring and luxury interiors. Kishangarh factory stock.',
     keywords: ['botticino marble', 'bottincino marble', 'italian beige marble', 'beige marble india', 'fossil marble', 'botticino marble price india'],
     faqs: [
       {
@@ -477,7 +477,7 @@ export const importedMarble: StoneProduct[] = [
     ],
     metaTitle: 'Dyna Marble | Turkish White Grey Veined Marble',
     metaDescription:
-      'Dyna Turkish Marble — white base with bold grey veining. Perfect for feature walls, kitchen islands, and luxury bathrooms. Available in polished and honed finishes.',
+      'Dyna Turkish Marble — warm white base with bold grey veining. Ideal for feature walls, kitchen islands, and luxury floors. Polished & honed in Kishangarh.',
     keywords: ['dyna marble', 'turkish marble india', 'grey veined marble', 'imported white marble', 'dyna marble price india'],
     faqs: [
       {
@@ -530,7 +530,7 @@ export const importedMarble: StoneProduct[] = [
     ],
     metaTitle: 'Perlato Marble | Italian Ivory Marble India',
     metaDescription:
-      'Perlato Sicilia Italian Marble — ivory-cream with fossilised detail. Perfect for spa floors, hotel lobbies, and luxury residences. Imported directly to Kishangarh.',
+      'Perlato Sicilia Italian Marble — ivory-cream stone with fossilised detail. Ideal for hotel lobbies, spa floors, and villas. Direct Kishangarh import.',
     keywords: ['perlato marble', 'perlato sicilia', 'italian ivory marble', 'fossil marble india', 'cream marble imported', 'perlato marble price'],
     faqs: [
       {
@@ -585,7 +585,7 @@ export const importedMarble: StoneProduct[] = [
     ],
     metaTitle: 'Michelangelo Marble | Turkish White Marble India',
     metaDescription:
-      'Michelangelo Turkish Marble — bright white with flowing grey rivers. Ideal for grand entrances, kitchen islands, and luxury bathrooms. Available from Granite Gallery.',
+      'Michelangelo Turkish Marble — bright white base with flowing grey rivers. Ideal for grand entrances, kitchen islands, and baths. Granite Gallery.',
     keywords: ['michelangelo marble', 'michaelangelo marble', 'turkish white marble india', 'flowing veined marble', 'afyon white marble'],
     faqs: [
       {
@@ -629,13 +629,13 @@ export const importedMarble: StoneProduct[] = [
       thickness: '18–20 mm',
     },
     finishes: [
-      { id: 'filled-polished', label: 'Filled & Polished', images: [MARBLE_ROOMS.floor2, MARBLE_ROOMS.bath2, MARBLE_ROOMS.kitchen3] },
-      { id: 'honed-filled', label: 'Honed & Filled', images: [MARBLE_ROOMS.living1, MARBLE_ROOMS.wall1, MARBLE_ROOMS.slab2] },
-      { id: 'unfilled-brushed', label: 'Unfilled Brushed', images: [MARBLE_ROOMS.wall2, MARBLE_ROOMS.floor1, MARBLE_ROOMS.bath3] },
+      { id: 'polished', label: 'Filled & Polished', images: [MARBLE_ROOMS.floor2, MARBLE_ROOMS.bath2, MARBLE_ROOMS.kitchen3] },
+      { id: 'honed', label: 'Honed & Filled', images: [MARBLE_ROOMS.living1, MARBLE_ROOMS.wall1, MARBLE_ROOMS.slab2] },
+      { id: 'antique', label: 'Unfilled Brushed', images: [MARBLE_ROOMS.wall2, MARBLE_ROOMS.floor1, MARBLE_ROOMS.bath3] },
     ],
     applications: [
       ...marbleApplications,
-      { id: 'pool-surround', label: 'Pool Surround', images: [MARBLE_ROOMS.floor2, MARBLE_ROOMS.slab2, MARBLE_ROOMS.wall1] },
+      { id: 'exterior-cladding', label: 'Pool Surround', images: [MARBLE_ROOMS.floor2, MARBLE_ROOMS.slab2, MARBLE_ROOMS.wall1] },
     ],
     sizes: standardSizes,
     highlights: [
@@ -647,7 +647,7 @@ export const importedMarble: StoneProduct[] = [
     ],
     metaTitle: 'Travertine Marble | Italian Travertine Supplier India',
     metaDescription:
-      'Italian Travertine — warm beige cellular stone from Tivoli. Available in filled/polished, honed, and brushed finishes. Perfect for flooring, walls, and pool surrounds.',
+      'Italian Travertine — warm beige cellular stone from Tivoli. Available in filled, honed, and brushed finishes for floors, walls, and outdoor pool areas.',
     keywords: ['travertine marble', 'italian travertine india', 'travertine flooring', 'beige travertine', 'imported travertine', 'travertine price india'],
     faqs: [
       {
@@ -705,7 +705,7 @@ export const importedMarble: StoneProduct[] = [
     ],
     metaTitle: 'Statuario Marble | Carrara Italian White Marble India',
     metaDescription:
-      'Statuario / Satvario Italian Marble from Carrara — the world\'s most coveted white marble. Bold grey veining on brilliant white. Available polished & honed from Granite Gallery.',
+      'Statuario Italian Marble from Carrara — luxury white marble with dramatic grey veining. Polished & honed slabs available direct from Granite Gallery.',
     keywords: ['statuario marble', 'satvario marble', 'carrara marble india', 'italian white marble', 'luxury marble', 'statuario price india'],
     faqs: [
       {
@@ -752,11 +752,11 @@ export const importedMarble: StoneProduct[] = [
     },
     finishes: [
       { id: 'polished', label: 'Polished', images: [MARBLE_ROOMS.wall2, MARBLE_ROOMS.living1, MARBLE_ROOMS.bath3] },
-      { id: 'backlit', label: 'Backlit Panel', images: [MARBLE_ROOMS.wall2, MARBLE_ROOMS.kitchen3, MARBLE_ROOMS.slab2] },
+      { id: 'polished', label: 'Backlit Translucent', images: [MARBLE_ROOMS.wall2, MARBLE_ROOMS.kitchen3, MARBLE_ROOMS.slab2] },
     ],
     applications: [
-      { id: 'feature-wall', label: 'Feature Wall', images: [MARBLE_ROOMS.wall2, MARBLE_ROOMS.living1, MARBLE_ROOMS.slab2] },
-      { id: 'bar-counter', label: 'Bar Counter', images: [MARBLE_ROOMS.kitchen3, MARBLE_ROOMS.wall2, MARBLE_ROOMS.bath3] },
+      { id: 'wall-cladding', label: 'Feature Wall', images: [MARBLE_ROOMS.wall2, MARBLE_ROOMS.living1, MARBLE_ROOMS.slab2] },
+      { id: 'tabletops', label: 'Bar Counter', images: [MARBLE_ROOMS.kitchen3, MARBLE_ROOMS.wall2, MARBLE_ROOMS.bath3] },
       { id: 'bathroom', label: 'Bathroom', images: [MARBLE_ROOMS.bath3, MARBLE_ROOMS.bath2, MARBLE_ROOMS.wall2] },
       { id: 'flooring', label: 'Flooring', images: [MARBLE_ROOMS.floor2, MARBLE_ROOMS.living1, MARBLE_ROOMS.floor1] },
     ],
@@ -774,7 +774,7 @@ export const importedMarble: StoneProduct[] = [
     ],
     metaTitle: 'Honey Onyx Alabaster Marble | Translucent Stone India',
     metaDescription:
-      'Honey Onyx / Alabaster — semi-translucent golden stone, stunning when backlit. Perfect for feature walls, bar counters, and luxury bathrooms. Available from Granite Gallery.',
+      'Honey Onyx (Alabaster) — translucent golden stone, stunning when backlit. Perfect for feature walls, bar counters, and baths. Sourced by Granite Gallery.',
     keywords: ['honey onyx', 'alabaster marble', 'translucent marble india', 'backlit onyx', 'golden onyx stone', 'backlit stone panel india'],
     faqs: [
       {
@@ -828,7 +828,7 @@ export const importedMarble: StoneProduct[] = [
     ],
     metaTitle: 'Golden Lisa Marble | Spanish Golden Marble India',
     metaDescription:
-      'Golden Lisa Spanish Marble — warm golden-beige with caramel veining. Perfect for kitchen counters, bathroom vanities, and luxury flooring. Import direct from Granite Gallery.',
+      'Golden Lisa Spanish Marble — warm golden-beige stone with caramel veining. Ideal for countertops, vanities, and flooring. Direct from Granite Gallery.',
     keywords: ['golden lisa marble', 'golden beige marble', 'spanish marble india', 'warm marble flooring', 'golden lisa marble price'],
     faqs: [
       {
@@ -875,7 +875,7 @@ export const importedMarble: StoneProduct[] = [
     finishes: importedFinishes,
     applications: [
       ...marbleApplications,
-      { id: 'fireplace', label: 'Fireplace Surround', images: [DARK_MARBLE_ROOMS.wall1, DARK_MARBLE_ROOMS.slab1, DARK_MARBLE_ROOMS.bath1] },
+      { id: 'wall-cladding', label: 'Fireplace & Feature Wall', images: [DARK_MARBLE_ROOMS.wall1, DARK_MARBLE_ROOMS.slab1, DARK_MARBLE_ROOMS.bath1] },
     ],
     sizes: standardSizes,
     highlights: [
@@ -886,7 +886,7 @@ export const importedMarble: StoneProduct[] = [
     ],
     metaTitle: 'Emperador Marble | Dark Brown Spanish Marble India',
     metaDescription:
-      'Emperador Spanish Marble — rich dark brown with gold and white veining. Perfect for countertops, fireplaces, and dramatic feature walls. Available from Granite Gallery.',
+      'Emperador Spanish Marble — rich dark brown stone with gold and white veining. Perfect for countertops, fireplaces, and floors. Sourced by Granite Gallery.',
     keywords: ['emperador marble', 'dark brown marble', 'spanish brown marble india', 'emperador dark marble price', 'light emperador marble'],
     faqs: [
       {
@@ -940,7 +940,7 @@ export const importedMarble: StoneProduct[] = [
     ],
     metaTitle: 'Vietnam White Marble | Crystal White Marble India',
     metaDescription:
-      'Vietnam White Marble — crystal clear, bluish-white surface with minimal veining. One of Asia\'s purest white marbles. Available in large format slabs from Granite Gallery.',
+      'Vietnam White Marble — pristine crystal-white stone with minimal veining. Asia\'s purest white marble available in large gang-saw slabs at Granite Gallery.',
     keywords: ['vietnam white marble', 'vietnamese marble india', 'crystal white marble', 'bluish white marble', 'imported white marble india', 'vietnam white marble price'],
     faqs: [
       {

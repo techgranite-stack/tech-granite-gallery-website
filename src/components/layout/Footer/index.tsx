@@ -33,6 +33,19 @@ export default function Footer() {
     { name: 'Tabletops & Furniture', path: '/applications/tabletops' },
   ];
 
+  const stoneColors = [
+    { name: 'Black Granite', path: '/black-granite' },
+    { name: 'White Marble', path: '/white-marble' },
+    { name: 'Beige Marble', path: '/beige-marble' },
+    { name: 'Grey Granite', path: '/grey-granite' },
+    { name: 'Brown Granite', path: '/brown-granite' },
+    { name: 'Blue Granite', path: '/blue-granite' },
+    { name: 'Green Granite', path: '/green-granite' },
+    { name: 'Red Granite', path: '/red-granite' },
+    { name: 'Pink Granite', path: '/pink-granite' },
+    { name: 'Yellow Granite', path: '/yellow-granite' },
+  ];
+
   const locationsServed = [
     { name: 'Kishangarh, Rajasthan', role: 'Headquarters & Processing Plant' },
     { name: 'Delhi NCR', role: 'North India Experience Center' },
@@ -224,6 +237,20 @@ export default function Footer() {
             </div>
           </div>
 
+        </div>
+
+        {/* Natural Stone Collections by Color */}
+        <div className={styles.colorsStrip}>
+          <div className={styles.colorsInner}>
+            <span className={styles.colorsLabel}>Stones by Color:</span>
+            <div className={styles.colorPills}>
+              {stoneColors.map((sc) => (
+                <Link key={sc.path} href={sc.path} className={styles.colorPill}>
+                  {sc.name}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 

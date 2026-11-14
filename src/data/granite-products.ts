@@ -51,13 +51,13 @@ const graniteFinishes: StoneFinish[] = [
     images: [DARK_ROOMS.outdoor1, DARK_ROOMS.floor1, DARK_ROOMS.slab2],
   },
   {
-    id: 'leather',
-    label: 'Leather',
+    id: 'leathered',
+    label: 'Leathered',
     images: [DARK_ROOMS.kitchen2, DARK_ROOMS.wall1, DARK_ROOMS.slab1],
   },
   {
-    id: 'brushed',
-    label: 'Brushed',
+    id: 'shot-blast',
+    label: 'Shot Blast',
     images: [DARK_ROOMS.bath1, DARK_ROOMS.floor1, DARK_ROOMS.wall1],
   },
 ];
@@ -79,8 +79,8 @@ const lightGraniteFinishes: StoneFinish[] = [
     images: [LIGHT_ROOMS.outdoor1, LIGHT_ROOMS.floor1, LIGHT_ROOMS.slab1],
   },
   {
-    id: 'leather',
-    label: 'Leather',
+    id: 'leathered',
+    label: 'Leathered',
     images: [LIGHT_ROOMS.kitchen2, LIGHT_ROOMS.wall1, LIGHT_ROOMS.floor2],
   },
 ];
@@ -94,7 +94,7 @@ const graniteApplications: StoneApplication[] = [
     images: [DARK_ROOMS.floor1, LIGHT_ROOMS.floor1, DARK_ROOMS.outdoor1],
   },
   {
-    id: 'kitchen-counter',
+    id: 'kitchen-countertops',
     label: 'Kitchen Counter',
     images: [DARK_ROOMS.kitchen1, DARK_ROOMS.kitchen2, LIGHT_ROOMS.kitchen1],
   },
@@ -104,7 +104,7 @@ const graniteApplications: StoneApplication[] = [
     images: [DARK_ROOMS.wall1, LIGHT_ROOMS.wall1, GREY_ROOMS.floor1],
   },
   {
-    id: 'outdoor-paving',
+    id: 'exterior-cladding',
     label: 'Outdoor Paving',
     images: [DARK_ROOMS.outdoor1, LIGHT_ROOMS.outdoor1, GREY_ROOMS.outdoor1],
   },
@@ -292,7 +292,7 @@ export const graniteProducts: StoneProduct[] = [
     sizes: standardSizes,
     highlights: ['India\'s most widely used white granite', 'Clean white base with consistent grey-black speckle', 'Excellent value for large area flooring', 'Widely available in large format tiles and slabs'],
     metaTitle: 'P White Granite | White Granite India | Granite Gallery',
-    metaDescription: 'P White Granite — India\'s most popular white granite. Clean white base with grey speckle. Ideal for flooring, countertops, and exterior. Best price from Granite Gallery.',
+    metaDescription: 'P White Granite — India\'s popular white granite with grey speckles. Durable stone for flooring, countertops, and facades. Best rates at Granite Gallery.',
     keywords: ['p white granite', 'white granite india', 'andhra white granite', 'white granite flooring', 'white granite price'],
     faqs: [
       { question: 'What is P White Granite also known as?', answer: 'P White is also called Andhra White, after its source in Andhra Pradesh. It is India\'s single most popular granite, with a clean white base and subtle grey-black speckle.' },
@@ -460,7 +460,7 @@ export const graniteProducts: StoneProduct[] = [
     sizes: standardSizes,
     highlights: ['Rare golden-yellow — unusual in the granite category', 'Warm, luminous tone brightens any interior', 'Ideal for kitchen countertops and feature accents', 'Fine speckle creates visual richness without busyness'],
     metaTitle: 'Crystal Yellow Granite | Yellow Granite India',
-    metaDescription: 'Crystal Yellow Granite — rare golden-yellow stone from Rajasthan. Perfect for kitchen counters, accent floors, and feature walls. Available from Granite Gallery.',
+    metaDescription: 'Crystal Yellow Granite — vibrant golden-yellow stone from Rajasthan. Ideal for kitchen counters, accent floors, and wall cladding from Granite Gallery.',
     keywords: ['crystal yellow granite', 'yellow granite india', 'golden granite', 'yellow kitchen countertop stone', 'crystal yellow granite price'],
     faqs: [
       { question: 'Why is Crystal Yellow Granite considered rare?', answer: 'A warm, golden-yellow is one of the least common colours in the granite category. Crystal Yellow delivers that sunny tone with fine black and white speckles, making it highly sought after for accent features.' },
@@ -933,13 +933,12 @@ export const graniteProducts: StoneProduct[] = [
     galleryImages: [GREY_ROOMS.outdoor1, GREY_ROOMS.floor1, GREY_ROOMS.bath1, DARK_ROOMS.outdoor1, GREY_ROOMS.slab1, LIGHT_ROOMS.floor2],
     specs: { hardness: 'Mohs 6–7', density: '2.4 g/cm³', waterAbsorption: '< 1.5%', compressiveStrength: '95–140 MPa', porosity: 'Low', abrasionResistance: 'High', thickness: '20–22 mm' },
     finishes: [
-      { id: 'natural', label: 'Natural Cleft', images: [GREY_ROOMS.outdoor1, GREY_ROOMS.floor1, DARK_ROOMS.outdoor1] },
+      { id: 'chiseled', label: 'Natural Cleft', images: [GREY_ROOMS.outdoor1, GREY_ROOMS.floor1, DARK_ROOMS.outdoor1] },
       { id: 'honed', label: 'Honed', images: [GREY_ROOMS.bath1, GREY_ROOMS.floor1, GREY_ROOMS.slab1] },
       { id: 'flamed', label: 'Flamed', images: [DARK_ROOMS.outdoor1, GREY_ROOMS.outdoor1, GREY_ROOMS.floor1] },
     ],
     applications: [
-      { id: 'outdoor-paving', label: 'Outdoor Paving', images: [GREY_ROOMS.outdoor1, DARK_ROOMS.outdoor1, LIGHT_ROOMS.outdoor1] },
-      { id: 'garden', label: 'Garden Landscaping', images: [GREY_ROOMS.outdoor1, DARK_ROOMS.outdoor1, GREY_ROOMS.floor1] },
+      { id: 'exterior-cladding', label: 'Outdoor Paving & Landscaping', images: [GREY_ROOMS.outdoor1, DARK_ROOMS.outdoor1, LIGHT_ROOMS.outdoor1] },
       { id: 'flooring', label: 'Flooring', images: [GREY_ROOMS.floor1, GREY_ROOMS.bath1, LIGHT_ROOMS.floor2] },
       { id: 'wall-cladding', label: 'Wall Cladding', images: [GREY_ROOMS.floor1, DARK_ROOMS.wall1, GREY_ROOMS.slab1] },
     ],
@@ -1086,7 +1085,7 @@ export const graniteProducts: StoneProduct[] = [
     sizes: standardSizes,
     highlights: ['Black with golden bronzite star inclusions — iconic look', 'India\'s most exported and recognised granite', 'Exceptional density and mirror-polish capability', 'Popular across 80+ countries for kitchen countertops'],
     metaTitle: 'Black Galaxy Granite | Golden Star Black Granite India',
-    metaDescription: 'Black Galaxy Granite — India\'s most iconic export stone. Deep black with golden star inclusions. Premium kitchen countertop granite available from Granite Gallery.',
+    metaDescription: 'Black Galaxy Granite — iconic Indian black granite with shimmering golden star specks. Premium stone for countertops and floors from Granite Gallery.',
     keywords: ['black galaxy granite', 'galaxy black granite', 'andhra black granite', 'black granite with gold', 'black galaxy countertop', 'black galaxy granite price'],
     faqs: [
       { question: 'What are the golden specks in Black Galaxy Granite?', answer: 'They are tiny bronzite mineral points that glitter like stars against the deep black base — giving the stone its "galaxy" name. The effect is most striking under a mirror polish.' },
@@ -1143,7 +1142,7 @@ export const graniteProducts: StoneProduct[] = [
     sizes: standardSizes,
     highlights: ['True absolute black — virtually zero colour variation', 'India\'s most consistent black granite surface', 'Ultra-dense — takes the highest mirror polish', 'Preferred for precision architectural installations'],
     metaTitle: 'Telephone Black Granite | Absolute Black Granite Karnataka',
-    metaDescription: 'Telephone Black Granite — true absolute black with zero variation from Karnataka. The purest black granite from India for luxury countertops and architectural use.',
+    metaDescription: 'Telephone Black Granite — jet absolute black stone with uniform tone from Karnataka. Pure black granite for luxury countertops. Export from Kishangarh.',
     keywords: ['telephone black granite', 'absolute black granite karnataka', 'pure black granite india', 'jet black granite countertop', 'telephone black granite price'],
     faqs: [
       { question: 'What makes Telephone Black Granite special?', answer: 'Telephone Black is a true, absolute-black Karnataka stone with virtually zero colour variation or crystal flecks — the purest black granite from India, ideal for high-precision architectural work.' },

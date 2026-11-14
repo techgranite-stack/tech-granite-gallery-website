@@ -10,17 +10,18 @@ import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import { whyUsReasons } from '@/data/whyus';
 import { testimonials } from '@/data/testimonials';
 import { pageSeo } from '@/data/page-seo';
+import { buildMetadata } from '@/lib/seo';
 import type { HeroSlide, StatItem } from '@/types';
 
 const seo = pageSeo['/team'];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
   keywords: seo.keywords,
-  openGraph: { title: seo.metaTitle, description: seo.metaDescription, ...(seo.ogImage ? { images: [seo.ogImage] } : {}) },
-  alternates: { canonical: '/team' },
-};
+  canonical: '/team',
+  image: seo.ogImage,
+});
 
 // ── Team-page hero slides (people & partnership focused) ──
 const teamSlides: HeroSlide[] = [

@@ -13,20 +13,17 @@ import { categories } from '@/data/categories';
 import type { FilterGroup } from '@/components/sections/StoneListingSection';
 import { pageSeo } from '@/data/page-seo';
 import type { HeroSlide, StatItem } from '@/types';
+import { buildMetadata } from '@/lib/seo';
 
 const seo = pageSeo['/marble'];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
   keywords: seo.keywords,
-  alternates: { canonical: '/marble' },
-  openGraph: {
-    title: seo.metaTitle,
-    description: seo.metaDescription,
-    ...(seo.ogImage ? { images: [seo.ogImage] } : {}),
-  },
-};
+  canonical: '/marble',
+  image: seo.ogImage,
+});
 
 const marbleSlides: HeroSlide[] = [
   {

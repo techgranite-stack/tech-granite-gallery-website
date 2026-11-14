@@ -6,6 +6,7 @@ import PageHero from '@/components/sections/PageHero';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import { finishesData } from '@/lib/finish-data';
+import { buildMetadata } from '@/lib/seo';
 import styles from './finish.module.css';
 
 // Unknown slugs 404 at the routing layer instead of rendering placeholder content.
@@ -21,17 +22,13 @@ export async function generateMetadata(
   const { slug } = await params;
   const finish = finishesData.find((f) => f.slug === slug);
   if (!finish) return {};
-  return {
+  return buildMetadata({
     title: finish.metaTitle,
     description: finish.metaDescription,
     keywords: finish.keywords,
-    openGraph: {
-      title: finish.metaTitle,
-      description: finish.metaDescription,
-      ...(finish.ogImage ?? finish.image ? { images: [finish.ogImage ?? finish.image] } : {}),
-    },
-    alternates: { canonical: `/finishes/${finish.slug}` },
-  };
+    canonical: `/finishes/${finish.slug}`,
+    image: finish.ogImage ?? finish.image,
+  });
 }
 
 export default async function FinishDetailPage(

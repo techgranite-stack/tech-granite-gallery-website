@@ -337,7 +337,7 @@ export const finishesData: Finish[] = [
     careInstructions: 'Clean with mild soap or stone cleaner. Reseal every 2 years.',
     image: '/images/finishes/latino.webp',
     metaTitle: 'Latino Stone Finish | Granite Gallery',
-    metaDescription: 'Latino stone finish — micro-textured velvet grip for granite & sandstone. Export from Kishangarh.',
+    metaDescription: 'Latino stone finish — micro-textured velvet surface delivering high slip resistance and rich color depth for granite and sandstone. Supply from Kishangarh.',
     keywords: ['latino stone finish', 'micro textured stone', 'latino finish granite', 'velvet grip stone'],
     faqs: [
       {
@@ -362,7 +362,7 @@ export const finishesData: Finish[] = [
     careInstructions: 'Sweep regularly. Wash with stone-safe pH neutral cleaner. Seal every 2 years.',
     image: '/images/finishes/antique.webp',
     metaTitle: 'Antique Brushed Stone Finish | Granite Gallery',
-    metaDescription: 'Antique brushed marble & limestone — historic patina texture finish. Export from Kishangarh.',
+    metaDescription: 'Antique brushed stone finish for marble and limestone — subtle weathered texture with historic patina. Ideal for heritage flooring. Export from Kishangarh.',
     keywords: ['antique stone finish', 'brushed marble finish', 'aged stone tiles', 'antique limestone india'],
     faqs: [
       {

@@ -217,7 +217,7 @@ With customs documentation, container loading, and material certifications handl
     author: 'Vishal Rathi',
     authorSlug: 'vishal-rathi',
     metaTitle: 'Why Kishangarh Is India’s Marble Capital | Granite Gallery',
-    metaDescription: 'Inside Kishangarh — the world’s largest marble market. How premium stone is sourced, processed with Italian technology, and exported to projects in 30+ countries.',
+    metaDescription: 'Inside Kishangarh — world’s largest marble market. Discover how premium stone is sourced, processed with Italian machines, and exported to 30+ countries.',
     keywords: ['Kishangarh marble', 'marble market India', 'Kishangarh stone', 'buy marble Kishangarh', 'India marble capital', 'marble exporter Rajasthan'],
     tags: ['Heritage', 'Kishangarh', 'Sourcing', 'Export']
   }

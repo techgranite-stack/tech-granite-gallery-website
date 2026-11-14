@@ -14,6 +14,7 @@ import BannerContactForm from '@/components/sections/BannerContactForm';
 import { marqueeItems } from '@/data/landing';
 import { categories } from '@/data/categories';
 import { productsData } from '@/lib/product-data';
+import { colorPages } from '@/data/stone-index';
 import { testimonials } from '@/data/testimonials';
 import { whyUsReasons, whyUsMarquee } from '@/data/whyus';
 import { pageSeo } from '@/data/page-seo';
@@ -31,20 +32,18 @@ const collectionStats: StatItem[] = [
 
 import styles from './collections.module.css';
 
+import { buildMetadata } from '@/lib/seo';
+
 // ── SEO ───────────────────────────────────────────────────────────────────────
 const seo = pageSeo['/collections'];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
   keywords: seo.keywords,
-  openGraph: {
-    title: seo.metaTitle,
-    description: seo.metaDescription,
-    ...(seo.ogImage ? { images: [seo.ogImage] } : {}),
-  },
-  alternates: { canonical: '/collections' },
-};
+  canonical: '/collections',
+  image: seo.ogImage,
+});
 
 // ── Collection-specific hero slides ──────────────────────────────────────────
 const collectionSlides: HeroSlide[] = [
@@ -146,6 +145,22 @@ export default function CollectionsPage() {
                 </Link>
               );
             })}
+          </div>
+
+          {/* Browse Stone by Color */}
+          <div className={styles.colorBrowseWrap}>
+            <div className={styles.colorBrowseHeader}>
+              <h3 className={styles.colorBrowseTitle}>Browse Natural Stones by Color</h3>
+              <p className={styles.colorBrowseSub}>Curated palettes for architectural interiors & facades</p>
+            </div>
+            <div className={styles.colorPillsList}>
+              {colorPages.map((cp) => (
+                <Link key={cp.slug} href={`/${cp.slug}`} className={styles.colorPillItem}>
+                  <span className={styles.swatchDot} />
+                  <span>{cp.title.replace(/ Collection$/, '')}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

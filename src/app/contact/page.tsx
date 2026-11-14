@@ -8,21 +8,17 @@ import { localBusinessJsonLd, trailJsonLd } from '@/lib/structured-data';
 import { addressOneLine, primaryLocation, dispatch } from '@/data/local-seo';
 import { siteConfig } from '@/config/site';
 
+import { buildMetadata } from '@/lib/seo';
+
 const seo = pageSeo['/contact'];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
   keywords: seo.keywords,
-  alternates: { canonical: '/contact' },
-  openGraph: {
-    type: 'website',
-    title: seo.metaTitle,
-    description: seo.metaDescription,
-    url: '/contact',
-    ...(seo.ogImage ? { images: [seo.ogImage] } : {}),
-  },
-};
+  canonical: '/contact',
+  image: seo.ogImage,
+});
 
 /**
  * /contact — the site had no contact route at all before this.

@@ -1,0 +1,80 @@
+.relatedColorsSection {
+  background: var(--ivory-light, #FAF7F2);
+  padding: 60px 40px;
+  border-top: 1px solid rgba(192, 133, 82, 0.15);
+}
+
+.relatedColorsInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.relatedColorsEyebrow {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--copper);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.relatedColorsTitle {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: var(--mahogany);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.colorsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 16px;
+}
+
+.colorCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: #ffffff;
+  border: 1px solid rgba(192, 133, 82, 0.25);
+  border-radius: 30px;
+  color: var(--mahogany);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.colorCard:hover {
+  background: var(--copper);
+  color: #ffffff;
+  border-color: var(--copper);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(192, 133, 82, 0.25);
+}
+
+.colorSwatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: inline-block;
+}
+
+@media (max-width: 640px) {
+  .relatedColorsSection {
+    padding: 40px 20px;
+  }
+  .relatedColorsTitle {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+}

@@ -6,7 +6,7 @@ import { applicationsData } from '@/lib/application-data';
 import { blogPostsData }    from '@/lib/blog-data';
 import { projectsData }     from '@/lib/project-data';
 import { landingPages }     from '@/lib/landing-pages-data';
-import { getAllMarble, getAllGranite } from '@/data/stone-index';
+import { getAllMarble, getAllGranite, colorPages } from '@/data/stone-index';
 
 // Render on-demand — heavy data imports cause static generation timeout on Vercel
 export const dynamic = 'force-dynamic';
@@ -54,6 +54,13 @@ function buildGroups(): SitemapGroup[] {
       links: graniteStones.map((s) => ({
         label: s.name,
         href:  `/granite/${s.slug}`,
+      })),
+    },
+    {
+      heading: 'Stone Collections by Color',
+      links: colorPages.map((cp) => ({
+        label: cp.title,
+        href:  `/${cp.slug}`,
       })),
     },
     {

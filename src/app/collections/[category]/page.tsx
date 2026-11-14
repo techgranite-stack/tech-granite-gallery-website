@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { buildMetadata } from '@/lib/seo';
 import HeroSlider from '@/components/sections/HeroSlider';
 import StatsBand from '@/components/sections/StatsBand';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
@@ -21,6 +22,7 @@ import type { HeroSlide, StatItem } from '@/types';
 export async function generateStaticParams() {
   const ids = new Set<string>(categories.map((c) => c.id));
   productsData.forEach((p) => ids.add(p.type));
+  ids.add('travertine');
   return Array.from(ids).map((category) => ({ category }));
 }
 
@@ -41,6 +43,9 @@ interface ResolvedCat {
   image?: string;
   images?: string[];
   tag?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  keywords?: string[];
 }
 
 /** A curated category, or a minimal derived one for product-type-only slugs. */
@@ -61,11 +66,11 @@ function resolveProducts(category: string): Product[] {
       exotic: ['exotic', 'onyx'],
       onyx: ['onyx'],
       imported: ['marble', 'travertine', 'onyx', 'exotic'],
+      travertine: ['marble'],
     };
     const types = typeMap[category] ?? [category];
     products = productsData.filter((p) => types.includes(p.type));
   }
-  if (products.length === 0) products = [mockProductFallback];
   return products;
 }
 
@@ -154,19 +159,17 @@ export async function generateMetadata(
   { params }: { params: Promise<{ category: string }> }
 ): Promise<Metadata> {
   const { category } = await params;
-  const cat = categories.find((c) => c.id === category);
+  const products = resolveProducts(category);
+  const cat = resolveCat(category, products);
   const name = cat?.title ?? titleCaseSlug(category);
-  return {
+  const heroImage = cat?.image || (products.length > 0 ? (products[0].standImage || products[0].heroImage) : undefined);
+  return buildMetadata({
     title: cat?.metaTitle ?? `${name} Collection | Granite Gallery`,
     description: cat?.metaDescription ?? `Explore our ${name} collection — premium slabs, tiles and custom formats. Direct export from Kishangarh.`,
     keywords: cat?.keywords,
-    openGraph: {
-      title: cat?.metaTitle ?? `${name} Collection | Granite Gallery`,
-      description: cat?.metaDescription,
-      ...(cat?.image ? { images: [cat.image] } : {}),
-    },
-    alternates: { canonical: `/collections/${category}` },
-  };
+    canonical: `/collections/${category}`,
+    image: heroImage,
+  });
 }
 
 // ── Page ──────────────────────────────────────────────────────

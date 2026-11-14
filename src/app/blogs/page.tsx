@@ -4,16 +4,17 @@ import ArticleCardGrid from '@/components/sections/ArticleCardGrid';
 import { blogPostsData } from '@/lib/blog-data';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import { pageSeo } from '@/data/page-seo';
+import { buildMetadata } from '@/lib/seo';
 
 const seo = pageSeo['/blogs'];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
   keywords: seo.keywords,
-  openGraph: { title: seo.metaTitle, description: seo.metaDescription, ...(seo.ogImage ? { images: [seo.ogImage] } : {}) },
-  alternates: { canonical: '/blogs' },
-};
+  canonical: '/blogs',
+  image: seo.ogImage,
+});
 
 export default function BlogsPage() {
   return (

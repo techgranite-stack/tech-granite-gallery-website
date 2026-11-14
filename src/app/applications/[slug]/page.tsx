@@ -14,6 +14,7 @@ import { testimonials } from '@/data/testimonials';
 import { applicationsData } from '@/lib/application-data';
 import { productsData } from '@/lib/product-data';
 import { projectsData } from '@/lib/project-data';
+import { buildMetadata } from '@/lib/seo';
 
 // Sample photo fallbacks (16:9) if an entry in application-data.ts has no sampleImages.
 const PLACEHOLDER_SAMPLES = [
@@ -112,17 +113,13 @@ export async function generateMetadata(
   const { slug } = await params;
   const app = applicationsData.find((a) => a.slug === slug);
   if (!app) return {};
-  return {
+  return buildMetadata({
     title: app.metaTitle,
     description: app.metaDescription,
     keywords: app.keywords,
-    openGraph: {
-      title: app.metaTitle,
-      description: app.metaDescription,
-      ...(app.ogImage ?? app.heroImage ? { images: [app.ogImage ?? app.heroImage] } : {}),
-    },
-    alternates: { canonical: `/applications/${app.slug}` },
-  };
+    canonical: `/applications/${app.slug}`,
+    image: app.ogImage ?? app.heroImage,
+  });
 }
 
 export default async function ApplicationDetailPage(

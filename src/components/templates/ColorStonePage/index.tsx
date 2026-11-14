@@ -1,10 +1,27 @@
+import Link from 'next/link';
 import PageHero from '@/components/sections/PageHero';
 import StoneListingSection from '@/components/sections/StoneListingSection';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import type { StoneProduct, ColorFamily } from '@/types/stone';
 import { fromStoneProduct } from '@/lib/listing-item';
+import { colorPages } from '@/data/stone-index';
 import type { FilterOption, FilterGroup } from '@/components/sections/StoneListingSection';
+import styles from './ColorStonePage.module.css';
+
+const SWATCH_HEX: Record<ColorFamily, string> = {
+  white: '#f5f5f0',
+  black: '#1f1f1f',
+  grey: '#9e9e9e',
+  pink: '#e8a598',
+  red: '#a93226',
+  green: '#27ae60',
+  brown: '#795548',
+  blue: '#2980b9',
+  yellow: '#f1c40f',
+  beige: '#d7ccc8',
+  multi: '#b0bec5',
+};
 
 interface ColorPageData {
   color: ColorFamily;
@@ -131,6 +148,26 @@ export default function ColorStonePage({ data, products }: ColorStonePageProps) 
         filters={filters}
         heading={`${colorLabel} Stone Collection`}
       />
+
+      <section className={styles.relatedColorsSection}>
+        <div className={styles.relatedColorsInner}>
+          <span className={styles.relatedColorsEyebrow}>Palette Variety</span>
+          <h2 className={styles.relatedColorsTitle}>Explore Other Stone Colors</h2>
+          <div className={styles.colorsGrid}>
+            {colorPages
+              .filter((cp) => cp.slug !== data.slug)
+              .map((cp) => (
+                <Link key={cp.slug} href={`/${cp.slug}`} className={styles.colorCard}>
+                  <span
+                    className={styles.colorSwatch}
+                    style={{ backgroundColor: SWATCH_HEX[cp.color] || '#ccc' }}
+                  />
+                  <span>{cp.title.replace(/ Collection$/, '')}</span>
+                </Link>
+              ))}
+          </div>
+        </div>
+      </section>
 
       <ScrollingTagline items={taglineItems} />
 

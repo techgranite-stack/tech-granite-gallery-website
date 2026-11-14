@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { pageSeo } from '@/data/page-seo';
+import { buildMetadata } from '@/lib/seo';
 
 /**
  * `about/page.tsx` is a client component (it drives the stone/application/finish
@@ -12,17 +13,13 @@ import { pageSeo } from '@/data/page-seo';
  */
 const seo = pageSeo['/about'];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
   keywords: seo.keywords,
-  alternates: { canonical: '/about' },
-  openGraph: {
-    title: seo.metaTitle,
-    description: seo.metaDescription,
-    ...(seo.ogImage ? { images: [seo.ogImage] } : {}),
-  },
-};
+  canonical: '/about',
+  image: seo.ogImage,
+});
 
 export default function AboutLayout({
   children,

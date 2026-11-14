@@ -9,17 +9,18 @@ import BannerContactForm from '@/components/sections/BannerContactForm';
 import { applicationsData, mockApplicationFallback } from '@/lib/application-data';
 import { testimonials } from '@/data/testimonials';
 import { pageSeo } from '@/data/page-seo';
+import { buildMetadata } from '@/lib/seo';
 import type { HeroSlide, StatItem, WhyUsReason } from '@/types';
 
 const seo = pageSeo['/applications'];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
   keywords: seo.keywords,
-  openGraph: { title: seo.metaTitle, description: seo.metaDescription, ...(seo.ogImage ? { images: [seo.ogImage] } : {}) },
-  alternates: { canonical: '/applications' },
-};
+  canonical: '/applications',
+  image: seo.ogImage,
+});
 
 const applicationSlides: HeroSlide[] = [
   {

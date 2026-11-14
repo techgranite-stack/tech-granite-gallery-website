@@ -6,6 +6,7 @@ import PageHero from '@/components/sections/PageHero';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import { blogPostsData } from '@/lib/blog-data';
 import { getTeamMember } from '@/data/team';
+import { buildMetadata } from '@/lib/seo';
 import styles from './blog.module.css';
 
 // Unknown slugs 404 at the routing layer instead of rendering placeholder content.
@@ -21,17 +22,14 @@ export async function generateMetadata(
   const { slug } = await params;
   const post = blogPostsData.find((p) => p.slug === slug);
   if (!post) return {};
-  return {
+  return buildMetadata({
     title: post.metaTitle,
     description: post.metaDescription,
     keywords: post.keywords,
-    openGraph: {
-      title: post.metaTitle,
-      description: post.metaDescription,
-      ...(post.ogImage ?? post.image ? { images: [post.ogImage ?? post.image] } : {}),
-    },
-    alternates: { canonical: `/blogs/${post.slug}` },
-  };
+    canonical: `/blogs/${post.slug}`,
+    image: post.ogImage ?? post.image,
+    type: 'article',
+  });
 }
 
 const parseInlineMarkdown = (text: string) => {

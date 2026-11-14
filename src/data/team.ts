@@ -37,7 +37,7 @@ export const teamMembers: ExtendedTeamMember[] = [
     specialties: ['Product Development', 'Sandstone & Quartzite', 'Architectural Stone Solutions', 'Natural Stone Sourcing'],
     bio: 'With over 20 years of experience in the natural stone industry, Amit Rathi leads Granite Gallery India\'s vision of innovation, quality, and excellence. He specializes in new product development, sandstone, quartzite, and customized architectural stone solutions. His deep understanding of materials, market trends, and customer requirements has helped create distinctive stone products for architects, builders, developers, hospitality projects, and global clients. His passion for innovation and craftsmanship continues to drive Granite Gallery India\'s growth as a trusted name in natural stone.',
     metaTitle: 'Amit Rathi — Founder & Director | Granite Gallery India',
-    metaDescription: 'Meet Amit Rathi, Founder & Director of Granite Gallery India — Product Development & Natural Stone Specialist with 20+ years of natural stone industry experience.',
+    metaDescription: 'Meet Amit Rathi, Founder & Director of Granite Gallery India — natural stone specialist with 20+ years expertise in sourcing, processing, and global export.',
     keywords: ['Amit Rathi', 'Granite Gallery Founder', 'Natural Stone Specialist', 'Sandstone Quartzite Expert', 'Product Development Stone'],
   },
   {
@@ -55,7 +55,7 @@ export const teamMembers: ExtendedTeamMember[] = [
     specialties: ['Financial Planning', 'Accounting Systems', 'Taxation & Compliance', 'Business Controls'],
     bio: 'Shreekant Dargar manages the company\'s financial operations, ensuring strong financial planning, accounting systems, taxation, compliance, and business controls. With a focus on accuracy, transparency, and financial discipline, he plays a vital role in maintaining operational stability and supporting sustainable growth. His expertise ensures efficient financial management and strong governance across the organization.',
     metaTitle: 'Shreekant Dargar — Head – Accounts & Finance',
-    metaDescription: 'Meet Shreekant Dargar, Head – Accounts & Finance at Granite Gallery India, directing financial planning, accounting systems, taxation, compliance, and business controls.',
+    metaDescription: 'Meet Shreekant Dargar, Head – Accounts & Finance at Granite Gallery India, leading financial planning, taxation, statutory compliance, and fiscal controls.',
     keywords: ['Shreekant Dargar', 'Head Accounts & Finance', 'Granite Gallery finance head', 'stone industry accounting', 'financial governance'],
   },
   {
@@ -73,7 +73,7 @@ export const teamMembers: ExtendedTeamMember[] = [
     specialties: ['CNC Technology', 'CAD/CAM Design', 'Digital Manufacturing', 'Precision Stone Carving'],
     bio: 'An IIT alumnus with expertise in engineering and digital manufacturing, Vishal Rathi leads Granite Gallery India\'s CNC operations, CAD/CAM designing, and advanced machining processes. He specializes in transforming creative concepts into precision-crafted stone products using modern technology. His technical expertise enables the execution of intricate carvings, sculptures, architectural elements, and customized stone designs with exceptional accuracy and craftsmanship.',
     metaTitle: 'Vishal Rathi — Head – CNC Technology & Design',
-    metaDescription: 'Meet Vishal Rathi, IIT Alumnus and Head – CNC Technology & Design at Granite Gallery India, leading digital manufacturing, CAD/CAM design, and precision stone carving.',
+    metaDescription: 'Meet Vishal Rathi, IIT Alumnus & Head – CNC Technology at Granite Gallery India, driving digital manufacturing, CAD/CAM design, and stone precision carving.',
     keywords: ['Vishal Rathi', 'IIT Alumnus', 'CNC Technology', 'Stone Design Specialist', 'CAD CAM stone milling', 'Granite Gallery'],
   },
   {

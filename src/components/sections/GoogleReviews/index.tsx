@@ -54,15 +54,11 @@ export default function GoogleReviews({
 
       <div className={styles.inner}>
         <header className={styles.header}>
-          <span className={styles.eyebrow}>
-            <span className={styles.eyebrowDot}>✦</span>
-            {eyebrow}
-            <span className={styles.eyebrowDot}>✦</span>
-          </span>
-          <h2 id={`${id}-title`} className={styles.title}>
+          <span className="section-eyebrow">{eyebrow}</span>
+          <h2 id={`${id}-title`} className="section-title">
             {title} <em>{titleAccent}</em>
           </h2>
-          <p className={styles.description}>{description}</p>
+          <p className="section-desc centered">{description}</p>
         </header>
 
         <div className={`${styles.layout} ${hasCards ? '' : styles.layoutSolo}`}>

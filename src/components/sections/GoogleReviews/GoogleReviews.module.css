@@ -49,49 +49,6 @@
   margin: 0 auto 48px;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-sans);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--copper);
-  margin-bottom: 12px;
-}
-
-.eyebrowDot {
-  font-size: 0.65rem;
-  color: var(--copper);
-  opacity: 0.8;
-}
-
-.title {
-  font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-  font-weight: 400;
-  line-height: 1.15;
-  color: var(--mahogany);
-  letter-spacing: -0.01em;
-  margin-bottom: 14px;
-}
-
-.title em {
-  font-style: italic;
-  font-family: var(--font-serif);
-  color: var(--copper);
-}
-
-.description {
-  font-family: var(--font-sans);
-  font-size: clamp(0.9rem, 1.05vw, 1rem);
-  line-height: 1.65;
-  color: var(--text-mid);
-  margin: 0 auto;
-}
-
 /* ── Layout: summary left, carousel right ── */
 .layout {
   display: grid;

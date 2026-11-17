@@ -51,20 +51,23 @@
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   font-family: var(--font-sans);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--copper-light);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
-.eyebrowDot {
-  font-size: 0.65rem;
-  color: var(--copper);
-  opacity: 0.8;
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--copper);
 }
 
 .title {

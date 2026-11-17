@@ -179,11 +179,7 @@ export default function ProcessSteps({
       <div className={styles.inner}>
         <Reveal animation="fade-up">
           <header className={styles.header}>
-            <span className={styles.eyebrow}>
-              <span className={styles.eyebrowDot}>✦</span>
-              {eyebrow}
-              <span className={styles.eyebrowDot}>✦</span>
-            </span>
+            <span className={styles.eyebrow}>{eyebrow}</span>
             <h2 id={`${id}-title`} className={styles.title}>
               {title} <em>{titleAccent}</em>
             </h2>

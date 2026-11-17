@@ -209,8 +209,8 @@
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 14px;
+  justify-content: flex-start;
+  gap: 12px;
   min-height: 190px;
   padding: 24px 26px;
   background: var(--white);
@@ -337,6 +337,7 @@ a.authorName:hover { color: var(--copper-dark); }
   font-size: 0.9rem;
   line-height: 1.55;
   color: #3c4043;
+  margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;

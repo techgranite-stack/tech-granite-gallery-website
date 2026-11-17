@@ -91,15 +91,12 @@ export interface FAQItem {
   answer: string;
 }
 
-export type ProcessIconName = "chat" | "slab" | "visualize" | "check" | "truck" | "build";
+export type ProcessIconName = "chat" | "slab" | "visualize" | "check" | "truck" | "build" | "factory";
 
 export interface ProcessStep {
   /** Display number, e.g. "01". */
   num: string;
   title: string;
   desc: string;
-  image: string;
-  /** Describes the photograph — used as the <img> alt. */
-  imageAlt: string;
   icon: ProcessIconName;
 }

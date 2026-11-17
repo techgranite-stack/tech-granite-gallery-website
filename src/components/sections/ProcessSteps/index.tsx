@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import Reveal from '@/components/ui/Reveal';
 import { processSteps } from '@/data/process';
@@ -31,22 +30,22 @@ export interface ProcessStepsProps {
 }
 
 /**
- * <ProcessSteps /> — numbered journey list with a photo per step.
+ * <ProcessSteps /> — numbered journey list: number, text, icon.
  * Presentational and data-driven: reuse it for any sequence (marble process,
  * export process, installation guide) by passing `steps` + copy props.
  */
 export default function ProcessSteps({
   steps = processSteps,
-  eyebrow = 'Our Selection & Project Process',
-  title = 'How We Bring Your',
-  titleAccent = 'Vision to Life',
-  description = 'Every stone project is different. From slab selection to final application, our team helps homeowners, architects and designers choose the right natural stone with clarity and confidence.',
+  eyebrow = 'From Brief to Installation',
+  title = 'Your Stone, Handled',
+  titleAccent = 'End to End',
+  description = 'A clear, accountable path for architects, builders and homeowners: from the first conversation at our Kishangarh facility to stone arriving ready for your site.',
   cta = {
-    title: 'Planning a Stone Project?',
+    title: 'Have a Project in Mind?',
     description:
-      'Visit our Kishangarh facility to compare full slabs and select your stone with confidence.',
-    primary: { label: 'Plan Showroom Visit', href: '/contact' },
-    secondary: { label: 'Enquire on WhatsApp', href: siteConfig.links.whatsapp },
+      'Tell us the space and the stone you are considering. We will reply with options, availability and a quote.',
+    primary: { label: 'Request a Quote', href: '/contact' },
+    secondary: { label: 'Chat on WhatsApp', href: siteConfig.links.whatsapp },
   },
   tone = 'stone',
   id = 'process',
@@ -69,26 +68,16 @@ export default function ProcessSteps({
         </Reveal>
 
         <ol className={styles.list}>
-          {steps.map((step, i) => (
+          {steps.map((step) => (
             <li key={step.num} className={styles.step}>
               <span className={styles.num}>{step.num}</span>
-              <span className={styles.icon}>
-                <ProcessIcon name={step.icon} />
-              </span>
               <div className={styles.copy}>
                 <h3 className={styles.stepTitle}>{step.title}</h3>
                 <p className={styles.stepDesc}>{step.desc}</p>
               </div>
-              <div className={styles.media}>
-                <Image
-                  src={step.image}
-                  alt={step.imageAlt}
-                  fill
-                  sizes="(max-width: 760px) 100vw, 280px"
-                  className={styles.img}
-                  loading={i < 2 ? 'eager' : 'lazy'}
-                />
-              </div>
+              <span className={styles.icon}>
+                <ProcessIcon name={step.icon} />
+              </span>
             </li>
           ))}
         </ol>

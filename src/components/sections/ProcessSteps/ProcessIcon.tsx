@@ -22,6 +22,7 @@ const PATHS: Record<ProcessIconName, React.ReactNode> = {
       <circle cx="17" cy="18" r="1.8" />
     </>
   ),
+  factory: <path d="M3 21V10l6 3V10l6 3V6h3v15zM7 17h2M12 17h2" />,
   build: <path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6" />,
 };
 

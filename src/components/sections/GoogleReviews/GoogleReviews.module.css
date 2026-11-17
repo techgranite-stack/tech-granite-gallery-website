@@ -9,7 +9,10 @@
   padding: 40px 0 84px;
   overflow: hidden;
 }
-.toneWhite { background: var(--white); }
+
+.toneWhite {
+  background: var(--white);
+}
 
 /* ── Seamless Khatamband Lattice & Stone Watermark matching Testimonials ── */
 .textureOverlay {
@@ -63,8 +66,8 @@
   border-radius: 18px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.3s ease,
-              box-shadow 0.3s ease;
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .summary:hover {
@@ -81,12 +84,12 @@
   max-width: 500px;
 }
 
-.summaryThumb {
-  width: 68px;
-  height: 52px;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--stone-200);
+.summaryLogo {
+  width: auto;
+  max-width: 155px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 6px;
 }
 
 .summaryBody {
@@ -94,14 +97,6 @@
   flex-direction: column;
   gap: 6px;
   align-items: flex-start;
-}
-
-.summaryName {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--mahogany);
-  line-height: 1.15;
 }
 
 .summaryRating {
@@ -182,7 +177,10 @@
   padding: 8px 2px 14px;
   outline: none;
 }
-.track::-webkit-scrollbar { display: none; }
+
+.track::-webkit-scrollbar {
+  display: none;
+}
 
 .arrow {
   position: absolute;
@@ -212,9 +210,19 @@
   transform: translateY(-50%) scale(1.08);
   box-shadow: 0 4px 14px rgba(192, 133, 82, 0.3);
 }
-.arrow:disabled { opacity: 0; pointer-events: none; }
-.arrowPrev { left: 0; }
-.arrowNext { right: 0; }
+
+.arrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.arrowPrev {
+  left: 0;
+}
+
+.arrowNext {
+  right: 0;
+}
 
 /* ── Review card: Clean White Stone Card (Exact 3 Cards on Desktop) ── */
 .card {
@@ -234,8 +242,8 @@
   border-radius: 18px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.3s ease,
-              box-shadow 0.3s ease;
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -293,7 +301,9 @@
   white-space: nowrap;
 }
 
-a.authorName:hover { color: var(--copper-dark); }
+a.authorName:hover {
+  color: var(--copper-dark);
+}
 
 .cardTime {
   font-family: var(--font-sans);
@@ -389,6 +399,7 @@ a.authorName:hover { color: var(--copper-dark); }
     grid-template-columns: 220px minmax(0, 1fr);
     gap: 18px;
   }
+
   .card {
     flex: 0 0 calc((100% - 16px) / 2);
     width: calc((100% - 16px) / 2);
@@ -400,44 +411,58 @@ a.authorName:hover { color: var(--copper-dark); }
   .section {
     padding: 30px 0 70px;
   }
+
   .layout {
     grid-template-columns: minmax(0, 1fr);
     gap: 20px;
   }
+
   .summary {
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 20px;
   }
+
   .carousel {
     padding: 0;
   }
+
   .card {
     flex: 0 0 calc((100% - 16px) / 2);
     width: calc((100% - 16px) / 2);
     max-width: calc((100% - 16px) / 2);
   }
-  .arrow { display: none; }
+
+  .arrow {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
-  .inner { padding: 0 18px; }
+  .inner {
+    padding: 0 18px;
+  }
+
   .summary {
     flex-direction: column;
     text-align: center;
   }
+
   .summaryBody {
     align-items: center;
   }
+
   .card {
     flex: 0 0 100%;
     width: 100%;
     max-width: 100%;
   }
+
   .ctas {
     flex-direction: column;
   }
+
   .ctaOutline,
   .ctaSolid {
     justify-content: center;

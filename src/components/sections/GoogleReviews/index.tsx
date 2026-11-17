@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getGoogleReviews, type GetGoogleReviewsOptions } from '@/lib/google-reviews';
 import Stars, { GoogleGlyph } from './Stars';
 import ReviewCard from './ReviewCard';
@@ -64,17 +65,14 @@ export default function GoogleReviews({
         <div className={`${styles.layout} ${hasCards ? '' : styles.layoutSolo}`}>
           {/* ── Summary panel ── */}
           <aside className={styles.summary}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={thumbnail}
-              alt=""
-              width={64}
-              height={48}
-              loading="lazy"
-              className={styles.summaryThumb}
-            />
             <div className={styles.summaryBody}>
-              <strong className={styles.summaryName}>{data.placeName}</strong>
+              <Image
+                src="/Logo-black.png"
+                alt={data.placeName}
+                width={155}
+                height={44}
+                className={styles.summaryLogo}
+              />
               <div className={styles.summaryRating}>
                 <span className={styles.summaryScore}>{data.rating.toFixed(1)}</span>
                 <Stars rating={data.rating} size={18} />

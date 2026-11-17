@@ -64,8 +64,9 @@ export default function GoogleReviews({
             />
             <span className={styles.ribbonDivider} aria-hidden="true" />
             <div className={styles.ribbonRating}>
+              <GoogleGlyph size={18} />
               <span className={styles.ribbonScore}>{data.rating.toFixed(1)}</span>
-              <Stars rating={data.rating} size={16} />
+              <Stars rating={data.rating} size={15} />
               <span className={styles.ribbonCount}>
                 ({data.totalReviews.toLocaleString('en-IN')} Google Reviews)
               </span>

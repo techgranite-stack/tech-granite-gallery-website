@@ -210,9 +210,6 @@ export default function ProcessSteps({
                   <div className={styles.cardHeader}>
                     <div className={styles.titleWrap}>
                       <h3 className={styles.stepTitle}>{step.title}</h3>
-                      {isVisualization && (
-                        <span className={styles.highlightPill}>Interactive 3D / Bookmatch</span>
-                      )}
                     </div>
                   </div>
 

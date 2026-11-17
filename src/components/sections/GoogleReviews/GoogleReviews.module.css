@@ -1,0 +1,273 @@
+/* ═══════════════════════════════════════════════════════════
+   Google Reviews section — modular, brand-palette styling
+═══════════════════════════════════════════════════════════ */
+
+.section {
+  background: var(--ivory);
+  padding: var(--section-py-md) 0;
+}
+.toneWhite { background: var(--white); }
+
+.inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* ── Layout: summary left, carousel right ── */
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+.layoutSolo {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+}
+
+/* ── Summary panel ── */
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.layoutSolo .summary {
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 32px;
+  background: var(--white);
+  border: 1px solid rgba(var(--copper-rgb), 0.22);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+.summaryThumb {
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+.summaryBody {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.summaryName {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--mahogany);
+  line-height: 1.1;
+}
+.summaryRating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.summaryScore {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.summaryCount {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.writeBtn {
+  margin-top: 6px;
+  display: inline-flex;
+  padding: 8px 18px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--mahogany);
+  background: var(--white);
+  border: 1px solid var(--stone-300);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+.writeBtn:hover { border-color: var(--copper); color: var(--copper-dark); }
+
+/* ── Stars ── */
+.stars {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+}
+.starRow { letter-spacing: 2px; }
+.starsEmpty { color: #D9D2C8; }
+.starsFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #F5B301;
+}
+
+/* ── Carousel ── */
+.carousel {
+  position: relative;
+  min-width: 0;
+}
+.track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 8px 4px 20px;
+  outline: none;
+}
+.track::-webkit-scrollbar { display: none; }
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--stone-200);
+  background: var(--white);
+  color: var(--mahogany);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: opacity 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.arrow:hover:not(:disabled) { background: var(--copper); color: var(--white); border-color: var(--copper); }
+.arrow:disabled { opacity: 0; pointer-events: none; }
+.arrowPrev { left: -14px; }
+.arrowNext { right: -14px; }
+
+/* ── Review card ── */
+.card {
+  flex: 0 0 min(320px, 82%);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 220px;
+  padding: 22px;
+  background: var(--white);
+  border: 1px solid rgba(var(--copper-rgb), 0.14);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+.toneWhite .card { background: var(--off-white); }
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.avatar,
+.avatarImg {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.avatarImg { object-fit: cover; }
+
+.cardWho {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+.authorName {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+a.authorName:hover { color: var(--copper-dark); }
+.cardTime {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+.cardGoogle { flex-shrink: 0; display: inline-flex; }
+
+.cardText {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-mid);
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── CTAs ── */
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 36px;
+}
+.ctaOutline,
+.ctaSolid {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.ctaOutline {
+  color: var(--copper-dark);
+  background: transparent;
+  border: 1px solid var(--copper);
+}
+.ctaOutline:hover { background: var(--copper); color: var(--white); }
+.ctaSolid {
+  color: var(--white);
+  background: var(--copper);
+  border: 1px solid var(--copper);
+}
+.ctaSolid:hover { background: var(--copper-dark); border-color: var(--copper-dark); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .summary { flex-direction: row; align-items: center; justify-content: center; gap: 18px; }
+  .arrow { display: none; }
+}
+@media (max-width: 560px) {
+  .inner { padding: 0 20px; }
+  .layoutSolo .summary { flex-direction: column; text-align: center; }
+  .layoutSolo .summaryBody { align-items: center; }
+}

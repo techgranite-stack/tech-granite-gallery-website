@@ -8,6 +8,7 @@ import ScrollingTagline from "@/components/sections/ScrollingTagline";
 import HoverListReveal from "@/components/sections/HoverListReveal";
 import MosaicGrid from "@/components/sections/MosaicGrid";
 import NumberedCardGrid from "@/components/sections/NumberedCardGrid";
+import GoogleReviews from "@/components/sections/GoogleReviews";
 
 // Dynamically import below-the-fold interactive sections to reduce initial mobile JS bundle
 const CoverflowCarousel = dynamic(() => import("@/components/sections/CoverflowCarousel"));
@@ -31,6 +32,9 @@ import { whyUsReasons, whyUsMarquee } from "@/data/whyus";
 import { buildMetadata } from '@/lib/seo';
 
 const seo = pageSeo['/'];
+
+// Re-render daily so the Google Reviews section picks up new reviews (ISR).
+export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
   title: seo.metaTitle,
@@ -97,7 +101,10 @@ export default function Home() {
       {/* 8. Projects Gallery — mahogany, full viewport, self-contained */}
       <HorizontalScrollGallery projects={projects} />
 
-      {/* 9. Testimonials — ivory, self-contained */}
+      {/* 9a. Google Reviews — live from Places API, falls back gracefully */}
+      <GoogleReviews />
+
+      {/* 9b. Testimonials — ivory, self-contained */}
       <MarqueeTestimonials testimonials={testimonials} />
 
       {/* 10. Team — ivory, self-contained */}

@@ -2,6 +2,10 @@ import type { Metadata } from 'next';
 import PageHero from '@/components/sections/PageHero';
 import LocalInfoBlock from '@/components/sections/LocalInfoBlock';
 import BannerContactForm from '@/components/sections/BannerContactForm';
+import GoogleReviews from '@/components/sections/GoogleReviews';
+
+// Daily ISR so the Google Reviews section stays fresh.
+export const revalidate = 86400;
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import { pageSeo } from '@/data/page-seo';
 import { localBusinessJsonLd, trailJsonLd } from '@/lib/structured-data';
@@ -115,6 +119,8 @@ export default function ContactPage() {
           },
         ]}
       />
+
+      <GoogleReviews tone="white" limit={3} secondaryCta={null} />
 
       <BannerContactForm />
     </>

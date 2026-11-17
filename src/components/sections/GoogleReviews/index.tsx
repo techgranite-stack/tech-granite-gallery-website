@@ -49,13 +49,20 @@ export default function GoogleReviews({
       className={`${styles.section} ${tone === 'white' ? styles.toneWhite : ''}`}
       aria-labelledby={`${id}-title`}
     >
+      {/* Background Khatamband lattice & stone watermark */}
+      <div className={styles.textureOverlay} aria-hidden="true" />
+
       <div className={styles.inner}>
         <header className={styles.header}>
-          <span className="section-eyebrow">{eyebrow}</span>
-          <h2 id={`${id}-title`} className="section-title">
+          <span className={styles.eyebrow}>
+            <span className={styles.eyebrowDot}>✦</span>
+            {eyebrow}
+            <span className={styles.eyebrowDot}>✦</span>
+          </span>
+          <h2 id={`${id}-title`} className={styles.title}>
             {title} <em>{titleAccent}</em>
           </h2>
-          <p className="section-desc centered">{description}</p>
+          <p className={styles.description}>{description}</p>
         </header>
 
         <div className={`${styles.layout} ${hasCards ? '' : styles.layoutSolo}`}>
@@ -117,6 +124,9 @@ export default function GoogleReviews({
           )}
         </div>
       </div>
+
+      {/* Elegant transition gradient melting into the following dark mahogany section */}
+      <div className={styles.bottomTransition} aria-hidden="true" />
     </section>
   );
 }

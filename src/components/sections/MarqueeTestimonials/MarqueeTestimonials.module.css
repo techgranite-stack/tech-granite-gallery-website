@@ -6,7 +6,7 @@
 
 .section {
   background: var(--ivory);
-  padding: var(--section-py) 0;
+  padding: var(--section-py) 0 30px;
   overflow: hidden;
   position: relative;
 }

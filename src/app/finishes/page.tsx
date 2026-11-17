@@ -3,9 +3,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import HeroSlider from '@/components/sections/HeroSlider';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
+import NumberedCardGrid from '@/components/sections/NumberedCardGrid';
+import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
+import GoogleReviews from '@/components/sections/GoogleReviews';
+import ProcessSteps from '@/components/sections/ProcessSteps';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import { finishesData, mockFinishFallback } from '@/lib/finish-data';
 import { marqueeItems } from '@/data/landing';
+import { testimonials } from '@/data/testimonials';
+import { finishesReasons, finishesMarquee } from '@/data/whyus';
 import { pageSeo } from '@/data/page-seo';
 import type { HeroSlide } from '@/types';
 import { buildMetadata } from '@/lib/seo';
@@ -123,6 +129,21 @@ export default function FinishesPage() {
       </section>
 
       <ScrollingTagline items={marqueeItems} />
+
+      {/* Why Choose Our Finishes — 6 points with same design */}
+      <NumberedCardGrid
+        reasons={finishesReasons}
+        marqueeItems={finishesMarquee}
+        title="Why Architects & Builders Choose Our Finishes"
+        bg="#C8B89A"
+        cardBg="#FFFFFF"
+      />
+
+      {/* Client Voices, Google Reviews & Process Journey */}
+      <MarqueeTestimonials testimonials={testimonials} />
+      <GoogleReviews />
+      <ProcessSteps />
+
       <BannerContactForm />
     </>
   );

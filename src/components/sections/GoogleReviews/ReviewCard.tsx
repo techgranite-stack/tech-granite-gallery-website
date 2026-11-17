@@ -2,7 +2,7 @@ import type { GoogleReview } from '@/lib/google-reviews';
 import Stars, { GoogleGlyph } from './Stars';
 import styles from './GoogleReviews.module.css';
 
-// Warm, on-brand avatar tints for reviewers without a Google profile photo.
+// Authentic Google reviewer avatar tints
 const AVATAR_TINTS = ['#B5452A', '#C08552', '#8C5A3C', '#6B7F5A', '#4B6C8C', '#7A5C8C'];
 
 function tintFor(name: string) {
@@ -57,12 +57,11 @@ export default function ReviewCard({ review }: { review: GoogleReview }) {
         </span>
       </header>
 
-      {/* Numerical rating + 5 Stars + Verified Google badge */}
+      {/* 5 Stars + Verified Google badge */}
       <div className={styles.ratingRow}>
-        <span className={styles.ratingScore}>{review.rating.toFixed(1)}</span>
         <Stars rating={review.rating} size={15} />
-        <span className={styles.verifiedBadge} title="Verified Google Review">
-          <svg viewBox="0 0 16 16" width="14" height="14" fill="#1a73e8" aria-hidden="true">
+        <span className={styles.verifiedBadge} title="Verified review on Google">
+          <svg viewBox="0 0 16 16" width="15" height="15" fill="#1a73e8" aria-hidden="true">
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
           </svg>
         </span>

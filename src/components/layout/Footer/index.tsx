@@ -2,7 +2,7 @@ import styles from './Footer.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { siteConfig } from '@/config/site';
-import { addressOneLine } from '@/data/local-seo';
+import { addressOneLine, googleBusinessProfile } from '@/data/local-seo';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -108,7 +108,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.googleReviewBadge}
-              aria-label="Granite Gallery Google Reviews 4.9 Rating"
+              aria-label={`Granite Gallery Google Reviews ${googleBusinessProfile.ratingValue} rating from ${googleBusinessProfile.reviewCount} reviews`}
             >
               <div className={styles.googleIconWrap}>
                 <svg width="18" height="18" viewBox="0 0 24 24">
@@ -120,10 +120,10 @@ export default function Footer() {
               </div>
               <div className={styles.googleReviewText}>
                 <div className={styles.googleStarsWrap}>
-                  <span className={styles.googleRatingNum}>4.9</span>
+                  <span className={styles.googleRatingNum}>{googleBusinessProfile.ratingValue.toFixed(1)}</span>
                   <div className={styles.googleStars}>★★★★★</div>
                 </div>
-                <span className={styles.googleReviewCount}>46 Google Reviews</span>
+                <span className={styles.googleReviewCount}>{googleBusinessProfile.reviewCount} Google Reviews</span>
               </div>
             </a>
 
@@ -264,6 +264,15 @@ export default function Footer() {
           <nav className={styles.bottomLinks} aria-label="Footer">
             <Link href="/marble-exporters-in-kishangarh" className={styles.bottomLink}>
               Marble Exporters in Kishangarh
+            </Link>
+            <Link href="/projects" className={styles.bottomLink}>
+              Projects
+            </Link>
+            <Link href="/blogs" className={styles.bottomLink}>
+              Blogs
+            </Link>
+            <Link href="/team" className={styles.bottomLink}>
+              Team
             </Link>
             <Link href="/contact" className={styles.bottomLink}>
               Contact

@@ -37,14 +37,14 @@ export interface GoogleReviewsData {
 export interface GetGoogleReviewsOptions {
   /** Hide reviews below this star rating. Default 4. */
   minRating?: number;
-  /** Max cards to show. Default 6. */
+  /** Max cards to show. Default 12. */
   limit?: number;
   /** Drop star-only reviews with no written text. Default true. */
   requireText?: boolean;
 }
 
 export function getGoogleReviews(options: GetGoogleReviewsOptions = {}): GoogleReviewsData {
-  const { minRating = 4, limit = 6, requireText = true } = options;
+  const { minRating = 4, limit = 12, requireText = true } = options;
   const mapsUrl = googleListingLinks.mapsUrl ?? siteConfig.links.maps;
 
   return {

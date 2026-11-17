@@ -138,7 +138,7 @@ export const dispatch = {
 /** Google Business Profile signals shown on-site. Keep in sync with the GBP. */
 export const googleBusinessProfile = {
   ratingValue: 4.9,
-  reviewCount: 46,
+  reviewCount: 52,
 } as const;
 
 /**

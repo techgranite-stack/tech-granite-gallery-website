@@ -97,9 +97,6 @@ export default function Home() {
       {/* 7. Why Us — ivory, self-contained */}
       <NumberedCardGrid reasons={whyUsReasons} marqueeItems={whyUsMarquee} />
 
-      {/* 7b. How we work — selection → visualization → dispatch → installation */}
-      <ProcessSteps />
-
       {/* 8. Projects Gallery — mahogany, full viewport, self-contained */}
       <HorizontalScrollGallery projects={projects} />
 
@@ -108,6 +105,9 @@ export default function Home() {
 
       {/* 9b. Google Reviews — sits directly below "What Our Clients Say" */}
       <GoogleReviews />
+
+      {/* 9c. How we work — selection → visualization → dispatch → installation */}
+      <ProcessSteps />
 
       {/* 10. Team — ivory, self-contained */}
       <PortraitTeamGrid members={teamMembers} />

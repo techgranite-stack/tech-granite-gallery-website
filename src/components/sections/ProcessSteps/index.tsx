@@ -40,7 +40,8 @@ export interface ProcessStepsProps {
 /**
  * <ProcessSteps /> — Vertical journey timeline.
  * A copper spine down the middle with numbered nodes. Cards alternate left & right
- * and slide into place as you scroll, while the vertical line fills with copper.
+ * and slide into place as you scroll, while the vertical line fills with copper
+ * and connects seamlessly into the final project inquiry card.
  */
 export default function ProcessSteps({
   steps = processSteps,
@@ -65,7 +66,7 @@ export default function ProcessSteps({
     () => {
       if (!timelineRef.current || !fillLineRef.current) return;
 
-      // 1. Vertical Copper Line Fill Progress
+      // 1. Vertical Copper Line Fill Progress (smooth scrub into terminal node)
       gsap.fromTo(
         fillLineRef.current,
         { scaleY: 0 },
@@ -75,7 +76,7 @@ export default function ProcessSteps({
           scrollTrigger: {
             trigger: timelineRef.current,
             start: 'top 75%',
-            end: 'bottom 75%',
+            end: 'bottom 80%',
             scrub: 0.5,
           },
         }
@@ -261,39 +262,62 @@ export default function ProcessSteps({
               );
             })}
           </ol>
-        </div>
 
-        {/* ── Bottom CTA Card ── */}
-        {cta && (
-          <Reveal animation="fade-up">
-            <div className={styles.cta}>
-              <div className={styles.ctaGlow} aria-hidden="true" />
-              <span className={styles.ctaIcon}>
-                <ProcessIcon name="build" />
-              </span>
-              <div className={styles.ctaCopy}>
-                <h3 className={styles.ctaTitle}>{cta.title}</h3>
-                <p className={styles.ctaDesc}>{cta.description}</p>
+          {/* ── Bottom Terminal CTA (Directly connected to the spine) ── */}
+          {cta && (
+            <div className={styles.terminalSection}>
+              {/* Terminal Connection Node */}
+              <div className={styles.terminalNode} aria-hidden="true">
+                <span className={styles.terminalIcon}>✦</span>
+                <span className={styles.terminalLabel}>START YOUR PROJECT</span>
               </div>
-              <div className={styles.ctaBtns}>
-                <Link href={cta.primary.href} className={styles.btnSolid}>
-                  {cta.primary.label}
-                </Link>
-                {cta.secondary && (
-                  <a
-                    href={cta.secondary.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-wa-source="process_timeline_cta"
-                    className={styles.btnOutline}
+
+              <div className={styles.cta}>
+                <div className={styles.ctaGlow} aria-hidden="true" />
+                
+                {/* Architectural Gemstone Facet Icon */}
+                <span className={styles.ctaIcon} aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
-                    {cta.secondary.label}
-                  </a>
-                )}
+                    <path d="M6 3h12l4 6-10 12L2 9l4-6z" />
+                    <path d="M2 9h20" />
+                    <path d="M10 3l-2 6 4 12 4-12-2-6" />
+                  </svg>
+                </span>
+
+                <div className={styles.ctaCopy}>
+                  <h3 className={styles.ctaTitle}>{cta.title}</h3>
+                  <p className={styles.ctaDesc}>{cta.description}</p>
+                </div>
+
+                <div className={styles.ctaBtns}>
+                  <Link href={cta.primary.href} className={styles.btnSolid}>
+                    {cta.primary.label}
+                  </Link>
+                  {cta.secondary && (
+                    <a
+                      href={cta.secondary.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-wa-source="process_timeline_cta"
+                      className={styles.btnOutline}
+                    >
+                      {cta.secondary.label}
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
-          </Reveal>
-        )}
+          )}
+        </div>
       </div>
     </section>
   );

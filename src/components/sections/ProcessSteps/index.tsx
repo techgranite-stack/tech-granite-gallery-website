@@ -1,10 +1,19 @@
+'use client';
+import { useRef } from 'react';
 import Link from 'next/link';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import Reveal from '@/components/ui/Reveal';
 import { processSteps } from '@/data/process';
 import { siteConfig } from '@/config/site';
 import type { ProcessStep } from '@/types';
 import ProcessIcon from './ProcessIcon';
 import styles from './ProcessSteps.module.css';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface CtaLink {
   label: string;
@@ -29,8 +38,9 @@ export interface ProcessStepsProps {
 }
 
 /**
- * <ProcessSteps /> — Dark mahogany stone band with vein texture, copper glow,
- * and horizontal stepper with a dotted copper path.
+ * <ProcessSteps /> — Vertical journey timeline.
+ * A copper spine down the middle with numbered nodes. Cards alternate left & right
+ * and slide into place as you scroll, while the vertical line fills with copper.
  */
 export default function ProcessSteps({
   steps = processSteps,
@@ -47,8 +57,80 @@ export default function ProcessSteps({
   },
   id = 'process',
 }: ProcessStepsProps) {
+  const containerRef = useRef<HTMLElement>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const fillLineRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!timelineRef.current || !fillLineRef.current) return;
+
+      // 1. Vertical Copper Line Fill Progress
+      gsap.fromTo(
+        fillLineRef.current,
+        { scaleY: 0 },
+        {
+          scaleY: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: timelineRef.current,
+            start: 'top 75%',
+            end: 'bottom 75%',
+            scrub: 0.5,
+          },
+        }
+      );
+
+      // 2. Slide-in animations for each row (cards & nodes)
+      const rows = timelineRef.current.querySelectorAll<HTMLElement>(`.${styles.timelineRow}`);
+      rows.forEach((row, idx) => {
+        const isLeft = idx % 2 === 0;
+        const card = row.querySelector<HTMLElement>(`.${styles.stepCard}`);
+        const node = row.querySelector<HTMLElement>(`.${styles.nodeBadge}`);
+
+        if (card) {
+          const xOffset = isLeft ? -45 : 45;
+          gsap.fromTo(
+            card,
+            { opacity: 0, x: xOffset },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.85,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: row,
+                start: 'top 82%',
+                toggleActions: 'play none none reverse',
+              },
+            }
+          );
+        }
+
+        if (node) {
+          gsap.fromTo(
+            node,
+            { scale: 0.6, opacity: 0 },
+            {
+              scale: 1,
+              opacity: 1,
+              duration: 0.6,
+              ease: 'back.out(1.7)',
+              scrollTrigger: {
+                trigger: row,
+                start: 'top 82%',
+                toggleActions: 'play none none reverse',
+              },
+            }
+          );
+        }
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <section id={id} className={styles.section} aria-labelledby={`${id}-title`}>
+    <section id={id} ref={containerRef} className={styles.section} aria-labelledby={`${id}-title`}>
       {/* Background marble vein texture & copper glow */}
       <div className={styles.ambientGlow} aria-hidden="true" />
       <svg
@@ -64,20 +146,20 @@ export default function ProcessSteps({
           stroke="url(#copperVeinGrad1)"
           strokeWidth="1.5"
           strokeDasharray="4 8"
-          opacity="0.35"
+          opacity="0.32"
         />
         <path
           d="M-20 450 C 280 380, 520 540, 800 460 C 1080 380, 1340 520, 1520 480"
           stroke="url(#copperVeinGrad2)"
           strokeWidth="1.2"
-          opacity="0.25"
+          opacity="0.22"
         />
         <path
           d="M80 820 C 340 760, 640 860, 920 780 C 1200 700, 1380 820, 1550 790"
           stroke="url(#copperVeinGrad1)"
           strokeWidth="1.5"
           strokeDasharray="6 12"
-          opacity="0.3"
+          opacity="0.28"
         />
         <defs>
           <linearGradient id="copperVeinGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -108,43 +190,72 @@ export default function ProcessSteps({
           </header>
         </Reveal>
 
-        {/* Horizontal Stepper Grid with Dotted Copper Track */}
-        <div className={styles.stepperContainer}>
-          <ol className={styles.grid}>
-            {steps.map((step, idx) => {
-              const isVisualization = step.num === '03' || step.title.toLowerCase().includes('visualization');
-              return (
-                <li
-                  key={step.num}
-                  className={`${styles.stepCard} ${isVisualization ? styles.stepCardFeatured : ''}`}
-                >
-                  {/* Step Stepper Header: Number node & dotted path */}
-                  <div className={styles.nodeHeader}>
-                    <div className={styles.numBadge}>
-                      <span className={styles.numText}>{step.num}</span>
-                    </div>
-                    <div className={styles.dottedConnector} aria-hidden="true" />
-                    {idx < steps.length - 1 && (
-                      <span className={styles.stepArrow} aria-hidden="true">→</span>
-                    )}
-                  </div>
+        {/* ── Vertical Timeline Spine ── */}
+        <div ref={timelineRef} className={styles.timeline}>
+          {/* Base Track Line */}
+          <div className={styles.timelineSpineBase} aria-hidden="true" />
+          {/* Active Copper Fill Line (Scroll Driven) */}
+          <div ref={fillLineRef} className={styles.timelineSpineFill} aria-hidden="true">
+            <span className={styles.leadSpark} />
+          </div>
 
-                  {/* Step Body: Title and Description */}
-                  <div className={styles.stepBody}>
-                    <div className={styles.titleRow}>
+          <ol className={styles.timelineList}>
+            {steps.map((step, idx) => {
+              const isLeft = idx % 2 === 0;
+              const isVisualization = step.num === '03' || step.title.toLowerCase().includes('visualization');
+
+              const cardContent = (
+                <article
+                  className={`${styles.stepCard} ${isVisualization ? styles.stepCardFeatured : ''} ${
+                    isLeft ? styles.cardLeft : styles.cardRight
+                  }`}
+                >
+                  <div className={styles.cardHeader}>
+                    <div className={styles.titleWrap}>
                       <h3 className={styles.stepTitle}>{step.title}</h3>
                       {isVisualization && (
                         <span className={styles.highlightPill}>Interactive 3D / Bookmatch</span>
                       )}
                     </div>
-                    <p className={styles.stepDesc}>{step.desc}</p>
                   </div>
 
-                  {/* Step Footer: Icon in frosted copper medallion */}
-                  <div className={styles.stepFooter}>
+                  <p className={styles.stepDesc}>{step.desc}</p>
+
+                  <div className={styles.cardFooter}>
                     <span className={styles.iconMedallion}>
                       <ProcessIcon name={step.icon} />
                     </span>
+                  </div>
+                </article>
+              );
+
+              return (
+                <li
+                  key={step.num}
+                  className={`${styles.timelineRow} ${isLeft ? styles.rowLeft : styles.rowRight}`}
+                >
+                  {/* Left Column (Desktop) */}
+                  <div className={styles.colLeft}>
+                    {isLeft ? cardContent : null}
+                  </div>
+
+                  {/* Center Node (Always on the timeline spine) */}
+                  <div className={styles.colCenter}>
+                    <div className={styles.nodeBadge}>
+                      <span className={styles.nodeNumber}>{step.num}</span>
+                    </div>
+                    {/* Horizontal connector arm linking node to the card */}
+                    <div
+                      className={`${styles.connectorArm} ${
+                        isLeft ? styles.connectorArmLeft : styles.connectorArmRight
+                      }`}
+                      aria-hidden="true"
+                    />
+                  </div>
+
+                  {/* Right Column (Desktop) */}
+                  <div className={styles.colRight}>
+                    {!isLeft ? cardContent : null}
                   </div>
                 </li>
               );
@@ -152,7 +263,7 @@ export default function ProcessSteps({
           </ol>
         </div>
 
-        {/* Bottom CTA Card */}
+        {/* ── Bottom CTA Card ── */}
         {cta && (
           <Reveal animation="fade-up">
             <div className={styles.cta}>
@@ -173,7 +284,7 @@ export default function ProcessSteps({
                     href={cta.secondary.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    data-wa-source="process_cta"
+                    data-wa-source="process_timeline_cta"
                     className={styles.btnOutline}
                   >
                     {cta.secondary.label}

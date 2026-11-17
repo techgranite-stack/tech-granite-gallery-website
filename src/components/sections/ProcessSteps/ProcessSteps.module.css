@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════
-   PROCESS STEPS — LUXURY MAHOGANY STONE BAND & HORIZONTAL STEPPER
+   PROCESS STEPS — VERTICAL JOURNEY TIMELINE (DARK MAHOGANY & COPPER)
    ═══════════════════════════════════════════════════════════════════════ */
 
 .section {
@@ -45,7 +45,7 @@
 .header {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto 56px;
+  margin: 0 auto 60px;
 }
 
 .eyebrow {
@@ -91,33 +91,155 @@
   margin: 0 auto;
 }
 
-/* ── Stepper Grid (Horizontal on Desktop) ── */
-.stepperContainer {
+/* ═══════════════════════════════════════════════════════════════════════
+   VERTICAL TIMELINE SPINE & ALTERNATING CARDS
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.timeline {
   position: relative;
-  margin-bottom: 48px;
+  max-width: 1100px;
+  margin: 0 auto 64px;
+  padding: 10px 0;
 }
 
-.grid {
+/* 1. Base Track Line (Unfilled) */
+.timelineSpineBase {
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: rgba(192, 133, 82, 0.2);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+/* 2. Active Copper Fill Line (Scroll Driven) */
+.timelineSpineFill {
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.5px;
+  background: linear-gradient(180deg, var(--copper-dark) 0%, var(--copper) 60%, var(--copper-light) 100%);
+  transform-origin: top center;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(192, 133, 82, 0.5);
+  z-index: 2;
+}
+
+/* Glowing Spark at head of the fill line */
+.leadSpark {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #FFF8F0;
+  box-shadow: 0 0 14px var(--copper-light), 0 0 6px var(--copper);
+}
+
+/* 3. Timeline Rows */
+.timelineList {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
   padding: 0;
   margin: 0;
-}
-
-/* ── Individual Step Card ── */
-.stepCard {
-  position: relative;
   display: flex;
   flex-direction: column;
-  background: rgba(36, 22, 17, 0.68);
-  border: 1px solid rgba(192, 133, 82, 0.22);
-  border-radius: 16px;
-  padding: 24px 24px 22px;
+  gap: 36px;
+  position: relative;
+  z-index: 3;
+}
+
+.timelineRow {
+  display: grid;
+  grid-template-columns: 1fr 90px 1fr;
+  align-items: center;
+  position: relative;
+}
+
+.colLeft {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.colRight {
+  display: flex;
+  justify-content: flex-start;
+  min-width: 0;
+}
+
+/* 4. Center Node */
+.colCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 4;
+}
+
+.nodeBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2D1A14 0%, #170E0A 100%);
+  border: 1.5px solid var(--copper);
+  box-shadow: 0 0 16px rgba(192, 133, 82, 0.35);
+  position: relative;
+  z-index: 5;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.nodeNumber {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--copper-light);
+  line-height: 1;
+}
+
+/* Horizontal connector arm from node to card */
+.connectorArm {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 1.5px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.connectorArmLeft {
+  right: 50%;
+  background: linear-gradient(90deg, rgba(192, 133, 82, 0.65), rgba(192, 133, 82, 0.2));
+}
+
+.connectorArmRight {
+  left: 50%;
+  background: linear-gradient(90deg, rgba(192, 133, 82, 0.2), rgba(192, 133, 82, 0.65));
+}
+
+/* 5. Step Card */
+.stepCard {
+  max-width: 460px;
+  width: 100%;
+  background: rgba(36, 23, 18, 0.72);
+  border: 1px solid rgba(192, 133, 82, 0.24);
+  border-radius: 18px;
+  padding: 24px 26px;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.36);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.35s ease,
               box-shadow 0.35s ease,
@@ -127,15 +249,21 @@
 .stepCard:hover {
   transform: translateY(-4px);
   border-color: rgba(192, 133, 82, 0.65);
-  background: rgba(44, 28, 21, 0.82);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 28px rgba(192, 133, 82, 0.18);
+  background: rgba(44, 28, 22, 0.85);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45), 0 0 28px rgba(192, 133, 82, 0.2);
+}
+
+.timelineRow:hover .nodeBadge {
+  transform: scale(1.12);
+  border-color: var(--copper-light);
+  box-shadow: 0 0 24px rgba(192, 133, 82, 0.6);
 }
 
 /* Highlighted Step 03: Material Visualization */
 .stepCardFeatured {
   border-color: rgba(192, 133, 82, 0.55);
   background: linear-gradient(155deg, rgba(46, 29, 22, 0.85) 0%, rgba(32, 19, 14, 0.8) 100%);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4), 0 0 26px rgba(192, 133, 82, 0.16);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.42), 0 0 26px rgba(192, 133, 82, 0.18);
 }
 
 .stepCardFeatured::after {
@@ -148,70 +276,20 @@
   background: linear-gradient(90deg, transparent, var(--copper-light), transparent);
 }
 
-/* ── Node Header with Number Badge & Dotted Connector ── */
-.nodeHeader {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  position: relative;
-  margin-bottom: 18px;
+/* Card Header */
+.cardHeader {
+  margin-bottom: 10px;
 }
 
-.numBadge {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #2D1B15 0%, #1A100C 100%);
-  border: 1.5px solid var(--copper);
-  box-shadow: 0 0 14px rgba(192, 133, 82, 0.32);
-  flex-shrink: 0;
-}
-
-.numText {
-  font-family: var(--font-serif);
-  font-size: 1.22rem;
-  font-weight: 700;
-  color: var(--copper-light);
-  line-height: 1;
-}
-
-/* Dotted horizontal connector line */
-.dottedConnector {
-  flex: 1;
-  height: 0;
-  border-top: 2px dashed rgba(192, 133, 82, 0.4);
-}
-
-.stepArrow {
-  font-size: 0.95rem;
-  color: var(--copper);
-  opacity: 0.75;
-  font-weight: 600;
-  user-select: none;
-}
-
-/* ── Step Body ── */
-.stepBody {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.titleRow {
+.titleWrap {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-bottom: 8px;
 }
 
 .stepTitle {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #FFF8F0;
   line-height: 1.25;
@@ -233,19 +311,17 @@
 
 .stepDesc {
   font-family: var(--font-sans);
-  font-size: 0.87rem;
+  font-size: 0.88rem;
   line-height: 1.62;
   color: rgba(255, 248, 240, 0.74);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
-/* ── Step Footer: Icon Medallion ── */
-.stepFooter {
+/* Card Footer: Icon Medallion */
+.cardFooter {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-top: auto;
-  padding-top: 10px;
 }
 
 .iconMedallion {
@@ -268,7 +344,10 @@
   box-shadow: 0 0 16px rgba(192, 133, 82, 0.45);
 }
 
-/* ── Bottom CTA Card ── */
+/* ═══════════════════════════════════════════════════════════════════════
+   BOTTOM CTA CARD
+   ═══════════════════════════════════════════════════════════════════════ */
+
 .cta {
   position: relative;
   display: flex;
@@ -376,17 +455,57 @@
   transform: translateY(-2px);
 }
 
-/* ── Responsive Adaptations ── */
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-}
+/* ═══════════════════════════════════════════════════════════════════════
+   RESPONSIVE ADAPTATIONS (MOBILE & TABLET)
+   ═══════════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 860px) {
   .section {
     padding: 72px 0 80px;
+  }
+
+  .timelineSpineBase,
+  .timelineSpineFill {
+    left: 24px;
+    transform: none;
+  }
+
+  .timelineList {
+    gap: 28px;
+  }
+
+  .timelineRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .colCenter {
+    order: 1;
+    flex-shrink: 0;
+    width: 48px;
+    padding-top: 4px;
+  }
+
+  .colLeft,
+  .colRight {
+    flex: 1;
+    min-width: 0;
+    order: 2;
+  }
+
+  .colLeft:empty,
+  .colRight:empty {
+    display: none;
+  }
+
+  .connectorArm {
+    display: none;
+  }
+
+  .stepCard {
+    max-width: 100%;
+    padding: 20px 20px;
   }
 
   .cta {
@@ -407,35 +526,35 @@
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 640px) {
   .inner {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+  .timelineSpineBase,
+  .timelineSpineFill {
+    left: 20px;
   }
 
-  .stepCard {
-    padding: 20px 18px;
+  .colCenter {
+    width: 40px;
   }
 
-  .numBadge {
-    width: 38px;
-    height: 38px;
+  .nodeBadge {
+    width: 40px;
+    height: 40px;
   }
 
-  .numText {
+  .nodeNumber {
     font-size: 1.05rem;
   }
 
   .stepTitle {
-    font-size: 1.2rem;
+    font-size: 1.22rem;
   }
 
   .stepDesc {
-    font-size: 0.84rem;
+    font-size: 0.85rem;
   }
 
   .ctaIcon {

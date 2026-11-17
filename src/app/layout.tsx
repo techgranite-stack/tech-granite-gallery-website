@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
+import AiSearchFloat from "@/components/ui/AiSearchFloat";
 import CustomCursor from "@/components/ui/CustomCursor";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import QuickDialog from "@/components/ui/QuickDialog";
@@ -118,6 +119,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <WhatsAppFloat />
+          <AiSearchFloat />
           <QuickDialog />
         </SmoothScroll>
         <GoogleAnalytics gaId={siteConfig.gaMeasurementId} />

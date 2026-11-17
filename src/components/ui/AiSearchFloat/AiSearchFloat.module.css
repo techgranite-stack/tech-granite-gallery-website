@@ -1,0 +1,320 @@
+.floatContainer {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 950;
+  user-select: none;
+}
+
+/* ── Collapsed Trigger Button ── */
+.triggerBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fbf5ef;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.triggerBtn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.triggerBtn:active {
+  transform: scale(0.96);
+}
+
+.triggerRing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #2563eb;
+  background: #f7ede3;
+}
+
+.aiText {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.3px;
+  color: #9c4126;
+  line-height: 1;
+}
+
+.triggerTooltip {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+  background: #1e293b;
+  color: #ffffff;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.triggerTooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #1e293b transparent transparent;
+}
+
+.triggerBtn:hover .triggerTooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ── Expanded Dock (Pill Vertical Menu) ── */
+.dock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 40px;
+  padding: 10px 8px;
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  animation: dockSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dockSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.enginesList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Individual Engine Icon Buttons ── */
+.engineBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.engineBtn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+  background: #fafafa;
+}
+
+.engineBtn:active {
+  transform: scale(0.95);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.engineIcon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.engineBtn:hover .engineIcon {
+  transform: scale(1.05);
+}
+
+/* ── Tooltips ── */
+.tooltip {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+  background: #1e293b;
+  color: #ffffff;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 11px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #1e293b transparent transparent;
+}
+
+.engineBtn:hover .tooltip,
+.closeBtn:hover .tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ── Close Button at the bottom ── */
+.closeBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 4px;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.closeBtn:hover {
+  transform: scale(1.1);
+}
+
+.closeBtn:active {
+  transform: scale(0.95);
+}
+
+.closeRing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #2563eb;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+}
+
+.closeIcon {
+  width: 18px;
+  height: 18px;
+  color: #a4482d;
+}
+
+/* ── Toast Feedback Notification ── */
+.toast {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 0;
+  background: #1e293b;
+  color: #f8fafc;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  animation: toastFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes toastFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Mobile responsiveness ── */
+@media (max-width: 640px) {
+  .floatContainer {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .triggerBtn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .triggerRing {
+    width: 40px;
+    height: 40px;
+  }
+
+  .aiText {
+    font-size: 15px;
+  }
+
+  .engineBtn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .engineIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* On touch screens, tooltips are hidden since hover is not standard */
+  .tooltip,
+  .triggerTooltip {
+    display: none;
+  }
+}

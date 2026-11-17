@@ -34,8 +34,6 @@ import { buildMetadata } from '@/lib/seo';
 
 const seo = pageSeo['/'];
 
-// Re-render daily so the Google Reviews section picks up new reviews (ISR).
-export const revalidate = 86400;
 
 export const metadata: Metadata = buildMetadata({
   title: seo.metaTitle,

@@ -26,10 +26,10 @@ export interface GoogleReviewsProps extends GetGoogleReviewsOptions {
  *   <GoogleReviews />                                   // homepage defaults
  *   <GoogleReviews tone="white" limit={3} secondaryCta={null} />
  *
- * Async server component: data comes from src/lib/google-reviews.ts (live
- * Places API → manual snapshot → summary-only), cached & revalidated daily.
+ * Server component. Reviews are curated by hand in src/data/google-reviews.ts;
+ * rating/count come from src/data/local-seo.ts. No API, no runtime fetch.
  */
-export default async function GoogleReviews({
+export default function GoogleReviews({
   eyebrow = 'Google Reviews',
   title = 'Trusted by Customers',
   titleAccent = 'Across India',
@@ -40,7 +40,7 @@ export default async function GoogleReviews({
   id = 'google-reviews',
   ...fetchOptions
 }: GoogleReviewsProps) {
-  const data = await getGoogleReviews(fetchOptions);
+  const data = getGoogleReviews(fetchOptions);
   const hasCards = data.reviews.length > 0;
 
   return (

@@ -239,16 +239,20 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
     const numberedCards = {
       eyebrow: 'COST TRANSPARENCY PROTOCOL',
       title: 'How to Calculate Your True Sourcing Cost',
-      subtitle: 'Avoid common market pitfalls and hidden surcharges with our verified 4-step framework.',
-      marqueeItems: ['Ex-Factory Rates', 'Zero Hidden Loading Fees', '18% Fixed GST', 'Consignment Transit Insurance'],
+      subtitle: 'Avoid common market pitfalls and hidden surcharges with our verified 6-step framework.',
+      marqueeItems: ['Ex-Factory Rates', 'Zero Hidden Loading Fees', '18% Fixed GST', 'Consignment Transit Insurance', 'Weighbridge Verified', 'A-Frame Crating'],
       reasons: [
         {
           title: 'Base Slab Rate & Lot Reservation',
           desc: 'Always verify lot-wise pricing rather than single-piece sample rates. Booking entire gangsaw blocks guarantees zero shade variation across your floors.',
         },
         {
-          title: 'Gangsaw vs Block-Cutter Cutting',
+          title: 'Gangsaw vs Block-Cutter Calibration',
           desc: 'Insist on gangsaw-calibrated slabs (uniform 16mm/18mm). Slabs cut on local circular block-cutters often fluctuate from 14mm to 22mm, causing massive on-site grinding costs.',
+        },
+        {
+          title: 'Weighbridge Slips & Mandi Commissions',
+          desc: 'Confirm billing on actual industrial weighbridge slips. Open-mandi intermediaries frequently charge 10–15% hidden broker commissions and arbitrary loading tariffs.',
         },
         {
           title: 'Handling, Crating & Transit Insurance',
@@ -257,6 +261,10 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
         {
           title: 'Unloading & Site Dry Lay Inspection',
           desc: 'Before fixing slabs with mortar, lay them dry in natural light to confirm vein continuity, squareness, and polish reflection across the entire layout.',
+        },
+        {
+          title: 'Adhesive, Sealing & Wastage Allowances',
+          desc: 'Budget for high-grade polymer adhesives and penetrating sealers, planning for standard 7–10% wastage on diagonal cuts and edge profiling.',
         },
       ],
     };
@@ -431,7 +439,7 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
       eyebrow: 'EVALUATION CHECKLIST',
       title: `Buyer Checklist: Choosing the Right ${matName}`,
       subtitle: 'Critical technical criteria verified by senior architects before approving slab consignments.',
-      marqueeItems: ['Gangsaw Calibrated', 'ASTM Rigor', 'Zero Artificial Wax', 'Single-Lot Integrity', 'Direct Yard Loading'],
+      marqueeItems: ['Gangsaw Calibrated', 'ASTM Rigor', 'Zero Artificial Wax', 'Single-Lot Integrity', 'Direct Yard Loading', 'Fiberglass Mesh Reinforcement'],
       reasons: [
         {
           title: 'Density & Acoustic Resonance',
@@ -444,12 +452,20 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
             : 'Ensure high-gloss mirror polish or consistent velvet matte honing without swirl marks or uneven epoxy patches.',
         },
         {
+          title: 'Calibrated Thickness & Square Edges',
+          desc: 'Verify laser-measured thickness across all four corners with zero taper, ensuring perfect 90° square cuts to prevent uneven floor joints and lippage.',
+        },
+        {
           title: 'Chemical Inertness & Non-Staining',
           desc: 'For high-utility surfaces, verify the stone does not react with turmeric, citric acids, or standard household cleaning solutions.',
         },
         {
           title: 'Quarry Origin & Single-Block Lot',
           desc: 'Source slabs tagged from verifiable quarry blocks to guarantee uniform mineral composition and thermal expansion behavior.',
+        },
+        {
+          title: 'Structural Reinforcement & Back-Netting',
+          desc: 'Ensure exotic and heavily veined slabs feature factory-applied epoxy resin backing with fiberglass mesh for maximum tensile stability during transit and cutting.',
         },
       ],
     };
@@ -575,23 +591,31 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
       eyebrow: 'INSTALLATION PROTOCOL',
       title: `Architectural ${appTitle} Installation Guide`,
       subtitle: 'Engineered laying practices to prevent hollow spots, cracks, and moisture staining.',
-      marqueeItems: ['Level Sub-base', 'Polymer Adhesive', 'Expansion Grouting', 'Nano Sealer'],
+      marqueeItems: ['Level Sub-base', 'Polymer Adhesive', '100% Back-Buttering', 'Expansion Grouting', 'Color-Matched Resin', 'Nano Sealer'],
       reasons: [
         {
-          title: 'Sub-Floor Curing & Leveling',
-          desc: 'Ensure the concrete substrate is fully cured (minimum 28 days) and free of dust. Never lay heavy stone over uncured or uneven screeds.',
+          title: 'Sub-Floor Curing & Precision Leveling',
+          desc: 'Ensure the concrete substrate is fully cured (minimum 28 days) and laser-leveled. Never lay heavy stone over uncured or uneven screeds.',
         },
         {
-          title: 'Polymer-Modified Adhesive',
-          desc: 'For white marbles and light granites, use specialized white adhesive instead of grey cement to avoid dark hydration staining bleeding through the stone.',
+          title: 'Polymer-Modified White Adhesive',
+          desc: 'For white marbles and light granites, use specialized white polymer adhesive instead of grey cement to avoid dark hydration staining bleeding through the stone.',
         },
         {
-          title: 'Expansion Joints & Grouting',
-          desc: 'Maintain 2mm expansion joints across large floor spans to absorb seasonal temperature expansion, preventing tiles from lifting or tenting.',
+          title: 'Back-Buttering & 100% Bedding',
+          desc: 'Apply complete adhesive coverage using notched trowels with mandatory back-buttering on slab undersides to eliminate hollow sound spots and air pockets.',
+        },
+        {
+          title: 'Expansion Joints & Movement Seams',
+          desc: 'Maintain 2mm expansion joints across large floor spans to absorb seasonal temperature differentials, preventing slabs from lifting or tenting.',
+        },
+        {
+          title: 'Epoxy Resin Grouting',
+          desc: 'Use non-shrink, stain-resistant epoxy resin grouts color-matched to the stone base tone, preventing water infiltration into capillary edges.',
         },
         {
           title: 'Impregnating Nano-Sealer',
-          desc: 'Apply a solvent-based penetrating impregnator within 48 hours of grouting to seal microscopic pores against oil, turmeric, and acidic spills.',
+          desc: 'Apply a solvent-based penetrating impregnator 72 hours after installation to seal microscopic pores against oil, turmeric, and acidic spills.',
         },
       ],
     };

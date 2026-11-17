@@ -289,7 +289,7 @@ export const flagshipPages: Record<string, FlagshipPageData> = {
       eyebrow: 'MANUFACTURING RIGOR',
       title: 'Why Source Directly from Our Kishangarh Plant',
       subtitle: 'Complete quality control from raw quarry block to crated consignment.',
-      marqueeItems: ['Multi-Wire Gangsaws', 'Line Polish Calibration', 'Ultrasonic Crack Testing', 'Direct Factory Invoicing'],
+      marqueeItems: ['Multi-Wire Gangsaws', 'Line Polish Calibration', 'Ultrasonic Crack Testing', 'Direct Factory Invoicing', '16-Head Line Polish', 'Direct Quarry Supply'],
       reasons: [
         {
           num: '01',
@@ -310,6 +310,16 @@ export const flagshipPages: Record<string, FlagshipPageData> = {
           num: '04',
           title: 'Transparent Factory Weighbridge Dispatch',
           desc: 'Consignments are loaded with high-capacity gantry cranes and verified on our industrial weighbridge on the MEGA Highway, eliminating hidden weight surcharges.',
+        },
+        {
+          num: '05',
+          title: '16-Head Line Polish Mirror Calibrators',
+          desc: 'State-of-the-art Italian abrasive polishing lines achieving 90+ gloss reflectivity without artificial waxes or superficial chemical coatings.',
+        },
+        {
+          num: '06',
+          title: 'Direct Quarry Block Sourcing',
+          desc: 'Raw granite blocks sourced directly from company-associated quarries across Rajasthan, South India, and Norway, guaranteeing unbroken supply chains.',
         },
       ],
     },
@@ -570,7 +580,7 @@ export const flagshipPages: Record<string, FlagshipPageData> = {
       eyebrow: 'IMPORT EXPERTISE',
       title: 'Why Kishangarh is Asia’s Hub for Italian Marble',
       subtitle: 'Sourcing directly from Kishangarh stockyards saves 30% to 45% compared to city retail showrooms.',
-      marqueeItems: ['Direct Port Consignments', 'Live Dry-Lay Dry Runs', 'Automated Resin Lines', 'Zero Middleman Overhead'],
+      marqueeItems: ['Direct Port Consignments', 'Live Dry-Lay Dry Runs', 'Automated Resin Lines', 'Zero Middleman Overhead', '18mm Gangsaw Calibration', 'Insured Transit'],
       reasons: [
         {
           num: '01',
@@ -591,6 +601,16 @@ export const flagshipPages: Record<string, FlagshipPageData> = {
           num: '04',
           title: 'Certified Calibrated 18mm Thickness',
           desc: 'Unlike retail sellers who supply shaved 15mm–16mm slabs, our Kishangarh facility enforces a strict 18mm gangsaw calibration standard.',
+        },
+        {
+          num: '05',
+          title: 'Zero-Wax High-Reflectance Mirror Polish',
+          desc: 'Finished using progressive 16-head diamond abrasives to reveal natural crystalline translucency without artificial waxes or silicone coatings.',
+        },
+        {
+          num: '06',
+          title: 'A-Frame Wooden Crating & Insured Highway Transit',
+          desc: 'Packed vertically with treated wooden A-frames, heavy strapping, and comprehensive transport insurance for damage-free delivery anywhere in India.',
         },
       ],
     },
@@ -851,7 +871,7 @@ export const flagshipPages: Record<string, FlagshipPageData> = {
       eyebrow: 'DIRECT DISPATCH ADVANTAGE',
       title: 'Why Delhi NCR Builders Order from Our Kishangarh Facility',
       subtitle: 'Fast 24–48 hour transit directly to your project site via the NH48 expressway corridor.',
-      marqueeItems: ['24–48h Delivery', 'Direct Highway Corridor', 'Zero Retail Markup', '100% Insured Consignment'],
+      marqueeItems: ['24–48h Delivery', 'Direct Highway Corridor', 'Zero Retail Markup', '100% Insured Consignment', 'Single-Block Consistency', 'Technical Laying Advisory'],
       reasons: [
         {
           num: '01',
@@ -872,6 +892,16 @@ export const flagshipPages: Record<string, FlagshipPageData> = {
           num: '04',
           title: 'Live 4K Digital Sourcing & Caliper Verification',
           desc: 'Can’t travel to Kishangarh? Our sales engineers provide live 4K video walk-throughs, dry-lay lot photos, caliper thickness checks, and wet-tests before dispatch.',
+        },
+        {
+          num: '05',
+          title: 'Single-Block Gangsaw Consistency for Entire Bungalows',
+          desc: 'Reserve 2,000 to 10,000 sq ft from identical quarry blocks, eliminating the mismatched lot variations and color shifts common in city retail yards.',
+        },
+        {
+          num: '06',
+          title: 'On-Site Technical Laying Advisory',
+          desc: 'Comprehensive guidance on moisture-resistant white polymer adhesives, expansion joints, and crystallization polishing tailored to North India’s extreme temperature swings.',
         },
       ],
     },
@@ -1132,7 +1162,7 @@ export const flagshipPages: Record<string, FlagshipPageData> = {
       eyebrow: 'DIRECT MANDI SUPPLY',
       title: 'Why Buy Marble from Kishangarh Instead of Delhi Showrooms',
       subtitle: 'Complete single-block lot transparency with 30% to 40% direct savings.',
-      marqueeItems: ['Single-Block Lots', 'Zero Dye Mixing', '18mm Gangsaw Standard', 'Insured Direct Transit'],
+      marqueeItems: ['Single-Block Lots', 'Zero Dye Mixing', '18mm Gangsaw Standard', 'Insured Direct Transit', '4K Video Inspection', 'Direct Freight Logistics'],
       reasons: [
         {
           num: '01',
@@ -1153,6 +1183,16 @@ export const flagshipPages: Record<string, FlagshipPageData> = {
           num: '04',
           title: 'Direct Doorstep Offloading Support in NCR',
           desc: 'Our freight trucks navigate direct to your site in Delhi, Gurgaon, or Noida, equipped with heavy wooden A-frames designed for crane offloading without chipping.',
+        },
+        {
+          num: '05',
+          title: 'Live 4K Digital Slab Approval & Video Dry Lay',
+          desc: 'Inspect full blocks virtually with high-resolution video scans, wet-surface vein clarity tests, and micrometer thickness measurements before dispatch.',
+        },
+        {
+          num: '06',
+          title: 'Zero-Defect Transit Insurance & Direct Freight Coordination',
+          desc: 'Insured door-to-site transit with dedicated GPS tracking and experienced drivers trained in transporting heavy luxury stone consignments.',
         },
       ],
     },
@@ -1415,7 +1455,7 @@ export const flagshipPages: Record<string, FlagshipPageData> = {
       eyebrow: 'BESPOKE RESIDENTIAL SOURCING',
       title: 'Why Leading Villa Architects Partner with Granite Gallery',
       subtitle: 'End-to-end material curation, slab mapping, and precision gangsaw fabrication.',
-      marqueeItems: ['Curated Quarry Lots', 'Dry-Lay CAD Mapping', '18mm/20mm Calibrated', 'White-Glove Site Logistics'],
+      marqueeItems: ['Curated Quarry Lots', 'Dry-Lay CAD Mapping', '18mm/20mm Calibrated', 'White-Glove Site Logistics', 'CNC Pre-Cutting', 'Export-Grade Crating'],
       reasons: [
         {
           num: '01',
@@ -1436,6 +1476,16 @@ export const flagshipPages: Record<string, FlagshipPageData> = {
           num: '04',
           title: 'Direct Factory Sourcing Without Showroom Premiums',
           desc: 'Sourcing directly from our Kishangarh facility allows villa owners to reallocate 35% of their stone budget into higher-grade bookmatched slabs or exotic gemstones.',
+        },
+        {
+          num: '05',
+          title: 'Precision Waterjet Edge Profiling & Pre-Cutting',
+          desc: 'Customized CNC edge profiling, bullnosing, and mitered apron cutting delivered ready for immediate assembly without messy site fabrication.',
+        },
+        {
+          num: '06',
+          title: 'White-Glove Export Crating & Insured Site Delivery',
+          desc: 'Heavy-duty vertical wooden A-frame packaging with foam interleaving, ensuring zero edge chipping from factory yard to site crane.',
         },
       ],
     },

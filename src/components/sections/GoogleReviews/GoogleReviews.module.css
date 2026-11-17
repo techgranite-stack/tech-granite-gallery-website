@@ -9,7 +9,10 @@
   padding: 40px 0 84px;
   overflow: hidden;
 }
-.toneWhite { background: var(--white); }
+
+.toneWhite {
+  background: var(--white);
+}
 
 /* ── Seamless Khatamband Lattice & Stone Watermark matching Testimonials ── */
 .textureOverlay {
@@ -137,7 +140,10 @@
   padding: 10px 2px 18px;
   outline: none;
 }
-.track::-webkit-scrollbar { display: none; }
+
+.track::-webkit-scrollbar {
+  display: none;
+}
 
 .arrow {
   position: absolute;
@@ -165,9 +171,19 @@
   transform: translateY(-50%) scale(1.08);
   box-shadow: 0 4px 16px rgba(192, 133, 82, 0.35);
 }
-.arrow:disabled { opacity: 0; pointer-events: none; }
-.arrowPrev { left: 0; }
-.arrowNext { right: 0; }
+
+.arrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.arrowPrev {
+  left: 0;
+}
+
+.arrowNext {
+  right: 0;
+}
 
 /* ── Interactive Pagination Dots ── */
 .dots {
@@ -218,8 +234,8 @@
   border-radius: 18px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.35s ease,
-              box-shadow 0.35s ease;
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .card::before {
@@ -245,7 +261,9 @@
   opacity: 1;
 }
 
-.toneWhite .card { background: var(--off-white); }
+.toneWhite .card {
+  background: var(--off-white);
+}
 
 .cardHead {
   display: flex;
@@ -294,7 +312,9 @@
   white-space: nowrap;
 }
 
-a.authorName:hover { color: var(--copper-dark); }
+a.authorName:hover {
+  color: var(--copper-dark);
+}
 
 .cardTime {
   font-family: var(--font-sans);
@@ -351,8 +371,15 @@ a.authorName:hover { color: var(--copper-dark); }
   line-height: 1;
   white-space: nowrap;
 }
-.starRow { letter-spacing: 2px; }
-.starsEmpty { color: #E0D7CB; }
+
+.starRow {
+  letter-spacing: 2px;
+}
+
+.starsEmpty {
+  color: #E0D7CB;
+}
+
 .starsFill {
   position: absolute;
   top: 0;
@@ -427,35 +454,47 @@ a.authorName:hover { color: var(--copper-dark); }
   .section {
     padding: 30px 0 70px;
   }
+
   .carousel {
     padding: 0 12px;
   }
+
   .card {
     flex: 0 0 calc((100% - 20px) / 2);
     width: calc((100% - 20px) / 2);
     max-width: calc((100% - 20px) / 2);
     padding: 20px 20px;
   }
-  .arrow { display: none; }
+
+  .arrow {
+    display: none;
+  }
+
   .trustRibbon {
     gap: 12px;
     padding: 10px 18px;
   }
+
   .ribbonDivider {
     display: none;
   }
 }
 
 @media (max-width: 640px) {
-  .inner { padding: 0 18px; }
+  .inner {
+    padding: 0 18px;
+  }
+
   .card {
     flex: 0 0 100%;
     width: 100%;
     max-width: 100%;
   }
+
   .ctas {
     flex-direction: column;
   }
+
   .ctaOutline,
   .ctaSolid {
     justify-content: center;

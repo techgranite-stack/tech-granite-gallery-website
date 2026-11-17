@@ -120,9 +120,6 @@ export default function GoogleReviews({
           )}
         </div>
       </div>
-
-      {/* Elegant transition gradient melting into the following dark mahogany section */}
-      <div className={styles.bottomTransition} aria-hidden="true" />
     </section>
   );
 }

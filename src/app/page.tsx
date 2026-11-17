@@ -9,6 +9,7 @@ import HoverListReveal from "@/components/sections/HoverListReveal";
 import MosaicGrid from "@/components/sections/MosaicGrid";
 import NumberedCardGrid from "@/components/sections/NumberedCardGrid";
 import GoogleReviews from "@/components/sections/GoogleReviews";
+import ProcessSteps from "@/components/sections/ProcessSteps";
 
 // Dynamically import below-the-fold interactive sections to reduce initial mobile JS bundle
 const CoverflowCarousel = dynamic(() => import("@/components/sections/CoverflowCarousel"));
@@ -98,14 +99,17 @@ export default function Home() {
       {/* 7. Why Us — ivory, self-contained */}
       <NumberedCardGrid reasons={whyUsReasons} marqueeItems={whyUsMarquee} />
 
+      {/* 7b. How we work — selection → visualization → dispatch → installation */}
+      <ProcessSteps />
+
       {/* 8. Projects Gallery — mahogany, full viewport, self-contained */}
       <HorizontalScrollGallery projects={projects} />
 
-      {/* 9a. Google Reviews — live from Places API, falls back gracefully */}
-      <GoogleReviews />
-
-      {/* 9b. Testimonials — ivory, self-contained */}
+      {/* 9a. Testimonials — ivory, self-contained */}
       <MarqueeTestimonials testimonials={testimonials} />
+
+      {/* 9b. Google Reviews — sits directly below "What Our Clients Say" */}
+      <GoogleReviews />
 
       {/* 10. Team — ivory, self-contained */}
       <PortraitTeamGrid members={teamMembers} />

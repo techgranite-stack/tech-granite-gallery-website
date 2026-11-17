@@ -1,139 +1,444 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   PROCESS STEPS — LUXURY MAHOGANY STONE BAND & HORIZONTAL STEPPER
+   ═══════════════════════════════════════════════════════════════════════ */
+
 .section {
-  background: var(--off-white);
-  padding: var(--section-py-md) 0;
+  position: relative;
+  background: linear-gradient(180deg, #18100C 0%, #241611 40%, #1A110D 100%);
+  padding: 100px 0 110px;
+  overflow: hidden;
+  color: #FFF8F0;
 }
-.toneIvory { background: var(--ivory); }
+
+/* Ambient copper spotlight */
+.ambientGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 480px;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(192, 133, 82, 0.22), transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Marble vein background overlay */
+.veinTexture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
 
 .inner {
-  max-width: 1040px;
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
 }
 
+/* ── Section Header ── */
 .header {
   text-align: center;
-  margin-bottom: 44px;
+  max-width: 760px;
+  margin: 0 auto 56px;
 }
 
-/* ── Step list ── */
-.list {
-  list-style: none;
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-}
-
-.step {
-  display: grid;
-  grid-template-columns: 72px minmax(0, 1fr) 48px;
+.eyebrow {
+  display: inline-flex;
   align-items: center;
-  gap: 18px;
-  padding: 22px 28px 22px 28px;
-  border-bottom: 1px solid rgba(var(--copper-rgb), 0.14);
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--copper-light);
+  margin-bottom: 14px;
 }
-.step:last-child { border-bottom: none; }
 
-.num {
+.eyebrowDot {
+  font-size: 0.65rem;
+  color: var(--copper);
+  opacity: 0.8;
+}
+
+.title {
   font-family: var(--font-serif);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--copper-dark);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #FFF8F0;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+}
+
+.title em {
+  font-style: italic;
+  font-family: var(--font-serif);
+  color: var(--copper-light);
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+  line-height: 1.7;
+  color: rgba(255, 248, 240, 0.72);
+  margin: 0 auto;
+}
+
+/* ── Stepper Grid (Horizontal on Desktop) ── */
+.stepperContainer {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Individual Step Card ── */
+.stepCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(36, 22, 17, 0.68);
+  border: 1px solid rgba(192, 133, 82, 0.22);
+  border-radius: 16px;
+  padding: 24px 24px 22px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              background-color 0.35s ease;
+}
+
+.stepCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(192, 133, 82, 0.65);
+  background: rgba(44, 28, 21, 0.82);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 28px rgba(192, 133, 82, 0.18);
+}
+
+/* Highlighted Step 03: Material Visualization */
+.stepCardFeatured {
+  border-color: rgba(192, 133, 82, 0.55);
+  background: linear-gradient(155deg, rgba(46, 29, 22, 0.85) 0%, rgba(32, 19, 14, 0.8) 100%);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4), 0 0 26px rgba(192, 133, 82, 0.16);
+}
+
+.stepCardFeatured::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--copper-light), transparent);
+}
+
+/* ── Node Header with Number Badge & Dotted Connector ── */
+.nodeHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.numBadge {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2D1B15 0%, #1A100C 100%);
+  border: 1.5px solid var(--copper);
+  box-shadow: 0 0 14px rgba(192, 133, 82, 0.32);
+  flex-shrink: 0;
+}
+
+.numText {
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--copper-light);
   line-height: 1;
 }
-.icon {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: var(--copper-pale);
-  color: var(--copper-dark);
+
+/* Dotted horizontal connector line */
+.dottedConnector {
+  flex: 1;
+  height: 0;
+  border-top: 2px dashed rgba(192, 133, 82, 0.4);
+}
+
+.stepArrow {
+  font-size: 0.95rem;
+  color: var(--copper);
+  opacity: 0.75;
+  font-weight: 600;
+  user-select: none;
+}
+
+/* ── Step Body ── */
+.stepBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
 }
 
 .stepTitle {
   font-family: var(--font-serif);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--mahogany);
-  margin-bottom: 4px;
-}
-.stepDesc {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  line-height: 1.55;
-  color: var(--text-mid);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #FFF8F0;
+  line-height: 1.25;
 }
 
-/* ── CTA card ── */
-.cta {
+.highlightPill {
+  align-self: flex-start;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1A100C;
+  background: linear-gradient(135deg, var(--copper-light) 0%, var(--copper) 100%);
+  padding: 3px 9px;
+  border-radius: 100px;
+  box-shadow: 0 2px 8px rgba(192, 133, 82, 0.3);
+}
+
+.stepDesc {
+  font-family: var(--font-sans);
+  font-size: 0.87rem;
+  line-height: 1.62;
+  color: rgba(255, 248, 240, 0.74);
+  margin-bottom: 18px;
+}
+
+/* ── Step Footer: Icon Medallion ── */
+.stepFooter {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-top: 20px;
-  padding: 20px 26px;
-  background: var(--ivory);
-  border: 1px solid rgba(var(--copper-rgb), 0.3);
-  border-radius: var(--radius-lg);
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 10px;
 }
+
+.iconMedallion {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(192, 133, 82, 0.12);
+  border: 1px solid rgba(192, 133, 82, 0.35);
+  color: var(--copper-light);
+  transition: all 0.3s ease;
+}
+
+.stepCard:hover .iconMedallion {
+  background: var(--copper);
+  color: #FFF8F0;
+  border-color: var(--copper-light);
+  transform: scale(1.08);
+  box-shadow: 0 0 16px rgba(192, 133, 82, 0.45);
+}
+
+/* ── Bottom CTA Card ── */
+.cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 36px;
+  background: linear-gradient(135deg, rgba(44, 27, 20, 0.82) 0%, rgba(26, 16, 12, 0.92) 100%);
+  border: 1px solid rgba(192, 133, 82, 0.35);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.ctaGlow {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(192, 133, 82, 0.18), transparent 70%);
+  pointer-events: none;
+}
+
 .ctaIcon {
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border: 1px solid var(--copper);
-  color: var(--copper-dark);
+  background: rgba(192, 133, 82, 0.14);
+  border: 1.5px solid var(--copper);
+  color: var(--copper-light);
 }
-.ctaCopy { flex: 1; min-width: 0; }
+
+.ctaCopy {
+  flex: 1;
+  min-width: 0;
+}
+
 .ctaTitle {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--mahogany);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: #FFF8F0;
+  margin-bottom: 4px;
 }
+
 .ctaDesc {
   font-family: var(--font-sans);
-  font-size: 0.85rem;
-  color: var(--text-mid);
+  font-size: 0.88rem;
+  color: rgba(255, 248, 240, 0.72);
+  line-height: 1.5;
 }
-.ctaBtns { display: flex; gap: 12px; flex-shrink: 0; }
+
+.ctaBtns {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
 
 .btnSolid,
 .btnOutline {
   display: inline-flex;
   align-items: center;
-  padding: 11px 22px;
+  justify-content: center;
+  padding: 12px 24px;
   border-radius: 100px;
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
   text-decoration: none;
   white-space: nowrap;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.btnSolid { background: var(--copper); border: 1px solid var(--copper); color: var(--white); }
-.btnSolid:hover { background: var(--copper-dark); border-color: var(--copper-dark); }
-.btnOutline { border: 1px solid var(--copper); color: var(--copper-dark); }
-.btnOutline:hover { background: var(--copper); color: var(--white); }
 
-/* ── Responsive ── */
-@media (max-width: 900px) {
-  .cta { flex-wrap: wrap; }
-  .ctaBtns { width: 100%; }
+.btnSolid {
+  background: var(--copper);
+  border: 1px solid var(--copper-light);
+  color: #FFF8F0;
+  box-shadow: 0 4px 18px rgba(192, 133, 82, 0.35);
 }
-@media (max-width: 640px) {
-  .inner { padding: 0 20px; }
-  .step {
-    grid-template-columns: 40px minmax(0, 1fr) 40px;
-    gap: 12px;
-    padding: 18px;
-    align-items: start;
+
+.btnSolid:hover {
+  background: var(--copper-dark);
+  border-color: var(--copper);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(192, 133, 82, 0.5);
+}
+
+.btnOutline {
+  border: 1px solid rgba(192, 133, 82, 0.55);
+  background: rgba(192, 133, 82, 0.08);
+  color: var(--copper-light);
+}
+
+.btnOutline:hover {
+  background: var(--copper);
+  border-color: var(--copper);
+  color: #FFF8F0;
+  transform: translateY(-2px);
+}
+
+/* ── Responsive Adaptations ── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
-  .num { font-size: 1.6rem; }
-  .icon { width: 38px; height: 38px; }
-  .ctaIcon { display: none; }
-  .ctaBtns { flex-direction: column; }
-  .btnSolid, .btnOutline { justify-content: center; }
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding: 72px 0 80px;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 18px;
+  }
+
+  .ctaBtns {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btnSolid,
+  .btnOutline {
+    width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .inner {
+    padding: 0 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .stepCard {
+    padding: 20px 18px;
+  }
+
+  .numBadge {
+    width: 38px;
+    height: 38px;
+  }
+
+  .numText {
+    font-size: 1.05rem;
+  }
+
+  .stepTitle {
+    font-size: 1.2rem;
+  }
+
+  .stepDesc {
+    font-size: 0.84rem;
+  }
+
+  .ctaIcon {
+    display: none;
+  }
 }

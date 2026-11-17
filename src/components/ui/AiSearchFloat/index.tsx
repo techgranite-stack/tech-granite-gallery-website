@@ -146,10 +146,6 @@ export default function AiSearchFloat() {
       {/* Expanded Stack Pill Menu (Luxury Dark Stone Glass) */}
       {isOpen ? (
         <div className={styles.dock} role="dialog" aria-label="AI Search Engines">
-          <div className={styles.dockHeader}>
-            <span className={styles.dockTitle}>Direct AI Search</span>
-          </div>
-
           <div className={styles.enginesList}>
             {AI_ENGINES.map((engine) => (
               <button

@@ -5,6 +5,8 @@ import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import StoneListingSection from '@/components/sections/StoneListingSection';
 import HorizontalScrollGallery from '@/components/sections/HorizontalScrollGallery';
 import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
+import GoogleReviews from '@/components/sections/GoogleReviews';
+import ProcessSteps from '@/components/sections/ProcessSteps';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import { getAllMarble } from '@/data/stone-index';
 import { fromStoneProduct } from '@/lib/listing-item';
@@ -122,6 +124,8 @@ export default function MarblePage() {
         btnLabel="Explore Collection"
       />
       <MarqueeTestimonials testimonials={testimonials} />
+      <GoogleReviews />
+      <ProcessSteps />
       <BannerContactForm />
     </>
   );

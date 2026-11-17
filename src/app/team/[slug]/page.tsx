@@ -6,6 +6,8 @@ import BannerContactForm from '@/components/sections/BannerContactForm';
 import StatsBand from '@/components/sections/StatsBand';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
+import GoogleReviews from '@/components/sections/GoogleReviews';
+import ProcessSteps from '@/components/sections/ProcessSteps';
 import { teamMembers, getTeamMember } from '@/data/team';
 import { testimonials } from '@/data/testimonials';
 import { buildMetadata } from '@/lib/seo';
@@ -258,8 +260,10 @@ export default async function TeamMemberPage(
       {/* Personalised marquee */}
       <ScrollingTagline items={memberMarquee} />
 
-      {/* Testimonials */}
+      {/* Testimonials, Google Reviews & Process */}
       <MarqueeTestimonials testimonials={testimonials} />
+      <GoogleReviews />
+      <ProcessSteps />
 
       <BannerContactForm />
     </div>

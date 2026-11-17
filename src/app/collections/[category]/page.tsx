@@ -8,6 +8,8 @@ import StoneListingSection from '@/components/sections/StoneListingSection';
 import type { FilterGroup } from '@/components/sections/StoneListingSection';
 import HorizontalScrollGallery from '@/components/sections/HorizontalScrollGallery';
 import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
+import GoogleReviews from '@/components/sections/GoogleReviews';
+import ProcessSteps from '@/components/sections/ProcessSteps';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import { productsData, mockProductFallback, type Product } from '@/lib/product-data';
 import { fromCollectionProduct } from '@/lib/listing-item';
@@ -222,6 +224,8 @@ export default async function CategoryPage(
         btnLabel="Explore Collection"
       />
       <MarqueeTestimonials testimonials={testimonials} />
+      <GoogleReviews />
+      <ProcessSteps />
       <BannerContactForm />
     </>
   );

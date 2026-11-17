@@ -8,6 +8,8 @@ import StatsBand from '@/components/sections/StatsBand';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import PortraitTeamGrid from '@/components/sections/PortraitTeamGrid';
 import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
+import GoogleReviews from '@/components/sections/GoogleReviews';
+import ProcessSteps from '@/components/sections/ProcessSteps';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import Reveal from '@/components/ui/Reveal';
 import { testimonials } from '@/data/testimonials';
@@ -658,8 +660,10 @@ export default function AboutPage() {
       {/* Leadership Team Grid */}
       <PortraitTeamGrid />
 
-      {/* Testimonials */}
+      {/* Testimonials, Google Reviews & Process */}
       <MarqueeTestimonials testimonials={testimonials} />
+      <GoogleReviews />
+      <ProcessSteps />
 
       {/* CTA Contact Banner */}
       <BannerContactForm />

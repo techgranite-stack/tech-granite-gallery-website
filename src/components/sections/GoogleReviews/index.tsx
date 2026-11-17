@@ -12,8 +12,6 @@ export interface GoogleReviewsProps extends GetGoogleReviewsOptions {
   /** Italicised word(s) inside the title, rendered in copper. */
   titleAccent?: string;
   description?: string;
-  /** Business thumbnail shown in the summary panel. */
-  thumbnail?: string;
   /** Secondary CTA next to "Read more Google reviews". Pass null to hide. */
   secondaryCta?: { label: string; href: string } | null;
   /** Section background. */
@@ -23,19 +21,13 @@ export interface GoogleReviewsProps extends GetGoogleReviewsOptions {
 
 /**
  * <GoogleReviews />  — self-contained, drop-in social-proof section.
- *
- *   <GoogleReviews />                                   // homepage defaults
- *   <GoogleReviews tone="white" limit={3} secondaryCta={null} />
- *
- * Server component. Reviews are curated by hand in src/data/google-reviews.ts;
- * rating/count come from src/data/local-seo.ts. No API, no runtime fetch.
+ * Features an architectural trust ribbon and full-width verified review carousel.
  */
 export default function GoogleReviews({
   eyebrow = 'Google Reviews',
   title = 'Trusted by Customers',
   titleAccent = 'Across India',
   description = 'Real feedback from architects, builders and homeowners who visited our Kishangarh facility, walked through full slabs, and chose stone for their projects.',
-  thumbnail = '/images/hero/granite-gallery-marble-granite-sandstone.webp',
   secondaryCta = { label: 'Get a Quote', href: '/contact' },
   tone = 'ivory',
   id = 'google-reviews',
@@ -60,46 +52,46 @@ export default function GoogleReviews({
             {title} <em>{titleAccent}</em>
           </h2>
           <p className="section-desc centered">{description}</p>
+
+          {/* ── Architectural Trust Ribbon ── */}
+          <div className={styles.trustRibbon}>
+            <Image
+              src="/Logo-black.png"
+              alt={data.placeName}
+              width={128}
+              height={36}
+              className={styles.ribbonLogo}
+            />
+            <span className={styles.ribbonDivider} aria-hidden="true" />
+            <div className={styles.ribbonRating}>
+              <span className={styles.ribbonScore}>{data.rating.toFixed(1)}</span>
+              <Stars rating={data.rating} size={16} />
+              <span className={styles.ribbonCount}>
+                ({data.totalReviews.toLocaleString('en-IN')} Google Reviews)
+              </span>
+            </div>
+            <span className={styles.ribbonDivider} aria-hidden="true" />
+            <a
+              href={data.writeReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.ribbonWriteBtn}
+            >
+              Write a Review <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </header>
 
-        <div className={`${styles.layout} ${hasCards ? '' : styles.layoutSolo}`}>
-          {/* ── Summary panel ── */}
-          <aside className={styles.summary}>
-            <div className={styles.summaryBody}>
-              <Image
-                src="/Logo-black.png"
-                alt={data.placeName}
-                width={155}
-                height={44}
-                className={styles.summaryLogo}
-              />
-              <div className={styles.summaryRating}>
-                <span className={styles.summaryScore}>{data.rating.toFixed(1)}</span>
-                <Stars rating={data.rating} size={18} />
-              </div>
-              <span className={styles.summaryCount}>
-                {data.totalReviews.toLocaleString('en-IN')} Google reviews
-              </span>
-              <a
-                href={data.writeReviewUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.writeBtn}
-              >
-                Write a review
-              </a>
-            </div>
-          </aside>
-
-          {/* ── Review cards ── */}
-          {hasCards && (
+        {/* ── Review Cards Carousel (Full Width) ── */}
+        {hasCards && (
+          <div className={styles.carouselContainer}>
             <ReviewsCarousel>
               {data.reviews.map((review) => (
                 <ReviewCard key={review.id} review={review} />
               ))}
             </ReviewsCarousel>
-          )}
-        </div>
+          </div>
+        )}
 
         <div className={styles.ctas}>
           <a

@@ -15,6 +15,8 @@ import { localBusinessJsonLd, localServiceJsonLd, trailJsonLd } from '@/lib/stru
 const CoverflowCarousel = dynamic(() => import('@/components/sections/CoverflowCarousel'));
 const HorizontalScrollGallery = dynamic(() => import('@/components/sections/HorizontalScrollGallery'));
 const MarqueeTestimonials = dynamic(() => import('@/components/sections/MarqueeTestimonials'));
+const GoogleReviews = dynamic(() => import('@/components/sections/GoogleReviews'));
+const ProcessSteps = dynamic(() => import('@/components/sections/ProcessSteps'));
 const PortraitTeamGrid = dynamic(() => import('@/components/sections/PortraitTeamGrid'));
 const ArticleCardGrid = dynamic(() => import('@/components/sections/ArticleCardGrid'));
 const BannerContactForm = dynamic(() => import('@/components/sections/BannerContactForm'));
@@ -108,9 +110,13 @@ export default function FlagshipLandingPage({ data }: FlagshipLandingPageProps) 
         />
       )}
 
-      {/* 9. Verified Client & Architect Reviews Marquee */}
+      {/* 9. Verified Client & Architect Reviews Marquee, Google Reviews & Process */}
       {data.testimonials && data.testimonials.length > 0 && (
-        <MarqueeTestimonials testimonials={data.testimonials} />
+        <>
+          <MarqueeTestimonials testimonials={data.testimonials} />
+          <GoogleReviews />
+          <ProcessSteps />
+        </>
       )}
 
       {/* 10. The Minds Behind Excellence — Leadership */}

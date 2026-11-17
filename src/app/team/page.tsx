@@ -4,6 +4,8 @@ import PortraitTeamGrid from '@/components/sections/PortraitTeamGrid';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import NumberedCardGrid from '@/components/sections/NumberedCardGrid';
 import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
+import GoogleReviews from '@/components/sections/GoogleReviews';
+import ProcessSteps from '@/components/sections/ProcessSteps';
 import HeroSlider from '@/components/sections/HeroSlider';
 import StatsBand from '@/components/sections/StatsBand';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
@@ -91,8 +93,10 @@ export default function TeamPage() {
       </section>
 
 
-      {/* Testimonials */}
+      {/* Testimonials, Google Reviews & Process */}
       <MarqueeTestimonials testimonials={testimonials} />
+      <GoogleReviews />
+      <ProcessSteps />
 
       <BannerContactForm />
     </>

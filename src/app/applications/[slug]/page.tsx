@@ -9,6 +9,8 @@ import FAQAccordion from '@/components/sections/FAQAccordion';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
+import GoogleReviews from '@/components/sections/GoogleReviews';
+import ProcessSteps from '@/components/sections/ProcessSteps';
 import ApplicationGallery from './ApplicationGallery';
 import { testimonials } from '@/data/testimonials';
 import { applicationsData } from '@/lib/application-data';
@@ -249,8 +251,10 @@ export default async function ApplicationDetailPage(
         <HorizontalScrollGallery projects={mappedProjects} />
       )}
 
-      {/* 8. Testimonials — same as the home page */}
+      {/* 8. Testimonials, Google Reviews & Process */}
       <MarqueeTestimonials testimonials={testimonials} />
+      <GoogleReviews />
+      <ProcessSteps />
 
       <BannerContactForm />
     </>

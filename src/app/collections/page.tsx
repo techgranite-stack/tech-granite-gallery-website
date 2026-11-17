@@ -8,6 +8,8 @@ import StatsBand from '@/components/sections/StatsBand';
 import NumberedCardGrid from '@/components/sections/NumberedCardGrid';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
+import GoogleReviews from '@/components/sections/GoogleReviews';
+import ProcessSteps from '@/components/sections/ProcessSteps';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 
 // Data
@@ -174,8 +176,10 @@ export default function CollectionsPage() {
         cardBg="#FFFFFF"
       />
 
-      {/* 6. Testimonials */}
+      {/* 6. Testimonials, Google Reviews & Process */}
       <MarqueeTestimonials testimonials={testimonials} />
+      <GoogleReviews />
+      <ProcessSteps />
       {/* 7. CTA Banner + Contact Form */}
       <BannerContactForm />
 

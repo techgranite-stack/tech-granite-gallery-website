@@ -5,6 +5,8 @@ import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import HoverListReveal from '@/components/sections/HoverListReveal';
 import NumberedCardGrid from '@/components/sections/NumberedCardGrid';
 import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
+import GoogleReviews from '@/components/sections/GoogleReviews';
+import ProcessSteps from '@/components/sections/ProcessSteps';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import { applicationsData, mockApplicationFallback } from '@/lib/application-data';
 import { testimonials } from '@/data/testimonials';
@@ -159,8 +161,10 @@ export default function ApplicationsPage() {
         cardBg="var(--stone-100)"
       />
 
-      {/* 7. Testimonials */}
+      {/* 7. Testimonials, Google Reviews & Process */}
       <MarqueeTestimonials testimonials={testimonials} />
+      <GoogleReviews />
+      <ProcessSteps />
 
       {/* 8. Contact */}
       <BannerContactForm />

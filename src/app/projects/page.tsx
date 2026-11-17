@@ -5,6 +5,8 @@ import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import ProjectsFilterList from './ProjectsFilterList';
 import NumberedCardGrid from '@/components/sections/NumberedCardGrid';
 import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
+import GoogleReviews from '@/components/sections/GoogleReviews';
+import ProcessSteps from '@/components/sections/ProcessSteps';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import { projectsData } from '@/lib/project-data';
 import { testimonials } from '@/data/testimonials';
@@ -120,8 +122,10 @@ export default function ProjectsPage() {
         cardBg="var(--stone-100)"
       />
 
-      {/* 6. Testimonials */}
+      {/* 6. Testimonials, Google Reviews & Process */}
       <MarqueeTestimonials testimonials={testimonials} />
+      <GoogleReviews />
+      <ProcessSteps />
 
       {/* 7. Contact */}
       <BannerContactForm />

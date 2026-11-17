@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════
-   Google Reviews section — Clean Architectural Stone Palette
-   Crisp, unified white stone cards on subtle ivory canvas
+   Google Reviews section — Architectural Trust Ribbon & Fluid Carousel
+   Seamless full-width layout with zero empty space
 ═══════════════════════════════════════════════════════════ */
 
 .section {
@@ -9,10 +9,7 @@
   padding: 40px 0 84px;
   overflow: hidden;
 }
-
-.toneWhite {
-  background: var(--white);
-}
+.toneWhite { background: var(--white); }
 
 /* ── Seamless Khatamband Lattice & Stone Watermark matching Testimonials ── */
 .textureOverlay {
@@ -28,7 +25,7 @@
 .inner {
   position: relative;
   z-index: 2;
-  max-width: 1360px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 32px;
 }
@@ -36,140 +33,96 @@
 /* ── Section Header ── */
 .header {
   text-align: center;
-  max-width: 760px;
-  margin: 0 auto 44px;
+  max-width: 860px;
+  margin: 0 auto 40px;
 }
 
-/* ── Layout: summary left, carousel right ── */
-.layout {
-  display: grid;
-  grid-template-columns: 240px minmax(0, 1fr);
-  gap: 24px;
-  align-items: stretch;
-}
-
-.layoutSolo {
-  grid-template-columns: minmax(0, 1fr);
-  justify-items: center;
-}
-
-/* ── Left Summary Panel: Clean White Architectural Stone Card ── */
-.summary {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 24px 22px;
-  background: var(--white);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 18px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.summary:hover {
-  transform: translateY(-3px);
-  border-color: rgba(192, 133, 82, 0.4);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
-
-.layoutSolo .summary {
-  flex-direction: row;
+/* ── Centered Architectural Trust Ribbon ── */
+.trustRibbon {
+  display: inline-flex;
   align-items: center;
-  gap: 24px;
-  padding: 24px 32px;
-  max-width: 500px;
+  gap: 18px;
+  padding: 10px 24px;
+  background: var(--white);
+  border: 1px solid rgba(192, 133, 82, 0.28);
+  border-radius: 100px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  margin-top: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.summaryLogo {
+.ribbonLogo {
   width: auto;
-  max-width: 155px;
-  height: 40px;
+  height: 30px;
   object-fit: contain;
-  margin-bottom: 6px;
 }
 
-.summaryBody {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  align-items: flex-start;
+.ribbonDivider {
+  width: 1px;
+  height: 20px;
+  background: rgba(192, 133, 82, 0.35);
 }
 
-.summaryRating {
+.ribbonRating {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.summaryScore {
+.ribbonScore {
   font-family: var(--font-sans);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-dark);
 }
 
-.summaryCount {
+.ribbonCount {
   font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 
-.writeBtn {
-  margin-top: 8px;
+.ribbonWriteBtn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 8px 18px;
+  gap: 4px;
+  padding: 6px 14px;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: var(--text-dark);
-  background: var(--white);
-  border: 1px solid var(--stone-300);
-  border-radius: var(--radius-sm);
+  color: var(--copper-dark);
+  background: rgba(192, 133, 82, 0.1);
+  border: 1px solid rgba(192, 133, 82, 0.3);
+  border-radius: 100px;
   text-decoration: none;
   transition: all 0.25s ease;
 }
 
-.writeBtn:hover {
+.ribbonWriteBtn:hover {
+  background: var(--copper);
   border-color: var(--copper);
-  color: var(--copper-dark);
-  background: #FAF8F5;
+  color: var(--white);
+  box-shadow: 0 3px 12px rgba(192, 133, 82, 0.3);
 }
 
-/* ── Stars ── */
-.stars {
+/* ── Carousel: Full Width with Edge-Aligned Arrows ── */
+.carouselContainer {
   position: relative;
-  display: inline-block;
-  line-height: 1;
-  white-space: nowrap;
-}
-.starRow { letter-spacing: 2px; }
-.starsEmpty { color: #E0D7CB; }
-.starsFill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  color: #F5B301;
+  width: 100%;
 }
 
-/* ── Carousel: Side Padded so 3 Cards Fit Edge-to-Edge ── */
 .carousel {
   position: relative;
   min-width: 0;
-  padding: 0 44px;
+  padding: 0 48px;
   display: flex;
   align-items: center;
 }
 
 .track {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   width: 100%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -177,18 +130,15 @@
   padding: 8px 2px 14px;
   outline: none;
 }
-
-.track::-webkit-scrollbar {
-  display: none;
-}
+.track::-webkit-scrollbar { display: none; }
 
 .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 4;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1px solid var(--stone-300);
   background: var(--white);
@@ -210,40 +160,30 @@
   transform: translateY(-50%) scale(1.08);
   box-shadow: 0 4px 14px rgba(192, 133, 82, 0.3);
 }
-
-.arrow:disabled {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.arrowPrev {
-  left: 0;
-}
-
-.arrowNext {
-  right: 0;
-}
+.arrow:disabled { opacity: 0; pointer-events: none; }
+.arrowPrev { left: 0; }
+.arrowNext { right: 0; }
 
 /* ── Review card: Clean White Stone Card (Exact 3 Cards on Desktop) ── */
 .card {
   position: relative;
-  flex: 0 0 calc((100% - 32px) / 3);
-  width: calc((100% - 32px) / 3);
-  max-width: calc((100% - 32px) / 3);
+  flex: 0 0 calc((100% - 40px) / 3);
+  width: calc((100% - 40px) / 3);
+  max-width: calc((100% - 40px) / 3);
   box-sizing: border-box;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  min-height: 170px;
-  padding: 22px 20px;
+  gap: 12px;
+  min-height: 160px;
+  padding: 22px 24px;
   background: var(--white);
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 18px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -257,7 +197,7 @@
 .cardHead {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .avatar,
@@ -292,7 +232,7 @@
 
 .authorName {
   font-family: var(--font-sans);
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   font-weight: 600;
   color: #1f1f1f;
   text-decoration: none;
@@ -301,9 +241,7 @@
   white-space: nowrap;
 }
 
-a.authorName:hover {
-  color: var(--copper-dark);
-}
+a.authorName:hover { color: var(--copper-dark); }
 
 .cardTime {
   font-family: var(--font-sans);
@@ -321,7 +259,6 @@ a.authorName:hover {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 2px;
 }
 
 .verifiedBadge {
@@ -338,6 +275,23 @@ a.authorName:hover {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* ── Stars ── */
+.stars {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+}
+.starRow { letter-spacing: 2px; }
+.starsEmpty { color: #E0D7CB; }
+.starsFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #F5B301;
 }
 
 /* ── Bottom CTAs ── */
@@ -395,15 +349,10 @@ a.authorName:hover {
 
 /* ── Responsive Adaptations ── */
 @media (max-width: 1040px) {
-  .layout {
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 18px;
-  }
-
   .card {
-    flex: 0 0 calc((100% - 16px) / 2);
-    width: calc((100% - 16px) / 2);
-    max-width: calc((100% - 16px) / 2);
+    flex: 0 0 calc((100% - 20px) / 2);
+    width: calc((100% - 20px) / 2);
+    max-width: calc((100% - 20px) / 2);
   }
 }
 
@@ -411,58 +360,34 @@ a.authorName:hover {
   .section {
     padding: 30px 0 70px;
   }
-
-  .layout {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-  }
-
-  .summary {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  }
-
   .carousel {
     padding: 0;
   }
-
   .card {
-    flex: 0 0 calc((100% - 16px) / 2);
-    width: calc((100% - 16px) / 2);
-    max-width: calc((100% - 16px) / 2);
+    flex: 0 0 calc((100% - 20px) / 2);
+    width: calc((100% - 20px) / 2);
+    max-width: calc((100% - 20px) / 2);
   }
-
-  .arrow {
+  .arrow { display: none; }
+  .trustRibbon {
+    gap: 12px;
+    padding: 10px 18px;
+  }
+  .ribbonDivider {
     display: none;
   }
 }
 
 @media (max-width: 640px) {
-  .inner {
-    padding: 0 18px;
-  }
-
-  .summary {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .summaryBody {
-    align-items: center;
-  }
-
+  .inner { padding: 0 18px; }
   .card {
     flex: 0 0 100%;
     width: 100%;
     max-width: 100%;
   }
-
   .ctas {
     flex-direction: column;
   }
-
   .ctaOutline,
   .ctaSolid {
     justify-content: center;

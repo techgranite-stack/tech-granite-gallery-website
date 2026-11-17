@@ -11,7 +11,7 @@ interface AiEngine {
   name: string;
   tooltip: string;
   getUrl: (prompt: string) => string;
-  icon: (className?: string) => JSX.Element;
+  icon: () => JSX.Element;
 }
 
 const AI_ENGINES: AiEngine[] = [
@@ -34,14 +34,14 @@ const AI_ENGINES: AiEngine[] = [
     icon: () => (
       <svg viewBox="0 0 24 24" className={styles.engineIcon}>
         <defs>
-          <linearGradient id="geminiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#4A87FF" />
-            <stop offset="50%" stopColor="#8E55EA" />
-            <stop offset="100%" stopColor="#D96570" />
+          <linearGradient id="geminiGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#60A5FA" />
+            <stop offset="50%" stopColor="#A78BFA" />
+            <stop offset="100%" stopColor="#F472B6" />
           </linearGradient>
         </defs>
         <path
-          fill="url(#geminiGradient)"
+          fill="url(#geminiGradDark)"
           d="M12 0C12 6.627 6.627 12 0 12c6.627 0 12 5.373 12 12 0-6.627 5.373-12 12-12-6.627 0-12-5.373-12-12z"
         />
       </svg>
@@ -65,7 +65,7 @@ const AI_ENGINES: AiEngine[] = [
     tooltip: 'Ask Claude',
     getUrl: (prompt) => `https://claude.ai/new?q=${encodeURIComponent(prompt)}`,
     icon: () => (
-      <svg viewBox="0 0 24 24" className={styles.engineIcon} fill="#D97706">
+      <svg viewBox="0 0 24 24" className={styles.engineIcon} fill="#E0876A">
         <path d="M12 2a1.5 1.5 0 0 1 1.5 1.5v3.2a1.5 1.5 0 0 1-3 0V3.5A1.5 1.5 0 0 1 12 2zm0 15.3a1.5 1.5 0 0 1 1.5 1.5v3.2a1.5 1.5 0 0 1-3 0v-3.2A1.5 1.5 0 0 1 12 17.3zm10-5.3a1.5 1.5 0 0 1-1.5 1.5h-3.2a1.5 1.5 0 0 1 0-3h3.2a1.5 1.5 0 0 1 1.5 1.5zM6.7 12a1.5 1.5 0 0 1-1.5 1.5H2a1.5 1.5 0 0 1 0-3h3.2A1.5 1.5 0 0 1 6.7 12zm11.38-6.08a1.5 1.5 0 0 1 0 2.12l-2.26 2.26a1.5 1.5 0 1 1-2.12-2.12l2.26-2.26a1.5 1.5 0 0 1 2.12 0zm-9.9 9.9a1.5 1.5 0 0 1 0 2.12l-2.26 2.26a1.5 1.5 0 1 1-2.12-2.12l2.26-2.26a1.5 1.5 0 0 1 2.12 0zm12.02 9.9a1.5 1.5 0 0 1-2.12 0l-2.26-2.26a1.5 1.5 0 1 1 2.12-2.12l2.26 2.26a1.5 1.5 0 0 1 0 2.12zM5.92 8.04a1.5 1.5 0 0 1-2.12 0l-2.26-2.26a1.5 1.5 0 1 1 2.12-2.12l2.26 2.26a1.5 1.5 0 0 1 0 2.12z" />
       </svg>
     ),
@@ -76,7 +76,7 @@ const AI_ENGINES: AiEngine[] = [
     tooltip: 'Ask Microsoft Copilot',
     getUrl: (prompt) => `https://copilot.microsoft.com/?q=${encodeURIComponent(prompt)}`,
     icon: () => (
-      <svg viewBox="0 0 24 24" className={styles.engineIcon} fill="none" stroke="#0284C7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 24 24" className={styles.engineIcon} fill="none" stroke="#38BDF8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2v20" />
         <path d="M7 6.5l5-4.5 5 4.5" />
         <path d="M7 17.5l5 4.5 5-4.5" />
@@ -90,8 +90,16 @@ const AI_ENGINES: AiEngine[] = [
 
 export default function AiSearchFloat() {
   const [isOpen, setIsOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [pulse, setPulse] = useState(true);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Entrance timing synchronized with page layout
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 1200);
+    return () => clearTimeout(t);
+  }, []);
 
   // Close on Escape or click outside
   useEffect(() => {
@@ -118,16 +126,13 @@ export default function AiSearchFloat() {
   }, [isOpen]);
 
   const handleOpenAi = (engine: AiEngine) => {
-    // 1. Copy prompt to clipboard so user can effortlessly paste if needed
     if (navigator.clipboard) {
       navigator.clipboard.writeText(GRANITE_GALLERY_AI_PROMPT).catch(() => {});
     }
 
-    // 2. Open the AI engine with prompt
     const targetUrl = engine.getUrl(GRANITE_GALLERY_AI_PROMPT);
     window.open(targetUrl, '_blank', 'noopener,noreferrer');
 
-    // 3. Show brief toast feedback
     setToastMessage(`Opening ${engine.name} (Prompt copied)`);
     setTimeout(() => {
       setToastMessage(null);
@@ -138,9 +143,13 @@ export default function AiSearchFloat() {
     <div className={styles.floatContainer} ref={containerRef}>
       {toastMessage && <div className={styles.toast}>{toastMessage}</div>}
 
-      {/* Expanded Stack Pill Menu */}
+      {/* Expanded Stack Pill Menu (Luxury Dark Stone Glass) */}
       {isOpen ? (
         <div className={styles.dock} role="dialog" aria-label="AI Search Engines">
+          <div className={styles.dockHeader}>
+            <span className={styles.dockTitle}>Direct AI Search</span>
+          </div>
+
           <div className={styles.enginesList}>
             {AI_ENGINES.map((engine) => (
               <button
@@ -164,7 +173,7 @@ export default function AiSearchFloat() {
             aria-label="Close AI Search Menu"
           >
             <div className={styles.closeRing}>
-              <svg viewBox="0 0 24 24" className={styles.closeIcon} fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round">
+              <svg viewBox="0 0 24 24" className={styles.closeIcon} fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round">
                 <line x1="6" y1="6" x2="18" y2="18" />
                 <line x1="6" y1="18" x2="18" y2="6" />
               </svg>
@@ -173,18 +182,22 @@ export default function AiSearchFloat() {
           </button>
         </div>
       ) : (
-        /* Collapsed Circular Trigger Button */
+        /* Collapsed Trigger Button — Brand Copper Pill matching GALLERY COLLECTION */
         <button
           type="button"
-          className={styles.triggerBtn}
+          className={`${styles.triggerBtn} ${visible ? styles.visible : ''}`}
           onClick={() => setIsOpen(true)}
-          aria-label="Search with AI about Granite Gallery"
+          aria-label="Ask AI about Granite Gallery"
           title="Direct AI Search"
+          onMouseEnter={() => setPulse(false)}
+          onMouseLeave={() => setPulse(true)}
         >
-          <div className={styles.triggerRing}>
-            <span className={styles.aiText}>AI</span>
-          </div>
-          <span className={styles.triggerTooltip}>Ask AI about us</span>
+          {pulse && <span className={styles.ring} />}
+          <svg viewBox="0 0 24 24" className={styles.sparkleIcon} fill="currentColor">
+            <path d="M12 2L14.39 8.26L20.65 10.65L14.39 13.04L12 19.3L9.61 13.04L3.35 10.65L9.61 8.26L12 2Z" />
+            <path d="M19 16L20.17 19.08L23.25 20.25L20.17 21.42L19 24.5L17.83 21.42L14.75 20.25L17.83 19.08L19 16Z" opacity="0.8" />
+          </svg>
+          <span className={styles.label}>Ask AI</span>
         </button>
       )}
     </div>

@@ -86,24 +86,26 @@
 .ribbonWriteBtn {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 6px 14px;
+  gap: 6px;
+  padding: 8px 18px;
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--copper-dark);
-  background: rgba(192, 133, 82, 0.1);
-  border: 1px solid rgba(192, 133, 82, 0.3);
+  color: var(--white);
+  background: var(--copper);
+  border: 1px solid var(--copper);
   border-radius: 100px;
   text-decoration: none;
+  box-shadow: 0 2px 8px rgba(192, 133, 82, 0.25);
   transition: all 0.25s ease;
 }
 
 .ribbonWriteBtn:hover {
-  background: var(--copper);
-  border-color: var(--copper);
+  background: var(--bronze, #8C5A3C);
+  border-color: var(--bronze, #8C5A3C);
   color: var(--white);
-  box-shadow: 0 3px 12px rgba(192, 133, 82, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(192, 133, 82, 0.4);
 }
 
 /* ── Carousel: Full Width with Edge-Aligned Arrows ── */

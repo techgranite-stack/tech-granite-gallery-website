@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { getGoogleReviews, type GetGoogleReviewsOptions } from '@/lib/google-reviews';
 import Stars, { GoogleGlyph } from './Stars';
@@ -28,7 +27,7 @@ export default function GoogleReviews({
   title = 'Trusted by Customers',
   titleAccent = 'Across India',
   description = 'Real feedback from architects, builders and homeowners who visited our Kishangarh facility, walked through full slabs, and chose stone for their projects.',
-  secondaryCta = { label: 'Get a Quote', href: '/contact' },
+  secondaryCta = null,
   tone = 'ivory',
   id = 'google-reviews',
   ...fetchOptions
@@ -104,11 +103,6 @@ export default function GoogleReviews({
             <GoogleGlyph size={16} />
             Read More Google Reviews <span aria-hidden="true">→</span>
           </a>
-          {secondaryCta && (
-            <Link href={secondaryCta.href} className={styles.ctaSolid}>
-              {secondaryCta.label} <span aria-hidden="true">→</span>
-            </Link>
-          )}
         </div>
       </div>
     </section>

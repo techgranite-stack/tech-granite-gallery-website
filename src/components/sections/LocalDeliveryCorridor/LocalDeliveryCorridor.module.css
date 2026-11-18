@@ -1,13 +1,35 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   LOCAL DELIVERY CORRIDORS — DARK COPPER LUXURY THEME
+   Styled in synergy with ProcessSteps ("From Brief to Installation")
+   ═══════════════════════════════════════════════════════════════════════ */
+
 .section {
-  padding: 36px 0;
-  background: #ffffff;
-  border-top: 1px solid rgba(75, 46, 43, 0.08);
-  border-bottom: 1px solid rgba(75, 46, 43, 0.08);
-  width: 100%;
   position: relative;
+  background: linear-gradient(180deg, #18100C 0%, #241611 40%, #1A110D 100%);
+  border-top: 1px solid rgba(192, 133, 82, 0.28);
+  border-bottom: 1px solid rgba(192, 133, 82, 0.28);
+  padding: 68px 0 72px;
+  overflow: hidden;
+  color: #FFF8F0;
+  width: 100%;
+}
+
+/* Ambient copper spotlight */
+.ambientGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 380px;
+  background: radial-gradient(ellipse 65% 50% at 50% 0%, rgba(192, 133, 82, 0.22), transparent 75%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .container {
+  position: relative;
+  z-index: 2;
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 40px;
@@ -17,117 +39,288 @@
   text-align: center;
 }
 
-.eyebrowRow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
+/* ── Section Header ── */
+.header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 36px;
 }
 
-.eyebrowDash {
-  color: var(--copper);
-  font-size: 10px;
-  opacity: 0.6;
+.eyebrowWrapper {
+  margin-bottom: 14px;
 }
 
 .eyebrow {
-  font-family: var(--font-sans);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--copper);
-}
-
-.corridorBar {
-  width: 100%;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  display: flex;
-  justify-content: center;
-}
-
-.corridorBar::-webkit-scrollbar {
-  display: none;
-}
-
-.citiesTrack {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #DDA15E;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--copper);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.22;
+  color: #FFF8F0;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+
+.title em {
+  font-style: italic;
+  font-family: var(--font-serif);
+  color: #DDA15E;
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.88rem, 1.05vw, 0.98rem);
+  line-height: 1.65;
+  color: rgba(255, 248, 240, 0.7);
+  margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   STRATEGIC CORRIDOR CAPSULES / INTERACTIVE CHIPS
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.corridorGrid {
+  display: flex;
   flex-wrap: wrap;
-  row-gap: 12px;
-  column-gap: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.corridorCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, rgba(44, 27, 20, 0.72) 0%, rgba(24, 15, 11, 0.9) 100%);
+  border: 1px solid rgba(192, 133, 82, 0.26);
+  border-radius: 100px;
+  color: #FFF8F0;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.corridorCard:hover {
+  background: linear-gradient(135deg, rgba(192, 133, 82, 0.24) 0%, rgba(44, 27, 20, 0.95) 100%);
+  border-color: rgba(192, 133, 82, 0.65);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 16px rgba(192, 133, 82, 0.25);
+  color: #FFF8F0;
+}
+
+/* Active Zone Highlight (Current Page Location) */
+.activeCard {
+  background: linear-gradient(135deg, rgba(192, 133, 82, 0.36) 0%, rgba(44, 27, 20, 0.95) 100%);
+  border: 1.5px solid #DDA15E;
+  box-shadow: 0 0 24px rgba(192, 133, 82, 0.45), inset 0 0 12px rgba(192, 133, 82, 0.18);
+  color: #FFF8F0;
+  cursor: default;
+}
+
+.geoDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--copper);
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.corridorCard:hover .geoDot {
+  opacity: 1;
+  transform: scale(1.3);
+  background: #DDA15E;
+}
+
+/* Glowing Live Pulsing Indicator for Current Active Hub */
+.livePulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px #4ade80, 0 0 4px #22c55e;
+  animation: pulseGlow 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+.cityName {
+  font-weight: 500;
+  color: #FFF8F0;
+}
+
+.activeTag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #DDA15E;
+  background: rgba(192, 133, 82, 0.22);
+  border: 1px solid rgba(192, 133, 82, 0.45);
+  padding: 2px 7px;
+  border-radius: 999px;
   white-space: nowrap;
 }
 
-.cityItem {
+.transitTag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 248, 240, 0.7);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.corridorCard:hover .transitTag {
+  color: #DDA15E;
+  background: rgba(192, 133, 82, 0.18);
+  border-color: rgba(192, 133, 82, 0.35);
+}
+
+.originTag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #FFF8F0;
+  background: linear-gradient(135deg, var(--copper-dark, #8C5A3C) 0%, var(--copper) 100%);
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  box-shadow: 0 0 10px rgba(192, 133, 82, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   UI STRATEGIC REASSURANCE BAR (DISPATCH GUARANTEES)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.reassuranceBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 36px;
+  padding: 14px 28px;
+  background: rgba(24, 15, 11, 0.6);
+  border: 1px solid rgba(192, 133, 82, 0.2);
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.reassuranceItem {
   display: inline-flex;
   align-items: center;
-}
-
-.cityLink,
-.cityName {
+  gap: 8px;
   font-family: var(--font-sans);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--mahogany);
-  text-decoration: none;
-  padding: 4px 6px;
-  transition: color 0.18s ease, transform 0.18s ease;
-  letter-spacing: 0.01em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 248, 240, 0.85);
+  white-space: nowrap;
 }
 
-.cityLink:hover {
-  color: var(--copper);
-  transform: translateY(-1px);
+.reassuranceIcon {
+  color: #DDA15E;
+  flex-shrink: 0;
 }
 
-.divider {
-  color: rgba(75, 46, 43, 0.22);
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin: 0 14px;
+.reassuranceDivider {
+  color: rgba(192, 133, 82, 0.4);
+  font-size: 0.75rem;
   user-select: none;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════
+   RESPONSIVE ADAPTATIONS
+   ═══════════════════════════════════════════════════════════════════════ */
+
 @media (max-width: 1024px) {
   .section {
-    padding: 30px 0;
+    padding: 56px 0 60px;
   }
 
   .container {
     padding: 0 24px;
   }
 
-  .cityLink,
-  .cityName {
-    font-size: 0.875rem;
-    padding: 3px 4px;
+  .corridorGrid {
+    gap: 8px;
   }
 
-  .divider {
-    margin: 0 10px;
+  .corridorCard {
+    padding: 7px 12px;
+    font-size: 0.82rem;
   }
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: 24px 0;
+    padding: 48px 0 52px;
   }
 
   .container {
     padding: 0 16px;
   }
 
-  .citiesTrack {
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    padding: 0 8px;
+  .header {
+    margin-bottom: 24px;
   }
 
-  .corridorBar {
-    justify-content: flex-start;
+  .reassuranceBar {
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 16px;
+    padding: 16px;
+    width: 100%;
+  }
+
+  .reassuranceDivider {
+    display: none;
   }
 }

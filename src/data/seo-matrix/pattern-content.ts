@@ -11,6 +11,7 @@ import { getProductBySlug, allStones } from '@/data/stone-index';
 import { ProseBlock, LandingHero } from '@/lib/landing-pages-data';
 import { ManifestEntry, ResolvedCombo, LocationFacts, PriceBand } from '@/lib/landing/types';
 import { calculateLandedCost } from './prices';
+import { resolveProductExactPhotos } from '@/lib/product-detail';
 
 export interface PatternContentOutput {
   heroImages: string[];
@@ -48,15 +49,15 @@ export function resolvePatternImages(resolved: ResolvedCombo): { images: string[
   const matName = material?.name ?? 'Natural Stone';
   const locName = location?.name ?? 'Kishangarh';
 
-  // 1. Specific Stone page: use exact stone photography
+  // 1. Specific Stone page: use exact stone photography matching the product page
   if (combo.stoneSlug) {
     const stone = getProductBySlug(combo.stoneSlug);
     if (stone) {
-      const stonePhotos = [stone.thumbnail, ...(stone.heroImages ?? []), ...(stone.galleryImages ?? [])].filter(Boolean);
+      const stonePhotos = resolveProductExactPhotos(stone);
       if (stonePhotos.length > 0) {
         return {
           images: stonePhotos.slice(0, 4),
-          alt: `${stone.name} granite gangsaw slabs and installed interior applications in ${locName}`,
+          alt: `${stone.name} natural stone slabs, gangsaw lot and installed applications in ${locName}`,
         };
       }
     }

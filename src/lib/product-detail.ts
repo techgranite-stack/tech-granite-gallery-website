@@ -156,6 +156,43 @@ export function resolveCollectionImage(
   return fallback;
 }
 
+/**
+ * Returns exact, authentic product photography matching what is shown
+ * on the stone detail page (hero.webp, stand.webp, catalog.webp).
+ * Excludes generic room stock photography.
+ */
+export function resolveProductExactPhotos(stone: StoneProduct): string[] {
+  const photos: string[] = [];
+
+  // 1. Try stones/<slug>/ (Granite & Marble)
+  const heroImg = resolveHeroImage(stone.slug, '');
+  if (heroImg) photos.push(heroImg);
+  const standImg = resolveStandImage(stone.slug, '');
+  if (standImg) photos.push(standImg);
+  const catalogImg = resolveCatalogImage(stone.slug, '');
+  if (catalogImg) photos.push(catalogImg);
+
+  // 2. Try collections/<category>/<slug>/ (Sandstone, Quartzite, Slate, Limestone)
+  const collHero = resolveCollectionImage(stone.category, stone.slug, 'hero', '');
+  if (collHero) photos.push(collHero);
+  const collStand = resolveCollectionImage(stone.category, stone.slug, 'stand', '');
+  if (collStand) photos.push(collStand);
+  const collCatalog = resolveCollectionImage(stone.category, stone.slug, 'catalog', '');
+  if (collCatalog) photos.push(collCatalog);
+
+  // 3. Fallback to product images only if not generic /applications/ stock rooms
+  const otherImages = [
+    stone.thumbnail,
+    ...(stone.heroImages || []),
+    ...(stone.galleryImages || []),
+  ].filter((img) => Boolean(img) && !img.includes('/applications/'));
+
+  photos.push(...otherImages);
+
+  const unique = Array.from(new Set(photos.filter(Boolean)));
+  return unique.length > 0 ? unique : [stone.thumbnail || '/images/hero/granite-gallery-marble-granite-sandstone.webp'];
+}
+
 interface StoneDetailOpts {
   /** Small label under the title, e.g. "Indian Marble" / "Granite" */
   subtitle: string;

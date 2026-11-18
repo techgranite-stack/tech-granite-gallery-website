@@ -37,6 +37,8 @@ interface StoneListingSectionProps {
   products: ListingItem[];
   filters?: FilterGroup[];
   heading?: string;
+  eyebrow?: string;
+  initialLimit?: number;
 }
 
 /* Fallback swatch palette for the colour group when an option omits `swatch` */
@@ -109,11 +111,23 @@ function MobileCard({ product }: { product: ListingItem }) {
 
 /* ─── Main component ────────────────────────────────────────────────────────── */
 export default function StoneListingSection({
-  products, filters = [], heading,
+  products,
+  filters = [],
+  heading,
+  eyebrow,
+  initialLimit,
 }: StoneListingSectionProps) {
   // active selection per filter-group key; absent / 'all' = no filter
   const [active, setActive] = useState<Record<string, string>>({});
   const [mobileIdx, setMobileIdx] = useState(0);
+  const [visibleCount, setVisibleCount] = useState<number>(initialLimit ?? 9999);
+
+  // When filters or initialLimit change, reset visible count to initialLimit
+  useEffect(() => {
+    if (initialLimit) {
+      setVisibleCount(initialLimit);
+    }
+  }, [active, initialLimit]);
 
   const sectionRef = useRef<HTMLElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -222,7 +236,7 @@ export default function StoneListingSection({
       gsap.fromTo(countRef.current, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.3, ease: 'back.out(2.5)', delay: 0.05 });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filtered]);
+  }, [filtered, visibleCount]);
 
   // ── Section entrance (ScrollTrigger) ─────────────────────────────────────
   useGSAP(() => {
@@ -317,6 +331,11 @@ export default function StoneListingSection({
 
             <div className={styles.topBar} ref={topBarRef}>
               <div>
+                {eyebrow && (
+                  <span className="section-eyebrow" style={{ display: 'block', marginBottom: '8px' }}>
+                    {eyebrow}
+                  </span>
+                )}
                 {heading && <h2 className={styles.heading}>{heading}</h2>}
                 <p className={styles.count} ref={countRef}>
                   {filtered.length} {filtered.length === 1 ? 'stone' : 'stones'}
@@ -365,13 +384,40 @@ export default function StoneListingSection({
 
             {/* ── Desktop grid ─────────────────────────────────────── */}
             {filtered.length > 0 ? (
-              <div className={styles.grid} ref={gridRef}>
-                {filtered.map(product => (
-                  <div key={product.slug} className={styles.cardWrap}>
-                    <StoneCard product={product} />
+              <>
+                <div className={styles.grid} ref={gridRef}>
+                  {(initialLimit ? filtered.slice(0, visibleCount) : filtered).map(product => (
+                    <div key={product.slug} className={styles.cardWrap}>
+                      <StoneCard product={product} />
+                    </div>
+                  ))}
+                </div>
+
+                {initialLimit && filtered.length > visibleCount && (
+                  <div className={styles.showMoreWrap}>
+                    <button
+                      type="button"
+                      className={styles.showMoreBtn}
+                      onClick={() => setVisibleCount(prev => prev + initialLimit)}
+                    >
+                      <span>Show More Stones ({filtered.length - visibleCount} remaining)</span>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </button>
                   </div>
-                ))}
-              </div>
+                )}
+              </>
             ) : (
               <div className={styles.empty}>
                 <p>No stones match this filter.</p>

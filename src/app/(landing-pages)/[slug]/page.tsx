@@ -6,14 +6,15 @@ import {
   getColorPageBySlug,
   getProductsByColor,
   getProductBySlug,
+  getAllGranite,
+  getAllMarble,
 } from '@/data/stone-index';
-import { productPath } from '@/types/stone';
-import { resolveCatalogImage } from '@/lib/product-detail';
+import { fromStoneProduct, type ListingItem } from '@/lib/listing-item';
 import ColorStonePage from '@/components/templates/ColorStonePage';
 import PageHero from '@/components/sections/PageHero';
 import LandingProse from '@/components/sections/LandingProse';
 import LocalInfoBlock from '@/components/sections/LocalInfoBlock';
-import RelatedGrid from '@/components/sections/RelatedGrid';
+import StoneListingSection, { type FilterGroup } from '@/components/sections/StoneListingSection';
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
@@ -43,6 +44,26 @@ export function generateStaticParams() {
   const allSlugs = Array.from(new Set([...flagshipSlugs, ...landingSlugs, ...colorSlugs, ...programmaticSlugs]));
   return allSlugs.map((slug) => ({ slug }));
 }
+
+const COLOR_FILTERS: FilterGroup[] = [
+  {
+    key: 'color',
+    label: 'Color',
+    display: 'swatch',
+    options: [
+      { value: 'white', label: 'White' },
+      { value: 'black', label: 'Black' },
+      { value: 'grey', label: 'Grey' },
+      { value: 'pink', label: 'Pink' },
+      { value: 'red', label: 'Red' },
+      { value: 'green', label: 'Green' },
+      { value: 'brown', label: 'Brown' },
+      { value: 'blue', label: 'Blue' },
+      { value: 'yellow', label: 'Yellow' },
+      { value: 'beige', label: 'Beige' },
+    ],
+  },
+];
 
 export function generateMetadata({ params }: PageProps): Metadata {
   // Color page metadata — sourced from colorPages data in stone-index.ts
@@ -108,19 +129,33 @@ export default function CatchAllPage({ params }: PageProps) {
 
   const { hero, intro, blocks, showcase, tagline, localInfo, faqs, faqHeading, service } = page;
 
-  // Resolve showcase slugs against the live catalogue, so a renamed or removed
-  // stone surfaces as a missing card rather than a broken link.
-  const showcaseItems =
-    showcase?.slugs
-      .map((slug) => getProductBySlug(slug))
-      .filter((s): s is NonNullable<typeof s> => Boolean(s))
-      .map((s) => ({
-        href: productPath(s),
-        image: resolveCatalogImage(s.slug, s.thumbnail),
-        category: s.category === 'granite' ? 'Granite' : 'Marble',
-        name: s.name,
-        sub: s.tagline,
-      })) ?? [];
+  // Resolve stones for the collection listing section
+  const isMarblePage =
+    page.slug.includes('marble') ||
+    page.hero.h1?.toLowerCase().includes('marble') ||
+    page.service?.serviceType?.toLowerCase().includes('marble') ||
+    page.hero.eyebrow?.toLowerCase().includes('marble');
+
+  const primaryStones = (showcase?.slugs ?? [])
+    .map((slug) => getProductBySlug(slug))
+    .filter((s): s is NonNullable<typeof s> => Boolean(s));
+
+  const categoryStones = isMarblePage ? getAllMarble() : getAllGranite();
+
+  // Combine matching stones first, followed by category stones (deduped by slug)
+  const allListingStones = Array.from(
+    new Map([...primaryStones, ...categoryStones].map((s) => [s.slug, s])).values()
+  );
+
+  const listingProducts: ListingItem[] = allListingStones.map(fromStoneProduct);
+
+  const listingHeading = showcase
+    ? `${showcase.heading} ${showcase.headingEm}`
+    : isMarblePage
+    ? 'All Marble Collection'
+    : 'All Granite Collection';
+
+  const listingEyebrow = showcase?.eyebrow ?? 'Curated Selection';
 
   return (
     <>
@@ -206,12 +241,13 @@ export default function CatchAllPage({ params }: PageProps) {
         />
       )}
 
-      {showcase && showcaseItems.length > 0 && (
-        <RelatedGrid
-          eyebrow={showcase.eyebrow}
-          title={showcase.heading}
-          titleEm={showcase.headingEm}
-          items={showcaseItems}
+      {listingProducts.length > 0 && (
+        <StoneListingSection
+          products={listingProducts}
+          filters={COLOR_FILTERS}
+          heading={listingHeading}
+          eyebrow={listingEyebrow}
+          initialLimit={9}
         />
       )}
 

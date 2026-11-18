@@ -766,3 +766,44 @@
   flex-shrink: 0;
   margin: auto 4px;
 }
+
+/* ── Show More Button ── */
+.showMoreWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  width: 100%;
+}
+
+.showMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 34px;
+  background: var(--white);
+  border: 1.5px solid var(--copper);
+  border-radius: 100px;
+  color: var(--copper-dark);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(192, 133, 82, 0.12);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showMoreBtn:hover {
+  background: var(--copper);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(192, 133, 82, 0.3);
+}
+
+.showMoreBtn svg {
+  transition: transform 0.25s ease;
+}
+
+.showMoreBtn:hover svg {
+  transform: translateY(3px);
+}

@@ -27,6 +27,11 @@ const SUB_SITEMAPS = [
   'sitemap-blogs.xml',
   'sitemap-projects.xml',
   'sitemap-team.xml',
+  'sitemap-landing-granite.xml',
+  'sitemap-landing-marble.xml',
+  'sitemap-landing-sandstone.xml',
+  'sitemap-landing-specialty.xml',
+  'sitemap-landing-guides.xml',
   'sitemap-landing.xml',
   'sitemap-images.xml',
 ] as const;

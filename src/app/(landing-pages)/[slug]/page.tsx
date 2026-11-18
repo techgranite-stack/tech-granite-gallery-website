@@ -30,6 +30,7 @@ import FlagshipLandingPage from '@/components/templates/FlagshipLandingPage';
 import { getFlagshipPage, getAllFlagshipSlugs } from '@/data/flagship-pages';
 import { localBusinessJsonLd, localServiceJsonLd, trailJsonLd } from '@/lib/structured-data';
 import { getAllLandingSlugs, getLandingPage } from '@/lib/landing';
+import { parseSlug } from '@/lib/landing/slug';
 import { buildMetadata } from '@/lib/seo';
 
 interface PageProps {
@@ -131,6 +132,8 @@ export default function CatchAllPage({ params }: PageProps) {
   // ── Marketing / local landing page (Handcrafted or Programmatic) ─────────────
   const page = landingPages[params.slug] ?? getLandingPage(params.slug);
   if (!page) notFound();
+
+  const parsedSlug = parseSlug(params.slug);
 
   const { hero, intro, blocks, showcase, tagline, localInfo, faqs, faqHeading, service } = page;
 
@@ -273,7 +276,11 @@ export default function CatchAllPage({ params }: PageProps) {
 
       {localInfo && <LocalInfoBlock info={localInfo} />}
 
-      <LocalDeliveryCorridor />
+      <LocalDeliveryCorridor
+        stoneSlug={parsedSlug.stoneSlug}
+        material={parsedSlug.material}
+        currentLocation={parsedSlug.location}
+      />
 
       {faqs.length > 0 && (
         <FAQAccordion

@@ -6,6 +6,7 @@ import CoverflowCarousel from '@/components/sections/CoverflowCarousel';
 import NumberedCardGrid from '@/components/sections/NumberedCardGrid';
 import HorizontalScrollGallery from '@/components/sections/HorizontalScrollGallery';
 import FAQAccordion from '@/components/sections/FAQAccordion';
+import LocalDeliveryCorridor from '@/components/sections/LocalDeliveryCorridor';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import MarqueeTestimonials from '@/components/sections/MarqueeTestimonials';
@@ -222,6 +223,9 @@ export default async function ApplicationDetailPage(
         <CoverflowCarousel products={mappedStones} />
       )}
       */}
+
+      {/* Direct Site Delivery Corridors */}
+      <LocalDeliveryCorridor />
 
       {/* 4. FAQs accordion (default white/ivory background) */}
       {app.faqs && app.faqs.length > 0 && (

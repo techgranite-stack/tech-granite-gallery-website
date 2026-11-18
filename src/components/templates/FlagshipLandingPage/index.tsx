@@ -19,6 +19,7 @@ const GoogleReviews = dynamic(() => import('@/components/sections/GoogleReviews'
 const ProcessSteps = dynamic(() => import('@/components/sections/ProcessSteps'));
 const PortraitTeamGrid = dynamic(() => import('@/components/sections/PortraitTeamGrid'));
 const ArticleCardGrid = dynamic(() => import('@/components/sections/ArticleCardGrid'));
+const LocalDeliveryCorridor = dynamic(() => import('@/components/sections/LocalDeliveryCorridor'));
 const BannerContactForm = dynamic(() => import('@/components/sections/BannerContactForm'));
 
 interface FlagshipLandingPageProps {
@@ -124,6 +125,9 @@ export default function FlagshipLandingPage({ data }: FlagshipLandingPageProps) 
 
       {/* 11. Knowledge Hub — Insights & Guides */}
       <ArticleCardGrid posts={data.blogPosts ?? defaultBlogPosts} />
+
+      {/* Local Delivery Corridors */}
+      <LocalDeliveryCorridor />
 
       {/* 12. Rich Domain FAQs with Built-in Google FAQPage Schema */}
       {data.faqs && data.faqs.length > 0 && (

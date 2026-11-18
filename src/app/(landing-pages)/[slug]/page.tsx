@@ -16,6 +16,7 @@ import LandingProse from '@/components/sections/LandingProse';
 import LocalInfoBlock from '@/components/sections/LocalInfoBlock';
 import StoneListingSection, { type FilterGroup } from '@/components/sections/StoneListingSection';
 import FAQAccordion from '@/components/sections/FAQAccordion';
+import LocalDeliveryCorridor from '@/components/sections/LocalDeliveryCorridor';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import StatsBand from '@/components/sections/StatsBand';
@@ -254,6 +255,8 @@ export default function CatchAllPage({ params }: PageProps) {
       {tagline && tagline.length > 0 && <ScrollingTagline items={tagline} />}
 
       {localInfo && <LocalInfoBlock info={localInfo} />}
+
+      <LocalDeliveryCorridor />
 
       {faqs.length > 0 && (
         <FAQAccordion

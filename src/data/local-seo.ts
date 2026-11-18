@@ -115,8 +115,20 @@ export const primaryLocation = {
  */
 export const areasServed = [
   { name: 'Kishangarh', type: 'City' },
-  { name: 'Ajmer', type: 'City' },
+  { name: 'Delhi NCR', type: 'City' },
+  { name: 'Bengaluru', type: 'City' },
+  { name: 'Mumbai', type: 'City' },
+  { name: 'Ludhiana', type: 'City' },
+  { name: 'Ahmedabad', type: 'City' },
+  { name: 'Surat', type: 'City' },
+  { name: 'Indore', type: 'City' },
+  { name: 'Gurugram', type: 'City' },
+  { name: 'Pune', type: 'City' },
+  { name: 'Nagpur', type: 'City' },
+  { name: 'Mysuru', type: 'City' },
+  { name: 'Karnataka', type: 'State' },
   { name: 'Jaipur', type: 'City' },
+  { name: 'Ajmer', type: 'City' },
   { name: 'Rajasthan', type: 'State' },
   { name: 'India', type: 'Country' },
 ] as const;

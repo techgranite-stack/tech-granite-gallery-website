@@ -1,0 +1,133 @@
+.section {
+  padding: 36px 0;
+  background: #ffffff;
+  border-top: 1px solid rgba(75, 46, 43, 0.08);
+  border-bottom: 1px solid rgba(75, 46, 43, 0.08);
+  width: 100%;
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrowRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.eyebrowDash {
+  color: var(--copper);
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+.corridorBar {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.corridorBar::-webkit-scrollbar {
+  display: none;
+}
+
+.citiesTrack {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 12px;
+  column-gap: 0;
+  white-space: nowrap;
+}
+
+.cityItem {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cityLink,
+.cityName {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--mahogany);
+  text-decoration: none;
+  padding: 4px 6px;
+  transition: color 0.18s ease, transform 0.18s ease;
+  letter-spacing: 0.01em;
+}
+
+.cityLink:hover {
+  color: var(--copper);
+  transform: translateY(-1px);
+}
+
+.divider {
+  color: rgba(75, 46, 43, 0.22);
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0 14px;
+  user-select: none;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 30px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .cityLink,
+  .cityName {
+    font-size: 0.875rem;
+    padding: 3px 4px;
+  }
+
+  .divider {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 24px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .citiesTrack {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding: 0 8px;
+  }
+
+  .corridorBar {
+    justify-content: flex-start;
+  }
+}

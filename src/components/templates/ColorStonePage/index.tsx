@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import PageHero from '@/components/sections/PageHero';
 import StoneListingSection from '@/components/sections/StoneListingSection';
+import LocalDeliveryCorridor from '@/components/sections/LocalDeliveryCorridor';
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
@@ -192,6 +193,8 @@ export default function ColorStonePage({ data, products }: ColorStonePageProps) 
           </div>
         </div>
       </section>
+
+      <LocalDeliveryCorridor />
 
       <FAQAccordion
         items={colorFaqs}

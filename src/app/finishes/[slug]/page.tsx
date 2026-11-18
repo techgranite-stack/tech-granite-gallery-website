@@ -5,6 +5,7 @@ import Image from 'next/image';
 import PageHero from '@/components/sections/PageHero';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import FAQAccordion from '@/components/sections/FAQAccordion';
+import LocalDeliveryCorridor from '@/components/sections/LocalDeliveryCorridor';
 import { finishesData } from '@/lib/finish-data';
 import { buildMetadata } from '@/lib/seo';
 import styles from './finish.module.css';
@@ -195,6 +196,8 @@ export default async function FinishDetailPage(
           </div>
         </section>
       )}
+
+      <LocalDeliveryCorridor />
 
       {finish.faqs && finish.faqs.length > 0 && (
         <FAQAccordion

@@ -42,7 +42,14 @@ export type LocationId =
   | 'bangalore'
   | 'hyderabad'
   | 'ahmedabad'
-  | 'pune';
+  | 'pune'
+  | 'ludhiana'
+  | 'surat'
+  | 'indore'
+  | 'gurugram'
+  | 'nagpur'
+  | 'mysuru'
+  | 'karnataka';
 
 export type MaterialId =
   | 'granite'

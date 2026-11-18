@@ -8,6 +8,7 @@ import { finishesData } from '@/lib/finish-data';
 import { projectsData } from '@/lib/project-data';
 import { blogPostsData } from '@/lib/blog-data';
 import { landingPages } from '@/lib/landing-pages-data';
+import { getAllLandingSlugs, getLandingPage } from '@/lib/landing';
 import { SITE_URL } from '@/lib/seo-url';
 import { IMAGE_SITEMAP_NS } from '@/lib/sitemap-images';
 import {
@@ -93,11 +94,15 @@ export async function GET() {
     }
   }
 
-  // 3. Stone Catalogue Index (All 55+ stones: Granite, Marble, Sandstone, Quartzite, Slate, Onyx)
+  // 3. Stone Catalogue Index (All 98 catalog stones: Granite, Marble, Sandstone, Quartzite, Slate, Limestone, etc.)
   for (const stone of allStones) {
-    const categorySegment = stone.category === 'granite' ? 'granite' : 'marble';
-    const pageUrl = `${SITE_URL}/${categorySegment}/${stone.slug}`;
-    const stoneTitle = `${stone.name} ${categorySegment === 'granite' ? 'Granite' : 'Marble'} Slab`;
+    let pageUrl = `${SITE_URL}/granite/${stone.slug}`;
+    if (stone.category === 'marble' || stone.category === 'imported-marble') {
+      pageUrl = `${SITE_URL}/marble/${stone.slug}`;
+    } else if (stone.category !== 'granite') {
+      pageUrl = `${SITE_URL}/collections/${stone.category}/${stone.slug}`;
+    }
+    const stoneTitle = `${stone.name} ${stone.category === 'imported-marble' ? 'Imported Marble' : stone.category} Slab`;
 
     const hero = resolveHeroImage(stone.slug, stone.heroImages[0] ?? stone.thumbnail);
     const stand = resolveStandImage(stone.slug, stone.heroImages[0] ?? stone.thumbnail);
@@ -141,11 +146,20 @@ export async function GET() {
     addImageToPage(pageUrl, blog.image, blog.title, blog.excerpt || blog.title);
   }
 
-  // 8. Handcrafted Landing Page Images
-  for (const [slug, lp] of Object.entries(landingPages)) {
+  // 8. All Landing Pages (Programmatic & Handcrafted Landing Pages with stone photos)
+  const handcraftedSlugs = Object.keys(landingPages);
+  const programmaticSlugs = getAllLandingSlugs();
+  const allLandingSlugs = Array.from(new Set([...handcraftedSlugs, ...programmaticSlugs]));
+
+  for (const slug of allLandingSlugs) {
+    const page = landingPages[slug] ?? getLandingPage(slug);
+    if (!page) continue;
     const pageUrl = `${SITE_URL}/${slug}`;
-    for (const img of lp.hero.images) {
-      addImageToPage(pageUrl, img, lp.hero.imageAlt || lp.hero.h1, lp.hero.subtitle);
+    const caption = Array.isArray(page.tagline)
+      ? page.tagline.join(' · ')
+      : (page.tagline || page.metadata.description);
+    for (const img of page.hero.images) {
+      addImageToPage(pageUrl, img, page.hero.imageAlt || page.hero.h1, caption);
     }
   }
 

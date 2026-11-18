@@ -46,6 +46,33 @@ export const FINISH_COMPATIBILITY: Record<MaterialId, FinishId[]> = {
     'polished',
     'bush-hammered',
   ],
+  slate: [
+    'natural-cleft',
+    'honed',
+    'polished',
+  ],
+  limestone: [
+    'polished',
+    'honed',
+    'antique',
+    'leathered',
+  ],
+  'imported-marble': [
+    'polished',
+    'honed',
+    'antique',
+    'latino',
+  ],
+  exotic: [
+    'polished',
+    'leathered',
+    'honed',
+  ],
+  porphyry: [
+    'flamed',
+    'bush-hammered',
+    'natural-cleft',
+  ],
 };
 
 // Gate G1: Material-Application Compatibility
@@ -87,6 +114,34 @@ export const APPLICATION_COMPATIBILITY: Record<MaterialId, ApplicationId[]> = {
     'wall-cladding',
     'flooring',
     'bathroom',
+  ],
+  slate: [
+    'wall-cladding',
+    'flooring',
+    'exterior-cladding',
+  ],
+  limestone: [
+    'flooring',
+    'wall-cladding',
+    'exterior-cladding',
+  ],
+  'imported-marble': [
+    'flooring',
+    'wall-cladding',
+    'bathroom',
+    'tabletops',
+    'staircase',
+  ],
+  exotic: [
+    'kitchen-countertops',
+    'wall-cladding',
+    'tabletops',
+    'flooring',
+  ],
+  porphyry: [
+    'flooring',
+    'exterior-cladding',
+    'staircase',
   ],
 };
 

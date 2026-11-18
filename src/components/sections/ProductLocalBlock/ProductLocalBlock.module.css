@@ -76,6 +76,69 @@
   color: var(--mahogany);
 }
 
+.corridorBlock {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(75, 46, 43, 0.1);
+}
+
+.corridorEyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 6px;
+}
+
+.corridorTitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--mahogany);
+  margin-bottom: 16px;
+}
+
+.cityPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cityPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--ivory, #fffdfa);
+  border: 1px solid rgba(75, 46, 43, 0.15);
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--mahogany);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cityPill:hover {
+  background: #C08552;
+  color: #fff;
+  border-color: #C08552;
+  transform: translateY(-1px);
+}
+
+.cityPillArrow {
+  opacity: 0.6;
+  font-size: 11px;
+}
+
+.cityPill:hover .cityPillArrow {
+  opacity: 1;
+}
+
 /* ── CTAs ── */
 .ctaRow {
   display: flex;

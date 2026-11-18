@@ -1,11 +1,58 @@
 import { allMarble } from './marble-products';
 import { graniteProducts } from './granite-products';
+import { productsData } from '@/lib/product-data';
 import type { StoneProduct, ColorFamily, StoneCategory } from '@/types/stone';
 
 export type { StoneProduct, ColorFamily, StoneCategory };
 
-/** Every stone in the catalogue */
-export const allStones: StoneProduct[] = [...allMarble, ...graniteProducts];
+/** Map productsData (sandstone, quartzite, slate, limestone) into StoneProduct structure */
+const otherStones: StoneProduct[] = productsData
+  .filter((p) => !allMarble.some((m) => m.slug === p.slug) && !graniteProducts.some((g) => g.slug === p.slug))
+  .map((p) => ({
+    slug: p.slug,
+    name: p.name,
+    category: (p.type === 'onyx' ? 'marble' : p.type) as StoneCategory,
+    colorFamily: (p.colorFamily && p.colorFamily.length > 0 ? p.colorFamily : [(p.primaryColor as ColorFamily) || 'beige']) as ColorFamily[],
+    tagline: p.subtitle || p.description?.slice(0, 80) || p.name,
+    origin: p.origin || 'Rajasthan, India',
+    description: p.longDescription || p.description || '',
+    thumbnail: p.catalogImage || p.heroImage || (p.gallery && p.gallery[0]) || '/images/hero/granite-gallery-marble-granite-sandstone.webp',
+    heroImages: [p.heroImage, ...(p.gallery || [])].filter(Boolean),
+    galleryImages: p.gallery || [],
+    finishes: (p.finishesAvailable || ['Polished', 'Honed']).map((f) => ({
+      id: f.toLowerCase().replace(/\s+/g, '-'),
+      label: f,
+      images: [],
+    })),
+    applications: (p.applications || ['Flooring', 'Wall Cladding']).map((a) => ({
+      id: a.toLowerCase().replace(/\s+/g, '-'),
+      label: a,
+      images: [],
+    })),
+    sizes: (p.sizes || ['Gangsaw Slabs', 'Cutter Slabs']).map((s) => ({
+      label: s,
+      dimensions: 'Custom Calibrated',
+    })),
+    specs: {
+      hardness: p.specifications?.hardness || 'Mohs 6–7',
+      density: p.specifications?.density || '2.65 g/cm³',
+      waterAbsorption: p.specifications?.waterAbsorption || '< 0.3%',
+      compressiveStrength: p.specifications?.compressiveStrength || '140–180 MPa',
+      porosity: 'Low',
+      abrasionResistance: 'High',
+      thickness: '18mm / 20mm / 30mm',
+    },
+    highlights: [p.origin, p.finish, ...(p.applications || []).slice(0, 2)].filter(Boolean),
+    metaTitle: p.metaTitle || `${p.name} Slabs & Tiles | Granite Gallery`,
+    metaDescription: p.metaDescription || p.description,
+    keywords: p.keywords || [p.name.toLowerCase(), `${p.name.toLowerCase()} kishangarh`, p.type],
+    faqs: p.faqs,
+    featured: false,
+    priceRange: p.priceRange || { low: 45, high: 120, unit: 'sqft' },
+  }));
+
+/** Every stone in the catalogue (40 granites, 15 marbles, 18 sandstones, 6 quartzites, 7 slates, 3 limestones) */
+export const allStones: StoneProduct[] = [...allMarble, ...graniteProducts, ...otherStones];
 
 // ─── Lookup helpers ───────────────────────────────────────────────────────────
 
@@ -19,11 +66,27 @@ export function getProductsByCategory(category: StoneCategory): StoneProduct[] {
 
 /** Returns all marble (domestic + imported) */
 export function getAllMarble(): StoneProduct[] {
-  return allStones.filter((s) => s.category !== 'granite');
+  return allStones.filter((s) => s.category === 'marble' || s.category === 'imported-marble');
 }
 
 export function getAllGranite(): StoneProduct[] {
   return allStones.filter((s) => s.category === 'granite');
+}
+
+export function getAllSandstone(): StoneProduct[] {
+  return allStones.filter((s) => s.category === 'sandstone');
+}
+
+export function getAllQuartzite(): StoneProduct[] {
+  return allStones.filter((s) => s.category === 'quartzite');
+}
+
+export function getAllSlate(): StoneProduct[] {
+  return allStones.filter((s) => s.category === 'slate');
+}
+
+export function getAllLimestone(): StoneProduct[] {
+  return allStones.filter((s) => s.category === 'limestone');
 }
 
 export function getProductsByColor(color: ColorFamily): StoneProduct[] {

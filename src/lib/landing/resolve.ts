@@ -26,6 +26,10 @@ export function resolveCombo(combo: Combo): ResolvedCombo {
       // Filter by material
       if (combo.material === 'granite' && s.category !== 'granite') return false;
       if (combo.material === 'marble' && s.category !== 'marble' && s.category !== 'imported-marble') return false;
+      if (combo.material === 'sandstone' && s.category !== 'sandstone') return false;
+      if (combo.material === 'quartzite' && s.category !== 'quartzite') return false;
+      if (combo.material === 'slate' && s.category !== 'slate') return false;
+      if (combo.material === 'limestone' && s.category !== 'limestone') return false;
 
       // Filter by color
       if (combo.color && !s.colorFamily.includes(combo.color)) return false;
@@ -58,6 +62,14 @@ export function resolveCombo(combo: Combo): ResolvedCombo {
       matchingStones = allStones.filter((s) => s.category === 'granite').slice(0, 8);
     } else if (combo.material === 'marble') {
       matchingStones = allStones.filter((s) => s.category === 'marble' || s.category === 'imported-marble').slice(0, 8);
+    } else if (combo.material === 'sandstone') {
+      matchingStones = allStones.filter((s) => s.category === 'sandstone').slice(0, 8);
+    } else if (combo.material === 'quartzite') {
+      matchingStones = allStones.filter((s) => s.category === 'quartzite').slice(0, 8);
+    } else if (combo.material === 'slate') {
+      matchingStones = allStones.filter((s) => s.category === 'slate').slice(0, 8);
+    } else if (combo.material === 'limestone') {
+      matchingStones = allStones.filter((s) => s.category === 'limestone').slice(0, 8);
     } else {
       matchingStones = allStones.slice(0, 8);
     }

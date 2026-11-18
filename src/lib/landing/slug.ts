@@ -5,14 +5,16 @@
 
 import { Combo, PatternId, LocationId, MaterialId, ApplicationId, FinishId } from './types';
 import { ColorFamily } from '@/types/stone';
+import { allStones } from '@/data/stone-index';
 
-const KNOWN_LOCATIONS: LocationId[] = [
+export const KNOWN_LOCATIONS: LocationId[] = [
   'kishangarh', 'delhi', 'rajasthan', 'jaipur', 'mumbai',
   'bangalore', 'hyderabad', 'ahmedabad', 'pune',
+  'ludhiana', 'surat', 'indore', 'gurugram', 'nagpur', 'mysuru', 'karnataka',
 ];
 
-const KNOWN_MATERIALS: MaterialId[] = [
-  'granite', 'marble', 'sandstone', 'quartzite', 'onyx', 'travertine',
+export const KNOWN_MATERIALS: MaterialId[] = [
+  'granite', 'marble', 'sandstone', 'quartzite', 'onyx', 'travertine', 'slate', 'limestone',
 ];
 
 const KNOWN_APPLICATIONS: ApplicationId[] = [
@@ -46,8 +48,13 @@ export function buildSlug(combo: Combo): string {
       return `${combo.color}-${combo.material}-in-${combo.location}`;
     case 'P7':
       return `${combo.finish}-${combo.material}-slabs`;
-    case 'P-Stone':
-      return `${combo.stoneSlug}-${combo.material}-in-${combo.location}`;
+    case 'P-Stone': {
+      const mat = combo.material ?? 'granite';
+      const baseSlug = combo.stoneSlug?.endsWith(`-${mat}`)
+        ? combo.stoneSlug
+        : `${combo.stoneSlug}-${mat}`;
+      return `${baseSlug}-in-${combo.location}`;
+    }
     case 'G1':
       return `${combo.material}-price-in-${combo.location}`;
     case 'G6':
@@ -70,6 +77,24 @@ export function parseSlug(slug: string): Partial<Combo> {
   for (const loc of KNOWN_LOCATIONS) {
     if (slug.endsWith(`-in-${loc}`)) {
       result.location = loc;
+      const prefix = slug.slice(0, -(loc.length + 4));
+
+      // 1. Check if prefix matches a specific catalog stone directly
+      const exactStone = allStones.find((s) => s.slug === prefix);
+      if (exactStone) {
+        result.pattern = 'P-Stone';
+        result.stoneSlug = exactStone.slug;
+        result.material = (exactStone.category === 'imported-marble' ? 'marble' : exactStone.category) as MaterialId;
+      } else {
+        // 2. Strip trailing material suffix (e.g. "tan-brown-granite" -> "tan-brown", "statuario-marble" -> "statuario")
+        const stripped = prefix.replace(/-(granite|marble|sandstone|quartzite|slate|limestone|onyx|travertine)$/, '');
+        const matchedStone = allStones.find((s) => s.slug === stripped);
+        if (matchedStone) {
+          result.pattern = 'P-Stone';
+          result.stoneSlug = matchedStone.slug;
+          result.material = (matchedStone.category === 'imported-marble' ? 'marble' : matchedStone.category) as MaterialId;
+        }
+      }
       break;
     }
   }

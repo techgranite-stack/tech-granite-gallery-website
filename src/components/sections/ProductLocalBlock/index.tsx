@@ -3,7 +3,28 @@ import { MapPin, MessageCircle } from 'lucide-react';
 import type { StoneProduct } from '@/types/stone';
 import { siteConfig } from '@/config/site';
 import { primaryLocation, dispatch, addressOneLine } from '@/data/local-seo';
+import { buildSlug } from '@/lib/landing/slug';
+import type { MaterialId, LocationId } from '@/lib/landing/types';
 import styles from './ProductLocalBlock.module.css';
+
+const DELIVERY_CITIES: { id: LocationId; label: string }[] = [
+  { id: 'delhi', label: 'Delhi NCR' },
+  { id: 'mumbai', label: 'Mumbai' },
+  { id: 'bangalore', label: 'Bengaluru' },
+  { id: 'ludhiana', label: 'Ludhiana' },
+  { id: 'ahmedabad', label: 'Ahmedabad' },
+  { id: 'surat', label: 'Surat' },
+  { id: 'indore', label: 'Indore' },
+  { id: 'gurugram', label: 'Gurugram' },
+  { id: 'pune', label: 'Pune' },
+  { id: 'nagpur', label: 'Nagpur' },
+  { id: 'mysuru', label: 'Mysuru' },
+  { id: 'karnataka', label: 'Karnataka' },
+  { id: 'hyderabad', label: 'Hyderabad' },
+  { id: 'jaipur', label: 'Jaipur' },
+  { id: 'rajasthan', label: 'Rajasthan' },
+  { id: 'kishangarh', label: 'Kishangarh' },
+];
 
 /**
  * Per-product local supply block.
@@ -95,6 +116,35 @@ export default function ProductLocalBlock({ product }: { product: StoneProduct }
                 <dd className={styles.factValue}>{formatsLine}</dd>
               </div>
             </dl>
+
+            {/* ── Direct Delivery Corridors ── */}
+            <div className={styles.corridorBlock}>
+              <span className={styles.corridorEyebrow}>Direct Supply &amp; City Rates</span>
+              <h3 className={styles.corridorTitle}>
+                Order {product.name} with Doorstep Delivery
+              </h3>
+              <div className={styles.cityPills}>
+                {DELIVERY_CITIES.map((loc) => {
+                  const mat = (product.category === 'imported-marble' ? 'marble' : product.category) as MaterialId;
+                  const citySlug = buildSlug({
+                    pattern: 'P-Stone',
+                    stoneSlug: product.slug,
+                    material: mat,
+                    location: loc.id,
+                  });
+                  return (
+                    <Link
+                      key={loc.id}
+                      href={`/${citySlug}`}
+                      className={styles.cityPill}
+                    >
+                      <span>{loc.label}</span>
+                      <span className={styles.cityPillArrow}>→</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
 
             <div className={styles.ctaRow}>
               <a

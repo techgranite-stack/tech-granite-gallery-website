@@ -6,6 +6,7 @@
 
 import { PriceBand, MaterialId, LocationId } from '@/lib/landing/types';
 import { LOCATIONS } from './locations';
+import { getProductBySlug } from '@/data/stone-index';
 
 const CURRENT_PRICE_DATE = '2026-10-15';
 
@@ -117,6 +118,91 @@ export const MATERIAL_PRICES: Record<MaterialId, PriceBand> = {
     premiumHigh: 850,
     marketNotes:
       'Classic Beige, Silver, Titanium, and Romano Travertine. Unfilled rustic finishes cost less; epoxy/resin filled and honed slabs command standard rates.',
+  },
+  slate: {
+    material: 'slate',
+    lowPrice: 35,
+    highPrice: 180,
+    unit: 'sqft',
+    basis: 'Natural cleft, calibrated tiles and slabs, ex-factory Kishangarh yard',
+    thicknessMm: '12–25 mm',
+    updatedAt: CURRENT_PRICE_DATE,
+    verified: true,
+    commercialLow: 35,
+    commercialHigh: 60,
+    standardLow: 65,
+    standardHigh: 110,
+    premiumLow: 115,
+    premiumHigh: 180,
+    marketNotes: 'High durability, non-porous, and anti-skid. Sourced from Kund, Himachal, and Rajasthan quarries.',
+  },
+  limestone: {
+    material: 'limestone',
+    lowPrice: 28,
+    highPrice: 160,
+    unit: 'sqft',
+    basis: 'Natural, polished, and mirror-finish limestone slabs & tiles, ex-factory Kishangarh yard',
+    thicknessMm: '18–30 mm',
+    updatedAt: CURRENT_PRICE_DATE,
+    verified: true,
+    commercialLow: 28,
+    commercialHigh: 50,
+    standardLow: 55,
+    standardHigh: 95,
+    premiumLow: 100,
+    premiumHigh: 160,
+    marketNotes: 'Iconic Indian limestone including Kota Stone, Jaisalmer Yellow, and Kadappa Black. Renowned for longevity and cool thermal properties.',
+  },
+  'imported-marble': {
+    material: 'imported-marble',
+    lowPrice: 250,
+    highPrice: 3500,
+    unit: 'sqft',
+    basis: '18mm gangsaw slabs quarried in Italy, Greece, and Spain, ex-Kishangarh yard',
+    thicknessMm: '18 mm',
+    updatedAt: CURRENT_PRICE_DATE,
+    verified: true,
+    commercialLow: 250,
+    commercialHigh: 450,
+    standardLow: 450,
+    standardHigh: 950,
+    premiumLow: 950,
+    premiumHigh: 3500,
+    marketNotes: 'Includes Statuario, Calacatta Gold, Carrara, Botticino, and Michelangelo Marble.',
+  },
+  exotic: {
+    material: 'exotic',
+    lowPrice: 350,
+    highPrice: 2800,
+    unit: 'sqft',
+    basis: 'Exotic high-hardness quartzite and granite slabs',
+    thicknessMm: '20 mm',
+    updatedAt: CURRENT_PRICE_DATE,
+    verified: true,
+    commercialLow: 350,
+    commercialHigh: 650,
+    standardLow: 650,
+    standardHigh: 1400,
+    premiumLow: 1400,
+    premiumHigh: 2800,
+    marketNotes: 'Semi-precious crystal veining, backlit aesthetics, and exceptional density.',
+  },
+  porphyry: {
+    material: 'porphyry',
+    lowPrice: 45,
+    highPrice: 150,
+    unit: 'sqft',
+    basis: 'Flamed and natural split porphyry paving slabs',
+    thicknessMm: '20–40 mm',
+    updatedAt: CURRENT_PRICE_DATE,
+    verified: true,
+    commercialLow: 45,
+    commercialHigh: 75,
+    standardLow: 75,
+    standardHigh: 110,
+    premiumLow: 110,
+    premiumHigh: 150,
+    marketNotes: 'Heavy-duty commercial paving and vehicular driveway surfaces.',
   },
 };
 
@@ -484,8 +570,31 @@ export const STONE_SPECIFIC_PRICES: Record<string, PriceBand> = {
 };
 
 export function getPriceBand(material: MaterialId, stoneSlug?: string): PriceBand {
-  if (stoneSlug && STONE_SPECIFIC_PRICES[stoneSlug]) {
-    return STONE_SPECIFIC_PRICES[stoneSlug];
+  if (stoneSlug) {
+    if (STONE_SPECIFIC_PRICES[stoneSlug]) {
+      return STONE_SPECIFIC_PRICES[stoneSlug];
+    }
+    const stone = getProductBySlug(stoneSlug);
+    if (stone?.priceRange) {
+      return {
+        material,
+        stoneSlug,
+        lowPrice: stone.priceRange.low,
+        highPrice: stone.priceRange.high,
+        unit: 'sqft',
+        basis: `${stone.name} calibrated slabs, ex-factory Kishangarh yard`,
+        thicknessMm: stone.specs?.thickness || '16–18 mm',
+        updatedAt: CURRENT_PRICE_DATE,
+        verified: true,
+        commercialLow: stone.priceRange.low,
+        commercialHigh: Math.round(stone.priceRange.low * 1.25),
+        standardLow: Math.round(stone.priceRange.low * 1.25),
+        standardHigh: Math.round(stone.priceRange.high * 0.85),
+        premiumLow: Math.round(stone.priceRange.high * 0.85),
+        premiumHigh: stone.priceRange.high,
+        marketNotes: `${stone.name} direct sourcing from Kishangarh processing plant. Verified ASTM specs and lot selection.`,
+      };
+    }
   }
   return MATERIAL_PRICES[material] ?? MATERIAL_PRICES.granite;
 }

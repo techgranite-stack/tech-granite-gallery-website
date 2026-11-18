@@ -829,22 +829,31 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
   }
 
   // ── BRANCH D: DEFAULT GEO & STONE SOURCING (P1, P6, P-Stone, G5) ────
-  const heroEyebrow = isKishangarh ? 'PRIMARY PROCESSING & EXPORT YARD' : `${locName.toUpperCase()} DIRECT HIGHWAY CORRIDOR`;
-  const heroH1 = `${matName} in`;
+  const stone = combo.stoneSlug ? getProductBySlug(combo.stoneSlug) : undefined;
+  const stoneName = stone ? stone.name : matName;
+
+  const heroEyebrow = isKishangarh
+    ? (stone ? `${stone.name.toUpperCase()} • PRIMARY PROCESSING & EXPORT YARD` : 'PRIMARY PROCESSING & EXPORT YARD')
+    : `${locName.toUpperCase()} DIRECT HIGHWAY CORRIDOR`;
+  const heroH1 = `${stoneName} in`;
   const heroH1Em = locName;
   const heroSubtitle = isKishangarh
-    ? `Direct factory wholesale sourcing of certified ${matName.toLowerCase()} gangsaw slabs, custom cuts, and lot inspection on the MEGA Highway.`
-    : `Direct quarry and factory dispatch of certified ${matName.toLowerCase()} slabs from our Kishangarh yard direct to site in ${locName}.`;
+    ? (stone
+        ? `Direct factory wholesale sourcing of certified ${stone.name} gangsaw slabs, custom cuts, and lot inspection on the MEGA Highway.`
+        : `Direct factory wholesale sourcing of certified ${matName.toLowerCase()} gangsaw slabs, custom cuts, and lot inspection on the MEGA Highway.`)
+    : (stone
+        ? `Direct quarry and factory dispatch of certified ${stone.name} slabs from our Kishangarh yard direct to site in ${locName}.`
+        : `Direct quarry and factory dispatch of certified ${matName.toLowerCase()} slabs from our Kishangarh yard direct to site in ${locName}.`);
 
   const intro: ProseBlock = {
     id: 'intro',
     eyebrow: isKishangarh ? 'KISHANGARH MANDI SOURCING' : `${locName.toUpperCase()} SUPPLY & LOGISTICS`,
-    heading: isKishangarh ? `Direct Wholesale Sourcing of ${matName}` : `Direct Factory Supply of ${matName}`,
+    heading: isKishangarh ? `Direct Wholesale Sourcing of ${stoneName}` : `Direct Factory Supply of ${stoneName}`,
     headingEm: isKishangarh ? 'at Kishangarh Mandi' : `to ${locName}`,
     body: [
       isKishangarh
-        ? `Granite Gallery operates premier stone processing and gangsaw facilities directly on the MEGA Highway in Kishangarh, Rajasthan. Sourcing directly from exclusive Rajasthan and South Indian quarry concessions, our yard stocks over 55 natural stone varieties in calibrated gangsaw slabs ready for immediate inspection and dispatch.`
-        : `Granite Gallery delivers export-grade gangsaw slabs of ${matName.toLowerCase()} direct from our Kishangarh processing plant to ${locName}. Each slab undergoes strict quality control for thickness uniformity (16mm/18mm/20mm), structural soundness, and aesthetic vein flow.`,
+        ? `Granite Gallery operates premier stone processing and gangsaw facilities directly on the MEGA Highway in Kishangarh, Rajasthan. Sourcing directly from exclusive quarry concessions, our yard stocks premium ${stoneName} in calibrated gangsaw slabs ready for immediate inspection and dispatch.`
+        : `Granite Gallery delivers export-grade gangsaw slabs of ${stoneName} direct from our Kishangarh processing plant to ${locName}. Each slab undergoes strict quality control for thickness uniformity (16mm/18mm/20mm), structural soundness, and aesthetic vein flow.`,
       isKishangarh
         ? `Whether you are a wholesale marble trader, commercial developer, or private villa owner, our Kishangarh yard offers complete block transparency, automated gangsaw cutting, and immediate crane loading.`
         : `Consignments are transported via dedicated highway corridors with fumigated wooden A-frame packaging, all-risk transit insurance, and GPS vehicle tracking.`,
@@ -877,7 +886,7 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
       headingEm: 'for Lasting Durability',
       dark: true,
       body: [
-        `${matName} is chosen by architects and structural engineers for its exceptional durability and natural elegance. Tested under ASTM standards, our stones deliver industry-leading performance across indoor and outdoor environments.`,
+        `${stoneName} is chosen by architects and structural engineers for its exceptional durability and natural elegance. Tested under ASTM standards, our stones deliver industry-leading performance across indoor and outdoor environments.`,
       ],
       bullets: [
         { title: 'Density Range', text: specRanges.density ?? '2.65 g/cm³' },
@@ -910,9 +919,9 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
 
   const faqs = [
     {
-      question: `What is the price of ${matName.toLowerCase()} in ${locName}?`,
+      question: `What is the price of ${stoneName} in ${locName}?`,
       answer: priceBand
-        ? `Ex-factory Kishangarh rates for ${matName.toLowerCase()} range from ₹${priceBand.lowPrice} to ₹${priceBand.highPrice}/sq ft depending on slab grade. ${isKishangarh ? 'Direct yard pickup incurs zero extra freight.' : `For delivery to ${locName}, add ₹${location?.freightPerSqftMin ?? 8}–₹${location?.freightPerSqftMax ?? 14}/sq ft freight and 18% GST, bringing estimated landed site cost to approx. ₹${landed?.minLanded}–₹${landed?.maxLanded}/sq ft.`}`
+        ? `Ex-factory Kishangarh rates for ${stoneName} range from ₹${priceBand.lowPrice} to ₹${priceBand.highPrice}/sq ft depending on slab grade. ${isKishangarh ? 'Direct yard pickup incurs zero extra freight.' : `For delivery to ${locName}, add ₹${location?.freightPerSqftMin ?? 8}–₹${location?.freightPerSqftMax ?? 14}/sq ft freight and 18% GST, bringing estimated landed site cost to approx. ₹${landed?.minLanded}–₹${landed?.maxLanded}/sq ft.`}`
         : `Pricing varies based on quarry lot, background consistency, and finish. Contact our sales desk for current rate sheets.`,
     },
     {
@@ -922,12 +931,14 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
         : `Transit from our Kishangarh yard to ${locName} takes approximately ${location?.transitDays ?? '24–48 hours'} via direct national highway corridors.`,
     },
     {
-      question: `Can I inspect the actual ${matName.toLowerCase()} slabs before dispatch to ${locName}?`,
+      question: `Can I inspect the actual ${stoneName} slabs before dispatch to ${locName}?`,
       answer: `Yes. You can visit our Kishangarh yard on the MEGA Highway in person. For clients in ${locName} unable to travel, our sales engineers provide 4K live video inspections, wet-test color verification, dry-lay lot photos, and caliper thickness measurements of the exact slabs reserved for your order.`,
     },
     {
-      question: `What finishes are available for ${matName.toLowerCase()}?`,
-      answer: `We process ${matName.toLowerCase()} in High Gloss Mirror Polished, Leathered/Lapotra, Flamed, Honed, Shot-Blast, and Acid-Wash finishes.`,
+      question: `What finishes are available for ${stoneName}?`,
+      answer: stone && stone.finishes?.length
+        ? `${stoneName} is processed in ${stone.finishes.map((f) => f.label).join(', ')} finishes.`
+        : `We process ${stoneName} in High Gloss Mirror Polished, Leathered/Lapotra, Flamed, Honed, Shot-Blast, and Acid-Wash finishes.`,
     },
     {
       question: `What is the minimum order quantity (MOQ) for dispatch to ${locName}?`,
@@ -948,7 +959,7 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
     faqs,
     faqHeading: {
       title: 'Frequently Asked Questions',
-      titleEm: `About ${matName} in ${locName}`,
+      titleEm: `About ${stoneName} in ${locName}`,
       description: 'Clear answers on pricing, delivery timelines, minimum order quantities, and slab inspection.',
     },
   };

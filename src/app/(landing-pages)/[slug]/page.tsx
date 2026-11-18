@@ -8,6 +8,10 @@ import {
   getProductBySlug,
   getAllGranite,
   getAllMarble,
+  getAllSandstone,
+  getAllQuartzite,
+  getAllSlate,
+  getAllLimestone,
 } from '@/data/stone-index';
 import { fromStoneProduct, type ListingItem } from '@/lib/listing-item';
 import ColorStonePage from '@/components/templates/ColorStonePage';
@@ -130,18 +134,33 @@ export default function CatchAllPage({ params }: PageProps) {
 
   const { hero, intro, blocks, showcase, tagline, localInfo, faqs, faqHeading, service } = page;
 
-  // Resolve stones for the collection listing section
-  const isMarblePage =
-    page.slug.includes('marble') ||
-    page.hero.h1?.toLowerCase().includes('marble') ||
-    page.service?.serviceType?.toLowerCase().includes('marble') ||
-    page.hero.eyebrow?.toLowerCase().includes('marble');
+  // Resolve stones for the collection listing section based on material category
+  const slugLower = page.slug.toLowerCase();
+  const titleLower = (page.hero.h1 ?? '').toLowerCase();
+
+  let categoryStones = getAllGranite();
+  let defaultHeading = 'All Granite Collection';
+
+  if (slugLower.includes('marble') || titleLower.includes('marble')) {
+    categoryStones = getAllMarble();
+    defaultHeading = 'All Marble Collection';
+  } else if (slugLower.includes('sandstone') || titleLower.includes('sandstone')) {
+    categoryStones = getAllSandstone();
+    defaultHeading = 'All Sandstone Collection';
+  } else if (slugLower.includes('quartzite') || titleLower.includes('quartzite')) {
+    categoryStones = getAllQuartzite();
+    defaultHeading = 'All Quartzite Collection';
+  } else if (slugLower.includes('slate') || titleLower.includes('slate')) {
+    categoryStones = getAllSlate();
+    defaultHeading = 'All Slate Collection';
+  } else if (slugLower.includes('limestone') || titleLower.includes('limestone')) {
+    categoryStones = getAllLimestone();
+    defaultHeading = 'All Limestone Collection';
+  }
 
   const primaryStones = (showcase?.slugs ?? [])
     .map((slug) => getProductBySlug(slug))
     .filter((s): s is NonNullable<typeof s> => Boolean(s));
-
-  const categoryStones = isMarblePage ? getAllMarble() : getAllGranite();
 
   // Combine matching stones first, followed by category stones (deduped by slug)
   const allListingStones = Array.from(
@@ -152,9 +171,7 @@ export default function CatchAllPage({ params }: PageProps) {
 
   const listingHeading = showcase
     ? `${showcase.heading} ${showcase.headingEm}`
-    : isMarblePage
-    ? 'All Marble Collection'
-    : 'All Granite Collection';
+    : defaultHeading;
 
   const listingEyebrow = showcase?.eyebrow ?? 'Curated Selection';
 

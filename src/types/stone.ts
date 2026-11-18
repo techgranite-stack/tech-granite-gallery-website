@@ -1,6 +1,17 @@
 import type { FAQItem } from '@/types';
 
-export type StoneCategory = 'marble' | 'imported-marble' | 'granite';
+export type StoneCategory =
+  | 'marble'
+  | 'imported-marble'
+  | 'granite'
+  | 'sandstone'
+  | 'quartzite'
+  | 'limestone'
+  | 'slate'
+  | 'onyx'
+  | 'travertine'
+  | 'exotic'
+  | 'porphyry';
 
 export type ColorFamily =
   | 'white' | 'black' | 'grey' | 'pink' | 'red'

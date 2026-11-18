@@ -57,7 +57,12 @@ export type MaterialId =
   | 'sandstone'
   | 'quartzite'
   | 'onyx'
-  | 'travertine';
+  | 'travertine'
+  | 'slate'
+  | 'limestone'
+  | 'imported-marble'
+  | 'exotic'
+  | 'porphyry';
 
 export type ApplicationId =
   | 'flooring'
@@ -79,7 +84,8 @@ export type FinishId =
   | 'acid-wash'
   | 'latino'
   | 'antique'
-  | 'hydro-blast';
+  | 'hydro-blast'
+  | 'natural-cleft';
 
 export interface LocationFacts {
   id: LocationId;

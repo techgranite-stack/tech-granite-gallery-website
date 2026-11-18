@@ -7,6 +7,8 @@ import FAQAccordion from '@/components/sections/FAQAccordion';
 import StoneCard from '@/components/ui/StoneCard';
 import Reveal from '@/components/ui/Reveal';
 import ProductCatalog from '@/components/sections/ProductCatalog';
+import ProductLocalBlock from '@/components/sections/ProductLocalBlock';
+import { getProductBySlug } from '@/data/stone-index';
 import { productsData } from '@/lib/product-data';
 import { fromCollectionProduct } from '@/lib/listing-item';
 import { fromCollectionDetail, resolveCollectionImage } from '@/lib/product-detail';
@@ -166,6 +168,11 @@ export default async function ProductDetailPage(
               </div>
             </div>
           </section>
+        )}
+
+        {/* ── Local Supply & City Delivery Corridors ── */}
+        {getProductBySlug(product.slug) && (
+          <ProductLocalBlock product={getProductBySlug(product.slug)!} />
         )}
 
         {product.faqs && product.faqs.length > 0 && (

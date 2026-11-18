@@ -6,7 +6,15 @@ import { applicationsData } from '@/lib/application-data';
 import { blogPostsData }    from '@/lib/blog-data';
 import { projectsData }     from '@/lib/project-data';
 import { landingPages }     from '@/lib/landing-pages-data';
-import { getAllMarble, getAllGranite, colorPages } from '@/data/stone-index';
+import {
+  getAllMarble,
+  getAllGranite,
+  getAllSandstone,
+  getAllQuartzite,
+  getAllSlate,
+  getAllLimestone,
+  colorPages,
+} from '@/data/stone-index';
 
 // Render on-demand — heavy data imports cause static generation timeout on Vercel
 export const dynamic = 'force-dynamic';
@@ -57,11 +65,70 @@ function buildGroups(): SitemapGroup[] {
       })),
     },
     {
+      heading: 'Sandstone Collection',
+      links: getAllSandstone().map((s) => ({
+        label: s.name,
+        href: `/collections/sandstone/${s.slug}`,
+      })),
+    },
+    {
+      heading: 'Quartzite Collection',
+      links: getAllQuartzite().map((s) => ({
+        label: s.name,
+        href: `/collections/quartzite/${s.slug}`,
+      })),
+    },
+    {
+      heading: 'Slate Collection',
+      links: getAllSlate().map((s) => ({
+        label: s.name,
+        href: `/collections/slate/${s.slug}`,
+      })),
+    },
+    {
+      heading: 'Limestone Collection',
+      links: getAllLimestone().map((s) => ({
+        label: s.name,
+        href: `/collections/limestone/${s.slug}`,
+      })),
+    },
+    {
       heading: 'Stone Collections by Color',
       links: colorPages.map((cp) => ({
         label: cp.title,
         href:  `/${cp.slug}`,
       })),
+    },
+    {
+      heading: 'Regional Sourcing Hubs (All Cities)',
+      links: [
+        { label: 'Granite in Delhi NCR', href: '/granite-suppliers-in-delhi' },
+        { label: 'Granite in Mumbai', href: '/granite-suppliers-in-mumbai' },
+        { label: 'Granite in Bengaluru', href: '/granite-suppliers-in-bangalore' },
+        { label: 'Granite in Ludhiana', href: '/granite-suppliers-in-ludhiana' },
+        { label: 'Granite in Surat', href: '/granite-suppliers-in-surat' },
+        { label: 'Granite in Indore', href: '/granite-suppliers-in-indore' },
+        { label: 'Granite in Gurugram', href: '/granite-suppliers-in-gurugram' },
+        { label: 'Granite in Pune', href: '/granite-suppliers-in-pune' },
+        { label: 'Granite in Nagpur', href: '/granite-suppliers-in-nagpur' },
+        { label: 'Granite in Mysuru', href: '/granite-suppliers-in-mysuru' },
+        { label: 'Granite in Ahmedabad', href: '/granite-suppliers-in-ahmedabad' },
+        { label: 'Granite in Jaipur', href: '/granite-suppliers-in-jaipur' },
+        { label: 'Granite in Hyderabad', href: '/granite-suppliers-in-hyderabad' },
+        { label: 'Marble in Delhi NCR', href: '/marble-suppliers-in-delhi' },
+        { label: 'Marble in Mumbai', href: '/marble-suppliers-in-mumbai' },
+        { label: 'Marble in Bengaluru', href: '/marble-suppliers-in-bangalore' },
+        { label: 'Marble in Ludhiana', href: '/marble-suppliers-in-ludhiana' },
+        { label: 'Marble in Surat', href: '/marble-suppliers-in-surat' },
+        { label: 'Marble in Indore', href: '/marble-suppliers-in-indore' },
+        { label: 'Marble in Gurugram', href: '/marble-suppliers-in-gurugram' },
+        { label: 'Sandstone in Delhi NCR', href: '/sandstone-suppliers-in-delhi' },
+        { label: 'Sandstone in Mumbai', href: '/sandstone-suppliers-in-mumbai' },
+        { label: 'Sandstone in Bangalore', href: '/sandstone-suppliers-in-bangalore' },
+        { label: 'Sandstone in Surat', href: '/sandstone-suppliers-in-surat' },
+        { label: 'Quartzite in Delhi NCR', href: '/quartzite-suppliers-in-delhi' },
+        { label: 'Quartzite in Mumbai', href: '/quartzite-suppliers-in-mumbai' },
+      ],
     },
     {
       heading: 'Collections (Legacy)',

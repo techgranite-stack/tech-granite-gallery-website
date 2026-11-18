@@ -211,7 +211,7 @@ export default function CatchAllPage({ params }: PageProps) {
         <StatsBand stats={page.statsBand} />
       )}
 
-      <LandingProse block={intro} />
+      <LandingProse block={intro} index={0} />
 
       {page.mosaicApps && page.mosaicApps.length > 0 && (
         <MosaicGrid
@@ -223,8 +223,8 @@ export default function CatchAllPage({ params }: PageProps) {
         />
       )}
 
-      {blocks.map((block) => (
-        <LandingProse key={block.id} block={block} />
+      {blocks.map((block, idx) => (
+        <LandingProse key={block.id} block={block} index={idx + 1} />
       ))}
 
       {page.numberedCards && page.numberedCards.reasons.length > 0 && (

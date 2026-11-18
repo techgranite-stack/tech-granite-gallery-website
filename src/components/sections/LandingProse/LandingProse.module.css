@@ -1,7 +1,15 @@
 .section {
-  padding: 96px 0;
+  padding: 104px 0;
   background: var(--ivory);
-  border-top: 1px solid rgba(75, 46, 43, 0.05);
+  border-top: 1px solid rgba(75, 46, 43, 0.06);
+  position: relative;
+}
+
+/* Subtle architectural stone tint for alternating sections */
+.altSection {
+  background: #F7F3EC;
+  border-top: 1px solid rgba(75, 46, 43, 0.08);
+  border-bottom: 1px solid rgba(75, 46, 43, 0.08);
 }
 
 .section.dark {
@@ -15,11 +23,10 @@
   padding: 0 40px;
 }
 
-/* Two-column: heading rail on the left, prose on the right. Keeps line length
-   readable, which matters because these blocks carry the page's real copy. */
+/* Two-column layout: Sticky editorial heading rail on the left, luxury card grid on the right */
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-columns: minmax(0, 4.6fr) minmax(0, 7.4fr);
   gap: 64px;
   align-items: start;
 }
@@ -27,23 +34,41 @@
 .header {
   position: sticky;
   top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.eyebrowRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.eyebrowDash {
+  color: var(--copper);
+  font-size: 11px;
+  opacity: 0.6;
 }
 
 .eyebrow {
   color: var(--copper);
 }
 
-.section.dark .eyebrow {
+.section.dark .eyebrow,
+.section.dark .eyebrowDash {
   color: var(--copper-light);
 }
 
 .title {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-size: clamp(2.1rem, 3.8vw, 3.25rem);
   font-weight: 400;
   color: var(--mahogany);
-  line-height: 1.15;
-  margin-top: 12px;
+  line-height: 1.16;
+  margin-top: 8px;
+  letter-spacing: -0.01em;
 }
 
 .section.dark .title {
@@ -59,74 +84,246 @@
   color: var(--copper-light);
 }
 
+/* Subtle architectural trust badge grounding the left column */
+.trustBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 6px 14px;
+  background: rgba(75, 46, 43, 0.04);
+  border: 1px solid rgba(75, 46, 43, 0.09);
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--mahogany-muted);
+}
+
+.trustDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--copper);
+  flex-shrink: 0;
+}
+
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .body p {
   font-family: var(--font-sans);
   font-size: 1.0625rem;
   line-height: 1.85;
   color: var(--mahogany-muted);
+  margin: 0;
 }
 
 .body p + p {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .section.dark .body p {
   color: rgba(255, 248, 240, 0.72);
 }
 
-/* ── Definition list ── */
+/* ── Architectural Cards Grid ── */
 .bullets {
-  margin-top: 40px;
+  margin: 32px 0 0 0;
+  padding: 0;
+  list-style: none;
   display: grid;
-  gap: 4px;
+  gap: 16px;
 }
 
-.bullet {
-  padding: 22px 0;
-  border-top: 1px solid rgba(75, 46, 43, 0.12);
+.bullets.grid2x2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
-.section.dark .bullet {
-  border-top-color: rgba(255, 248, 240, 0.14);
+.bullets.grid3Col {
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
-.bullet:last-child {
-  border-bottom: 1px solid rgba(75, 46, 43, 0.12);
+.bulletCard {
+  background: #ffffff;
+  border: 1px solid rgba(75, 46, 43, 0.09);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 18px rgba(75, 46, 43, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s ease,
+              border-color 0.22s ease;
 }
 
-.section.dark .bullet:last-child {
-  border-bottom-color: rgba(255, 248, 240, 0.14);
+.bulletCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--copper);
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-.bulletTitle {
+.bulletCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(184, 115, 51, 0.38);
+  box-shadow: 0 12px 28px rgba(75, 46, 43, 0.08);
+}
+
+.bulletCard:hover::before {
+  opacity: 1;
+}
+
+/* Featured / Export specification card variant */
+.bulletCard.cardFeatured {
+  border-color: rgba(184, 115, 51, 0.28);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FDFBF7 100%);
+}
+
+.bulletCard.cardFeatured::before {
+  opacity: 0.6;
+}
+
+/* Dark mode specification cards (e.g. ASTM testing) */
+.section.dark .bulletCard {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 248, 240, 0.12);
+  box-shadow: none;
+}
+
+.section.dark .bulletCard:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--copper-light);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.cardIndex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10.5px;
+  font-weight: 700;
   font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--copper);
-  margin-bottom: 10px;
+  background: rgba(184, 115, 51, 0.1);
+  padding: 2px 7px;
+  border-radius: 5px;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
 }
 
-.section.dark .bulletTitle {
+.section.dark .cardIndex {
+  background: rgba(212, 154, 106, 0.15);
   color: var(--copper-light);
 }
 
-.bulletText {
+.cardTitle {
   font-family: var(--font-sans);
-  font-size: 0.975rem;
-  line-height: 1.75;
-  color: var(--mahogany-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mahogany);
+  line-height: 1.3;
 }
 
-.section.dark .bulletText {
+.section.dark .cardTitle {
+  color: var(--ivory);
+}
+
+.exportBadge {
+  margin-left: auto;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(184, 115, 51, 0.12);
+  color: var(--copper);
+  border: 1px solid rgba(184, 115, 51, 0.25);
+  white-space: nowrap;
+}
+
+.cardBody {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Highlighted Price Callout */
+.priceHighlight {
+  margin: 2px 0 10px 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.priceValue {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--copper);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.section.dark .priceValue {
+  color: var(--copper-light);
+}
+
+.cardDesc {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--mahogany-muted);
+  margin: 0;
+}
+
+.section.dark .cardDesc {
   color: rgba(255, 248, 240, 0.68);
+}
+
+/* Engineering Metric Callout */
+.metricCallout {
+  margin-top: 4px;
+}
+
+.metricValue {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--copper);
+  line-height: 1.1;
+}
+
+.section.dark .metricValue {
+  color: var(--copper-light);
 }
 
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
   }
 
   .header {
@@ -141,5 +338,13 @@
 
   .container {
     padding: 0 20px;
+  }
+
+  .bullets.grid2x2 {
+    grid-template-columns: 1fr;
+  }
+
+  .bulletCard {
+    padding: 20px;
   }
 }

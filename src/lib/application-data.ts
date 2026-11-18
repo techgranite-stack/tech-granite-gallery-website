@@ -69,6 +69,14 @@ At Granite Gallery, we supply large-format slabs (up to 3200×1800mm), standard 
     {
       question: "Does natural stone flooring work with underfloor heating?",
       answer: "Yes. Natural stone has excellent thermal conductivity, making it the perfect material for underfloor heating systems as it retains and radiates heat very efficiently."
+    },
+    {
+      question: "How wide should grout joints be for large-format natural stone floors?",
+      answer: "For precision gangsaw-cut slabs with calibrated straight edges, we recommend tight 2mm to 3mm joints filled with color-matched epoxy or polymer-modified grout to accommodate subtle subfloor thermal expansion."
+    },
+    {
+      question: "Can natural stone flooring be re-polished if it loses its luster over years?",
+      answer: "Yes. Unlike printed ceramic or vitrified tiles, 18mm solid natural stone can be diamond ground, honed, and crystallised multiple times across decades, completely restoring its pristine showroom finish without replacing the slab."
     }
   ]
 };
@@ -126,6 +134,14 @@ We supply large-format slabs (up to 3200×1800mm), standard tiles, mosaic inlays
       {
         question: "Does natural stone flooring work with underfloor heating?",
         answer: "Yes. Natural stone has excellent thermal conductivity, making it the perfect material for underfloor heating systems as it retains and radiates heat very efficiently."
+      },
+      {
+        question: "How wide should grout joints be for large-format natural stone floors?",
+        answer: "For precision gangsaw-cut slabs with calibrated straight edges, we recommend tight 2mm to 3mm joints filled with color-matched epoxy or polymer-modified grout to accommodate subtle subfloor thermal expansion."
+      },
+      {
+        question: "Can natural stone flooring be re-polished if it loses its luster over years?",
+        answer: "Yes. Unlike printed ceramic or vitrified tiles, 18mm solid natural stone can be diamond ground, honed, and crystallised multiple times across decades, completely restoring its pristine showroom finish without replacing the slab."
       }
     ]
   },
@@ -175,6 +191,18 @@ From exterior facade cladding on commercial buildings to intimate bedroom accent
       {
         question: "What is bookmatching, and when is it used on walls?",
         answer: "Bookmatching is the practice of matching two or more stone slabs cut sequentially from the same block so that their veining mirrors each other, like an open book. It is highly specified for premium focal feature walls."
+      },
+      {
+        question: "What slab thickness is recommended for vertical interior wall cladding?",
+        answer: "For interior feature walls, 16mm to 18mm calibrated slabs are standard. For lightweight decorative accent panels, 12mm to 15mm reinforced panels can also be specified to minimize structural wall loading."
+      },
+      {
+        question: "Can stone wall cladding be backlit for luxury ambiance?",
+        answer: "Yes. Translucent natural stones such as Honey Onyx, White Onyx, and certain crystalline quartzites can be custom cut to 16mm, fiberglass net-backed, and installed with diffuse LED panel illumination behind them."
+      },
+      {
+        question: "How are joints detailed and concealed on large stone feature walls?",
+        answer: "We fabricate slabs with chamfered or hair-line micro-bevel edges, joined using color-tinted polyester resin or epoxy that is polished flush with the stone surface for a near-seamless aesthetic."
       }
     ]
   },
@@ -223,6 +251,18 @@ Granite offers unmatched hardness (7 Mohs) making it virtually scratch-proof and
       {
         question: "Can I place hot pans directly on a marble kitchen island?",
         answer: "No, we do not recommend placing hot pans directly on marble. Extreme local heat can cause thermal shock or discolor the protective sealants. Always use a trivet."
+      },
+      {
+        question: "What edge profiles are available for natural stone kitchen countertops?",
+        answer: "We offer bullnose, half-bullnose, bevelled, pencil round, ogee, and modern 40mm to 60mm mitred apron waterfall edges for a monolithic island block look."
+      },
+      {
+        question: "How often should granite or quartzite kitchen countertops be resealed?",
+        answer: "Dense granites like Absolute Black require sealing only once every 2 to 3 years, while lighter granites or natural quartzites should be treated with an impregnating sealer annually to repel cooking oils and spices."
+      },
+      {
+        question: "Can undermount sinks and flush cooktop cutouts be safely milled into stone countertops?",
+        answer: "Yes. All sink and cooktop cutouts are precision CNC waterjet cut at our Kishangarh facility with radiused internal corners and stainless steel underside rodding to prevent stress fractures."
       }
     ]
   },
@@ -271,6 +311,18 @@ Full stone shower enclosures in bookmatched marble slabs eliminate grout lines e
       {
         question: "Which stone finish should be used for bathroom floors?",
         answer: "Honed, leathered, or satin finishes are recommended for wet flooring areas, as they provide a slip-resistant surface underfoot with a minimum R10 rating."
+      },
+      {
+        question: "How do you prevent soap scum and hard water deposits on marble shower walls?",
+        answer: "Apply an oleophobic and hydrophobic nano-impregnating sealer. Squeegee shower walls after use and clean weekly with pH-neutral stone cleaner; never use descaling acids or bleach."
+      },
+      {
+        question: "Can floating stone vanity countertops support heavy stone vessel basins?",
+        answer: "Yes, when mounted on hidden heavy-gauge steel cantilever wall brackets rated for 150kg+. We also mill pre-drilled tap holes and waste cutouts to exact plumbing specifications."
+      },
+      {
+        question: "Which natural stones are best suited for high-humidity steam showers and bathrooms?",
+        answer: "Granites like Absolute Black and Imperial White, dense quartzites, and low-porosity marbles (like Carrara and Thassos) perform exceptionally well when installed with complete waterproof tanking membranes."
       }
     ]
   },
@@ -320,6 +372,18 @@ The choice of stone defines the personality of the space — bright Calacatta ma
       {
         question: "How is slip resistance achieved on polished stone staircases?",
         answer: "We can mill subtle anti-slip grooves near the front edge of each tread, apply sandblasted safety bands, or process the tread surface to a honed finish while keeping the riser polished."
+      },
+      {
+        question: "Can stair treads and risers be ordered pre-cut and edge-profiled from Kishangarh?",
+        answer: "Yes. Send us your architectural staircase schedule, and we will CNC cut every tread and riser to exact millimeter lengths, mill pencil-round or half-bullnose edges, and number each piece for rapid on-site assembly."
+      },
+      {
+        question: "What is the recommended edge profile for high-traffic natural stone steps?",
+        answer: "A 5mm pencil-round or half-bullnose profile is ideal. It softens the front edge against chipping from heavy shoe impacts while remaining comfortable underfoot."
+      },
+      {
+        question: "Can LED channel lighting be recessed into the underside of stone stair treads?",
+        answer: "Yes. We can mill precision 12mm×12mm underside shadow-line grooves along the front nose of each tread to house flush aluminium LED diffuser channels for dramatic ambient stair lighting."
       }
     ]
   },
@@ -369,6 +433,18 @@ Granite is the premier choice for exterior cladding — with a Mohs hardness of 
       {
         question: "What is a ventilated facade system?",
         answer: "A ventilated facade is an installation method where a continuous air gap is left between the stone cladding slab and the structural wall. This keeps the building insulated and allows dry air circulation, protecting against moisture."
+      },
+      {
+        question: "How does natural stone cladding perform against acid rain and atmospheric pollution?",
+        answer: "Granite and quartzite have extremely high silica content and virtually zero calcium carbonate, making them 100% immune to acid rain, urban exhaust emissions, and atmospheric discoloration."
+      },
+      {
+        question: "What is the minimum thickness for exterior stone facade panels?",
+        answer: "We recommend a minimum 25mm to 30mm thickness for exterior dry-cladding panels to withstand high wind velocity suction, seismic vibration, and temperature expansion cycles."
+      },
+      {
+        question: "Can exterior stone cladding be cleaned with high-pressure water washers?",
+        answer: "Yes. Granite and textured sandstone facades can be safely pressure-washed at moderate pressure (100–120 bar) to remove dust and pollution without degrading the stone or its mechanical bracket anchors."
       }
     ]
   },
@@ -418,6 +494,18 @@ From dramatic 4-metre Calacatta dining tables for formal dining rooms to slim-li
       {
         question: "How do I protect my marble dining tabletop from wine or coffee stains?",
         answer: "We apply a professional commercial sealant to all tabletops before delivery. To maintain protection, avoid spills, clean immediately, and wipe with a soft cloth and neutral cleaner."
+      },
+      {
+        question: "What slab thickness is standard for large luxury stone dining tables?",
+        answer: "20mm thickness with a laminated or mitred 40mm edge profile is the gold standard for dining tables. For very large 8- to 12-seater tops (2.4m to 3.2m), 30mm solid slabs provide supreme stability."
+      },
+      {
+        question: "Can stone tabletops be used in outdoor terraces and garden patios?",
+        answer: "Granite and quartzite tabletops are outstanding for outdoor use because they are unaffected by sun UV radiation, rain, and heat. We recommend honed or leathered finishes to avoid heat glare."
+      },
+      {
+        question: "How are large stone tabletops transported and installed safely?",
+        answer: "Tabletops are packed upright in bespoke timber crates on A-frames, delivered by air-suspension trucks, and lifted on edge by experienced handlers to ensure zero flex and crack-free installation."
       }
     ]
   },

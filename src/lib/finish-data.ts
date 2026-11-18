@@ -71,6 +71,14 @@ The process reveals the stone's truest colour depth, saturation, and the finest 
     {
       question: "How often should polished marble be sealed?",
       answer: "Polished marble should be sealed with a high-quality impregnating sealer every 12 to 18 months in residential settings to maintain its barrier against moisture and stains."
+    },
+    {
+      question: "Can mirror-polished granite or marble be restored if it gets scratched over time?",
+      answer: "Yes. Minor surface hairline scuffs can be polished out on-site using diamond polishing pads and crystallising powders. Deeper gouges can be filled with colour-matched transparent epoxy and buffed flush."
+    },
+    {
+      question: "What is the best cleaning routine to prevent dulling on polished stone?",
+      answer: "Use only pH-neutral stone soaps and clean microfibre mops with lukewarm water. Never use lemon, vinegar, bathroom tile cleaners, or acidic solutions which chemically strip the polish."
     }
   ]
 };
@@ -107,6 +115,14 @@ export const finishesData: Finish[] = [
       {
         question: "How often should polished marble be sealed?",
         answer: "Polished marble should be sealed with a high-quality impregnating sealer every 12 to 18 months in residential settings to maintain its barrier against moisture and stains."
+      },
+      {
+        question: "Can mirror-polished granite or marble be restored if it gets scratched over time?",
+        answer: "Yes. Minor surface hairline scuffs can be polished out on-site using diamond polishing pads and crystallising powders. Deeper gouges can be filled with colour-matched transparent epoxy and buffed flush."
+      },
+      {
+        question: "What is the best cleaning routine to prevent dulling on polished stone?",
+        answer: "Use only pH-neutral stone soaps and clean microfibre mops with lukewarm water. Never use lemon, vinegar, bathroom tile cleaners, or acidic solutions which chemically strip the polish."
       }
     ]
   },
@@ -140,6 +156,14 @@ export const finishesData: Finish[] = [
       {
         question: "Is leathered stone harder to clean?",
         answer: "Only slightly. Because it has small, natural undulations, dust or flour can sometimes settle in the valleys. However, wiping it down with a damp microfiber cloth and a stone-safe cleaner is all that is required."
+      },
+      {
+        question: "Does a leathered stone surface require sealing?",
+        answer: "Yes. While diamond brushing compacts and closes many micro-pores, applying a breathable penetrating sealer protects the valleys from stubborn oil, wine, and food stains without adding unwanted shine."
+      },
+      {
+        question: "Can leathered finishes be applied to all varieties of granite and quartzite?",
+        answer: "Leathering works exceptionally well on fine- to medium-grained granites (like Absolute Black, Steel Grey, Black Pearl) and dense quartzites, bringing out dramatic tactile relief along natural mineral veins."
       }
     ]
   },
@@ -173,6 +197,14 @@ export const finishesData: Finish[] = [
       {
         question: "What are the best applications for flamed granite?",
         answer: "Due to its high slip-resistance, flamed granite is the gold standard for exterior paving, pool decks, outdoor steps, and walkways."
+      },
+      {
+        question: "How does a flamed granite finish react to heavy rain and sub-zero temperatures?",
+        answer: "Flamed granite is virtually impervious to extreme weather. Its high thermal expansion rating and R12 anti-slip grip prevent slips during monsoons and resist surface spalling during winter freeze-thaw cycles."
+      },
+      {
+        question: "Can flamed granite be combined with other finishes for architectural detailing?",
+        answer: "Yes. Architects frequently specify flamed granite for stair treads and courtyard walkways with a contrasting 2-inch polished or honed margin along the perimeter for crisp, contemporary edge definition."
       }
     ]
   },
@@ -202,6 +234,18 @@ export const finishesData: Finish[] = [
       {
         question: "How does shot-blast compare to flamed finishes?",
         answer: "Shot blasting creates a much finer and more consistent texture than flaming, making it suitable for high-traffic interior commercial flooring as well as outdoor paving."
+      },
+      {
+        question: "What stones can be shot-blasted?",
+        answer: "Granite, dense quartzite, and hard dolomitic limestones are ideal for shot-blasting. The process can be calibrated with different steel grit sizes to achieve fine, medium, or coarse surface roughness."
+      },
+      {
+        question: "Does shot-blast stone retain its color after blasting?",
+        answer: "Shot-blasting lightens the appearance of the stone slightly due to diffuse light reflection. Applying a color-enhancing impregnating sealer deepens the natural stone hues while preserving the matte anti-skid grip."
+      },
+      {
+        question: "Is shot-blasted granite suitable for barefoot pool decks?",
+        answer: "Yes. A fine-grade shot-blast finish provides superior wet traction (PTV 45+) without the aggressive sharp ridges of flamed stone, making it comfortable for barefoot pool surrounds."
       }
     ]
   },
@@ -231,6 +275,18 @@ export const finishesData: Finish[] = [
       {
         question: "What is the maintenance level for bush-hammered stone?",
         answer: "Because of its deep mechanical pits, it is best swept regularly and pressure-washed occasionally when used outdoors. Sealing every 3 years is highly recommended."
+      },
+      {
+        question: "What is the difference between fine and coarse bush-hammered finishes?",
+        answer: "Fine bush hammering uses a hammer head with numerous closely spaced points (e.g. 64 or 100 pins), producing a dense, sandpaper-like texture. Coarse bush hammering uses fewer, larger points (e.g. 16 or 25 pins), creating deeper pits and an artisanal rustic appearance."
+      },
+      {
+        question: "Can bush hammering be performed on curved stone steps or column bases?",
+        answer: "Yes. Our Kishangarh artisans execute both automated machine hammering on large slabs and bespoke hand pneumatic bush hammering on curved risers, copings, and architectural moldings."
+      },
+      {
+        question: "Does bush-hammered granite lose its structural strength?",
+        answer: "No. The mechanical impact is strictly confined to the top 1mm to 2mm surface layer. In fact, we recommend a minimum slab thickness of 25mm to 30mm so the structural integrity remains uncompromised."
       }
     ]
   },
@@ -260,6 +316,18 @@ export const finishesData: Finish[] = [
       {
         question: "How do you clean chiseled rock-face stone?",
         answer: "Due to deep crevices, it is best cleaned outdoors with a stiff brush or a high-pressure water hose to remove organic debris."
+      },
+      {
+        question: "Can chiseled rock-face stone be used for interior fireplace surrounds?",
+        answer: "Yes. Chiseled granite and sandstone create breathtaking rustic fireplace hearths and feature pillars, casting dramatic natural shadows under directional spotlighting."
+      },
+      {
+        question: "What stone thicknesses are available for chiseled cladding panels?",
+        answer: "Because of the three-dimensional fractured face, chiseled slabs are processed in 30mm, 40mm, or 50mm thicknesses to ensure adequate body beneath the deepest chisel reliefs."
+      },
+      {
+        question: "How are chiseled slabs anchored to structural walls?",
+        answer: "Chiseled panels are heavy and must be anchored using stainless steel mechanical split anchors or kerf-cut brackets anchored into structural masonry or concrete sub-walls."
       }
     ]
   },
@@ -289,6 +357,18 @@ export const finishesData: Finish[] = [
       {
         question: "Is acid wash suitable for granite?",
         answer: "No. Acid wash relies on a chemical reaction with calcium carbonate. Since granite does not contain calcium carbonate, acid washing has no texture effect on it."
+      },
+      {
+        question: "How does an acid wash finish differ from a honed finish?",
+        answer: "While honing relies on mechanical grinding to create a flat satin finish, acid washing chemically dissolves softer micro-crystals, creating subtle undulating valleys and an authentic century-old European antique patina."
+      },
+      {
+        question: "Can acid-washed marble be used in bathroom vanity areas?",
+        answer: "Yes, when treated with an oleophobic penetrating sealer. The matte etched surface is naturally forgiving of fingerprints and cosmetic smudges compared to high-gloss mirror surfaces."
+      },
+      {
+        question: "Does acid washing change the original color of natural marble?",
+        answer: "It softens and mutes high-contrast colors into elegant earthy tones. A color enhancer can be applied subsequently if deeper pigment saturation is desired."
       }
     ]
   },
@@ -318,6 +398,18 @@ export const finishesData: Finish[] = [
       {
         question: "Is honed marble better than polished marble for floors?",
         answer: "Honed marble is less slippery and far better at concealing scratches, etch marks, and high-traffic foot wear, making it a favorite for floors."
+      },
+      {
+        question: "How often should honed marble flooring be resealed?",
+        answer: "Because honing leaves the micro-pores slightly open compared to mirror polish, apply an impregnating sealer every 12 months in high-traffic hallways and kitchens to prevent oil or coffee penetration."
+      },
+      {
+        question: "Can a honed finish be converted back to polished or vice versa in the future?",
+        answer: "Yes. A skilled stone restoration team can re-hone a polished floor or re-polish a honed floor on-site using sequential diamond grinding discs without removing the laid slabs."
+      },
+      {
+        question: "What honed grit levels are available at Granite Gallery?",
+        answer: "We offer honed surfaces from coarse 120-grit (ideal for exterior walkways) up to ultra-smooth 600-grit satin honed (ideal for luxury interior floors and vanity tops)."
       }
     ]
   },
@@ -343,6 +435,22 @@ export const finishesData: Finish[] = [
       {
         question: "What is a Latino finish on stone?",
         answer: "The Latino finish combines micro-abrasion and diamond brushing to give stone a velvet-soft tactile texture with reliable anti-slip properties."
+      },
+      {
+        question: "What are the key advantages of a Latino finish over standard flamed granite?",
+        answer: "The Latino finish produces a much softer, refined micro-relief that is pleasant for barefoot walking, whereas flamed granite can feel too coarse or sharp for indoor and terrace spaces."
+      },
+      {
+        question: "Is Latino-finished granite suitable for luxury bathroom floors?",
+        answer: "Yes. It delivers an R11 anti-slip safety rating when wet while maintaining a luxurious velvet aesthetic that coordinates with modern minimalist bathroom designs."
+      },
+      {
+        question: "How do you clean and maintain a Latino stone surface?",
+        answer: "Clean with regular mopping using pH-neutral stone detergents. Its uniform micro-texture does not trap grime and is easily cleaned with standard microfibre mops."
+      },
+      {
+        question: "Which granite colors look best with a Latino finish?",
+        answer: "Dark granites such as Absolute Black, Steel Grey, and Ash Black look stunning in a Latino finish, turning into rich graphite and charcoal matte tones."
       }
     ]
   },
@@ -368,6 +476,22 @@ export const finishesData: Finish[] = [
       {
         question: "How is an Antique finish achieved on natural stone?",
         answer: "Specialized rotary diamond wire brushes wear down softer mineral deposits while highlighting natural veins, creating an aged, soft-to-the-touch patina."
+      },
+      {
+        question: "What stones are best suited for an antique brushed finish?",
+        answer: "Marbles with rich mineral veining (such as Rainforest Green, Rainforest Brown, and Banswara White) and rustic sandstones produce the most dramatic undulating antique textures."
+      },
+      {
+        question: "Is an antique brushed finish difficult to keep clean?",
+        answer: "No. The undulating valleys are smoothly rounded off by diamond abrasive nylon brushes, allowing standard vacuuming and damp microfibre mopping to clean effortlessly."
+      },
+      {
+        question: "Does an antique finish hide scratches and daily wear?",
+        answer: "Exceptionally well. Because the surface is already textured with a vintage patina, everyday scuffs, minor scratches, and shoe marks blend naturally into the stone's rustic character."
+      },
+      {
+        question: "Can antique finished slabs be used outdoors in courtyards and verandahs?",
+        answer: "Yes. It is widely specified for heritage courtyards, pool surrounds, and traditional haveli verandahs because it offers excellent wet grip and timeless old-world charm."
       }
     ]
   },
@@ -401,6 +525,14 @@ export const finishesData: Finish[] = [
       {
         question: "Where is a Hydro Blast finish typically specified?",
         answer: "Because it is chemical-free and offers excellent slip resistance, it is popular for commercial flooring, exterior walkways, institutional spaces and museum floors where grip and a natural texture are both required."
+      },
+      {
+        question: "How does hydro-blasting compare to traditional sandblasting?",
+        answer: "Hydro-blasting uses pure high-pressure water without silica sand grit, avoiding airborne silica dust and leaving zero chemical residues or foreign abrasive particles embedded in the stone pores."
+      },
+      {
+        question: "Does hydro-blast stone require sealing?",
+        answer: "Yes. While waterjet texturing creates an organic anti-skid surface, applying a high-grade penetrating sealer protects the opened crystalline matrix from waterborne dirt and oil stains."
       }
     ]
   },

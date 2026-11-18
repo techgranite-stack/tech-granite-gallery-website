@@ -651,22 +651,41 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
       },
     ];
 
-    const faqs = (app?.faqs ?? []).length > 0
-      ? (app!.faqs as { question: string; answer: string }[])
-      : [
-          {
-            question: `What thickness is recommended for ${matName.toLowerCase()} ${appTitle.toLowerCase()}?`,
-            answer: `For residential and villa flooring, 18mm gangsaw calibrated slabs are standard. For heavy commercial floors or outdoor cladding, 20mm to 30mm calibrated slabs ensure superior structural deflection resistance.`,
-          },
-          {
-            question: `How do I prevent stains on ${matName.toLowerCase()}?`,
-            answer: `We recommend applying a high-grade penetrating impregnating sealer immediately after installation. This repels liquid spills like oil, wine, and turmeric while allowing the stone to breathe naturally.`,
-          },
-          {
-            question: `Can large format slabs be delivered to ${locName}?`,
-            answer: `Yes. Slabs up to 10×6 ft are packed in heavy-duty wooden A-frames with foam cushioning and shipped directly to ${locName} with transit insurance.`,
-          },
-        ];
+    const baseAppFaqs = (app?.faqs ?? []).map((f) => ({ question: f.question, answer: f.answer }));
+    const defaultAppFaqs = [
+      {
+        question: `What thickness is recommended for ${matName.toLowerCase()} ${appTitle.toLowerCase()}?`,
+        answer: `For residential and villa installations, 18mm gangsaw calibrated slabs are standard. For heavy commercial floors or outdoor cladding, 20mm to 30mm calibrated slabs ensure superior structural deflection resistance.`,
+      },
+      {
+        question: `How do I prevent stains and etching on ${matName.toLowerCase()}?`,
+        answer: `We recommend applying a high-grade penetrating impregnating sealer immediately after installation. This repels liquid spills like oil, wine, and turmeric while allowing the stone to breathe naturally.`,
+      },
+      {
+        question: `Can large format slabs be delivered to ${locName}?`,
+        answer: `Yes. Slabs up to 10×6 ft are packed in heavy-duty wooden A-frames with foam cushioning and shipped directly to ${locName} with full transit insurance.`,
+      },
+      {
+        question: `What adhesive and joint spacing should be used for ${matName.toLowerCase()} ${appTitle.toLowerCase()}?`,
+        answer: `Use polymer-modified flexible C2TE S1 thin-bed adhesives with minimum 95% back-buttering coverage to prevent hollow pockets. Maintain 2–3mm grout joints with movement joints every 4–5 meters to accommodate thermal expansion.`,
+      },
+      {
+        question: `Why choose natural ${matName.toLowerCase()} over vitrified tiles for ${appTitle.toLowerCase()}?`,
+        answer: `Natural ${matName.toLowerCase()} is 100% solid stone through its entire depth, meaning it can be restored, re-polished, and edge-moulded across generations without revealing an artificial ceramic biscuit or peeling top coat.`,
+      },
+      {
+        question: `Can I inspect and select specific slab lots from Kishangarh before dispatch to ${locName}?`,
+        answer: `Yes. We provide complete pre-dispatch transparency: visit our Kishangarh yard on the MEGA Highway or inspect lots via 4K live video calls, lot dry-lay photographs, and caliper thickness verification.`,
+      },
+    ];
+
+    const combinedAppFaqs = [...baseAppFaqs];
+    for (const item of defaultAppFaqs) {
+      if (!combinedAppFaqs.some((f) => f.question.toLowerCase() === item.question.toLowerCase())) {
+        combinedAppFaqs.push(item);
+      }
+    }
+    const faqs = combinedAppFaqs.slice(0, 6);
 
     return {
       heroImages,
@@ -754,18 +773,41 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
       { number: '25+ Yrs', label: 'Exterior Lifespan' },
     ];
 
-    const faqs = (finish?.faqs ?? []).length > 0
-      ? (finish!.faqs as { question: string; answer: string }[])
-      : [
-          {
-            question: `What are the benefits of ${finishName} ${matName.toLowerCase()}?`,
-            answer: `${finishName} finish provides enhanced slip resistance, eliminates glare from overhead lighting, and conceals fingerprints and water smudges better than high-gloss polished surfaces.`,
-          },
-          {
-            question: `Is ${finishName} stone suitable for outdoor use?`,
-            answer: `Yes, textured finishes like leathered, flamed, and shot-blast are heavily specified for outdoor pathways, pool copings, and exterior wall cladding due to their anti-slip grip and weather resilience.`,
-          },
-        ];
+    const baseFinishFaqs = (finish?.faqs ?? []).map((f) => ({ question: f.question, answer: f.answer }));
+    const defaultFinishFaqs = [
+      {
+        question: `What are the benefits of ${finishName} ${matName.toLowerCase()}?`,
+        answer: `${finishName} finish provides enhanced slip resistance, eliminates harsh lighting reflections, and conceals fingerprints and water marks far better than high-gloss mirror-polished surfaces.`,
+      },
+      {
+        question: `Is ${finishName} stone suitable for outdoor and high-moisture areas?`,
+        answer: `Yes. Textured finishes such as leathered, flamed, shot-blast, and honed are heavily specified for pool surrounds, verandahs, bathroom floors, and exterior facades due to their anti-slip grip (R10 to R12 ratings).`,
+      },
+      {
+        question: `How do you clean and maintain a ${finishName} stone surface?`,
+        answer: `Clean with a soft nylon brush or microfibre mop using neutral pH stone cleaners. Avoid acidic or abrasive cleansers that can degrade stone minerals or strip applied sealers.`,
+      },
+      {
+        question: `Does ${finishName} stone need to be sealed?`,
+        answer: `Yes. While mechanical texturing opens stone pores slightly, applying an impregnating penetrating sealer seals internal capillaries against oil and water while preserving the tactile matte texture.`,
+      },
+      {
+        question: `How does the price of ${finishName} finish compare to polished stone?`,
+        answer: `Processing ${finishName} finishes typically adds ₹10 to ₹35/sq ft over standard raw or polished slabs, depending on whether specialized diamond abrasive brushes, automated flaming torches, or acoustic waterjets are required.`,
+      },
+      {
+        question: `Can I order ${finishName} slabs delivered directly to ${locName}?`,
+        answer: `Yes. All ${finishName} slabs are processed in our Kishangarh factory, calibrated to 18mm/20mm/30mm, packed in fumigated wooden A-frames, and dispatched to ${locName} with transit insurance.`,
+      },
+    ];
+
+    const combinedFinishFaqs = [...baseFinishFaqs];
+    for (const item of defaultFinishFaqs) {
+      if (!combinedFinishFaqs.some((f) => f.question.toLowerCase() === item.question.toLowerCase())) {
+        combinedFinishFaqs.push(item);
+      }
+    }
+    const faqs = combinedFinishFaqs.slice(0, 6);
 
     return {
       heroImages,

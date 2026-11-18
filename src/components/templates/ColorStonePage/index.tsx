@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import PageHero from '@/components/sections/PageHero';
 import StoneListingSection from '@/components/sections/StoneListingSection';
+import FAQAccordion from '@/components/sections/FAQAccordion';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import type { StoneProduct, ColorFamily } from '@/types/stone';
@@ -123,6 +124,29 @@ export default function ColorStonePage({ data, products }: ColorStonePageProps) 
     { key: 'color', label: 'Color', display: 'swatch' as const, options: COLOR_FILTER_LIST },
   ];
 
+  const colorFaqs = [
+    {
+      question: `What makes ${colorLabel.toLowerCase()} natural stone varieties popular in luxury architecture?`,
+      answer: `${colorLabel} natural stone offers a timeless aesthetic versatile across contemporary, neoclassical, and minimalist interiors. Whether in subtle crystalline granites or deeply veined marbles, ${colorLabel.toLowerCase()} stones reflect light gracefully and pair seamlessly with wood, brass, and glass fixtures.`,
+    },
+    {
+      question: `What are the bestselling ${colorLabel.toLowerCase()} granite and marble varieties available in Kishangarh?`,
+      answer: `Our Kishangarh collection features prominent ${colorLabel.toLowerCase()} stones including ${products.slice(0, 4).map((p) => p.name).join(', ')}${products.length > 4 ? ', and more' : ''}. Each variety is available in bookmatched pairs and full gangsaw lots.`,
+    },
+    {
+      question: `How do I prevent staining and maintain ${colorLabel.toLowerCase()} stone surfaces?`,
+      answer: `We recommend applying a high-grade penetrating impregnating sealer right after installation. Clean regularly with neutral pH stone cleaners and avoid harsh acidic detergents (such as vinegar or bleach) to preserve the stone's natural crystal matrix.`,
+    },
+    {
+      question: `What is the price range for ${colorLabel.toLowerCase()} natural stone ex-factory Kishangarh?`,
+      answer: `Wholesale ex-factory rates in Kishangarh typically range from ₹55 to ₹135/sq ft for commercial to standard gangsaw granite, and ₹140 to ₹380+/sq ft for premium imported or exotic ${colorLabel.toLowerCase()} marble varieties, depending on lot purity and slab thickness.`,
+    },
+    {
+      question: `Can I inspect and reserve specific ${colorLabel.toLowerCase()} slab lots before shipment?`,
+      answer: `Yes. You can visit our Kishangarh yard on the MEGA Highway for hands-on slab selection, or book lots remotely via 4K live video walkthroughs, dry-lay lot photos, and caliper thickness measurements before dispatch.`,
+    },
+  ];
+
   return (
     <>
       <PageHero
@@ -168,6 +192,14 @@ export default function ColorStonePage({ data, products }: ColorStonePageProps) 
           </div>
         </div>
       </section>
+
+      <FAQAccordion
+        items={colorFaqs}
+        eyebrow="FAQ"
+        title={`${colorLabel} Stone`}
+        titleEm="Frequently Asked Questions"
+        description={`Expert answers on pricing, finishes, maintenance, and factory-direct dispatch for ${colorLabel.toLowerCase()} granite and marble slabs from Kishangarh.`}
+      />
 
       <ScrollingTagline items={taglineItems} />
 

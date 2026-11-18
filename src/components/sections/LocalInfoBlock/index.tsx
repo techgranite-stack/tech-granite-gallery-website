@@ -1,7 +1,7 @@
 import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react';
 import type { LandingLocalInfo } from '@/lib/landing-pages-data';
 import { siteConfig } from '@/config/site';
-import { addressOneLine, areasServed } from '@/data/local-seo';
+import { addressOneLine } from '@/data/local-seo';
 import styles from './LocalInfoBlock.module.css';
 
 /**
@@ -61,14 +61,6 @@ export default function LocalInfoBlock({ info }: { info: LandingLocalInfo }) {
                 <Mail size={16} className={styles.napIcon} aria-hidden="true" />
                 <span>{siteConfig.links.email}</span>
               </a>
-
-              <div className={styles.areas}>
-                {areasServed.map((a) => (
-                  <span key={a.name} className={styles.areaChip}>
-                    {a.name}
-                  </span>
-                ))}
-              </div>
             </div>
 
             <div className={styles.directions}>

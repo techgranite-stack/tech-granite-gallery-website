@@ -126,9 +126,6 @@ export default function FlagshipLandingPage({ data }: FlagshipLandingPageProps) 
       {/* 11. Knowledge Hub — Insights & Guides */}
       <ArticleCardGrid posts={data.blogPosts ?? defaultBlogPosts} />
 
-      {/* Local Delivery Corridors */}
-      <LocalDeliveryCorridor />
-
       {/* 12. Rich Domain FAQs with Built-in Google FAQPage Schema */}
       {data.faqs && data.faqs.length > 0 && (
         <FAQAccordion
@@ -145,6 +142,9 @@ export default function FlagshipLandingPage({ data }: FlagshipLandingPageProps) 
         bannerEyebrow={data.bannerCta?.eyebrow ?? 'Ready to Begin?'}
         bannerHeadline={data.bannerCta?.headline ?? 'Transform Your Space with Premium Stone'}
       />
+
+      {/* Direct Factory Dispatch & Delivery Corridors — in the bottom just before the footer */}
+      <LocalDeliveryCorridor />
     </>
   );
 }

@@ -197,8 +197,6 @@ export default async function FinishDetailPage(
         </section>
       )}
 
-      <LocalDeliveryCorridor />
-
       {finish.faqs && finish.faqs.length > 0 && (
         <FAQAccordion
           items={finish.faqs}
@@ -209,6 +207,9 @@ export default async function FinishDetailPage(
       )}
 
       <BannerContactForm />
+
+      {/* Direct Factory Dispatch & Delivery Corridors — in the bottom just before the footer */}
+      <LocalDeliveryCorridor />
     </>
   );
 }

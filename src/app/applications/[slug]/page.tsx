@@ -224,9 +224,6 @@ export default async function ApplicationDetailPage(
       )}
       */}
 
-      {/* Direct Site Delivery Corridors */}
-      <LocalDeliveryCorridor />
-
       {/* 4. FAQs accordion (default white/ivory background) */}
       {app.faqs && app.faqs.length > 0 && (
         <FAQAccordion
@@ -261,6 +258,9 @@ export default async function ApplicationDetailPage(
       <ProcessSteps />
 
       <BannerContactForm />
+
+      {/* Direct Factory Dispatch & Delivery Corridors — in the bottom just before the footer */}
+      <LocalDeliveryCorridor />
     </>
   );
 }

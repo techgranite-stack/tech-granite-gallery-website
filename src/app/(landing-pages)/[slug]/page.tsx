@@ -311,12 +311,6 @@ export default function CatchAllPage({ params }: PageProps) {
 
       {localInfo && <LocalInfoBlock info={localInfo} />}
 
-      <LocalDeliveryCorridor
-        stoneSlug={parsedSlug.stoneSlug}
-        material={parsedSlug.material}
-        currentLocation={parsedSlug.location}
-      />
-
       {faqs.length > 0 && (
         <FAQAccordion
           items={faqs}
@@ -346,6 +340,13 @@ export default function CatchAllPage({ params }: PageProps) {
       )}
 
       <BannerContactForm />
+
+      {/* Direct Factory Dispatch & Delivery Corridors — in the bottom just before the footer */}
+      <LocalDeliveryCorridor
+        stoneSlug={parsedSlug.stoneSlug}
+        material={parsedSlug.material}
+        currentLocation={parsedSlug.location}
+      />
     </>
   );
 }

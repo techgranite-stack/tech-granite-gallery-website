@@ -194,8 +194,6 @@ export default function ColorStonePage({ data, products }: ColorStonePageProps) 
         </div>
       </section>
 
-      <LocalDeliveryCorridor />
-
       <FAQAccordion
         items={colorFaqs}
         eyebrow="FAQ"
@@ -207,6 +205,9 @@ export default function ColorStonePage({ data, products }: ColorStonePageProps) 
       <ScrollingTagline items={taglineItems} />
 
       <BannerContactForm hideBanner />
+
+      {/* Direct Factory Dispatch & Delivery Corridors — in the bottom just before the footer */}
+      <LocalDeliveryCorridor />
     </>
   );
 }

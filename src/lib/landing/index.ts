@@ -22,23 +22,43 @@ export function getLandingPage(slug: string): LandingPageData | undefined {
   let entry = getManifestEntryBySlug(slug);
   const parsed = parseSlug(slug);
 
-  // If not explicitly in manifest, synthesize verified entry if it represents a valid Product x City combo
-  if (!entry && parsed.pattern === 'P-Stone' && parsed.stoneSlug && parsed.location) {
-    const stone = getProductBySlug(parsed.stoneSlug);
-    const loc = getLocation(parsed.location);
-    if (stone && loc) {
-      const mat = (stone.category === 'imported-marble' ? 'marble' : stone.category) as string;
-      const matCap = mat.charAt(0).toUpperCase() + mat.slice(1);
+  // If not explicitly in manifest, synthesize verified entry if it represents a valid combo
+  if (!entry) {
+    if (parsed.pattern === 'P-Stone' && parsed.stoneSlug && parsed.location) {
+      const stone = getProductBySlug(parsed.stoneSlug);
+      const loc = getLocation(parsed.location);
+      if (stone && loc) {
+        const mat = (stone.category === 'imported-marble' ? 'marble' : stone.category) as string;
+        const matCap = mat.charAt(0).toUpperCase() + mat.slice(1);
+        entry = {
+          id: 10000 + Math.abs(slug.split('').reduce((acc, c) => ((acc << 5) - acc) + c.charCodeAt(0), 0) % 90000),
+          slug,
+          route: `/${slug}`,
+          pattern: 'P-Stone',
+          primaryKeyword: `${stone.name.toLowerCase()} in ${loc.name.toLowerCase()}`,
+          metaTitle: `${stone.name} in ${loc.name} | Slabs & Rates`,
+          categoryDimensions: `Stone:${stone.name}|L:${loc.name}|M:${matCap}`,
+          wave: 'Wave 3',
+          catalogGrounding: `${stone.slug}|${parsed.location}`,
+          verified: true,
+        };
+      }
+    } else if (parsed.material && parsed.application) {
+      const loc = parsed.location ? getLocation(parsed.location) : undefined;
+      const matCap = parsed.material.charAt(0).toUpperCase() + parsed.material.slice(1);
+      const appCap = parsed.application.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+      const pattern = parsed.location ? 'P4' : 'P3';
+
       entry = {
-        id: 10000 + Math.abs(slug.split('').reduce((acc, c) => ((acc << 5) - acc) + c.charCodeAt(0), 0) % 90000),
+        id: 20000 + Math.abs(slug.split('').reduce((acc, c) => ((acc << 5) - acc) + c.charCodeAt(0), 0) % 70000),
         slug,
         route: `/${slug}`,
-        pattern: 'P-Stone',
-        primaryKeyword: `${stone.name.toLowerCase()} in ${loc.name.toLowerCase()}`,
-        metaTitle: `${stone.name} in ${loc.name} | Slabs & Rates`,
-        categoryDimensions: `Stone:${stone.name}|L:${loc.name}|M:${matCap}`,
+        pattern,
+        primaryKeyword: loc ? `${parsed.material} ${appCap.toLowerCase()} in ${loc.name.toLowerCase()}` : `${parsed.material} ${appCap.toLowerCase()}`,
+        metaTitle: loc ? `${matCap} ${appCap} in ${loc.name} | Architectural Slabs` : `${matCap} ${appCap} Slabs`,
+        categoryDimensions: loc ? `M:${matCap}|A:${appCap}|L:${loc.name}` : `M:${matCap}|A:${appCap}`,
         wave: 'Wave 3',
-        catalogGrounding: `${stone.slug}|${parsed.location}`,
+        catalogGrounding: `${parsed.material}|${parsed.application}${parsed.location ? `|${parsed.location}` : ''}`,
         verified: true,
       };
     }

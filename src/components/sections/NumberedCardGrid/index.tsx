@@ -15,6 +15,7 @@ if (typeof window !== 'undefined') {
 interface NumberedCardGridProps {
   reasons?: WhyUsReason[];
   marqueeItems?: string[];
+  showMarquee?: boolean;
   title?: string;
   /** Small label above the title. */
   eyebrow?: string;
@@ -29,6 +30,7 @@ interface NumberedCardGridProps {
 export default function NumberedCardGrid({
   reasons = whyUsReasons,
   marqueeItems = whyUsMarquee,
+  showMarquee = true,
   title,
   eyebrow = 'Unrivaled Expertise',
   subtitle = 'Two decades of setting the gold standard in the global stone industry.',
@@ -104,16 +106,18 @@ export default function NumberedCardGrid({
         </Reveal>
 
         {/* Marquee strip — qualities */}
-        <div className={styles.marqueeWrap}>
-          <div className={styles.marqueeTrack}>
-            {marqueeItems.map((item, i) => (
-              <span key={i} className={styles.marqueeItem}>
-                <span className={styles.marqueeGem}>✦</span>
-                {item}
-              </span>
-            ))}
+        {showMarquee && marqueeItems.length > 0 && (
+          <div className={styles.marqueeWrap}>
+            <div className={styles.marqueeTrack}>
+              {marqueeItems.map((item, i) => (
+                <span key={i} className={styles.marqueeItem}>
+                  <span className={styles.marqueeGem}>✦</span>
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         <div ref={gridRef} onScroll={handleScroll} className={styles.grid}>
           {reasons.map((r, i) => (

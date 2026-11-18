@@ -24,10 +24,14 @@ import LocalDeliveryCorridor from '@/components/sections/LocalDeliveryCorridor';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import StatsBand from '@/components/sections/StatsBand';
+import MarqueeStrip from '@/components/sections/MarqueeStrip';
 import NumberedCardGrid from '@/components/sections/NumberedCardGrid';
 import MosaicGrid from '@/components/sections/MosaicGrid';
+import ApplicationGallery from '@/components/sections/ApplicationGallery';
+import ProcessSteps from '@/components/sections/ProcessSteps';
 import FlagshipLandingPage from '@/components/templates/FlagshipLandingPage';
 import { getFlagshipPage, getAllFlagshipSlugs } from '@/data/flagship-pages';
+import { applicationsData } from '@/lib/application-data';
 import { localBusinessJsonLd, localServiceJsonLd, trailJsonLd } from '@/lib/structured-data';
 import { getAllLandingSlugs, getLandingPage } from '@/lib/landing';
 import { parseSlug } from '@/lib/landing/slug';
@@ -135,6 +139,20 @@ export default function CatchAllPage({ params }: PageProps) {
 
   const parsedSlug = parseSlug(params.slug);
 
+  const isApplicationPage = Boolean(parsedSlug.application);
+  const appData = parsedSlug.application
+    ? applicationsData.find((a) => a.slug === parsedSlug.application)
+    : undefined;
+  const appTitle =
+    appData?.title ??
+    (parsedSlug.application
+      ? parsedSlug.application.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+      : 'Application');
+  const appGalleryImages =
+    appData?.sampleImages && appData.sampleImages.length > 0
+      ? appData.sampleImages
+      : (appData?.gallery ?? []);
+
   const { hero, intro, blocks, showcase, tagline, localInfo, faqs, faqHeading, service } = page;
 
   // Resolve stones for the collection listing section based on material category
@@ -232,9 +250,14 @@ export default function CatchAllPage({ params }: PageProps) {
         <StatsBand stats={page.statsBand} />
       )}
 
+      {/* Marquee ticker strip placed directly after StatsBand */}
+      {page.numberedCards?.marqueeItems && page.numberedCards.marqueeItems.length > 0 && (
+        <MarqueeStrip items={page.numberedCards.marqueeItems} />
+      )}
+
       <LandingProse block={intro} index={0} />
 
-      {page.mosaicApps && page.mosaicApps.length > 0 && (
+      {!isApplicationPage && page.mosaicApps && page.mosaicApps.length > 0 && (
         <MosaicGrid
           apps={page.mosaicApps}
           eyebrow="APPLICATION SHOWCASE"
@@ -248,6 +271,11 @@ export default function CatchAllPage({ params }: PageProps) {
         <LandingProse key={block.id} block={block} index={idx + 1} />
       ))}
 
+      {/* For Application Pages: Gallery In Real Spaces placed directly before INSTALLATION PROTOCOL */}
+      {isApplicationPage && appGalleryImages.length > 0 && (
+        <ApplicationGallery images={appGalleryImages} title={appTitle} />
+      )}
+
       {page.numberedCards && page.numberedCards.reasons.length > 0 && (
         <NumberedCardGrid
           reasons={page.numberedCards.reasons.map((r, i) => ({
@@ -259,6 +287,9 @@ export default function CatchAllPage({ params }: PageProps) {
           title={page.numberedCards.title}
           subtitle={page.numberedCards.subtitle}
           marqueeItems={page.numberedCards.marqueeItems}
+          showMarquee={false}
+          bg="var(--stone-200)"
+          cardBg="var(--stone-100)"
         />
       )}
 
@@ -293,6 +324,20 @@ export default function CatchAllPage({ params }: PageProps) {
                 description: faqHeading.description,
               }
             : {})}
+        />
+      )}
+
+      {/* For Application Pages: From Brief to Installation placed right after FAQs */}
+      {isApplicationPage && <ProcessSteps />}
+
+      {/* For Application Pages: APPLICATION SHOWCASE moved right before Ready to Begin? */}
+      {isApplicationPage && page.mosaicApps && page.mosaicApps.length > 0 && (
+        <MosaicGrid
+          apps={page.mosaicApps}
+          eyebrow="APPLICATION SHOWCASE"
+          title="Architectural"
+          titleEm="Applications"
+          description="Engineered for high-traffic durability, stain resistance, and timeless luxury aesthetics."
         />
       )}
 

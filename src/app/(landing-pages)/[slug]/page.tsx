@@ -24,7 +24,6 @@ import LocalDeliveryCorridor from '@/components/sections/LocalDeliveryCorridor';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
 import StatsBand from '@/components/sections/StatsBand';
-import MarqueeStrip from '@/components/sections/MarqueeStrip';
 import NumberedCardGrid from '@/components/sections/NumberedCardGrid';
 import MosaicGrid from '@/components/sections/MosaicGrid';
 import ApplicationGallery from '@/components/sections/ApplicationGallery';
@@ -155,6 +154,11 @@ export default function CatchAllPage({ params }: PageProps) {
 
   const { hero, intro, blocks, showcase, tagline, localInfo, faqs, faqHeading, service } = page;
 
+  const marqueeItems =
+    page.numberedCards?.marqueeItems && page.numberedCards.marqueeItems.length > 0
+      ? page.numberedCards.marqueeItems
+      : (tagline && tagline.length > 0 ? tagline : []);
+
   // Resolve stones for the collection listing section based on material category
   const slugLower = page.slug.toLowerCase();
   const titleLower = (page.hero.h1 ?? '').toLowerCase();
@@ -250,9 +254,9 @@ export default function CatchAllPage({ params }: PageProps) {
         <StatsBand stats={page.statsBand} />
       )}
 
-      {/* Marquee ticker strip placed directly after StatsBand */}
-      {page.numberedCards?.marqueeItems && page.numberedCards.marqueeItems.length > 0 && (
-        <MarqueeStrip items={page.numberedCards.marqueeItems} />
+      {/* Original Copper Marquee directly after StatsBand */}
+      {marqueeItems && marqueeItems.length > 0 && (
+        <ScrollingTagline items={marqueeItems} />
       )}
 
       <LandingProse block={intro} index={0} />
@@ -303,7 +307,7 @@ export default function CatchAllPage({ params }: PageProps) {
         />
       )}
 
-      {tagline && tagline.length > 0 && <ScrollingTagline items={tagline} />}
+      {!isApplicationPage && tagline && tagline.length > 0 && <ScrollingTagline items={tagline} />}
 
       {localInfo && <LocalInfoBlock info={localInfo} />}
 

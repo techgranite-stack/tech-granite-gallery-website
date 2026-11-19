@@ -115,38 +115,27 @@ export default function NumberedCardGrid({
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        {/* Subtle architectural stone medallion in mid portion */}
-        <g opacity="0.32" transform="translate(720, 210)">
-          <circle r="150" stroke="rgba(192, 133, 82, 0.28)" strokeWidth="1" strokeDasharray="4 6" fill="none" />
-          <circle r="100" stroke="rgba(192, 133, 82, 0.20)" strokeWidth="0.8" fill="none" />
-          <circle r="45" stroke="rgba(192, 133, 82, 0.24)" strokeWidth="0.8" fill="none" />
-          <line x1="-180" y1="0" x2="180" y2="0" stroke="rgba(192, 133, 82, 0.24)" strokeWidth="0.8" strokeDasharray="4 8" />
-          <line x1="0" y1="-180" x2="0" y2="180" stroke="rgba(192, 133, 82, 0.24)" strokeWidth="0.8" strokeDasharray="4 8" />
-        </g>
+        {/* Subtle architectural vertical guides aligned with 1300px container */}
+        <line x1="70" y1="0" x2="70" y2="900" stroke="rgba(192, 133, 82, 0.08)" strokeWidth="1" strokeDasharray="6 10" />
+        <line x1="1370" y1="0" x2="1370" y2="900" stroke="rgba(192, 133, 82, 0.08)" strokeWidth="1" strokeDasharray="6 10" />
 
-        {/* Architectural stone side medallions matching site-wide style */}
-        <g opacity="0.25" transform="translate(80, 280)">
-          <path d="M50,150 C10,130 5,80 25,45 C35,28 45,15 50,0 C55,15 65,28 75,45 C95,80 90,130 50,150 Z" fill="none" stroke="rgba(192, 133, 82, 0.65)" strokeWidth="1.5" />
-          <path d="M50,135 C20,118 15,78 30,50 C38,36 46,24 50,12 C54,24 62,36 70,50 C85,78 80,118 50,135 Z" fill="none" stroke="rgba(192, 133, 82, 0.45)" strokeWidth="1" strokeDasharray="2 3" />
-          <circle cx="50" cy="80" r="8" fill="none" stroke="rgba(192, 133, 82, 0.55)" strokeWidth="1" />
-        </g>
-        <g opacity="0.25" transform="translate(1310, 280)">
-          <path d="M50,150 C10,130 5,80 25,45 C35,28 45,15 50,0 C55,15 65,28 75,45 C95,80 90,130 50,150 Z" fill="none" stroke="rgba(192, 133, 82, 0.65)" strokeWidth="1.5" />
-          <path d="M50,135 C20,118 15,78 30,50 C38,36 46,24 50,12 C54,24 62,36 70,50 C85,78 80,118 50,135 Z" fill="none" stroke="rgba(192, 133, 82, 0.45)" strokeWidth="1" strokeDasharray="2 3" />
-          <circle cx="50" cy="80" r="8" fill="none" stroke="rgba(192, 133, 82, 0.55)" strokeWidth="1" />
-        </g>
+        {/* Delicate architectural corner ticks */}
+        <path d="M60 60 H80 M70 50 V70" stroke="rgba(192, 133, 82, 0.20)" strokeWidth="1" />
+        <path d="M1360 60 H1380 M1370 50 V70" stroke="rgba(192, 133, 82, 0.20)" strokeWidth="1" />
+        <path d="M60 840 H80 M70 830 V850" stroke="rgba(192, 133, 82, 0.20)" strokeWidth="1" />
+        <path d="M1360 840 H1380 M1370 830 V850" stroke="rgba(192, 133, 82, 0.20)" strokeWidth="1" />
 
-        {/* Natural stone strata fissures */}
+        {/* Natural, ultra-fine stone strata fissure with subtle opacity */}
         <path
-          d="M-40 180 C 260 240, 520 120, 800 280 C 1080 440, 1320 320, 1480 420"
-          stroke="rgba(192, 133, 82, 0.20)"
-          strokeWidth="1.5"
+          d="M-40 220 C 320 170, 660 260, 980 190 C 1220 150, 1390 230, 1480 190"
+          stroke="rgba(192, 133, 82, 0.10)"
+          strokeWidth="1"
           strokeDasharray="4 8"
         />
         <path
-          d="M-20 620 C 320 540, 680 720, 1020 580 C 1240 490, 1380 620, 1480 680"
-          stroke="rgba(192, 133, 82, 0.16)"
-          strokeWidth="1.2"
+          d="M-20 680 C 380 610, 740 730, 1100 630 C 1280 580, 1400 660, 1480 620"
+          stroke="rgba(192, 133, 82, 0.08)"
+          strokeWidth="1"
         />
       </svg>
 

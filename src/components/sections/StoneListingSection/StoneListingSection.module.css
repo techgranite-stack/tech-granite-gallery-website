@@ -4,7 +4,8 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .section {
-  background: var(--ivory);
+  position: relative;
+  background-color: var(--ivory);
   padding: var(--section-py) 0;
   /* Contains any horizontal overflow from chip row or carousel */
   overflow-x: hidden;

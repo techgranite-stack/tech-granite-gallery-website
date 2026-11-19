@@ -6,6 +6,7 @@ import PageHero from '@/components/sections/PageHero';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import LocalDeliveryCorridor from '@/components/sections/LocalDeliveryCorridor';
+import OtherFinishesSection from '@/components/sections/OtherFinishesSection';
 import { finishesData } from '@/lib/finish-data';
 import { buildMetadata } from '@/lib/seo';
 import styles from './finish.module.css';
@@ -171,32 +172,6 @@ export default async function FinishDetailPage(
         </div>
       </section>
 
-      {/* Other Finishes */}
-      {related.length > 0 && (
-        <section className={styles.relatedSection}>
-          <div className={styles.container}>
-            <div className={styles.relatedHeader}>
-              <span className="section-eyebrow">Other Finishes</span>
-              <h2 className={styles.sectionTitle}>Explore More <em>Finishes</em></h2>
-            </div>
-            <div className={styles.relatedGrid}>
-              {related.map((f) => (
-                <Link key={f.slug} href={`/finishes/${f.slug}`} className={styles.relatedCard}>
-                  <div className={styles.relatedImgWrap}>
-                    <Image src={f.image} alt={f.name} fill sizes="25vw" className={styles.relatedImg} />
-                  </div>
-                  <div className={styles.relatedOverlay} />
-                  <div className={styles.relatedContent}>
-                    <p className={styles.relatedName}>{f.name}</p>
-                    <p className={styles.relatedSub}>{f.texture}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {finish.faqs && finish.faqs.length > 0 && (
         <FAQAccordion
           items={finish.faqs}
@@ -205,6 +180,9 @@ export default async function FinishDetailPage(
           eyebrow="FAQ"
         />
       )}
+
+      {/* Other Finishes - Warm Sandstone #C8B89A matching /finishes page */}
+      <OtherFinishesSection currentSlug={slug} />
 
       <BannerContactForm />
 

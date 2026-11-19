@@ -323,3 +323,14 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--ivory); }
 ::-webkit-scrollbar-thumb { background: var(--copper); border-radius: 10px; }
+
+/* ============================================
+   CUSTOM CURSOR (DESKTOP)
+============================================ */
+body.custom-cursor-active,
+body.custom-cursor-active a,
+body.custom-cursor-active button,
+body.custom-cursor-active [role="button"],
+body.custom-cursor-active label {
+  cursor: none !important;
+}

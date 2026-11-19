@@ -189,32 +189,51 @@
   text-transform: capitalize;
 }
 
-/* Related */
+/* Related — Warm Stone Theme */
 .relatedSection {
-  padding: 80px 0;
-  background: rgba(192, 133, 82, 0.04);
+  padding: 88px 0;
+  background: var(--stone-200, #E5D8C8);
+  border-top: 1px solid rgba(192, 133, 82, 0.24);
+  border-bottom: 1px solid rgba(192, 133, 82, 0.24);
 }
 .relatedHeader { text-align: center; margin-bottom: 48px; }
+.relatedHeader :global(.section-eyebrow) {
+  color: var(--copper);
+}
+.relatedHeader .sectionTitle {
+  color: var(--mahogany);
+}
+.relatedHeader .sectionTitle em {
+  color: var(--copper);
+}
 .relatedGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 18px;
 }
 .relatedCard {
   position: relative;
-  height: 220px;
-  border-radius: 12px;
+  height: 240px;
+  border-radius: 14px;
   overflow: hidden;
   display: block;
   text-decoration: none;
+  border: 1px solid rgba(192, 133, 82, 0.25);
+  box-shadow: 0 8px 24px rgba(75, 46, 43, 0.09);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 .relatedImgWrap { position: absolute; inset: 0; }
-.relatedImg { object-fit: cover; transition: transform 0.5s ease; }
-.relatedCard:hover .relatedImg { transform: scale(1.06); }
+.relatedImg { object-fit: cover; transition: transform 0.6s ease; }
+.relatedCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--copper);
+  box-shadow: 0 16px 36px rgba(75, 46, 43, 0.18), 0 0 16px rgba(192, 133, 82, 0.2);
+}
+.relatedCard:hover .relatedImg { transform: scale(1.08); }
 .relatedOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(75, 46, 43, 0.85) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(44, 27, 20, 0.9) 0%, rgba(44, 27, 20, 0.2) 55%, transparent 85%);
 }
 .relatedContent {
   position: absolute;
@@ -222,20 +241,20 @@
   left: 0;
   right: 0;
   z-index: 2;
-  padding: 16px;
+  padding: 18px;
 }
 .relatedName {
   font-family: var(--font-serif);
-  font-size: 1.05rem;
-  color: var(--ivory);
+  font-size: 1.15rem;
+  color: #FFF8F0;
   margin-bottom: 4px;
 }
 .relatedSub {
   font-family: var(--font-sans);
   font-size: 10px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 248, 240, 0.5);
+  color: var(--copper-light, #DDA15E);
 }
 
 /* Responsive */

@@ -4,12 +4,12 @@
   left: 0;
   width: 8px;
   height: 8px;
-  background: var(--copper);
+  background: var(--copper, #C08552);
   border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
   will-change: transform;
 }
 
@@ -17,27 +17,31 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(192, 133, 82, 0.4);
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid rgba(192, 133, 82, 0.45);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   opacity: 0;
-  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  transition:
+    opacity 0.2s ease,
+    width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.25s ease,
+    border-color 0.25s ease;
   will-change: transform;
 }
 
 .ring.expanded {
-  width: 60px;
-  height: 60px;
-  background: rgba(192, 133, 82, 0.08);
-  border-color: var(--copper);
-  transform: translate(-30px, -30px); /* Adjusted for larger size */
+  width: 56px;
+  height: 56px;
+  background: rgba(192, 133, 82, 0.12);
+  border-color: var(--copper, #C08552);
+  box-shadow: 0 0 16px rgba(192, 133, 82, 0.22);
 }
 
-/* Hide the copper cursor over zoomable images and while the lightbox is open,
-   so the native magnifying-glass (zoom-in / zoom-out) cursor shows cleanly. */
+/* Hide custom copper cursor over zoomable images or while lightboxes are open */
 :global(body.cursor-magnify) .dot,
 :global(body.cursor-magnify) .ring,
 :global(body.lightbox-open) .dot,
@@ -45,6 +49,10 @@
   opacity: 0 !important;
 }
 
+/* Completely disabled on touch screens */
 @media (pointer: coarse) {
-  .dot, .ring { display: none !important; }
+  .dot,
+  .ring {
+    display: none !important;
+  }
 }

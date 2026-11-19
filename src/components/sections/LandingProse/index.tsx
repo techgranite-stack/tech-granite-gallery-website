@@ -41,13 +41,9 @@ export default function LandingProse({ block, index = 0 }: LandingProseProps) {
           {/* Left Column: Sticky Editorial Heading & Trust Marker */}
           <div className={styles.header}>
             {block.eyebrow && (
-              <div className={styles.eyebrowRow}>
-                <span className={styles.eyebrowDash}>—</span>
-                <span className={`section-eyebrow ${styles.eyebrow}`}>
-                  {block.eyebrow}
-                </span>
-                <span className={styles.eyebrowDash}>—</span>
-              </div>
+              <span className={`section-eyebrow ${styles.eyebrow}`}>
+                {block.eyebrow}
+              </span>
             )}
 
             <h2 className={styles.title}>

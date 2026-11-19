@@ -11,9 +11,11 @@ interface ApplicationGalleryProps {
   interval?: number;
 }
 
-export default function ApplicationGallery({ images, title, interval = 4000 }: ApplicationGalleryProps) {
+export default function ApplicationGallery({ images, title, interval = 5000 }: ApplicationGalleryProps) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
   const touchStartX = useRef<number | null>(null);
   const mouseStartX = useRef<number | null>(null);
   const thumbStripRef = useRef<HTMLDivElement>(null);
@@ -26,21 +28,43 @@ export default function ApplicationGallery({ images, title, interval = 4000 }: A
     setIndex((i) => (i + 1) % images.length);
   }, [images.length]);
 
-  // Auto-advance
+  // Track if gallery section is actually in the viewport
   useEffect(() => {
-    if (images.length <= 1 || paused) return;
+    const el = sectionRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setIsInView(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-advance ONLY when visible in viewport and not paused
+  useEffect(() => {
+    if (images.length <= 1 || paused || !isInView) return;
     const id = setInterval(nextSlide, interval);
     return () => clearInterval(id);
-  }, [images.length, paused, interval, nextSlide]);
+  }, [images.length, paused, isInView, interval, nextSlide]);
 
-  // Sync thumbnail scroll position
+  // Sync thumbnail scroll position purely via scrollLeft (never scrollTo, never smooth-scroll anchoring)
   useEffect(() => {
-    if (!thumbStripRef.current) return;
-    const activeThumb = thumbStripRef.current.children[index] as HTMLElement;
+    if (!isInView) return;
+    const strip = thumbStripRef.current;
+    if (!strip) return;
+    const activeThumb = strip.children[index] as HTMLElement;
     if (activeThumb) {
-      activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      const targetLeft =
+        activeThumb.offsetLeft - strip.offsetWidth / 2 + activeThumb.offsetWidth / 2;
+      // Direct scrollLeft assignment prevents browser from scrolling the window
+      strip.scrollLeft = targetLeft;
     }
-  }, [index]);
+  }, [index, isInView]);
 
   if (images.length === 0) return null;
 
@@ -76,7 +100,7 @@ export default function ApplicationGallery({ images, title, interval = 4000 }: A
   };
 
   return (
-    <section className={styles.section} aria-label={`${title} Gallery`}>
+    <section ref={sectionRef} className={styles.section} aria-label={`${title} Gallery`}>
       <div className={styles.container}>
         <div className={styles.header}>
           <span className="section-eyebrow">Gallery</span>

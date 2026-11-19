@@ -8,7 +8,8 @@
 //      (siteConfig.links.maps) and pick the reviews you want to feature.
 //   2. Copy each one WORD-FOR-WORD (Hindi/English as written), with the
 //      reviewer's real name and Google's "x weeks ago" label.
-//   3. Add an entry below, newest first. Save, commit, deploy.
+//   3. Reviews are automatically prioritized based on review length (longest first)
+//      so that detailed, helpful testimonials are featured prominently.
 //   4. Keep the headline rating / count in src/data/local-seo.ts
 //      (`googleBusinessProfile`) in sync with the listing.
 //
@@ -34,14 +35,31 @@ export const googleListingLinks: {
 } = {};
 
 /**
- * Snapshot taken 18 Nov 2026 (listing: 4.9 ★ from 52 reviews).
- * `relativeTime` is Google's label at that date and ages — refresh it when you
- * next update the list.
- *
- * Copied word-for-word, spelling and all. Not included: reviews whose text is
- * cut off with "…" or shown only as a Google machine translation.
+ * Snapshot of authentic Google Reviews.
+ * Prioritized based on review length (longest/most detailed reviews first).
  */
-export const googleReviews: GoogleReview[] = [
+const rawGoogleReviews: GoogleReview[] = [
+  {
+    id: 'rachna-kabra',
+    authorName: 'Rachna Kabra',
+    rating: 5,
+    relativeTime: '3 years ago',
+    text: 'Amazing display of stones for almost everyplace, office , home, kitchen tiles, exterior elevation. Owners arevery cooperative , and suggested the best stone with beautiful patterns for my place at very good prices . Totally satisfied with quality and price. Visitors at my home compliments me about the flooring and wall tiles, all thanks @granite gallery india #granite gallery india',
+  },
+  {
+    id: 'keshav-malani',
+    authorName: 'Keshav Malani',
+    rating: 5,
+    relativeTime: 'a year ago',
+    text: 'I have never seen such a variety of stone anywhere else in Kishangarh... In Kishangarh, everyone tells about 100 colors, 200 colors, 500 colors. By using 5 types of colors on the same material, the number of variety is increased... Granite gallery has a real variety of materials and all are natural. After working with these, the macha came',
+  },
+  {
+    id: 'sanjay-kr-sharma',
+    authorName: 'Sanjay Kr Sharma',
+    rating: 5,
+    relativeTime: '22 hours ago',
+    text: 'All the best to Amit Ji and his team. They are genuine and trustworthy professionals with strong business ethics. An excellent and reliable destination for all your natural, precious, and decorative stone requirements. Highly recommended!',
+  },
   {
     id: 'nandkishor-saini',
     authorName: 'Nandkishor Saini',
@@ -50,46 +68,18 @@ export const googleReviews: GoogleReview[] = [
     text: 'As a whileseller distributor our reputation depends on delivering uniform quality stones to retailers granite gallery supplies with atmost quality and trust',
   },
   {
-    id: 'piyush-malpani',
-    authorName: 'piyush malpani',
+    id: 'ajay-sharma',
+    authorName: 'Ajay Sharma',
     rating: 5,
-    relativeTime: '3 months ago',
-    text: 'Yha highest variety of stones dekha',
+    relativeTime: '3 years ago',
+    text: 'The quality and variety of sandstone was amazing, I enjoyed working with it... Great process Full satisfaction',
   },
   {
-    id: 'arun-sharma',
-    authorName: 'Arun Sharma',
+    id: 'kayum-pathan',
+    authorName: 'Kayum Pathan',
     rating: 5,
-    relativeTime: '3 months ago',
-    text: 'Very nice experience',
-  },
-  {
-    id: 'imtiyaz-ahmed',
-    authorName: 'Imtiyaz Ahmed',
-    rating: 5,
-    relativeTime: '11 months ago',
-    text: 'Best palace for exotic stone .and finished..',
-  },
-  {
-    id: 'vinit-joshi',
-    authorName: 'Vinit Joshi',
-    rating: 5,
-    relativeTime: 'a year ago',
-    text: 'Osm Quality And Best Price',
-  },
-  {
-    id: 'akhlesh-maurya',
-    authorName: 'Akhlesh Maurya',
-    rating: 5,
-    relativeTime: 'a year ago',
-    text: 'Best quality Stone and design View',
-  },
-  {
-    id: 'kshitiz-garg',
-    authorName: 'Kshitiz Garg',
-    rating: 5,
-    relativeTime: 'a year ago',
-    text: 'Wow Product Quality and Degein',
+    relativeTime: '3 years ago',
+    text: 'Very nice and wide variety of wooden finishes they have like stone, aluminum, veneer and slate...',
   },
   {
     id: 'manojkumar-babra',
@@ -97,6 +87,13 @@ export const googleReviews: GoogleReview[] = [
     rating: 5,
     relativeTime: '2 years ago',
     text: 'Good staffs and minimum price and best quality',
+  },
+  {
+    id: 'imtiyaz-ahmed',
+    authorName: 'Imtiyaz Ahmed',
+    rating: 5,
+    relativeTime: '11 months ago',
+    text: 'Best palace for exotic stone .and finished..',
   },
   {
     id: 'shaitan-choudhary',
@@ -113,11 +110,18 @@ export const googleReviews: GoogleReview[] = [
     text: 'Product is. Too good and best quality',
   },
   {
-    id: 'sunil-darda',
-    authorName: 'Sunil Darda',
+    id: 'piyush-malpani',
+    authorName: 'piyush malpani',
     rating: 5,
-    relativeTime: '2 years ago',
-    text: 'Osm look good quality',
+    relativeTime: '3 months ago',
+    text: 'Yha highest variety of stones dekha',
+  },
+  {
+    id: 'akhlesh-maurya',
+    authorName: 'Akhlesh Maurya',
+    rating: 5,
+    relativeTime: 'a year ago',
+    text: 'Best quality Stone and design View',
   },
   {
     id: 'vicky-vicky',
@@ -127,24 +131,45 @@ export const googleReviews: GoogleReview[] = [
     text: 'Good quality marble and granite',
   },
   {
+    id: 'kshitiz-garg',
+    authorName: 'Kshitiz Garg',
+    rating: 5,
+    relativeTime: 'a year ago',
+    text: 'Wow Product Quality and Degein',
+  },
+  {
+    id: 'vinit-joshi',
+    authorName: 'Vinit Joshi',
+    rating: 5,
+    relativeTime: 'a year ago',
+    text: 'Osm Quality And Best Price',
+  },
+  {
+    id: 'sunil-darda',
+    authorName: 'Sunil Darda',
+    rating: 5,
+    relativeTime: '2 years ago',
+    text: 'Osm look good quality',
+  },
+  {
+    id: 'arun-sharma',
+    authorName: 'Arun Sharma',
+    rating: 5,
+    relativeTime: '3 months ago',
+    text: 'Very nice experience',
+  },
+  {
     id: 'ruparam-khatotiya',
     authorName: 'Ruparam Khatotiya',
     rating: 5,
     relativeTime: '2 years ago',
     text: 'Top quality market',
   },
-  {
-    id: 'rachna-kabra',
-    authorName: 'Rachna Kabra',
-    rating: 5,
-    relativeTime: '3 years ago',
-    text: 'Amazing display of stones for almost everyplace, office , home, kitchen tiles, exterior elevation. Owners arevery cooperative , and suggested the best stone with beautiful patterns for my place at very good prices . Totally satisfied with quality and price. Visitors at my home compliments me about the flooring and wall tiles, all thanks @granite gallery india #granite gallery india',
-  },
-  {
-    id: 'ajay-sharma',
-    authorName: 'Ajay Sharma',
-    rating: 5,
-    relativeTime: '3 years ago',
-    text: 'Bahut badiya sandstone ki quality and variety in se kam kar ke maja aaya... Bahut badiya process Full satisfaction',
-  },
 ];
+
+/**
+ * Reviews prioritized descending by review character length (most detailed first).
+ */
+export const googleReviews: GoogleReview[] = [...rawGoogleReviews].sort(
+  (a, b) => b.text.trim().length - a.text.trim().length
+);

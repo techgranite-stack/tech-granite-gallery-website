@@ -1,0 +1,25 @@
+/* Scroll progress bar — left edge of viewport across all pages */
+.progressTrack {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 2.5px;
+  height: 100vh;
+  background: rgba(192, 133, 82, 0.18);
+  z-index: 9999;
+  pointer-events: none;
+  user-select: none;
+}
+
+.progressBar {
+  width: 100%;
+  height: 0%;
+  background: var(--copper, #C08552);
+  transition: height 0.08s linear;
+}
+
+@media (max-width: 640px) {
+  .progressTrack {
+    width: 2px;
+  }
+}

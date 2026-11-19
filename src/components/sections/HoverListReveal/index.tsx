@@ -180,7 +180,7 @@ function MobileImageScroll({ images, href, title }: {
       const el = scrollRef.current;
       if (!el) return;
       const next = (activeRef.current + 1) % images.length;
-      el.scrollTo({ left: next * el.offsetWidth, behavior: 'smooth' });
+      el.scrollLeft = next * el.offsetWidth;
     }, 2000);
     return () => clearInterval(id);
   }, [images.length]);
@@ -223,17 +223,31 @@ const DRUM_RADIUS = 320;  // larger radius = more physical separation between it
 
 interface HoverListRevealProps {
   categories?: CategoryItem[];
+  eyebrow?: string;
+  title?: string;
+  titleEm?: string;
+  subtitle?: string;
+  initialIndex?: number;
+  bg?: string;
 }
 
-export default function HoverListReveal({ categories = defaultCategories }: HoverListRevealProps) {
-  const [activeIdx, setActiveIdx] = useState(0);
+export default function HoverListReveal({
+  categories = defaultCategories,
+  eyebrow = 'Our Collections',
+  title = 'Masterpieces of',
+  titleEm = 'Nature',
+  subtitle = "Explore our curated selection of fine stones, sourced from the deepest quarries and refined for the world's most prestigious projects.",
+  initialIndex = 0,
+  bg,
+}: HoverListRevealProps) {
+  const [activeIdx, setActiveIdx] = useState(initialIndex);
   const router = useRouter();
 
   const sectionRef = useRef<HTMLElement>(null);
   const drumWrapRef = useRef<HTMLDivElement>(null);
   const drumRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const offsetObj = useRef({ value: 0 });
+  const offsetObj = useRef({ value: initialIndex });
 
   // Wheel gesture lock — one physical scroll advances the drum by exactly one item.
   const wheelLocked = useRef(false);
@@ -353,19 +367,35 @@ export default function HoverListReveal({ categories = defaultCategories }: Hove
   const activeCategory = categories[activeIdx];
 
   return (
-    <section className={styles.section} id="collections" ref={sectionRef}>
+    <section
+      className={styles.section}
+      id="collections"
+      ref={sectionRef}
+      style={
+        bg
+          ? {
+              background: bg,
+              borderTop: '1px solid rgba(75, 46, 43, 0.1)',
+              borderBottom: '1px solid rgba(75, 46, 43, 0.1)',
+            }
+          : undefined
+      }
+    >
       <div className={styles.inner}>
 
         {/* ── TOP: centred heading ── */}
         <div className={styles.topHeader}>
           <div className={styles.eyebrowWrap}>
-            <span className="section-eyebrow">Our Collections</span>
+            <span className="section-eyebrow">{eyebrow}</span>
           </div>
-          <h2 className={`${styles.title} ${styles.titleCentered}`}>Masterpieces of <em>Nature</em></h2>
-          <p className={`${styles.subtitle} ${styles.subtitleCentered}`}>
-            Explore our curated selection of fine stones, sourced from the deepest quarries
-            and refined for the world&apos;s most prestigious projects.
-          </p>
+          <h2 className={`${styles.title} ${styles.titleCentered}`}>
+            {title} {titleEm && <em>{titleEm}</em>}
+          </h2>
+          {subtitle && (
+            <p className={`${styles.subtitle} ${styles.subtitleCentered}`}>
+              {subtitle}
+            </p>
+          )}
         </div>
 
         {/* ── BOTTOM: cylinder (left) + image (right), same height ── */}

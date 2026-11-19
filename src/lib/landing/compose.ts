@@ -12,8 +12,8 @@ import { buildPatternContent } from '@/data/seo-matrix/pattern-content';
 
 const KISHANGARH_MAP_EMBED =
   'https://maps.google.com/maps?q=' +
-  encodeURIComponent(addressOneLine) +
-  '&t=&z=15&ie=UTF8&iwloc=&output=embed';
+  encodeURIComponent('Granite Gallery India, ' + addressOneLine) +
+  '&t=k&z=16&ie=UTF8&iwloc=&output=embed';
 
 /**
  * Builds a strictly unique, 140–160 character meta description for every URL.
@@ -99,30 +99,28 @@ export function composeLandingPage(
         }
       : undefined;
 
-  // 4. Local Info Block (Emitted for Kishangarh facility)
-  const localInfo = isKishangarh
-    ? {
-        eyebrow: 'VISIT OUR FACILITY',
-        heading: 'Kishangarh Stone Processing Yard',
-        headingEm: 'on the MEGA Highway',
-        intro: 'Visit our stone gallery to inspect live slab blocks, compare finishes, and finalize custom edge profiling.',
-        directions: [
-          {
-            label: 'From Kishangarh Airport',
-            detail: 'Approx. 15 km (20 minutes) via NH48 direct bypass to Ralawata.',
-          },
-          {
-            label: 'From Kishangarh Railway Station',
-            detail: 'Approx. 8 km via Station Road connecting to the Marble Market corridor.',
-          },
-          {
-            label: 'From Jaipur',
-            detail: 'Take NH48 South towards Ajmer. Take the Kishangarh bypass onto the MEGA Highway.',
-          },
-        ],
-        mapEmbedUrl: KISHANGARH_MAP_EMBED,
-      }
-    : undefined;
+  // 4. Local Info Block (Kishangarh Processing Yard & Facility)
+  const localInfo = {
+    eyebrow: 'VISIT OUR FACILITY',
+    heading: 'Kishangarh Stone Processing Yard',
+    headingEm: 'on the MEGA Highway',
+    intro: 'Visit our stone gallery to inspect live slab blocks, compare finishes, and finalize custom edge profiling.',
+    directions: [
+      {
+        label: 'From Kishangarh Airport',
+        detail: 'Approx. 15 km (20 minutes) via NH48 direct bypass to Ralawata.',
+      },
+      {
+        label: 'From Kishangarh Railway Station',
+        detail: 'Approx. 8 km via Station Road connecting to the Marble Market corridor.',
+      },
+      {
+        label: 'From Jaipur',
+        detail: 'Take NH48 South towards Ajmer. Take the Kishangarh bypass onto the MEGA Highway.',
+      },
+    ],
+    mapEmbedUrl: KISHANGARH_MAP_EMBED,
+  };
 
   const uniqueDescription = buildUniqueDescription(entry, resolved);
 

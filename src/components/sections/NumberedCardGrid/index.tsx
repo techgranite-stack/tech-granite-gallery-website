@@ -21,7 +21,7 @@ interface NumberedCardGridProps {
   eyebrow?: string;
   /** Supporting line under the title. */
   subtitle?: string;
-  /** Override the section background. Defaults to var(--ivory). */
+  /** Override the section background. Defaults to var(--stone-200). */
   bg?: string;
   /** Override individual card background. Defaults to var(--ivory). */
   cardBg?: string;
@@ -41,49 +41,52 @@ export default function NumberedCardGrid({
   const gridRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  useGSAP(() => {
-    if (!sectionRef.current) return;
+  useGSAP(
+    () => {
+      if (!sectionRef.current) return;
 
-    const numbers = sectionRef.current.querySelectorAll(`.${styles.number}`);
-    const titles = sectionRef.current.querySelectorAll(`.${styles.title}`);
-    const descs = sectionRef.current.querySelectorAll(`.${styles.desc}`);
-    const cards = gsap.utils.toArray(sectionRef.current.querySelectorAll(`.${styles.card}`));
+      const numbers = sectionRef.current.querySelectorAll(`.${styles.number}`);
+      const titles = sectionRef.current.querySelectorAll(`.${styles.title}`);
+      const descs = sectionRef.current.querySelectorAll(`.${styles.desc}`);
 
-    // Ghost number: scale 2.5→1
-    gsap.fromTo(numbers,
-      { scale: 2.5, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 0.14,
-        duration: 1.4,
-        stagger: 0.1,
-        ease: 'expo.out',
-        scrollTrigger: {
-          trigger: sectionRef.current.querySelector(`.${styles.grid}`),
-          start: 'top 85%',
-          toggleActions: 'play none none reverse',
-        },
-      }
-    );
+      // Ghost number: scale 2.5→1
+      gsap.fromTo(
+        numbers,
+        { scale: 2.5, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 0.14,
+          duration: 1.4,
+          stagger: 0.1,
+          ease: 'expo.out',
+          scrollTrigger: {
+            trigger: sectionRef.current.querySelector(`.${styles.grid}`),
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
 
-    // Text: title + desc slide up
-    gsap.fromTo([...Array.from(titles), ...Array.from(descs)],
-      { y: 30, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.07,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current.querySelector(`.${styles.grid}`),
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
-        },
-      }
-    );
-
-  }, { scope: sectionRef, dependencies: [reasons] });
+      // Text: title + desc slide up
+      gsap.fromTo(
+        [...Array.from(titles), ...Array.from(descs)],
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.07,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current.querySelector(`.${styles.grid}`),
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+    },
+    { scope: sectionRef, dependencies: [reasons] }
+  );
 
   const handleScroll = () => {
     if (!gridRef.current) return;
@@ -104,9 +107,10 @@ export default function NumberedCardGrid({
         ...(cardBg ? ({ ['--card-bg' as string]: cardBg } as React.CSSProperties) : {}),
       }}
     >
-      {/* Outer section architectural pattern & ambient lighting */}
+      {/* ── Luminous Quartzite Flowing Mineral Strata Veins (Refined Background) ── */}
       <div className={styles.ambientGlow} aria-hidden="true" />
       <div className={styles.outerPattern} aria-hidden="true" />
+
       <svg
         className={styles.veinTexture}
         viewBox="0 0 1440 900"
@@ -115,35 +119,89 @@ export default function NumberedCardGrid({
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        {/* Subtle architectural vertical guides aligned with 1300px container */}
-        <line x1="70" y1="0" x2="70" y2="900" stroke="rgba(192, 133, 82, 0.08)" strokeWidth="1" strokeDasharray="6 10" />
-        <line x1="1370" y1="0" x2="1370" y2="900" stroke="rgba(192, 133, 82, 0.08)" strokeWidth="1" strokeDasharray="6 10" />
+        <defs>
+          <linearGradient id="luminousVeinGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#C08552" stopOpacity="0.35" />
+            <stop offset="35%" stopColor="#DDA15E" stopOpacity="0.55" />
+            <stop offset="70%" stopColor="#C08552" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="#C08552" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="luminousVeinGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#C08552" stopOpacity="0" />
+            <stop offset="30%" stopColor="#DDA15E" stopOpacity="0.45" />
+            <stop offset="65%" stopColor="#E5B88F" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#C08552" stopOpacity="0.15" />
+          </linearGradient>
+          <radialGradient id="centralQuartzDome" cx="50%" cy="40%" r="55%">
+            <stop offset="0%" stopColor="rgba(221, 161, 94, 0.22)" />
+            <stop offset="45%" stopColor="rgba(192, 133, 82, 0.08)" />
+            <stop offset="100%" stopColor="transparent" />
+          </radialGradient>
+          <radialGradient id="crystalShimmerNode" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#FFF8F0" stopOpacity="0.95" />
+            <stop offset="45%" stopColor="#DDA15E" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="transparent" />
+          </radialGradient>
+        </defs>
 
-        {/* Delicate architectural corner ticks */}
-        <path d="M60 60 H80 M70 50 V70" stroke="rgba(192, 133, 82, 0.20)" strokeWidth="1" />
-        <path d="M1360 60 H1380 M1370 50 V70" stroke="rgba(192, 133, 82, 0.20)" strokeWidth="1" />
-        <path d="M60 840 H80 M70 830 V850" stroke="rgba(192, 133, 82, 0.20)" strokeWidth="1" />
-        <path d="M1360 840 H1380 M1370 830 V850" stroke="rgba(192, 133, 82, 0.20)" strokeWidth="1" />
+        {/* Central ambient light dome behind title and grid */}
+        <ellipse cx="720" cy="380" rx="620" ry="320" fill="url(#centralQuartzDome)" />
 
-        {/* Natural, ultra-fine stone strata fissure with subtle opacity */}
+        {/* Diagonal flowing primary Calacatta / Quartzite mineral vein */}
         <path
-          d="M-40 220 C 320 170, 660 260, 980 190 C 1220 150, 1390 230, 1480 190"
-          stroke="rgba(192, 133, 82, 0.10)"
+          d="M -80 170 C 190 130, 370 255, 600 205 C 830 155, 980 275, 1200 225 C 1340 195, 1440 115, 1540 85"
+          stroke="url(#luminousVeinGrad1)"
+          strokeWidth="1.8"
+        />
+        {/* Soft secondary companion strand */}
+        <path
+          d="M -50 200 C 220 160, 400 275, 630 228 C 860 182, 1010 300, 1230 250 C 1370 218, 1470 145, 1540 115"
+          stroke="url(#luminousVeinGrad1)"
           strokeWidth="1"
           strokeDasharray="4 8"
+          opacity="0.65"
+        />
+
+        {/* Deep lower strata vein flowing across lower tier */}
+        <path
+          d="M -60 620 C 170 560, 350 690, 600 640 C 850 590, 1040 710, 1270 660 C 1390 630, 1470 575, 1530 535"
+          stroke="url(#luminousVeinGrad2)"
+          strokeWidth="1.6"
         />
         <path
-          d="M-20 680 C 380 610, 740 730, 1100 630 C 1280 580, 1400 660, 1480 620"
-          stroke="rgba(192, 133, 82, 0.08)"
-          strokeWidth="1"
+          d="M -30 650 C 200 590, 380 715, 630 665 C 880 615, 1070 735, 1300 685 C 1420 655, 1490 605, 1540 565"
+          stroke="url(#luminousVeinGrad2)"
+          strokeWidth="0.9"
+          strokeDasharray="6 10"
+          opacity="0.55"
         />
+
+        {/* Transverse subtle cross-strata mineral filament */}
+        <path
+          d="M 280 80 C 440 240, 510 460, 680 620 C 790 720, 880 840, 960 920"
+          stroke="url(#luminousVeinGrad1)"
+          strokeWidth="0.8"
+          opacity="0.28"
+        />
+
+        {/* Shimmering Quartz Crystal Nodes */}
+        <circle cx="600" cy="205" r="3.2" fill="url(#crystalShimmerNode)" />
+        <circle cx="1200" cy="225" r="2.8" fill="url(#crystalShimmerNode)" />
+        <circle cx="600" cy="640" r="3.2" fill="url(#crystalShimmerNode)" />
+        <circle cx="1270" cy="660" r="2.8" fill="url(#crystalShimmerNode)" />
       </svg>
 
       <div className={styles.inner}>
         <Reveal animation="fade-up">
           <div className={styles.header}>
             <span className="section-eyebrow">{eyebrow}</span>
-            <h2 className={styles.sectionTitle}>{title || <>The Granite Gallery <em>Legacy</em></>}</h2>
+            <h2 className={styles.sectionTitle}>
+              {title || (
+                <>
+                  The Granite Gallery <em>Legacy</em>
+                </>
+              )}
+            </h2>
             <p className={styles.sectionDesc}>{subtitle}</p>
           </div>
         </Reveal>
@@ -162,6 +220,7 @@ export default function NumberedCardGrid({
           </div>
         )}
 
+        {/* ── Middle Section: Exact Original Monolithic Card Grid ── */}
         <div ref={gridRef} onScroll={handleScroll} className={styles.grid}>
           {reasons.map((r, i) => (
             <div
@@ -187,7 +246,7 @@ export default function NumberedCardGrid({
                 if (gridRef.current) {
                   gridRef.current.scrollTo({
                     left: idx * 296,
-                    behavior: 'smooth'
+                    behavior: 'smooth',
                   });
                 }
               }}

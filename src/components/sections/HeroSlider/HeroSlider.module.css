@@ -20,25 +20,6 @@
   will-change: transform;
 }
 
-/* Scroll progress bar — left edge of viewport */
-.progressTrack {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 2px;
-  height: 100vh;
-  background: rgba(192, 133, 82, 0.15);
-  z-index: 9999;
-  pointer-events: none;
-}
-
-.progressBar {
-  width: 100%;
-  height: 0%;
-  background: var(--copper);
-  transition: height 0.1s linear;
-}
-
 /* Backgrounds */
 .bg {
   position: absolute;

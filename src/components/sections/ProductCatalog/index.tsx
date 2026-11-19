@@ -55,6 +55,8 @@ export default function ProductCatalog({
   backLabel,
   priceFormatted,
   priceNote,
+  rating,
+  reviews,
 }: ProductDetailData) {
   const paras = description.split('\n\n').filter(Boolean);
 
@@ -69,6 +71,13 @@ export default function ProductCatalog({
             <h2 className={styles.title}>{title}</h2>
             <div className={styles.titleMeta}>
               <span className={styles.subtitle}>{subtitle}</span>
+              {rating && (
+                <div className={styles.headerRating}>
+                  <span className={styles.starsGroup}>★★★★★</span>
+                  <span className={styles.ratingNumber}>{rating.ratingValue}</span>
+                  <span className={styles.ratingCount}>({rating.reviewCount} reviews)</span>
+                </div>
+              )}
               {priceFormatted && (
                 <span className={styles.pricePill}>
                   {priceFormatted} <span className={styles.pricePillSub}>ex-factory</span>

@@ -47,7 +47,6 @@ function WordReveal({ text, className }: { text: string; className?: string }) {
 export default function HeroSlider({ slides = heroSlides }: HeroSliderProps) {
   const [current, setCurrent] = useState(0);
   const containerRef = useRef<HTMLElement>(null);
-  const progressBarRef = useRef<HTMLDivElement>(null);
   const isFirstMount = useRef(true);
 
   /* ── Slide entrance: Instant BG on first mount + smooth transition on slide change ── */
@@ -125,19 +124,6 @@ export default function HeroSlider({ slides = heroSlides }: HeroSliderProps) {
     });
   }, { scope: containerRef });
 
-  /* ── Scroll progress bar ── */
-  useEffect(() => {
-    const bar = progressBarRef.current;
-    if (!bar) return;
-    const onScroll = () => {
-      const docH = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = (window.scrollY / docH) * 100;
-      bar.style.height = `${pct}%`;
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   const next = useCallback(() => setCurrent((p) => (p + 1) % slides.length), [slides.length]);
 
   useEffect(() => {
@@ -149,11 +135,6 @@ export default function HeroSlider({ slides = heroSlides }: HeroSliderProps) {
 
   return (
     <section className={styles.hero} ref={containerRef} id="home">
-      {/* Scroll progress bar — left edge */}
-      <div className={styles.progressTrack}>
-        <div ref={progressBarRef} className={styles.progressBar} />
-      </div>
-
       {/* Backgrounds */}
       {slides.map((s, i) => (
         <div

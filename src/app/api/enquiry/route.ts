@@ -19,15 +19,13 @@ export async function POST(request: Request) {
     if (!name || typeof name !== 'string' || !name.trim()) {
       return NextResponse.json({ success: false, error: 'Name is required' }, { status: 400 });
     }
-    if (!email || typeof email !== 'string' || !email.includes('@')) {
-      return NextResponse.json({ success: false, error: 'Valid email is required' }, { status: 400 });
-    }
     if (!phone || typeof phone !== 'string' || phone.trim().length < 7) {
       return NextResponse.json({ success: false, error: 'Valid phone number is required' }, { status: 400 });
     }
 
     const formattedName = name.trim();
-    const formattedEmail = email.trim();
+    const hasValidEmail = Boolean(email && typeof email === 'string' && email.includes('@'));
+    const formattedEmail = hasValidEmail ? (email as string).trim() : '';
     const formattedPhone = phone.trim();
     const formattedLocation = (location && typeof location === 'string') ? location.trim() : 'Not specified';
     const formattedMessage = (message && typeof message === 'string') ? message.trim() : 'No notes provided';
@@ -112,7 +110,7 @@ export async function POST(request: Request) {
         to: [notificationEmail],
         subject: `New Lead: ${formattedName} — ${spaceInterest}`,
         html: adminEmailHtml,
-        replyTo: formattedEmail,
+        ...(hasValidEmail ? { replyTo: formattedEmail } : {}),
       });
 
       if (sendResult.error) {
@@ -123,8 +121,9 @@ export async function POST(request: Request) {
         }, { status: 500 });
       }
 
-      // 2. Customer Auto-Acknowledgement (only when domain verified or sending to account email)
-      try {
+      // 2. Customer Auto-Acknowledgement (only when email provided and domain verified)
+      if (hasValidEmail) {
+        try {
         const customerEmailHtml = `
           <!DOCTYPE html>
           <html>
@@ -181,6 +180,7 @@ export async function POST(request: Request) {
       } catch (custErr) {
         // Log notice for unverified domain mode without failing lead submission
         console.info('Customer receipt skipped (requires verified domain at resend.com/domains):', custErr);
+      }
       }
     } else {
       console.log('Resend API key missing in environment variables. Lead details received:', {

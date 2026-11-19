@@ -80,7 +80,19 @@ export default function FAQAccordion({
   if (!items || items.length === 0) return null;
 
   return (
-    <section className={styles.section} ref={containerRef} style={bg ? { background: bg } : undefined}>
+    <section
+      className={styles.section}
+      ref={containerRef}
+      style={
+        bg
+          ? {
+              background: bg,
+              borderTop: '1px solid rgba(75, 46, 43, 0.1)',
+              borderBottom: '1px solid rgba(75, 46, 43, 0.1)',
+            }
+          : undefined
+      }
+    >
       {/* Dynamic SEO JSON-LD FAQ Schema injection */}
       <script
         type="application/ld+json"

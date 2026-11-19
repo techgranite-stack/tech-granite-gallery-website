@@ -37,10 +37,11 @@
   z-index: 1;
 }
 
-/* ── Header ── */
+/* ── Header — Centered matching teams page ── */
 .header {
-  max-width: 740px;
-  margin-bottom: clamp(48px, 6vw, 64px);
+  max-width: 780px;
+  margin: 0 auto clamp(48px, 6vw, 64px);
+  text-align: center;
 }
 
 .header :global(.section-eyebrow) {
@@ -55,12 +56,13 @@
 
 .title {
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
   font-weight: 400;
   color: var(--mahogany);
   line-height: 1.15;
   letter-spacing: -0.01em;
   margin-top: 12px;
+  text-align: center;
 }
 
 .title em {
@@ -73,60 +75,50 @@
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--mahogany-muted);
-  margin-top: 18px;
+  max-width: 640px;
+  margin: 18px auto 0;
+  text-align: center;
 }
 
-.statusBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  background: rgba(192, 133, 82, 0.08);
-  border: 1px solid rgba(192, 133, 82, 0.22);
-  border-radius: 100px;
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--copper-dark);
-  margin-top: 16px;
-}
-
-.statusDot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
-}
-
-/* ── Main Grid ── */
+/* ── Main Two-Column Grid (Equal & Aligned) ── */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1.08fr;
-  gap: 48px;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+  margin-bottom: 32px;
 }
 
-/* ── NAP Card ── */
+/* ── NAP Card & Map Card (Twin Companion Boxes) ── */
 .card {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(192, 133, 82, 0.22);
   border-radius: 20px;
-  padding: 36px;
+  padding: 32px;
   box-shadow: 0 20px 48px -12px rgba(75, 46, 43, 0.08), 0 2px 10px rgba(192, 133, 82, 0.04);
   transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease, border-color 0.4s ease;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .card:hover {
   transform: translateY(-3px);
   border-color: rgba(192, 133, 82, 0.45);
   box-shadow: 0 28px 60px -12px rgba(75, 46, 43, 0.12), 0 4px 16px rgba(192, 133, 82, 0.08);
+}
+
+.mapCard {
+  padding: 32px;
+}
+
+.mapCardContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .cardTopRow {
@@ -158,6 +150,14 @@
   gap: 6px;
 }
 
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
 .napName {
   font-family: var(--font-serif);
   font-size: 2rem;
@@ -169,7 +169,8 @@
 .rowsList {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .napRow {
@@ -228,11 +229,29 @@ a.napRow:hover .iconCircle {
   margin-bottom: 2px;
 }
 
+/* ── Interactive Map Frame (Fills Exact Space) ── */
+.mapWrap {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(192, 133, 82, 0.2);
+  flex: 1;
+  min-height: 230px;
+  background: var(--stone-200, #e5d8c8);
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .cardActions {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid rgba(75, 46, 43, 0.08);
 }
@@ -278,6 +297,7 @@ a.napRow:hover .iconCircle {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
@@ -287,168 +307,191 @@ a.napRow:hover .iconCircle {
   color: var(--copper-dark);
 }
 
-/* ── Directions Cards ── */
-.directions {
-  margin-top: 24px;
+/* ═══════════════════════════════════════════════════════════
+   TERMINAL CLIENT VISIT CTA BOX (Matching ProcessSteps style)
+   ═══════════════════════════════════════════════════════════ */
+.terminalSection {
+  position: relative;
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  width: 100%;
 }
 
-.directionCard {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(75, 46, 43, 0.08);
-  border-left: 3px solid var(--copper);
-  border-radius: 12px;
-  padding: 16px 20px;
-  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 2px 8px rgba(75, 46, 43, 0.03);
-}
-
-.directionCard:hover {
-  background: #ffffff;
-  border-color: rgba(192, 133, 82, 0.3);
-  border-left: 3px solid var(--copper-light, #dda15e);
-  transform: translateX(6px);
-  box-shadow: 0 8px 24px rgba(75, 46, 43, 0.07);
-}
-
-.directionHeader {
-  display: flex;
+.terminalNode {
+  position: relative;
+  z-index: 4;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, #2D1A14 0%, #180F0B 100%);
+  border: 1.5px solid var(--copper);
+  box-shadow: 0 0 20px rgba(192, 133, 82, 0.45);
+  margin-bottom: -15px;
+  transition: all 0.3s ease;
+}
+
+.terminalNode:hover {
+  transform: scale(1.05);
+  border-color: var(--copper-light);
+  box-shadow: 0 0 26px rgba(192, 133, 82, 0.65);
+}
+
+.terminalIcon {
+  color: var(--copper-light);
+  font-size: 0.75rem;
+}
+
+.terminalLabel {
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--copper);
+  letter-spacing: 0.14em;
+  color: var(--copper-light);
+}
+
+.cta {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  padding: 30px 36px;
+  background: linear-gradient(135deg, rgba(44, 27, 20, 0.92) 0%, rgba(24, 15, 11, 0.97) 100%);
+  border: 1px solid rgba(192, 133, 82, 0.35);
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.48), 0 0 32px rgba(192, 133, 82, 0.14);
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta:hover {
+  border-color: rgba(192, 133, 82, 0.6);
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.55), 0 0 38px rgba(192, 133, 82, 0.22);
+}
+
+.ctaGlow {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(192, 133, 82, 0.22), transparent 70%);
+  pointer-events: none;
+}
+
+.ctaIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(192, 133, 82, 0.14);
+  border: 1.5px solid var(--copper);
+  color: var(--copper-light);
+  box-shadow: 0 0 16px rgba(192, 133, 82, 0.28);
+}
+
+.ctaCopy {
+  flex: 1;
+  min-width: 0;
+}
+
+.ctaTitle {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: #FFF8F0;
   margin-bottom: 6px;
 }
 
-.directionIcon {
-  color: var(--copper);
-}
-
-.directionText {
+.ctaDesc {
   font-family: var(--font-sans);
-  font-size: 0.925rem;
-  line-height: 1.65;
-  color: var(--mahogany-muted);
+  font-size: 0.88rem;
+  color: rgba(255, 248, 240, 0.74);
+  line-height: 1.55;
   margin: 0;
 }
 
-/* ── Right Column: Map Container ── */
-.mapContainer {
+.ctaBtns {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
-.mapTopBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 4px;
-}
-
-.mapLiveTag {
+.btnSolid,
+.btnOutline {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--copper);
-}
-
-.mapWrap {
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(192, 133, 82, 0.25);
-  min-height: 480px;
-  height: 520px;
-  background: var(--stone-200, #e5d8c8);
-  box-shadow: 0 24px 54px -12px rgba(75, 46, 43, 0.12), 0 4px 16px rgba(192, 133, 82, 0.06);
-  position: relative;
-  transition: all 0.4s ease;
-}
-
-.mapWrap:hover {
-  border-color: rgba(192, 133, 82, 0.45);
-  box-shadow: 0 32px 64px -12px rgba(75, 46, 43, 0.16), 0 6px 20px rgba(192, 133, 82, 0.08);
-}
-
-.map {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 480px;
-  border: 0;
-}
-
-.mapLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--copper);
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-.mapLink:hover {
-  color: var(--copper-dark);
-  transform: translateX(3px);
-}
-
-.mapPills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 4px;
-}
-
-.mapPill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(192, 133, 82, 0.18);
+  justify-content: center;
+  padding: 12px 24px;
   border-radius: 100px;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--mahogany);
-  box-shadow: 0 2px 6px rgba(75, 46, 43, 0.04);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.mapPillDot {
-  color: var(--copper);
-  font-size: 10px;
+.btnSolid {
+  background: var(--copper);
+  border: 1px solid var(--copper-light);
+  color: #FFF8F0;
+  box-shadow: 0 4px 18px rgba(192, 133, 82, 0.35);
 }
 
-@media (max-width: 1024px) {
+.btnSolid:hover {
+  background: var(--copper-dark);
+  border-color: var(--copper);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(192, 133, 82, 0.5);
+}
+
+.btnOutline {
+  border: 1px solid rgba(192, 133, 82, 0.55);
+  background: rgba(192, 133, 82, 0.08);
+  color: var(--copper-light);
+}
+
+.btnOutline:hover {
+  background: rgba(192, 133, 82, 0.20);
+  border-color: var(--copper-light);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(192, 133, 82, 0.22);
+}
+
+@media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 24px;
   }
 
-  .mapWrap {
-    min-height: 400px;
-    height: 420px;
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px 24px;
+    gap: 20px;
+  }
+
+  .ctaBtns {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btnSolid,
+  .btnOutline {
+    width: 100%;
   }
 }
 
@@ -469,8 +512,11 @@ a.napRow:hover .iconCircle {
     grid-template-columns: 1fr;
   }
 
-  .mapWrap {
-    min-height: 340px;
-    height: 360px;
+  .terminalSection {
+    margin-top: 36px;
+  }
+
+  .cta {
+    padding: 22px 18px;
   }
 }

@@ -136,7 +136,7 @@ export default function FinishesPage() {
         marqueeItems={finishesMarquee}
         title="Why Architects & Builders Choose Our Finishes"
         bg="#C8B89A"
-        cardBg="#FFFFFF"
+        cardBg="var(--stone-100, #F2EBE0)"
       />
 
       {/* Client Voices, Google Reviews & Process Journey */}

@@ -135,8 +135,8 @@ export interface LandingPageData {
 
 const KISHANGARH_MAP_EMBED =
   'https://maps.google.com/maps?q=' +
-  encodeURIComponent(addressOneLine) +
-  '&t=&z=15&ie=UTF8&iwloc=&output=embed';
+  encodeURIComponent('Granite Gallery India, ' + addressOneLine) +
+  '&t=k&z=16&ie=UTF8&iwloc=&output=embed';
 
 // ─── Pages ───────────────────────────────────────────────────────────────────
 

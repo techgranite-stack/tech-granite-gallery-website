@@ -156,7 +156,7 @@ export const siteConfig = {
     // Derived from the structured copy in src/data/local-seo.ts so the flat
     // display string and the PostalAddress in the schema can never drift apart.
     address: addressOneLine,
-    maps: "https://www.google.com/maps/place/Granite+Gallery+India/@26.6790384,74.8630417,16.28z/data=!4m6!3m5!1s0x396bf3652f4b26cd:0x9e6bd1cd0358ce90!8m2!3d26.6799656!4d74.8600186!16s%2Fg%2F11clvcz9nb",
+    maps: "https://www.google.com/maps/place/Granite+Gallery+India/@26.6799656,74.8219098,9210m/data=!3m1!1e3!4m10!1m2!2m1!1sKhasra+No.948,+4,+MEGA+Highway,+Tehsil,+Ralawata,+Kishangarh,+Rajasthan+305801!3m6!1s0x396bf3652f4b26cd:0x9e6bd1cd0358ce90!8m2!3d26.6799656!4d74.8600186!15sCk5LaGFzcmEgTm8uOTQ4LCA0LCBNRUdBIEhpZ2h3YXksIFRlaHNpbCwgUmFsYXdhdGEsIEtpc2hhbmdhcmgsIFJhamFzdGhhbiAzMDU4MDFaSiJIa2hhc3JhIG5vIDk0OCA0IG1lZ2EgaGlnaHdheSB0ZWhzaWwgcmFsYXdhdGEga2lzaGFuZ2FyaCByYWphc3RoYW4gMzA1ODAxkgEQZ3Jhbml0ZV9zdXBwbGllcpoBI0NoWkRTVWhOTUc5blMwVkpRMEZuVFVOWkxVeGxVRVpSRUFF4AEA-gEECAAQGg!16s%2Fg%2F11clvcz9nb?hl=en-IN&entry=ttu&g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D",
     instagram: "https://www.instagram.com/granitegalleryindia/",
     youtube: "https://www.youtube.com/c/GraniteGalleryIndia",
   },

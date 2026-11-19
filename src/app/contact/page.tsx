@@ -87,8 +87,8 @@ export default function ContactPage() {
           ],
           mapEmbedUrl:
             'https://maps.google.com/maps?q=' +
-            encodeURIComponent(addressOneLine) +
-            '&t=&z=15&ie=UTF8&iwloc=&output=embed',
+            encodeURIComponent('Granite Gallery India, ' + addressOneLine) +
+            '&t=k&z=16&ie=UTF8&iwloc=&output=embed',
         }}
       />
 

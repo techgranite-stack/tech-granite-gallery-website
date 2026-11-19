@@ -67,6 +67,47 @@ export default function LocalDeliveryCorridor({
   material,
   currentLocation,
 }: LocalDeliveryCorridorProps) {
+  const row1 = CORRIDOR_CITIES.slice(0, 8);
+  const row2 = CORRIDOR_CITIES.slice(8, 16);
+
+  const renderCard = (city: CorridorCityData, prefix = 'grid') => {
+    const isCurrent = currentLocation && currentLocation.toLowerCase() === city.id;
+    const href = resolveCityHref(city.id, stoneSlug, material);
+    const key = `${prefix}-${city.id}`;
+
+    if (isCurrent) {
+      return (
+        <div
+          key={key}
+          className={`${styles.corridorCard} ${styles.activeCard}`}
+          title={`Current active supply zone: ${city.name}`}
+        >
+          <span className={styles.livePulse} aria-hidden="true" />
+          <span className={styles.cityName}>{city.name}</span>
+          <span className={styles.activeTag}>Current Site</span>
+          <span className={styles.transitTag}>{city.transit}</span>
+        </div>
+      );
+    }
+
+    return (
+      <Link
+        key={key}
+        href={href}
+        className={styles.corridorCard}
+        title={`Explore direct factory slab delivery & rates for ${city.name} (${city.transit})`}
+      >
+        <span className={styles.geoDot} aria-hidden="true" />
+        <span className={styles.cityName}>{city.name}</span>
+        {city.isOrigin ? (
+          <span className={styles.originTag}>{city.transit}</span>
+        ) : (
+          <span className={styles.transitTag}>{city.transit}</span>
+        )}
+      </Link>
+    );
+  };
+
   return (
     <section className={`${styles.section} ${className}`} aria-label="Local delivery corridors">
       {/* Ambient Copper Spotlight Glow */}
@@ -88,44 +129,34 @@ export default function LocalDeliveryCorridor({
           {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         </div>
 
-        {/* Interactive Strategic Corridor Capsule Grid */}
+        {/* Desktop Interactive Strategic Corridor Capsule Grid */}
         <div className={styles.corridorGrid}>
-          {CORRIDOR_CITIES.map((city) => {
-            const isCurrent = currentLocation && currentLocation.toLowerCase() === city.id;
-            const href = resolveCityHref(city.id, stoneSlug, material);
+          {CORRIDOR_CITIES.map((city) => renderCard(city, 'desktop'))}
+        </div>
 
-            if (isCurrent) {
-              return (
-                <div
-                  key={city.id}
-                  className={`${styles.corridorCard} ${styles.activeCard}`}
-                  title={`Current active supply zone: ${city.name}`}
-                >
-                  <span className={styles.livePulse} aria-hidden="true" />
-                  <span className={styles.cityName}>{city.name}</span>
-                  <span className={styles.activeTag}>Current Site</span>
-                  <span className={styles.transitTag}>{city.transit}</span>
-                </div>
-              );
-            }
+        {/* Mobile Dual-Track Seamless Marquee */}
+        <div className={styles.mobileMarqueeWrapper} aria-label="Delivery corridors marquee">
+          <div className={styles.marqueeTrackWrapper}>
+            {/* Row 1 — Forward Scroll */}
+            <div className={styles.marqueeTrack}>
+              <div className={styles.marqueeGroup}>
+                {row1.map((city) => renderCard(city, 'm1a'))}
+              </div>
+              <div className={styles.marqueeGroup} aria-hidden="true">
+                {row1.map((city) => renderCard(city, 'm1b'))}
+              </div>
+            </div>
 
-            return (
-              <Link
-                key={city.id}
-                href={href}
-                className={styles.corridorCard}
-                title={`Explore direct factory slab delivery & rates for ${city.name} (${city.transit})`}
-              >
-                <span className={styles.geoDot} aria-hidden="true" />
-                <span className={styles.cityName}>{city.name}</span>
-                {city.isOrigin ? (
-                  <span className={styles.originTag}>{city.transit}</span>
-                ) : (
-                  <span className={styles.transitTag}>{city.transit}</span>
-                )}
-              </Link>
-            );
-          })}
+            {/* Row 2 — Reverse Scroll */}
+            <div className={`${styles.marqueeTrack} ${styles.marqueeReverse}`}>
+              <div className={styles.marqueeGroup}>
+                {row2.map((city) => renderCard(city, 'm2a'))}
+              </div>
+              <div className={styles.marqueeGroup} aria-hidden="true">
+                {row2.map((city) => renderCard(city, 'm2b'))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* UI Strategic Reassurance / Dispatch Guarantees */}

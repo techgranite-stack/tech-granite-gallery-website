@@ -22,6 +22,7 @@ import { productPath } from '@/types/stone';
 import { SITE_URL, abs } from '@/lib/seo-url';
 import { siteConfig } from '@/config/site';
 import { getProductPrice } from '@/data/product-prices';
+import { getProductReviewSchema } from '@/lib/product-reviews';
 import {
   businessAddress,
   businessGeo,
@@ -170,6 +171,13 @@ export function productJsonLd(stone: StoneProduct, images: string[] = []) {
   const categoryLabel = stone.category === 'granite' ? 'Granite' : 'Marble';
   const url = abs(productPath(stone));
   const pricing = stone.priceRange ?? getProductPrice(stone.slug, stone.category);
+  const reviews = getProductReviewSchema(
+    stone.slug,
+    stone.name,
+    stone.category,
+    pricing.high,
+    pricing.low
+  );
 
   // Fall back to the old derivation only if the caller passed nothing, so an
   // un-migrated call site degrades rather than emitting an empty image array.
@@ -195,6 +203,8 @@ export function productJsonLd(stone: StoneProduct, images: string[] = []) {
     // Rajasthan stones it reinforces the regional association.
     countryOfOrigin: { '@type': 'Country', name: primaryLocation.country },
     url,
+    aggregateRating: reviews.aggregateRating,
+    review: reviews.review,
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'INR',

@@ -1,0 +1,155 @@
+/* ── Other Finishes Section (Warm Sandstone #C8B89A from Unrivaled Expertise) ── */
+.relatedSection {
+  padding: clamp(72px, 8vw, 96px) 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--stone-300, #C8B89A);
+  border-top: 1px solid rgba(140, 90, 60, 0.22);
+  border-bottom: 1px solid rgba(140, 90, 60, 0.22);
+}
+
+.ambientGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1300px;
+  height: 100%;
+  background: radial-gradient(ellipse 65% 45% at 50% 20%, rgba(221, 161, 94, 0.22), transparent 70%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: var(--container-max, 1320px);
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.relatedHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  color: var(--copper-dark, #8C5A3C);
+  margin-bottom: 14px;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  background: var(--copper-dark, #8C5A3C);
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--mahogany, #4B2E2B);
+}
+
+.sectionTitle em {
+  font-style: italic;
+  color: var(--copper-dark, #8C5A3C);
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.relatedCard {
+  position: relative;
+  height: 240px;
+  border-radius: 14px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  border: 1px solid rgba(140, 90, 60, 0.28);
+  box-shadow: 0 8px 24px rgba(75, 46, 43, 0.1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.relatedCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--mahogany, #4B2E2B);
+  box-shadow: 0 16px 36px rgba(75, 46, 43, 0.18), 0 0 20px rgba(192, 133, 82, 0.22);
+}
+
+.relatedImgWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.relatedImg {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.relatedCard:hover .relatedImg {
+  transform: scale(1.08);
+}
+
+.relatedOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44, 27, 20, 0.92) 0%, rgba(44, 27, 20, 0.28) 55%, transparent 85%);
+}
+
+.relatedContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 18px;
+}
+
+.relatedName {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #FFF8F0;
+  margin-bottom: 4px;
+}
+
+.relatedSub {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--copper-light, #DDA15E);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .relatedGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 20px;
+  }
+  .relatedGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .relatedCard {
+    height: 190px;
+  }
+  .relatedContent {
+    padding: 14px;
+  }
+  .relatedName {
+    font-size: 1rem;
+  }
+}

@@ -4,10 +4,11 @@ import "@/styles/globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
-import AiSearchFloat from "@/components/ui/AiSearchFloat";
 import CustomCursor from "@/components/ui/CustomCursor";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import QuickDialog from "@/components/ui/QuickDialog";
+import QuoteModal from "@/components/ui/QuoteModal";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import WhatsAppClickTracker from "@/components/analytics/WhatsAppClickTracker";
 import { siteConfig } from "@/config/site";
@@ -108,6 +109,7 @@ export default function RootLayout({
         />
         <SmoothScroll>
           <CustomCursor />
+          <ScrollProgress />
           <Navbar 
             links={siteConfig.mainNav} 
             logoSrc="/Logo-black.png"
@@ -119,8 +121,8 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <WhatsAppFloat />
-          <AiSearchFloat />
           <QuickDialog />
+          <QuoteModal />
         </SmoothScroll>
         <GoogleAnalytics gaId={siteConfig.gaMeasurementId} />
         <WhatsAppClickTracker />

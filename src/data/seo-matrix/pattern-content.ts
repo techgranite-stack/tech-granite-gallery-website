@@ -712,23 +712,38 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
   // ── BRANCH C: FINISH PAGES (P5, P7) ────────────────────────────────
   if (combo.finish) {
     const finish = finishesData.find((f) => f.slug === combo.finish);
-    const finishName = finish?.name ?? combo.finish.replace(/-/g, ' ');
+    const isLapatro =
+      combo.finish === 'leathered' &&
+      (entry.slug.includes('lapatro') ||
+        entry.slug.includes('lapotra') ||
+        entry.slug.includes('lapato') ||
+        entry.slug.includes('lapatra') ||
+        entry.slug.includes('lepatro'));
+
+    const finishName = isLapatro ? 'Lapatro Finish' : (finish?.name ?? combo.finish.replace(/-/g, ' '));
 
     const heroEyebrow = 'ARCHITECTURAL SURFACE FINISHES';
     const heroH1 = `${finishName} ${matName}`;
     const heroH1Em = isKishangarh ? 'in Kishangarh Yard' : `for ${locName}`;
-    const heroSubtitle = finish?.subtitle ?? `Specialized mechanical surface processing delivering tactile elegance, anti-skid safety, and lasting outdoor resilience.`;
+    const heroSubtitle = isLapatro
+      ? `Tactile diamond-brushed surface delivering organic undulating texture, anti-skid safety, and fingerprint-resistant elegance.`
+      : (finish?.subtitle ?? `Specialized mechanical surface processing delivering tactile elegance, anti-skid safety, and lasting outdoor resilience.`);
 
     const intro: ProseBlock = {
       id: 'intro',
       eyebrow: 'SURFACE ENGINEERING',
       heading: `Artisanal Texture & Slip Performance`,
-      headingEm: `of ${finishName} Finish`,
-      body: [
-        finish?.longDescription ??
-          `The ${finishName.toLowerCase()} finish is achieved through specialized processing line technology at our Kishangarh plant. Transforming the raw crystalline geology of ${matName.toLowerCase()}, it delivers distinct tactile depth, low maintenance, and superior slip resistance.`,
-        `Ideal for luxury architects specifying non-reflective matte surfaces for minimalist living rooms, pool surrounds, and exterior cladding.`,
-      ],
+      headingEm: `of ${finishName}`,
+      body: isLapatro
+        ? [
+            `Lapatro finish (widely known in the international stone trade as leathered finish) is crafted by running high-speed diamond-embedded abrasive brushes across calibrated ${matName.toLowerCase()} slabs. This specialized mechanical treatment removes softer mineral crystals while contouring natural veins, creating a warm, undulating tactile surface with zero harsh reflections and exceptional slip resistance.`,
+            `Highly specified by luxury architects across ${locName} for contemporary living rooms, outdoor verandahs, kitchen countertops, and feature wall cladding where an organic, tactile luxury texture is desired.`,
+          ]
+        : [
+            finish?.longDescription ??
+              `The ${finishName.toLowerCase()} finish is achieved through specialized processing line technology at our Kishangarh plant. Transforming the raw crystalline geology of ${matName.toLowerCase()}, it delivers distinct tactile depth, low maintenance, and superior slip resistance.`,
+            `Ideal for luxury architects specifying non-reflective matte surfaces for minimalist living rooms, pool surrounds, and exterior cladding.`,
+          ],
       bullets: [
         {
           title: 'Slip Safety Rating',
@@ -765,6 +780,20 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
           { title: 'Care Protocol', text: finish?.careInstructions ?? 'Clean with pH-neutral stone cleaner and soft cloth. Reseal every 2 years.' },
         ],
       },
+      {
+        id: 'logistics',
+        eyebrow: 'LOGISTICS & DISPATCH',
+        heading: isKishangarh ? 'Inspecting Live Lots at Our Kishangarh Yard' : `How We Deliver ${finishName} Slabs to ${locName}`,
+        headingEm: isKishangarh ? 'on the MEGA Highway' : 'Direct from Factory Gate',
+        dark: true,
+        body: [
+          isKishangarh
+            ? `Visit our primary processing facility on the MEGA Highway in Kishangarh to inspect live ${finishName.toLowerCase()} slab bundles in natural daylight, verify surface texture and thickness calibration, and oversee container loading.`
+            : `Granite Gallery operates a dedicated logistics corridor connecting our Kishangarh yard to ${locName}. Slabs are secured in heavy-duty wooden A-frames with high-density foam interleaving, preventing surface friction and transit breakage. Complete consignment tracking and all-risk transit insurance are provided.`,
+          location?.freightGuidelines ??
+            `Full-trailer loads (21–25 tons / ~3,800 sq ft of 18mm stone) or curated multi-stone part loads available for dispatch.`,
+        ],
+      },
     ];
 
     const statsBand = [
@@ -776,9 +805,17 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
 
     const baseFinishFaqs = (finish?.faqs ?? []).map((f) => ({ question: f.question, answer: f.answer }));
     const defaultFinishFaqs = [
+      ...(isLapatro
+        ? [
+            {
+              question: `What is the difference between Lapatro finish and leather finish?`,
+              answer: `Lapatro is the Indian natural stone trade name for a leathered finish. Both terms refer to the same specialized mechanical process where diamond-tipped brushes run over the slab surface to create a soft, undulating texture with a velvety matte feel.`,
+            },
+          ]
+        : []),
       {
         question: `What are the benefits of ${finishName} ${matName.toLowerCase()}?`,
-        answer: `${finishName} finish provides enhanced slip resistance, eliminates harsh lighting reflections, and conceals fingerprints and water marks far better than high-gloss mirror-polished surfaces.`,
+        answer: `${finishName} provides enhanced slip resistance, eliminates harsh lighting reflections, and conceals fingerprints and water marks far better than high-gloss mirror-polished surfaces.`,
       },
       {
         question: `Is ${finishName} stone suitable for outdoor and high-moisture areas?`,
@@ -793,8 +830,8 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
         answer: `Yes. While mechanical texturing opens stone pores slightly, applying an impregnating penetrating sealer seals internal capillaries against oil and water while preserving the tactile matte texture.`,
       },
       {
-        question: `How does the price of ${finishName} finish compare to polished stone?`,
-        answer: `Processing ${finishName} finishes typically adds ₹10 to ₹35/sq ft over standard raw or polished slabs, depending on whether specialized diamond abrasive brushes, automated flaming torches, or acoustic waterjets are required.`,
+        question: `How does the price of ${finishName} compare to polished stone?`,
+        answer: `Processing ${finishName} typically adds ₹10 to ₹35/sq ft over standard raw or polished slabs, depending on whether specialized diamond abrasive brushes, automated flaming torches, or acoustic waterjets are required.`,
       },
       {
         question: `Can I order ${finishName} slabs delivered directly to ${locName}?`,
@@ -830,21 +867,30 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
   }
 
   // ── BRANCH D: DEFAULT GEO & STONE SOURCING (P1, P6, P-Stone, G5) ────
+  const colName = combo.color ? combo.color.charAt(0).toUpperCase() + combo.color.slice(1) : undefined;
   const stone = combo.stoneSlug ? getProductBySlug(combo.stoneSlug) : undefined;
-  const stoneName = stone ? stone.name : matName;
+  const stoneName = stone ? stone.name : (colName ? `${colName} ${matName}` : matName);
 
   const heroEyebrow = isKishangarh
-    ? (stone ? `${stone.name.toUpperCase()} • PRIMARY PROCESSING & EXPORT YARD` : 'PRIMARY PROCESSING & EXPORT YARD')
-    : `${locName.toUpperCase()} DIRECT HIGHWAY CORRIDOR`;
+    ? (colName
+        ? `${colName.toUpperCase()} ${matName.toUpperCase()} • PRIMARY PROCESSING & EXPORT YARD`
+        : (stone ? `${stone.name.toUpperCase()} • PRIMARY PROCESSING & EXPORT YARD` : 'PRIMARY PROCESSING & EXPORT YARD'))
+    : (colName
+        ? `${colName.toUpperCase()} ${matName.toUpperCase()} • ${locName.toUpperCase()} DIRECT HIGHWAY CORRIDOR`
+        : `${locName.toUpperCase()} DIRECT HIGHWAY CORRIDOR`);
   const heroH1 = `${stoneName} in`;
   const heroH1Em = locName;
   const heroSubtitle = isKishangarh
-    ? (stone
-        ? `Direct factory wholesale sourcing of certified ${stone.name} gangsaw slabs, custom cuts, and lot inspection on the MEGA Highway.`
-        : `Direct factory wholesale sourcing of certified ${matName.toLowerCase()} gangsaw slabs, custom cuts, and lot inspection on the MEGA Highway.`)
-    : (stone
-        ? `Direct quarry and factory dispatch of certified ${stone.name} slabs from our Kishangarh yard direct to site in ${locName}.`
-        : `Direct quarry and factory dispatch of certified ${matName.toLowerCase()} slabs from our Kishangarh yard direct to site in ${locName}.`);
+    ? (colName
+        ? `Direct factory wholesale sourcing of certified ${colName.toLowerCase()} ${matName.toLowerCase()} gangsaw slabs, custom cuts, and lot inspection on the MEGA Highway.`
+        : (stone
+            ? `Direct factory wholesale sourcing of certified ${stone.name} gangsaw slabs, custom cuts, and lot inspection on the MEGA Highway.`
+            : `Direct factory wholesale sourcing of certified ${matName.toLowerCase()} gangsaw slabs, custom cuts, and lot inspection on the MEGA Highway.`))
+    : (colName
+        ? `Direct quarry and factory dispatch of certified ${colName.toLowerCase()} ${matName.toLowerCase()} slabs from our Kishangarh yard direct to site in ${locName}.`
+        : (stone
+            ? `Direct quarry and factory dispatch of certified ${stone.name} slabs from our Kishangarh yard direct to site in ${locName}.`
+            : `Direct quarry and factory dispatch of certified ${matName.toLowerCase()} slabs from our Kishangarh yard direct to site in ${locName}.`));
 
   const intro: ProseBlock = {
     id: 'intro',
@@ -885,7 +931,6 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
       eyebrow: 'ARCHITECTURAL RIGOR',
       heading: 'Physical Properties & Engineering Specs',
       headingEm: 'for Lasting Durability',
-      dark: true,
       body: [
         `${stoneName} is chosen by architects and structural engineers for its exceptional durability and natural elegance. Tested under ASTM standards, our stones deliver industry-leading performance across indoor and outdoor environments.`,
       ],
@@ -899,12 +944,13 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
     {
       id: 'logistics',
       eyebrow: 'LOGISTICS & DISPATCH',
-      heading: isKishangarh ? 'Visiting Our Kishangarh Yard' : `How We Deliver Slabs to ${locName}`,
+      heading: isKishangarh ? 'Visiting Our Kishangarh Yard' : `How We Deliver ${stoneName} Slabs to ${locName}`,
       headingEm: isKishangarh ? 'on the MEGA Highway' : 'Direct from Factory Gate',
+      dark: true,
       body: [
         isKishangarh
-          ? `Our primary stone processing facility is situated in the heart of the Kishangarh marble and granite belt on the MEGA Highway. Buyers and architects can personally inspect entire gangs of slabs, verify thickness calibration, and oversee container or trailer loading.`
-          : `Granite Gallery operates a dedicated logistics corridor connecting our Kishangarh yard to ${locName}. Slabs are secured in heavy-duty wooden A-frames with high-density foam interleaving, preventing surface friction and transit breakage. Complete consignment tracking and all-risk transit insurance are provided.`,
+          ? `Our primary stone processing facility is situated in the heart of the Kishangarh marble and granite belt on the MEGA Highway. Buyers and architects can personally inspect entire gangs of ${stoneName.toLowerCase()} slabs, verify thickness calibration, and oversee container or trailer loading.`
+          : `Granite Gallery operates a dedicated logistics corridor connecting our Kishangarh yard to ${locName}. Slabs of ${stoneName.toLowerCase()} are secured in heavy-duty wooden A-frames with high-density foam interleaving, preventing surface friction and transit breakage. Complete consignment tracking and all-risk transit insurance are provided.`,
         location?.freightGuidelines ??
           `Full-trailer loads (21–25 tons / ~3,800 sq ft of 18mm stone) or curated multi-stone part loads available for dispatch.`,
       ],
@@ -918,7 +964,22 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
     { number: '55+', label: 'Varieties Ready to Ship' },
   ];
 
-  const faqs = [
+  const colorFaqs = colName ? [
+    {
+      question: `What makes ${colName.toLowerCase()} ${matName.toLowerCase()} varieties popular in luxury architecture?`,
+      answer: `${colName} ${matName.toLowerCase()} offers a timeless aesthetic versatile across contemporary, neoclassical, and minimalist interiors. Whether in subtle crystalline granites or deeply veined marbles, ${colName.toLowerCase()} stones reflect light gracefully and pair seamlessly with wood, brass, and glass fixtures.`,
+    },
+    {
+      question: `What are the bestselling ${colName.toLowerCase()} ${matName.toLowerCase()} varieties available in Kishangarh?`,
+      answer: `Our Kishangarh collection features prominent ${colName.toLowerCase()} ${matName.toLowerCase()} varieties including ${colName === 'Grey' ? 'Steel Grey, Cera Grey, and Godhra Grey' : colName === 'Black' ? 'Absolute Black, Black Galaxy, and Telephone Black' : colName === 'White' ? 'Makrana White, Statuario, and Albeta' : 'exclusive regional quarry concessions'}. Each variety is available in bookmatched pairs and full gangsaw lots.`,
+    },
+    {
+      question: `How do I prevent staining and maintain ${colName.toLowerCase()} ${matName.toLowerCase()} surfaces?`,
+      answer: `We recommend applying a high-grade penetrating impregnating sealer right after installation. Clean regularly with neutral pH stone cleaners and avoid harsh acidic detergents to preserve the stone's natural crystal matrix.`,
+    },
+  ] : [];
+
+  const baseFaqs = [
     {
       question: `What is the price of ${stoneName} in ${locName}?`,
       answer: priceBand
@@ -946,6 +1007,8 @@ export function buildPatternContent(entry: ManifestEntry, resolved: ResolvedComb
       answer: `We supply projects of all scales—from individual home renovations (minimum 500–1,000 sq ft) to commercial IT parks and residential townships requiring full trailer consignments (10,000–100,000+ sq ft).`,
     },
   ];
+
+  const faqs = [...colorFaqs, ...baseFaqs];
 
   return {
     heroImages,

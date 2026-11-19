@@ -2,7 +2,8 @@
 <xsl:stylesheet version="1.0" 
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9"
-  exclude-result-prefixes="sitemap">
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  exclude-result-prefixes="sitemap image">
   
   <xsl:output method="html" encoding="UTF-8" indent="yes" />
   
@@ -151,6 +152,55 @@
                       <td style="text-align: center;">
                         <span class="badge">
                           <xsl:value-of select="sitemap:count" />
+                        </span>
+                      </td>
+                      <td>
+                        <xsl:value-of select="sitemap:lastmod" />
+                      </td>
+                    </tr>
+                  </xsl:for-each>
+                </tbody>
+              </table>
+            </xsl:when>
+
+            <!-- Image Sitemap format -->
+            <xsl:when test="sitemap:urlset/sitemap:url/image:image">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: 35%;">Page Location</th>
+                    <th style="width: 45%;">Image Assets &amp; Title</th>
+                    <th style="width: 10%; text-align: center;">Images Count</th>
+                    <th style="width: 10%;">Last Mod</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <xsl:for-each select="sitemap:urlset/sitemap:url[image:image]">
+                    <tr>
+                      <td>
+                        <a href="{sitemap:loc}" target="_blank">
+                          <xsl:value-of select="sitemap:loc" />
+                        </a>
+                      </td>
+                      <td>
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                          <xsl:for-each select="image:image">
+                            <div style="display: flex; align-items: baseline; gap: 6px; font-size: 12px;">
+                              <a href="{image:loc}" target="_blank" style="color: var(--copper); word-break: break-all;">
+                                <xsl:value-of select="image:loc" />
+                              </a>
+                              <xsl:if test="image:title">
+                                <span style="color: var(--text-muted); font-size: 11px;">
+                                  — <xsl:value-of select="image:title" />
+                                </span>
+                              </xsl:if>
+                            </div>
+                          </xsl:for-each>
+                        </div>
+                      </td>
+                      <td style="text-align: center;">
+                        <span class="badge">
+                          <xsl:value-of select="count(image:image)" />
                         </span>
                       </td>
                       <td>

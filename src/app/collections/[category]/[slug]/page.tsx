@@ -16,6 +16,7 @@ import { categories } from '@/data/categories';
 import { abs } from '@/lib/seo-url';
 import { buildMetadata } from '@/lib/seo';
 import { getProductPrice } from '@/data/product-prices';
+import { getProductReviewSchema } from '@/lib/product-reviews';
 import relatedStyles from '@/components/sections/RelatedStones/RelatedStones.module.css';
 
 // ── Static Params ──────────────────────────────────────────────
@@ -79,7 +80,15 @@ export default async function ProductDetailPage(
     product.whatsappMsg ?? `Hello, I'm interested in ${product.name}. Please share details and pricing.`
   )}`;
 
-  // JSON-LD structured data with Schema.org AggregateOffer
+  const reviews = getProductReviewSchema(
+    product.slug,
+    product.name,
+    product.type,
+    pricing.high,
+    pricing.low
+  );
+
+  // JSON-LD structured data with Schema.org AggregateOffer, AggregateRating & Reviews
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -89,6 +98,8 @@ export default async function ProductDetailPage(
     sku: product.slug,
     category: cat?.title ?? product.type,
     brand: { '@type': 'Brand', name: 'Granite Gallery' },
+    aggregateRating: reviews.aggregateRating,
+    review: reviews.review,
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'INR',

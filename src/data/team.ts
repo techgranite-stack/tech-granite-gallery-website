@@ -13,6 +13,7 @@ export interface ExtendedTeamMember extends TeamMember {
   experience: string;
   languages: string[];
   specialties: string[];
+  knowsAbout?: string[];
   // ── Per-member SEO (mirrors Project meta fields) ──
   metaTitle: string;
   metaDescription: string;
@@ -35,10 +36,11 @@ export const teamMembers: ExtendedTeamMember[] = [
     experience: '20+ Years',
     languages: ['English', 'Hindi'],
     specialties: ['Product Development', 'Sandstone & Quartzite', 'Architectural Stone Solutions', 'Natural Stone Sourcing'],
+    knowsAbout: ['Natural Stone', 'Sandstone', 'Quartzite', 'Stone Product Development'],
     bio: 'With over 20 years of experience in the natural stone industry, Amit Rathi leads Granite Gallery India\'s vision of innovation, quality, and excellence. He specializes in new product development, sandstone, quartzite, and customized architectural stone solutions. His deep understanding of materials, market trends, and customer requirements has helped create distinctive stone products for architects, builders, developers, hospitality projects, and global clients. His passion for innovation and craftsmanship continues to drive Granite Gallery India\'s growth as a trusted name in natural stone.',
-    metaTitle: 'Amit Rathi — Founder & Director | Granite Gallery India',
-    metaDescription: 'Meet Amit Rathi, Founder & Director of Granite Gallery India — natural stone specialist with 20+ years expertise in sourcing, processing, and global export.',
-    keywords: ['Amit Rathi', 'Granite Gallery Founder', 'Natural Stone Specialist', 'Sandstone Quartzite Expert', 'Product Development Stone'],
+    metaTitle: 'Amit Rathi – Founder & Director, Granite Gallery India',
+    metaDescription: 'Meet Amit Rathi, Founder & Director of Granite Gallery India, Kishangarh. Discover his experience in natural stone, sandstone, quartzite and product development.',
+    keywords: ['Amit Rathi', 'Amit Rathi Kishangarh', 'Amit Rathi Granite Gallery', 'Amit Rathi Rajasthan', 'Natural Stone', 'Sandstone', 'Quartzite', 'Stone Product Development'],
   },
   {
     slug: 'shrikant-dargar',
@@ -53,10 +55,11 @@ export const teamMembers: ExtendedTeamMember[] = [
     experience: '15+ Years',
     languages: ['English', 'Hindi', 'Marwari'],
     specialties: ['Financial Planning', 'Accounting Systems', 'Taxation & Compliance', 'Business Controls'],
+    knowsAbout: ['Financial Planning', 'Accounting Systems', 'Taxation & Compliance', 'Business Controls', 'Stone Industry Finance'],
     bio: 'Shreekant Dargar manages the company\'s financial operations, ensuring strong financial planning, accounting systems, taxation, compliance, and business controls. With a focus on accuracy, transparency, and financial discipline, he plays a vital role in maintaining operational stability and supporting sustainable growth. His expertise ensures efficient financial management and strong governance across the organization.',
-    metaTitle: 'Shreekant Dargar — Head – Accounts & Finance',
-    metaDescription: 'Meet Shreekant Dargar, Head – Accounts & Finance at Granite Gallery India, leading financial planning, taxation, statutory compliance, and fiscal controls.',
-    keywords: ['Shreekant Dargar', 'Head Accounts & Finance', 'Granite Gallery finance head', 'stone industry accounting', 'financial governance'],
+    metaTitle: 'Shreekant Dargar – Head – Accounts & Finance, Granite Gallery India',
+    metaDescription: 'Meet Shreekant Dargar, Head – Accounts & Finance at Granite Gallery India, Kishangarh. Discover his experience in stone industry accounting, financial planning, taxation, and fiscal compliance.',
+    keywords: ['Shreekant Dargar', 'Shreekant Dargar Kishangarh', 'Shreekant Dargar Granite Gallery', 'Shreekant Dargar Rajasthan', 'Financial Planning', 'Taxation & Compliance', 'Head Accounts and Finance'],
   },
   {
     slug: 'vishal-rathi',
@@ -71,10 +74,11 @@ export const teamMembers: ExtendedTeamMember[] = [
     experience: '12+ Years',
     languages: ['English', 'Hindi'],
     specialties: ['CNC Technology', 'CAD/CAM Design', 'Digital Manufacturing', 'Precision Stone Carving'],
+    knowsAbout: ['CNC Technology', 'CAD/CAM Design', 'Digital Manufacturing', 'Precision Stone Carving', '3D Stone Milling'],
     bio: 'An IIT alumnus with expertise in engineering and digital manufacturing, Vishal Rathi leads Granite Gallery India\'s CNC operations, CAD/CAM designing, and advanced machining processes. He specializes in transforming creative concepts into precision-crafted stone products using modern technology. His technical expertise enables the execution of intricate carvings, sculptures, architectural elements, and customized stone designs with exceptional accuracy and craftsmanship.',
-    metaTitle: 'Vishal Rathi — Head – CNC Technology & Design',
-    metaDescription: 'Meet Vishal Rathi, IIT Alumnus & Head – CNC Technology at Granite Gallery India, driving digital manufacturing, CAD/CAM design, and stone precision carving.',
-    keywords: ['Vishal Rathi', 'IIT Alumnus', 'CNC Technology', 'Stone Design Specialist', 'CAD CAM stone milling', 'Granite Gallery'],
+    metaTitle: 'Vishal Rathi – Head – CNC Technology & Design, Granite Gallery India',
+    metaDescription: 'Meet Vishal Rathi, IIT Alumnus & Head – CNC Technology & Design at Granite Gallery India, Kishangarh. Discover his expertise in digital stone manufacturing, CAD/CAM design, and 3D precision carving.',
+    keywords: ['Vishal Rathi', 'Vishal Rathi Kishangarh', 'Vishal Rathi Granite Gallery', 'Vishal Rathi Rajasthan', 'IIT Alumnus', 'CNC Technology', 'Stone Design Specialist', 'CAD CAM stone milling'],
   },
   {
     slug: 'anuj-rathi',
@@ -89,10 +93,11 @@ export const teamMembers: ExtendedTeamMember[] = [
     experience: '10+ Years',
     languages: ['English', 'Hindi'],
     specialties: ['Plant Operations', 'Manufacturing & Slicing', 'Quality Control', 'Inventory & Logistics'],
+    knowsAbout: ['Plant Operations', 'Manufacturing & Slicing', 'Quality Control', 'Inventory & Logistics', 'Gangsaw Calibration'],
     bio: 'Anuj Rathi oversees the day-to-day operations of Granite Gallery India\'s manufacturing facility, ensuring smooth production and efficient workflow. He manages production planning, team coordination, quality control, inventory movement, and process optimization. His focus on operational excellence, timely execution, and maintaining consistent quality standards plays a key role in delivering premium natural stone products to clients across India and international markets.',
-    metaTitle: 'Anuj Rathi — Head – Plant Operations & Manufacturing',
-    metaDescription: 'Meet Anuj Rathi, Head – Plant Operations & Manufacturing at Granite Gallery India, directing factory production, quality control, and inventory workflow.',
-    keywords: ['Anuj Rathi', 'Head Plant Operations', 'Granite Gallery Manufacturing', 'stone factory management', 'production planning'],
+    metaTitle: 'Anuj Rathi – Head – Plant Operations & Manufacturing, Granite Gallery India',
+    metaDescription: 'Meet Anuj Rathi, Head – Plant Operations & Manufacturing at Granite Gallery India, Kishangarh. Discover his experience in factory production, stone slicing, quality control, and inventory workflow.',
+    keywords: ['Anuj Rathi', 'Anuj Rathi Kishangarh', 'Anuj Rathi Granite Gallery', 'Anuj Rathi Rajasthan', 'Head Plant Operations', 'Granite Gallery Manufacturing', 'stone factory management'],
   },
 ];
 

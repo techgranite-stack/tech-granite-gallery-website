@@ -1,0 +1,190 @@
+/* ── Stone About Section (Eyebrow, Title, Meta, Description, Highlights & Hero Image) ── */
+
+.section {
+  padding: clamp(60px, 7vw, 90px) 0;
+  background: var(--stone-200, #E5D8C8);
+  border-top: 1px solid rgba(75, 46, 43, 0.08);
+  border-bottom: 1px solid rgba(75, 46, 43, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: var(--container-max, 1320px);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(40px, 5vw, 64px);
+  align-items: center;
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+}
+
+.title {
+  font-family: var(--font-serif, "Playfair Display", Georgia, serif);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: 300;
+  color: var(--mahogany, #4B2E2B);
+  line-height: 1.08;
+  margin-top: 6px;
+}
+
+.titleMeta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.subtitle {
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mid, #5C3D34);
+}
+
+.pricePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(192, 133, 82, 0.35);
+  border-radius: 999px;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--copper-dark, #8C5A3C);
+  letter-spacing: 0.02em;
+}
+
+.pricePillSub {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted, #7A6B63);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.copperLine {
+  width: 52px;
+  height: 2px;
+  background: var(--copper, #C08552);
+  margin: 20px 0 22px;
+}
+
+.para {
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  font-size: 1.05rem;
+  color: var(--text-dark, #2A1A17);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.highlights {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  font-size: 0.96rem;
+  color: var(--mahogany, #4B2E2B);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.highlightIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(192, 133, 82, 0.35);
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  color: var(--copper-dark, #8C5A3C);
+}
+
+.highlightIcon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.imageCol {
+  position: relative;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  height: clamp(380px, 45vw, 520px);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(192, 133, 82, 0.3);
+  box-shadow: 0 16px 40px rgba(75, 46, 43, 0.12);
+  background: #EAE3D6;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageWrap:hover .image {
+  transform: scale(1.03);
+}
+
+.imageBadge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  background: rgba(43, 27, 23, 0.82);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(192, 133, 82, 0.35);
+  border-radius: 999px;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  color: #F7F3EC;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 960px) {
+  .inner {
+    padding: 0 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .imageWrap {
+    height: 340px;
+  }
+}

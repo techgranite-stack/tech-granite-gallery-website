@@ -39,26 +39,18 @@
   align-items: flex-start;
 }
 
-.eyebrowRow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.eyebrow {
+  color: var(--copper);
   margin-bottom: 6px;
 }
 
-.eyebrowDash {
-  color: var(--copper);
-  font-size: 11px;
-  opacity: 0.6;
-}
-
-.eyebrow {
-  color: var(--copper);
-}
-
-.section.dark .eyebrow,
-.section.dark .eyebrowDash {
+.section.dark .eyebrow {
   color: var(--copper-light);
+}
+
+.section.dark .eyebrow::before,
+.section.dark .eyebrow::after {
+  background: var(--copper-light);
 }
 
 .title {

@@ -10,6 +10,7 @@ import path from 'path';
 import type { StoneProduct } from '@/types/stone';
 import type { Product } from '@/lib/product-data';
 import { getProductPrice } from '@/data/product-prices';
+import { getProductReviewData, type ProductReviewItem } from '@/lib/product-reviews';
 
 export interface DetailSpecRow {
   key: string;
@@ -42,6 +43,12 @@ export interface ProductDetailData {
   backLabel: string;
   priceFormatted?: string;
   priceNote?: string;
+  rating?: {
+    ratingValue: string;
+    ratingNumber: number;
+    reviewCount: number;
+  };
+  reviews?: ProductReviewItem[];
 }
 
 /** Title-cases a slug-ish string: "kitchen-countertops" → "Kitchen Countertops" */
@@ -206,6 +213,7 @@ interface StoneDetailOpts {
 export function fromStoneDetail(p: StoneProduct, opts: StoneDetailOpts): ProductDetailData {
   const price = p.priceRange ?? getProductPrice(p.slug, p.category);
   const priceFormatted = `₹${price.low} – ₹${price.high} / ${price.unit || 'sq ft'}`;
+  const reviewData = getProductReviewData(p.slug, p.name, p.category, price.high, price.low);
 
   const specRows: DetailSpecRow[] = [
     { key: 'Indicative Price', val: `${priceFormatted} (ex-factory)` },
@@ -242,6 +250,12 @@ export function fromStoneDetail(p: StoneProduct, opts: StoneDetailOpts): Product
     backLabel: opts.backLabel,
     priceFormatted,
     priceNote: 'Wholesale & factory rates (ex-Kishangarh). Contact for customized sizes & container export quotes.',
+    rating: {
+      ratingValue: reviewData.ratingValue,
+      ratingNumber: reviewData.ratingNumber,
+      reviewCount: reviewData.reviewCount,
+    },
+    reviews: reviewData.reviews,
   };
 }
 
@@ -257,6 +271,7 @@ export function fromCollectionDetail(p: Product, opts: CollectionDetailOpts): Pr
   const typeLabel = p.type.charAt(0).toUpperCase() + p.type.slice(1);
   const price = p.priceRange ?? getProductPrice(p.slug, p.type);
   const priceFormatted = `₹${price.low} – ₹${price.high} / ${price.unit || 'sq ft'}`;
+  const reviewData = getProductReviewData(p.slug, p.name, p.type, price.high, price.low);
 
   const specRows: DetailSpecRow[] = [
     { key: 'Indicative Price', val: `${priceFormatted} (ex-factory)` },
@@ -292,5 +307,11 @@ export function fromCollectionDetail(p: Product, opts: CollectionDetailOpts): Pr
     backLabel: opts.backLabel,
     priceFormatted,
     priceNote: 'Wholesale & factory rates (ex-Kishangarh). Contact for customized sizes & container export quotes.',
+    rating: {
+      ratingValue: reviewData.ratingValue,
+      ratingNumber: reviewData.ratingNumber,
+      reviewCount: reviewData.reviewCount,
+    },
+    reviews: reviewData.reviews,
   };
 }

@@ -5,6 +5,7 @@ import LocalDeliveryCorridor from '@/components/sections/LocalDeliveryCorridor';
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import BannerContactForm from '@/components/sections/BannerContactForm';
 import ScrollingTagline from '@/components/sections/ScrollingTagline';
+import RelatedColorsSection from '@/components/sections/RelatedColorsSection';
 import type { StoneProduct, ColorFamily } from '@/types/stone';
 import { fromStoneProduct } from '@/lib/listing-item';
 import { colorPages } from '@/data/stone-index';
@@ -174,33 +175,17 @@ export default function ColorStonePage({ data, products }: ColorStonePageProps) 
         heading={`${colorLabel} Stone Collection`}
       />
 
-      <section className={styles.relatedColorsSection}>
-        <div className={styles.relatedColorsInner}>
-          <span className={styles.relatedColorsEyebrow}>Palette Variety</span>
-          <h2 className={styles.relatedColorsTitle}>Explore Other Stone Colors</h2>
-          <div className={styles.colorsGrid}>
-            {colorPages
-              .filter((cp) => cp.slug !== data.slug)
-              .map((cp) => (
-                <Link key={cp.slug} href={`/${cp.slug}`} className={styles.colorCard}>
-                  <span
-                    className={styles.colorSwatch}
-                    style={{ backgroundColor: SWATCH_HEX[cp.color] || '#ccc' }}
-                  />
-                  <span>{cp.title.replace(/ Collection$/, '')}</span>
-                </Link>
-              ))}
-          </div>
-        </div>
-      </section>
-
       <FAQAccordion
         items={colorFaqs}
         eyebrow="FAQ"
+        bg="var(--stone-100, #F2EBE0)"
         title={`${colorLabel} Stone`}
         titleEm="Frequently Asked Questions"
         description={`Expert answers on pricing, finishes, maintenance, and factory-direct dispatch for ${colorLabel.toLowerCase()} granite and marble slabs from Kishangarh.`}
       />
+
+      {/* Palette Variety — Warm Sandstone #C8B89A */}
+      <RelatedColorsSection currentColor={data.color} currentSlug={data.slug} />
 
       <ScrollingTagline items={taglineItems} />
 

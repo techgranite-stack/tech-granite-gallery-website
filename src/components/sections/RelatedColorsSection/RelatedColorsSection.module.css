@@ -1,0 +1,117 @@
+/* ── Related Stone Colors Section (Warm Sandstone #C8B89A matching Other Finishes) ── */
+.relatedColorsSection {
+  background: var(--stone-300, #C8B89A);
+  padding: clamp(72px, 8vw, 96px) 40px;
+  border-top: 1px solid rgba(140, 90, 60, 0.22);
+  border-bottom: 1px solid rgba(140, 90, 60, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.ambientGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1300px;
+  height: 100%;
+  background: radial-gradient(ellipse 65% 45% at 50% 20%, rgba(221, 161, 94, 0.22), transparent 70%);
+  pointer-events: none;
+}
+
+.relatedColorsInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: var(--copper-dark, #8C5A3C);
+  margin-bottom: 14px;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  background: var(--copper-dark, #8C5A3C);
+}
+
+.relatedColorsTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--mahogany, #4B2E2B);
+  margin-bottom: 36px;
+}
+
+.colorsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 18px;
+}
+
+/* ── Frosted Warm Alabaster Stone Pill Buttons ── */
+.colorCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 22px;
+  background: rgba(255, 248, 240, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(140, 90, 60, 0.26);
+  border-radius: 100px;
+  color: var(--mahogany, #4B2E2B);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(75, 46, 43, 0.07);
+}
+
+.colorCard:hover {
+  background: var(--mahogany, #4B2E2B);
+  color: #FFF8F0;
+  border-color: var(--mahogany, #4B2E2B);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(75, 46, 43, 0.22), 0 0 16px rgba(192, 133, 82, 0.18);
+}
+
+.colorCard:hover .colorSwatch {
+  box-shadow: 0 0 0 2px rgba(255, 248, 240, 0.9);
+}
+
+.colorSwatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(75, 46, 43, 0.18);
+  box-shadow: 0 0 0 1.5px rgba(255, 248, 240, 0.85);
+  display: inline-block;
+  flex-shrink: 0;
+  transition: box-shadow 0.3s ease;
+}
+
+@media (max-width: 640px) {
+  .relatedColorsSection {
+    padding: 48px 20px;
+  }
+  .colorsGrid {
+    gap: 10px 12px;
+  }
+  .colorCard {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  .relatedColorsTitle {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+}

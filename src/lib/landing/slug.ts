@@ -99,6 +99,24 @@ export function parseSlug(slug: string): Partial<Combo> {
     }
   }
 
+  // Check if slug matches a specific catalog stone directly without location (e.g. "markino-granite" or "markino")
+  if (!result.pattern && !result.stoneSlug) {
+    const exactStone = allStones.find((s) => s.slug === slug);
+    if (exactStone) {
+      result.pattern = 'P-Stone';
+      result.stoneSlug = exactStone.slug;
+      result.material = (exactStone.category === 'imported-marble' ? 'marble' : exactStone.category) as MaterialId;
+    } else {
+      const stripped = slug.replace(/-(granite|marble|sandstone|quartzite|slate|limestone|onyx|travertine)$/, '');
+      const matchedStone = allStones.find((s) => s.slug === stripped);
+      if (matchedStone) {
+        result.pattern = 'P-Stone';
+        result.stoneSlug = matchedStone.slug;
+        result.material = (matchedStone.category === 'imported-marble' ? 'marble' : matchedStone.category) as MaterialId;
+      }
+    }
+  }
+
   // Check material
   for (const mat of KNOWN_MATERIALS) {
     if (slug.includes(mat)) {
@@ -134,25 +152,43 @@ export function parseSlug(slug: string): Partial<Combo> {
     }
   }
 
-  // Check finish
-  for (const fin of KNOWN_FINISHES) {
-    if (
-      slug.includes(fin) ||
-      (fin === 'leathered' && (slug.includes('leather-finish') || slug.includes('lapotra')))
-    ) {
-      result.finish = fin;
-      break;
+  // Check finish (including Indian mandi & trade names like Lapatro / Lapotra / Lapato for leathered finish)
+  const isLeatherOrLapatro =
+    slug.includes('leather') ||
+    slug.includes('lapatro') ||
+    slug.includes('lapotra') ||
+    slug.includes('lapatra') ||
+    slug.includes('lapato') ||
+    slug.includes('lepatro') ||
+    slug.includes('lepato') ||
+    slug.includes('lapothro');
+
+  if (isLeatherOrLapatro) {
+    result.finish = 'leathered';
+  } else {
+    for (const fin of KNOWN_FINISHES) {
+      if (slug.includes(fin)) {
+        result.finish = fin;
+        break;
+      }
+    }
+    if (!result.finish) {
+      if (slug.includes('flamed')) result.finish = 'flamed';
+      else if (slug.includes('honed')) result.finish = 'honed';
+      else if (slug.includes('acid-wash')) result.finish = 'acid-wash';
+      else if (slug.includes('bush-hammered')) result.finish = 'bush-hammered';
+      else if (slug.includes('shot-blast')) result.finish = 'shot-blast';
+      else if (slug.includes('chiseled')) result.finish = 'chiseled';
+      else if (slug.includes('hydro-blast')) result.finish = 'hydro-blast';
+      else if (slug.includes('polished')) result.finish = 'polished';
+      else if (slug.includes('antique')) result.finish = 'antique';
+      else if (slug.includes('latino')) result.finish = 'latino';
     }
   }
-  if (!result.finish) {
-    if (slug.includes('flamed')) result.finish = 'flamed';
-    else if (slug.includes('honed')) result.finish = 'honed';
-    else if (slug.includes('acid-wash')) result.finish = 'acid-wash';
-    else if (slug.includes('bush-hammered')) result.finish = 'bush-hammered';
-    else if (slug.includes('shot-blast')) result.finish = 'shot-blast';
-    else if (slug.includes('chiseled')) result.finish = 'chiseled';
-    else if (slug.includes('hydro-blast')) result.finish = 'hydro-blast';
-    else if (slug.includes('polished')) result.finish = 'polished';
+
+  // Infer finish pattern (P5 for finish x material in location, P7 for finish x material slabs) if not already set
+  if (!result.pattern && result.finish && result.material) {
+    result.pattern = result.location ? 'P5' : 'P7';
   }
 
   // Check color (can be prefix or infix e.g. best-black-granite)
@@ -161,6 +197,11 @@ export function parseSlug(slug: string): Partial<Combo> {
       result.color = col;
       break;
     }
+  }
+
+  // Infer color pattern (P6 for color x material in location or base color stone) if not already set
+  if (!result.pattern && result.color && result.material) {
+    result.pattern = 'P6';
   }
 
   return result;

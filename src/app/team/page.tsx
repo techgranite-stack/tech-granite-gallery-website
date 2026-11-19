@@ -77,20 +77,12 @@ export default function TeamPage() {
       <PortraitTeamGrid />
 
       {/* Number cards — Sourcing Standards */}
-      <section style={{ background: 'var(--white)', padding: '96px 0', borderTop: '1px solid rgba(75, 46, 43, 0.05)' }}>
-        <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '0 40px' }}>
-          <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 64px' }}>
-            <span className="section-eyebrow">Our Working Philosophy</span>
-            <h2 className="section-title" style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', fontWeight: '400', color: 'var(--mahogany)', marginTop: '12px', marginBottom: '24px' }}>
-              Why Architects <em>Trust Us</em>
-            </h2>
-            <p className="section-desc centered" style={{ color: 'rgba(75, 46, 43, 0.75)' }}>
-              From initial quarry blocks inspection to international container shipping, our leadership guarantees precision at every step.
-            </p>
-          </div>
-          <NumberedCardGrid reasons={whyUsReasons} />
-        </div>
-      </section>
+      <NumberedCardGrid
+        eyebrow="Our Working Philosophy"
+        title="Why Architects Trust Us"
+        subtitle="From initial quarry blocks inspection to international container shipping, our leadership guarantees precision at every step."
+        reasons={whyUsReasons}
+      />
 
 
       {/* Testimonials, Google Reviews & Process */}
